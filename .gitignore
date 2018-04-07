@@ -290,5 +290,8 @@ CMakeLists.txt.user*
 
 # Qt Creator backups
 
+ENSICAEN_GrandPrix_Pilote
+
+anakin.log
 
 # End of https://www.gitignore.io/api/c,qt,clion,clion+all,clion+iml,qtcreator,intellij+all

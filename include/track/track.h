@@ -1,16 +1,21 @@
 
+#ifndef TRACK_H
+#define TRACK_H
 
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct track_t {
-  int height = 0;
-  int width = 0;
-  int fuel = 0;
-  char ** track;
-}Track*;
+    int height;
+    int width;
+    int fuel;
+    char **track;
+} *Track;
 
+Track initTrack();
 
-int initTrack(Track t);
+int readHeader(Track t);
 
-int readHeader(int * height, int * width, int * fuel);
+int readTrack(Track t);
 
-int readTrack(char ** track);
+#endif //ALGO_AVANCE_GRAPH_H
