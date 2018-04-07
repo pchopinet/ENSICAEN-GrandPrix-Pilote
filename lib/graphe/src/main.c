@@ -1,16 +1,10 @@
-#include "../headers/genere_graphe.h"
-#include "../headers/library.h"
-#include "../headers/library_matrice.h"
+#include "../include/genere_graphe.h"
+#include "../include/library.h"
 
 int main() {
-    cree_graphe_oriente_value("./graphe.txt",6,3);
-    //graphe* G = createGraphe("./graphe.txt");
-    T_LADJ L = charge_graphe("./graphe.txt");
-    //printf("Graphe:\n");
-    //affiche_graphe(L);
-    printf("Parcours profondeur:");
-    //parcoursProfondeur(G);
+    cree_graphe_oriente_value("./graph.txt",6,3);
+    Ladj L = loadGraph("./graph.txt");
     printf("\nMarquage topologique: ");
-    printf("\nreturn %d\n",marquage(&L));
+    printf("\nreturn %d\n",tagging(&L));
     return 0;
 }

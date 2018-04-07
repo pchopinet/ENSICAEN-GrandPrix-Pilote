@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -Wextra -pedantic -fpic -g
 PATHOBJ=./obj/
 PATHSRC= ./src/
-OBJ=$(addprefix $(PATHOBJ),main.o genere_graphe.o library.o file.o L_ADJ.o library_matrice.o)
+OBJ=$(addprefix $(PATHOBJ),main.o genere_graphe.o library.o file.o liste_adjacence.o)
 all: main
 
 main: $(OBJ)

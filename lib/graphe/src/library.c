@@ -2,54 +2,54 @@
 // Created by clabonne on 04/04/18.
 //
 
-#include "../headers/library.h"
+#include "../include/library.h"
 
-int marquage(T_LADJ* L) {
+int tagging(Ladj* L) {
     int i;
     int n=0;
-    int sommet;
+    int node;
     int val;
     Queue Q = createQueue();
-    int* marquage = calloc(L->nbsom,sizeof(int));
+    int* flag = calloc(L->nbNode,sizeof(int));
 
-    L->marquage=calloc(L->nbsom,sizeof(int));
+    L->tag=calloc(L->nbNode,sizeof(int));
 
-    for (i=0; i<L->nbsom; i++) {
-        if (L->nbpred[i]==0) {
+    for (i=0; i<L->nbNode; i++) {
+        if (L->indegree[i]==0) {
             put(i,&Q);
         }
     }
 
     if(isEmpty(Q)){
-        free(L->marquage);
+        free(L->tag);
         printf("\nError: circuit!\n");
         return 1;
     }
 
     while (!isEmpty(Q)) {
-        sommet = push(&Q);
-        marquage[sommet]=1;
-        printf("%d",sommet);
-        L->marquage[n]=sommet;
+        node = push(&Q);
+        flag[node]=1;
+        printf("%d",node);
+        L->tag[n]=node;
         n++;
-        for (T_CELLULE* cell = L->tab[sommet];
-             cell!=NULL; cell=cell->suivant) {
-            if (marquage[cell->extremite]==0) {
-                val = cell->extremite;
-                L->nbpred[val]--;
-                if (L->nbpred[val]==0) {
+        for (Cell* C = L->tab[node];
+             C!=NULL; C=C->next) {
+            if (flag[C->head]==0) {
+                val = C->head;
+                L->indegree[val]--;
+                if (L->indegree[val]==0) {
                     put(val, &Q);
                 }
             } else {
-                free(L->marquage);
+                free(L->tag);
                 printf("\nError: circuit!\n");
                 return 2;
             }
         }
     }
 
-    if(n!=L->nbsom){
-        free(L->marquage);
+    if(n!=L->nbNode){
+        free(L->tag);
         printf("\nError: circuit!\n");
         return 3;
     }
