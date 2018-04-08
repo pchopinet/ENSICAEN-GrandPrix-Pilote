@@ -8,6 +8,6 @@
 #include "liste_ajdacence.h"
 #include "file.h"
 
-int tagging(Ladj*);
+//int tagging(Ladj*);
 
 #endif //UNTITLED1_LIBRARY_H
