@@ -22,7 +22,8 @@ typedef struct cell {
 
 typedef struct ladj {
     int nbNode, nbArc;
-    Cell** tab;
+    int height, width;
+    Cell*** tab;
     Point start[3];
     Point finish[5];
     //int* indegree;

@@ -1,5 +1,5 @@
 #include "../include/genere_graphe.h"
-#include "../include/library.h"
+#include "../../../include/track/trackFromFile.h"
 
 int main() {
     cree_graphe_oriente_value("./graph.txt",6,3);

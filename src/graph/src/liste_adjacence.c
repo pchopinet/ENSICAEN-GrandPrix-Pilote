@@ -22,7 +22,7 @@ void printCell(Cell *C) {
 /* allocation dynamique et initialisation */
 Ladj initLadj(Track t)
 {
-    int i,j;
+    int i, j;
     int k=0;
     Ladj L;
     L->nbNode=t->width*t->height;
@@ -45,7 +45,10 @@ Ladj initLadj(Track t)
             }
         }
     }
-    L.tab = (Cell **) calloc(L->nbNode, sizeof(Cell *));
+    L.tab = (Cell ***) calloc(t->height, sizeof(Cell **));
+    for (i=0; i<t->width; i++) {
+        L.tab[i] = (Cell **) calloc(t->width, sizeof(Cell *));
+    }
     //L.indegree = calloc(L.nbNode,sizeof(int));
     //L.tag = NULL;
     if (L.tab == NULL) { //nécesaire?
@@ -55,11 +58,13 @@ Ladj initLadj(Track t)
 }
 
 void printLadj(Ladj L) {
-    int i;
-    for (i = 0; i < L.nbNode; i++) {
-        if (L.tab[i]) {
-            printf("Successeurs de %d : ", i);
-            printCell(L.tab[i]);
+    int i, j;
+    for (i = 0; i < L.height; i++) {
+        for (j = 0; j < L.width; j++) {
+            if (L.tab[i][j]) {
+                printf("Successeurs de %d.%d : ", i, j);
+                printCell(L.tab[i][j]);
+            }
         }
     }
     printf("\n");

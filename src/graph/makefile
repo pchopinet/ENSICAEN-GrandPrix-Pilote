@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -Wextra -pedantic -fpic -g
 PATHOBJ=./obj/
 PATHSRC= ./src/
-OBJ=$(addprefix $(PATHOBJ),main.o genere_graphe.o library.o file.o liste_adjacence.o)
+OBJ=$(addprefix $(PATHOBJ),testGraph.o liste_adjacence.o graph.o trackFromFile.o)
 all: main
 
 main: $(OBJ)
@@ -12,5 +12,5 @@ $(PATHOBJ)%.o: $(PATHSRC)%.c
 	$(CC) -c  $^ $(CFLAGS) -o $@
 
 clean:
-	rm -rf main
+	rm -rf testGraph
 	rm -rf $(PATHOBJ)*.o
