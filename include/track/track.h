@@ -4,12 +4,14 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "../driver/driver.h"
 
 typedef struct track_t {
     int height;
     int width;
     int fuel;
     char **track;
+    Driver * drivers;
 } *Track;
 
 Track initTrack();

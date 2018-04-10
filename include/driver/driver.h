@@ -5,13 +5,14 @@
 #ifndef ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 #define ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 
-typedef struct pilote_t {
+typedef struct driver_t {
     int x;
     int y;
     int vx;
     int vy;
-}Pilote;
+} *Driver;
 
+void move(Driver p, int ax, int ay);
 
 
 #endif //ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
