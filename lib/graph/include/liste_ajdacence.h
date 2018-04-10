@@ -32,7 +32,6 @@ typedef struct ladj {
 
 Cell *createCell(Point head, float weight, Cell* next);
 void printCell(Cell* C);
-Ladj initLadj(Track t);
 void printLadj(Ladj L);
 //Ladj loadGraph(char* fileName);
 #endif

@@ -20,42 +20,7 @@ void printCell(Cell *C) {
 }
 
 /* allocation dynamique et initialisation */
-Ladj initLadj(Track t)
-{
-    int i, j;
-    int k=0;
-    Ladj L;
-    L->nbNode=t->width*t->height;
-    L.nbArc=0;
-    for (i=0; i<t->height; i++) {
-        for (j=0; j<t->width; j++) {
-            if (t->track[i][j] == '1') {
-                L.start[0].x = i;
-                L.start[0].y = j;
-            } else if (t->track[i][j] == '2') {
-                L.start[1].x = i;
-                L.start[1].y = j;
-            } else if (t->track[i][j] == '3') {
-                L.start[2].x = i;
-                L.start[2].y = j;
-            } else if (t->track[i][j] == '=') {
-                L.finish[k].x = i;
-                L.finish[k].y = j;
-                k++;
-            }
-        }
-    }
-    L.tab = (Cell ***) calloc(t->height, sizeof(Cell **));
-    for (i=0; i<t->width; i++) {
-        L.tab[i] = (Cell **) calloc(t->width, sizeof(Cell *));
-    }
-    //L.indegree = calloc(L.nbNode,sizeof(int));
-    //L.tag = NULL;
-    if (L.tab == NULL) { //nécesaire?
-        exit(-1);
-    }
-    return L;
-}
+
 
 void printLadj(Ladj L) {
     int i, j;
@@ -70,7 +35,7 @@ void printLadj(Ladj L) {
     printf("\n");
 }
 
-/*
+
 Ladj loadGraph(char* fileName) {
     int nbNode, nbArc;
     int i, tail, head;
@@ -93,4 +58,4 @@ Ladj loadGraph(char* fileName) {
     }
     fclose(f);
     return L;
-}*/
+}
