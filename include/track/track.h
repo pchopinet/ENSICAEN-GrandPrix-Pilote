@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "../driver/driver.h"
 
 #include "../../lib/graph/include/liste_ajdacence.h"
 
@@ -12,6 +13,7 @@ typedef struct track_t {
     int width;
     int fuel;
     char **track;
+    Driver * drivers;
 } *Track;
 
 Track initTrack();
