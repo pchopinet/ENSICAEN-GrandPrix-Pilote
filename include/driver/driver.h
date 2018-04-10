@@ -10,6 +10,7 @@ typedef struct driver_t {
     int y;
     int vx;
     int vy;
+    int fuel;
 } *Driver;
 
 void move(Driver p, int ax, int ay);
