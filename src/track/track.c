@@ -18,16 +18,21 @@ int readHeader(Track t) {
     if (t->height == 0 || t->width == 0 || t->fuel == 0) {
         return 1;
     }
+
+    char c;
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
+
     return 0;
 }
 
 int readTrack(Track t) {
     int i, j;
     char c;
+
     t->track = malloc(sizeof(char) * t->height);
     for (i = 0; i < t->height; i++) {           /* Lecture de la carte ligne par ligne */
-        j=0;
-        t->track[i] = malloc(sizeof(char)* t->width);
+        j = 0;
+        t->track[i] = malloc(sizeof(char) * t->width);
         while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
             t->track[i][j] = c;
             j++;
