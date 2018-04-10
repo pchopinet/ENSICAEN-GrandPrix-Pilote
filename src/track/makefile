@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -pedantic -fpic -g
-PATHOBJ=../../../obj/
+PATHOBJ=../../obj/track/
 PATHSRC= ./
 OBJ=$(addprefix $(PATHOBJ),track.o testTrack.o )
 all: main
@@ -14,5 +14,5 @@ $(PATHOBJ)%.o: ../../lib/graph/src/liste_adjacence.c
 	$(CC) -c  $^ $(CFLAGS) -o $@
 
 clean:
-	rm -rf testGraph
+	rm -rf main
 	rm -rf $(PATHOBJ)*.o

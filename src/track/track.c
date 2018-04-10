@@ -69,11 +69,11 @@ int readTrackFromFile(Track t, char* file) {
     for (i = 0; i < t->height; i++) {           /* Lecture de la carte ligne par ligne */
         t->track[i] = malloc(sizeof(char)* t->width);
         for (j=0; j<t->width; j++) {
-            fscanf(file, "%c", &c);
+            fscanf(f, "%c", &c);
             t->track[i][j] = c;
         }
         if (!feof(f)) {
-            fscanf(file, "%c", &c);
+            fscanf(f, "%c", &c);
         }
     }
     return 0;
@@ -84,7 +84,7 @@ Ladj initLadj(Track t)
     int i, j;
     int k=0;
     Ladj L;
-    L->nbNode=t->width*t->height;
+    L.nbNode=t->width*t->height;
     L.nbArc=0;
     for (i=0; i<t->height; i++) {
         for (j=0; j<t->width; j++) {

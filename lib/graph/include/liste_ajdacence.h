@@ -7,7 +7,6 @@
 #define UNTITLED1_LADJ_H
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../track/include/track.h"
 
 typedef struct point {//A mettre dans un autre .h;
     int x;
