@@ -23,7 +23,6 @@ typedef struct ladj {
     Point start[3];
     Point finish[5];
     int** tag;
-    int** tagF;
 } Ladj;
 
 Cell *createCell(Point head, float weight, Cell* next);

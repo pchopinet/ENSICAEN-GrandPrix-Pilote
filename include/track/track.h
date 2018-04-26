@@ -30,7 +30,7 @@ int readTrackFromFile(Track t, char* file);
 
 Ladj initLadj(Track t);
 
-int loadLadj(Ladj l, Track t, Point p);
+int loadLadj(Ladj l, Track T, Point p);
 
 int printTag(Ladj l);
 

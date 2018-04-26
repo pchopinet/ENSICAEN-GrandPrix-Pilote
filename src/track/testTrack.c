@@ -6,7 +6,7 @@ int main() {
     Ladj L = initLadj(t);
     loadLadj(L,t,L.start[0]);
     printf("%d\t%d\n",L.start->x,L.start->y);
-    //printLadj(L);
+    printLadj(L);
     printTag(L);
     return 0;
 }
