@@ -1,6 +1,6 @@
 
+#include <unistd.h>
 #include "../../include/track/track.h"
-
 
 Track initTrack() {
     Track t = malloc(sizeof(struct track_t));
@@ -46,46 +46,48 @@ Track initTrackFromFile(char* file) {
     if (t == NULL) {
         exit(1);
     }
-    readHeaderFromFile(t, file);
     readTrackFromFile(t, file);
     return t;
 }
 
-int readHeaderFromFile(Track t, char* file) {
-    FILE* f = fopen(file,"r");
-    fscanf(f, "%d %d %d", &(t->height), &(t->width), &(t->fuel));
-    fclose(f);
-    if (t->height == 0 || t->width == 0 || t->fuel == 0) {
-        return 1;
-    }
-    return 0;
-}
+
 
 int readTrackFromFile(Track t, char* file) {
     int i, j;
     char c;
-    t->track = malloc(sizeof(char) * t->height);
     FILE* f = fopen(file,"r");
+    if(f == NULL) {
+        printf("Error loading file.\n");
+        exit(1);
+    }
+
+    fscanf(f, "%d %d %d%c", &(t->width), &(t->height), &(t->fuel),&c);
+    t->track = calloc(sizeof(char*), t->height);
+
     for (i = 0; i < t->height; i++) {           /* Lecture de la carte ligne par ligne */
-        t->track[i] = malloc(sizeof(char)* t->width);
+        t->track[i] = calloc(sizeof(char), t->width);
         for (j=0; j<t->width; j++) {
             fscanf(f, "%c", &c);
+            printf("%c ",c);
             t->track[i][j] = c;
         }
         if (!feof(f)) {
             fscanf(f, "%c", &c);
         }
+        printf("\n");
     }
+    fclose(f);
     return 0;
 }
 
-Ladj initLadj(Track t)
-{
+Ladj initLadj(Track t) {
     int i, j;
     int k=0;
     Ladj L;
     L.nbNode=t->width*t->height;
     L.nbArc=0;
+    L.width=t->width;
+    L.height=t->height;
     for (i=0; i<t->height; i++) {
         for (j=0; j<t->width; j++) {
             if (t->track[i][j] == '1') {
@@ -104,14 +106,68 @@ Ladj initLadj(Track t)
             }
         }
     }
+
     L.tab = (Cell ***) calloc(t->height, sizeof(Cell **));
-    for (i=0; i<t->width; i++) {
+    L.tag = calloc(t->height,sizeof(int*));
+    L.tagF = calloc(t->height,sizeof(int*));
+    for (i=0; i<t->height; i++) {
         L.tab[i] = (Cell **) calloc(t->width, sizeof(Cell *));
+        L.tag[i] = calloc(t->width, sizeof(int));
+        L.tagF[i] = calloc(t->width, sizeof(int));
     }
-    //L.indegree = calloc(L.nbNode,sizeof(int));
-    //L.tag = NULL;
-    if (L.tab == NULL) { //nécesaire?
-        exit(1);
-    }
+
+
+    if (L.tab == NULL || L.tag == NULL || L.tagF == NULL) exit(-1);
     return L;
+}
+
+int loadLadj(Ladj L, Track t, Point p) {
+    Point tail, h;
+    Cell* C;
+    Queue Q = createQueue();
+    put(p, &Q);
+    while (!isEmpty(Q)) {
+        tail=push(&Q);
+        int xt=tail.x;
+        int yt=tail.y;
+        L.tag[xt][yt]=1;
+
+        //printTag(L);
+        //usleep(100000);
+        //system("clear");
+
+        for (h.x=xt-1; h.x<xt+2; h.x++) {
+            for (h.y=yt-1; h.y<yt+2; h.y++) {
+
+                if (pointIn(h,L.height,L.width) && t->track[h.x][h.y]=='#' && L.tag[h.x][h.y]==0) {
+
+                    if (L.tagF[h.x][h.y]==0) {
+                        put(h,&Q);
+                        L.tagF[h.x][h.y]=1;
+                    }
+
+                    C = createCell(h,1,L.tab[xt][yt]);
+                    L.tab[xt][yt]=C;
+
+                } else if (pointIn(h,L.height,L.width) && t->track[h.x][h.y]=='=') {
+
+                    C = createCell(h,1,L.tab[xt][yt]);
+                    L.tab[xt][yt]=C;
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+int printTag(Ladj l) {
+    int i, j;
+    printf("\nTag table : \n\n");
+    for (i=0; i<l.height; i++) {
+        for (j=0; j<l.width; ++j) {
+            printf("%d",l.tag[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
 }

@@ -1,18 +1,33 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -pedantic -fpic -g
+
+#-fno-stack-protector
+#-fno-stack-protector pour supprimer le stack smashing
+
 PATHOBJ=../../obj/track/
 PATHSRC= ./
-OBJ=$(addprefix $(PATHOBJ),track.o testTrack.o )
-all: main
+OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o)
+all: testTrack
 
-main: $(OBJ)
-	$(CC) $^ -o $@
+testTrack: $(OBJ)
+	$(CC) -o $@ $^
 
-$(PATHOBJ)%.o: $(PATHSRC)%.c
-	$(CC) -c  $^ $(CFLAGS) -o $@
-$(PATHOBJ)%.o: ../../lib/graph/src/liste_adjacence.c
-	$(CC) -c  $^ $(CFLAGS) -o $@
+$(PATHOBJ)liste_adjacence.o: ../../lib/graph/liste_adjacence.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+$(PATHOBJ)file.o: ../../lib/graph/file.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+$(PATHOBJ)track.o: $(PATHSRC)track.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+$(PATHOBJ)testTrack.o: $(PATHSRC)testTrack.c
+	$(CC) -c $(CFLAGS) -o $@ $^
+
+
 
 clean:
-	rm -rf main
+	rm -rf testTrack
 	rm -rf $(PATHOBJ)*.o
+
+.PHONY: all clean debug

@@ -1,5 +1,5 @@
 
-#include "../include/liste_ajdacence.h"
+#include "liste_ajdacence.h"
 
 Cell *createCell(Point head, float weight, Cell* next) {
     Cell* C;
@@ -35,7 +35,7 @@ void printLadj(Ladj L) {
     printf("\n");
 }
 
-
+/*
 Ladj loadGraph(char* fileName) {
     int nbNode, nbArc;
     int i, tail, head;
@@ -58,4 +58,4 @@ Ladj loadGraph(char* fileName) {
     }
     fclose(f);
     return L;
-}
+}*/

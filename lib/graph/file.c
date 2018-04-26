@@ -21,7 +21,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
-#include"../include/file.h"
+#include"file.h"
+
+int pointIn(Point p,int x,int y) {
+    return (p.x>=0 && p.y>=0 && p.x<x && p.y<y);
+}
 
 Node* createNode(T value, Node* next) {
     Node* n=(Node*)malloc(sizeof(Node));
@@ -52,16 +56,6 @@ void put(T value, Queue* Q) {
         Q->last->next=n;
         Q->last=n;
     }
-}
-
-void printQueue(Queue Q) {
-    Node* n=Q.first;
-    printf("[");
-    while (n!=NULL) {
-        printf("%d ",n->val);
-        n=n->next;
-    }
-    printf("]\n");
 }
 
 T push(Queue* Q) {

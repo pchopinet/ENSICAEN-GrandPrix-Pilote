@@ -18,11 +18,15 @@
  * @file file.h
  */
 
-#ifndef __FILE_H
-#define __FILE_H
+#ifndef FILE_H
+#define FILE_H
 
+typedef struct point {//A mettre dans un autre .h;
+    int x;
+    int y;
+} Point;
 
-typedef int T; //the type used
+typedef Point T; //the type used
 
 typedef struct node{
    T val;
@@ -34,10 +38,11 @@ typedef struct queue{
    Node* last;
 } Queue;
 
+int pointIn(Point p,int x,int y);
+
 Node* createNode(T value, Node* next);
 Queue createQueue();
 void put(T value, Queue*);
-void printQueue(Queue);
 T push(Queue*);
 void concat(Queue*, Queue*);
 Queue copyQueue(Queue);
