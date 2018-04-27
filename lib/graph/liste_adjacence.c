@@ -26,9 +26,9 @@ void printLadj(Ladj L) {
     int i, j;
     for (i = 0; i < L.height; i++) {
         for (j = 0; j < L.width; j++) {
-            if (L.tab[i][j]) {
+            if (L.tab[i][j][0][0]) {
                 printf("Successeurs de %d.%d : ", i, j);
-                printCell(L.tab[i][j]);
+                printCell(L.tab[i][j][0][0]);
             }
         }
     }

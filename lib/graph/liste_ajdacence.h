@@ -12,6 +12,7 @@
 
 typedef struct cell {
     Point head;
+    char c;
     float weight;
     struct cell *next;
 } Cell;
@@ -19,10 +20,10 @@ typedef struct cell {
 typedef struct ladj {
     int nbNode, nbArc;
     int height, width;
-    Cell*** tab;
+    Cell***** tab; //[x][y][vx][vy]
     Point start[3];
-    Point finish[5];
-    int** tag;
+    Point finish[14]; // Faire une allocationS dynamique !!
+    int**** tag;
 } Ladj;
 
 Cell *createCell(Point head, float weight, Cell* next);

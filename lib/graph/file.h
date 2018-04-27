@@ -24,6 +24,8 @@
 typedef struct point {//A mettre dans un autre .h;
     int x;
     int y;
+    int vx;
+    int vy;
 } Point;
 
 typedef Point T; //the type used

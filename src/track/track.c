@@ -1,5 +1,6 @@
 
 #include <unistd.h>
+#include <string.h>
 #include "../../include/track/track.h"
 
 Track initTrack() {
@@ -80,81 +81,104 @@ int readTrackFromFile(Track t, char* file) {
     return 0;
 }
 
-Ladj initLadj(Track t) {
+Ladj* initLadj(Track t) {
 
     int i, j;
     int k=0;
-    Ladj L;
+    Ladj* L=malloc(sizeof(Ladj));
 
-    L.nbNode=t->width*t->height;
-    L.nbArc=0;
-    L.width=t->width;
-    L.height=t->height;
+    L->nbNode=t->width*t->height;
+    L->nbArc=0;
+    L->width=t->width;
+    L->height=t->height;
 
     for (i=0; i<t->height; i++) {
         for (j=0; j<t->width; j++) {
 
             if (t->track[i][j] == '1') {
-                L.start[0].x = i;
-                L.start[0].y = j;
+                L->start[0].x = i;
+                L->start[0].y = j;
             } else if (t->track[i][j] == '2') {
-                L.start[1].x = i;
-                L.start[1].y = j;
+                L->start[1].x = i;
+                L->start[1].y = j;
             } else if (t->track[i][j] == '3') {
-                L.start[2].x = i;
-                L.start[2].y = j;
+                L->start[2].x = i;
+                L->start[2].y = j;
             } else if (t->track[i][j] == '=') {
-                L.finish[k].x = i;
-                L.finish[k].y = j;
+                L->finish[k].x = i;
+                L->finish[k].y = j;
                 k++;
             }
         }
     }
 
-    L.tab = (Cell ***) calloc(t->height, sizeof(Cell **));
-    L.tag = calloc(t->height,sizeof(int*));
-    for (i=0; i<t->height; i++) {
-        L.tab[i] = (Cell **) calloc(t->width, sizeof(Cell *));
-        L.tag[i] = calloc(t->width, sizeof(int));
+    for (i=0; i<3; i++) {
+        L->start[i].vx=0;
+        L->start[i].vy=0;
     }
 
-    if (L.tab == NULL || L.tag == NULL) exit(-1);
+    L->tag = malloc(t->height*sizeof(int***));
+    L->tab = malloc(t->height*sizeof(Cell ****));
+    for (i=0; i<t->height; i++) {
+        L->tag[i] = malloc(t->width*sizeof(int**));
+        L->tab[i] = malloc(t->width*sizeof(Cell ***));
+        for (j=0; j<t->width; j++) {
+            L->tag[i][j] = malloc(11*sizeof(int*));
+            L->tab[i][j] = malloc(11*sizeof(Cell **));
+            for (k=0; k<11; k++) {
+                L->tag[i][j][k] = calloc(11, sizeof(int));
+                L->tab[i][j][k] = calloc(11, sizeof(Cell *));
+            }
+        }
+    }
+
+
     return L;
 }
 
-int loadLadj(Ladj L, Track T, Point p) {
+int loadLadj(Ladj* L, Track T, Point p) {
 
+    int normeVit2;
     Point t, h;
     Cell* C;
     Queue Q = createQueue();
+
     put(p, &Q);
 
     while (!isEmpty(Q)) {
 
         t=push(&Q);
-        L.tag[t.x][t.y]=2;
+        L->tag[t.x][t.y][t.vx+5][t.vy+5]=2;
 
         //printTag(L);
         //usleep(100000);
         //system("clear");
 
-        for (h.x=t.x-1; h.x<t.x+2; h.x++) {
-            for (h.y=t.y-1; h.y<t.y+2; h.y++) {
+        for (h.vx=t.vx-1; h.vx<t.vx+2; h.vx++) {
+            for (h.vy=t.vy-1; h.vy<t.vy+2; h.vy++) {
 
-                if (pointIn(h,L.height,L.width) && T->track[h.x][h.y]=='#' && L.tag[h.x][h.y]!=2) {
+                normeVit2 = h.vx*h.vx+h.vy*h.vy;
 
-                    if (L.tag[h.x][h.y]==0) {
-                        put(h,&Q);
-                        L.tag[h.x][h.y]=1;
+                if (normeVit2<=25) {
+
+                    h.x = t.x + h.vx;
+                    h.y = t.y + h.vy;
+
+                    if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '#' && L->tag[h.x][h.y][h.vx+5][h.vy+5] != 2) {
+
+                        if (L->tag[h.x][h.y][h.vx+5][h.vy+5] == 0) {
+                            put(h, &Q);
+                            L->tag[h.x][h.y][h.vx+5][h.vy+5] = 1;
+                        }
+
+                        C = createCell(h, 1, L->tab[t.x][t.y][t.vx+5][t.vy+5]);
+                        L->tab[t.x][t.y][t.vx+5][t.vy+5] = C;
+
+                    } else if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '=') {
+
+                        C = createCell(h, 1, L->tab[t.x][t.y][t.vx+5][t.vy+5]);
+                        L->tab[t.x][t.y][t.vx+5][t.vy+5] = C;
                     }
-
-                    C = createCell(h,1,L.tab[t.x][t.y]);
-                    L.tab[t.x][t.y]=C;
-
-                } else if (pointIn(h,L.height,L.width) && T->track[h.x][h.y]=='=') {
-
-                    C = createCell(h,1,L.tab[t.x][t.y]);
-                    L.tab[t.x][t.y]=C;
                 }
             }
         }
@@ -162,16 +186,24 @@ int loadLadj(Ladj L, Track T, Point p) {
     return 0;
 }
 
-int printTag(Ladj l) {
+int printTag(Ladj* L) {
 
-    int i, j;
-    printf("\nTag table : \n\n");
+    int i, j, k, l;
 
-    for (i=0; i<l.height; i++) {
-        for (j=0; j<l.width; ++j) {
-            printf("%d",l.tag[i][j]);
+    printf("%d\n",L->tag[15][31][7][0]);
+
+    for (k=0; k<11; k++) {
+        for (l=0; l<11; l++) {
+
+            printf("\nTag table vx:%d vy:%d \n\n",k-5,l-5);
+
+            for (i=0; i<L->height; i++) {
+                for (j = 0; j < L->width; j++) {
+                    printf("%d", L->tag[i][j][k][l]);
+                }
+                printf("\n");
+            }
         }
-        printf("\n");
     }
     return 0;
 }

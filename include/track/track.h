@@ -28,10 +28,10 @@ int readHeaderFromFile(Track t, char* file);
 
 int readTrackFromFile(Track t, char* file);
 
-Ladj initLadj(Track t);
+Ladj* initLadj(Track t);
 
-int loadLadj(Ladj l, Track T, Point p);
+int loadLadj(Ladj* l, Track T, Point p);
 
-int printTag(Ladj l);
+int printTag(Ladj* L);
 
 #endif
