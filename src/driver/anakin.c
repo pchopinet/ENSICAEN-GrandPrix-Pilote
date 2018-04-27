@@ -9,7 +9,7 @@ int main() {
 
     Track t = initTrack();
     FILE *f = fopen("../anakin.log", "w");
-    fprintf(f, "%d %d %d\n", t->height, t->width, t->fuel);
+    fprintf(f, "%d %d %d\n", t->width, t->height, t->fuel);
 
     for (int i = 0; i < t->height; i++) {
         printf("%d : ",i);
