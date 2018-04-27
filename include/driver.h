@@ -5,6 +5,7 @@
 #ifndef ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 #define ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 
+
 typedef struct driver_t {
     int x;
     int y;

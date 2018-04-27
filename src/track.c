@@ -1,7 +1,7 @@
 
 #include <unistd.h>
 #include <string.h>
-#include "../../include/track/track.h"
+#include "../include/track.h"
 
 Track initTrack() {
     Track t = malloc(sizeof(struct track_t));
@@ -14,7 +14,7 @@ Track initTrack() {
 }
 
 int readHeader(Track t) {
-    fscanf(stdin, "%d %d %d", &(t->height), &(t->width), &(t->fuel));
+    fscanf(stdin, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
 
     if (t->height == 0 || t->width == 0 || t->fuel == 0) {
         return 1;

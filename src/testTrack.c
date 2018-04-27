@@ -1,5 +1,5 @@
 
-#include "../../include/track/track.h"
+#include "../include/track.h"
 
 int main() {
     //Track t = initTrackFromFile("starter_droit_au_but.txt");

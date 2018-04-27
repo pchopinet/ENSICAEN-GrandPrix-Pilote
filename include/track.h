@@ -4,9 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../driver/driver.h"
+#include "driver.h"
 
-#include "../../lib/graph/liste_ajdacence.h"
+#include "../lib/graph/liste_ajdacence.h"
 
 typedef struct track_t {
     int height;

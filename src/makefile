@@ -4,7 +4,7 @@ CFLAGS=-Wall -Wextra -pedantic -fpic -g
 #-fno-stack-protector
 #-fno-stack-protector pour supprimer le stack smashing
 
-PATHOBJ=../../obj/track/
+PATHOBJ=../obj/
 PATHSRC= ./
 OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o)
 all: testTrack
@@ -12,10 +12,10 @@ all: testTrack
 testTrack: $(OBJ)
 	$(CC) -o $@ $^
 
-$(PATHOBJ)liste_adjacence.o: ../../lib/graph/liste_adjacence.c
+$(PATHOBJ)liste_adjacence.o: ../lib/graph/liste_adjacence.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-$(PATHOBJ)file.o: ../../lib/graph/file.c
+$(PATHOBJ)file.o: ../lib/graph/file.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
 $(PATHOBJ)track.o: $(PATHSRC)track.c
