@@ -5,16 +5,11 @@
 #ifndef ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 #define ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H
 
+#include "vector.h"
 
-typedef struct driver_t {
-    int x;
-    int y;
-    int vx;
-    int vy;
-    int fuel;
-} *Driver;
+typedef struct driver_t *Driver;
 
-void move(Driver p, int ax, int ay);
+void move(Driver p, Vector acceleration);
 
 
 #endif //ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H

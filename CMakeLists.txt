@@ -8,6 +8,6 @@ set(SOURCE_FILES
         src/testTrack.c
         src/track.c
         makefile
-        README.md src/anakin.c src/driver.c include/driver.h src/vector.c include/vector.h)
+        README.md src/anakin.c src/driver.c include/driver.h src/vector.c include/vector.h src/Controller.c include/Controller.h src/point.c include/point.h)
 
 add_executable(ENSICAEN_GrandPrix_Pilote ${SOURCE_FILES})

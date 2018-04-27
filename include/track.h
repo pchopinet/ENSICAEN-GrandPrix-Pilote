@@ -13,7 +13,6 @@ typedef struct track_t {
     int width;
     int fuel;
     char **track;
-    Driver * drivers;
 } *Track;
 
 Track initTrack();
