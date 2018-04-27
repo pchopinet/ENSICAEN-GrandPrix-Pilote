@@ -21,16 +21,31 @@ int readHeader(Track t);
 
 int readTrack(Track t);
 
-Track initTrackFromFile(char* file);
+Track initTrackFromFile(char *file);
 
-int readHeaderFromFile(Track t, char* file);
+int readHeaderFromFile(Track t, char *file);
 
-int readTrackFromFile(Track t, char* file);
+int readTrackFromFile(Track t, char *file);
 
-Ladj* initLadj(Track t);
+Ladj *initLadj(Track t);
 
-int loadLadj(Ladj* l, Track T, Point p);
+int loadLadj(Ladj *l, Track T, Point p);
 
-int printTag(Ladj* L);
+int printTag(Ladj *L);
+
+/**
+ * @warning this function doesn't test if there is a car !
+ *
+ * @param t
+ * @param p
+ * @return
+ */
+int isAccessible(Track t, Point p);
+
+int isSand(Track t, Point p);
+
+int isFinishingLine(Track t, Point p);
+
+
 
 #endif
