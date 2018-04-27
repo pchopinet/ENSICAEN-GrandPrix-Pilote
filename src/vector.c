@@ -4,10 +4,29 @@
 
 #include <stdlib.h>
 #include "../include/vector.h"
+#include <math.h>
+
+struct vector_t {
+    int x;
+    int y;
+    double norm;
+};
+
+double norm(int x, int y);
+
 
 Vector newVector(int x, int y) {
     Vector v = malloc(sizeof(struct vector_t));
     v->x = x;
     v->y = y;
+    v->norm = norm(x, y);
     return v;
+}
+
+double VectorGetNorm(Vector this) {
+    return this->norm;
+}
+
+double Norm(int x, int y) {
+    return sqrt((double) (x * x + y * y));
 }
