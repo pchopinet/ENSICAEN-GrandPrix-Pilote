@@ -28,8 +28,16 @@ double VectorGetNorm(Vector this) {
 }
 
 void VectorAdd(Vector this, Vector v) {
-    this->x+=v->x;
-    this->y+=v->y;
+    this->x += v->x;
+    this->y += v->y;
+}
+
+int VectorX(Vector this) {
+    return this->x;
+}
+
+int VectorY(Vector this) {
+    return this->y;
 }
 
 double norm(int x, int y) {

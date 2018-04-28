@@ -18,11 +18,11 @@ Point newPoint(int x, int y) {
     return p;
 }
 
-int PointGetX(Point this) {
+int PointX(Point this) {
     return this->x;
 }
 
-int PointGetY(Point this) {
+int PointY(Point this) {
     return this->y;
 }
 

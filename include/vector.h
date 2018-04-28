@@ -11,9 +11,9 @@ Vector newVector(int x, int y);
 
 double VectorGetNorm(Vector this);
 
-int VectorGetX(Vector this);
+int VectorX(Vector this);
 
-int VectorGetY(Vector this);
+int VectorY(Vector this);
 
 void VectorAdd(Vector this, Vector v);
 

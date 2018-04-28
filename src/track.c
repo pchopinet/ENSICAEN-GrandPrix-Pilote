@@ -210,26 +210,26 @@ int printTag(Ladj *L) {
 }
 
 int isInTrack(Track t, Point p) {
-    int x = PointGetX(p);
-    int y = PointGetY(p);
+    int x = PointX(p);
+    int y = PointY(p);
     return x < t->width && y < t->height && x > 0 && y > 0;
 }
 
 int isAccessible(Track t, Point p) {
-    int x = PointGetX(p);
-    int y = PointGetY(p);
+    int x = PointX(p);
+    int y = PointY(p);
     return isInTrack(t, p) && t->track[y][x] != '.';
 }
 
 int isSand(Track t, Point p) {
-    int x = PointGetX(p);
-    int y = PointGetY(p);
+    int x = PointX(p);
+    int y = PointY(p);
     return isInTrack(t, p) && t->track[y][x] == '~';
 }
 
 int isFinishingLine(Track t, Point p) {
-    int x = PointGetX(p);
-    int y = PointGetY(p);
+    int x = PointX(p);
+    int y = PointY(p);
     return isInTrack(t, p) && t->track[y][x] == '=';
 }
 

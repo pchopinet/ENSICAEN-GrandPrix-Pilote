@@ -9,9 +9,9 @@ typedef struct point_t *Point;
 
 Point newPoint(int x, int y);
 
-int PointGetX(Point this);
+int PointX(Point this);
 
-int PointGetY(Point this);
+int PointY(Point this);
 
 int* PointGetXY(Point this);
 
