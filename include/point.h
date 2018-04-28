@@ -5,12 +5,6 @@
 #ifndef ENSICAEN_GRANDPRIX_PILOTE_POINT_H
 #define ENSICAEN_GRANDPRIX_PILOTE_POINT_H
 
-typedef struct point {
-    int x;
-    int y;
-    int vx;
-    int vy;
-} point;
 
 typedef struct point_t *Point;
 

@@ -21,7 +21,7 @@
 #ifndef FILE_H
 #define FILE_H
 
-#include "../../include/point.h"
+#include "../../include/pointClement.h"
 
 typedef point T; //the type used
 
@@ -34,8 +34,6 @@ typedef struct queue{
    Node* first;
    Node* last;
 } Queue;
-
-int pointIn(point p,int x,int y);
 
 Node* createNode(T value, Node* next);
 
