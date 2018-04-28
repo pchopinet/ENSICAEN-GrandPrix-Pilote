@@ -50,27 +50,64 @@ Cell** prev(Ladj* L, point p) {
     return &(L->prev[p.x][p.y][p.vx+5][p.vy+5]);
 }
 
-/*
-Ladj loadGraph(char* fileName) {
-    int nbNode, nbArc;
-    int i, tail, head;
-    float weight;
-    Ladj L;
-    Cell *C;
-    FILE *f;
+int pointInTrack(point p, Ladj* L) {
+    int x = L->height;
+    int y = L->width;
+    return (p.x>=0 && p.y>=0 && p.x<x && p.y<y);
+}
 
-    f = fopen(fileName, "rt");
-    if (f == NULL) {
-        exit(-1);
+int reachable1(Track t, point p, point q) { //essayer avec des conditions plus permissives
+
+    int b = 1;
+    int i, j, x1, x2, y1, y2;
+
+    if (p.x < q.x) {
+        x1 = p.x;
+        x2 = q.x;
+    } else {
+        x1 = q.x;
+        x2 = p.x;
     }
-    fscanf(f, "%d %d", &nbNode, &nbArc);
-    L = initLadj(nbNode, nbArc);
-    for (i = 0; i < nbArc; i++) {
-        fscanf(f, "%d %d %f", &tail, &head, &weight);
-        C = createCell(head, weight, L.next[tail]);
-        L.next[tail] = C;
-        L.indegree[head]++;
+
+    if (p.y < q.y) {
+        y1 = p.y;
+        y2 = q.y;
+    } else {
+        y1 = q.y;
+        y2 = p.y;
     }
-    fclose(f);
-    return L;
-}*/
+
+    for (i = x1; i <= x2; i++) {
+        for (j = y1; j <= y2; j++) {
+            b = b && (t->track[i][j] != '.');
+        }
+    }
+
+    return b;
+}
+
+int reachable2(Track t, point p, point q) {
+
+    int i, x, y, s;
+    int b=1;
+    int dx = q.x-p.x;
+    float dy = q.y-p.y;
+
+    s = dx>0 ? 1 : -1;
+
+    if (dx!=0) {
+        for (i=0; abs(i)<=abs(dx); i+=s) { // < ou <=
+            x = p.x + i;
+            y = p.y + (int) i * dy / dx;
+            b = b && (t->track[x][y] != '.');
+        }
+    } else {
+        s = dy>0 ? 1 : -1;
+        x = p.x;
+        for (i=0; abs(i)<abs(dy); i+=s) {
+            y = p.y + i;
+            b = b && (t->track[x][y]!='.');
+        }
+    }
+    return b;
+}

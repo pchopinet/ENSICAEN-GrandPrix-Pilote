@@ -6,7 +6,7 @@ CFLAGS=-Wall -Wextra -pedantic -fpic -g
 
 PATHOBJ=../obj/
 PATHSRC= ./
-OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o pointClement.o point.o print.o graph.o)
+OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o point.o print.o graph.o)
 all: testTrack
 
 testTrack: $(OBJ)

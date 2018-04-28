@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "file.h"
-
+#include "../../include/track.h"
 
 typedef struct cell {
     point head;
@@ -39,7 +39,10 @@ Cell** next(Ladj* L, point p);
 
 Cell** prev(Ladj* L, point p);
 
-//void printCell(Cell* C);
-//void printLadj(Ladj L);
-//Ladj loadGraph(char* fileName);
+int pointInTrack(point p, Ladj* L);
+
+int reachable1(Track t, point p, point q);
+
+int reachable2(Track t, point p, point q);
+
 #endif

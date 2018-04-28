@@ -77,19 +77,18 @@ int loadLadj(Ladj *L, Track T, point p) {
         //usleep(100000);
         //system("clear");
 
-        //printf("-%d %d %d %d-\n",t.x,t.y,t.vx,t.vy);
 
         for (h.vx=t.vx-1; h.vx<t.vx+2; h.vx++) {
             for (h.vy=t.vy-1; h.vy<t.vy+2; h.vy++) {
 
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
 
-                if (normSpeed2 <= 25) {
+                h.x = t.x + h.vx;
+                h.y = t.y + h.vy;
 
-                    h.x = t.x + h.vx;
-                    h.y = t.y + h.vy;
+                if (pointInTrack(h, L) && normSpeed2 <= 25 && reachable2(T, t, h)) {
 
-                    if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '#' && *tag(L, h) != 2) {
+                    if (T->track[h.x][h.y] == '#' && *tag(L, h) != 2) {
 
 
                         if (*tag(L, h) == 0) {
@@ -103,7 +102,7 @@ int loadLadj(Ladj *L, Track T, point p) {
                         C = createCell(t, 1, *prev(L, h));
                         *prev(L, h) = C;
 
-                    } else if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '=') {
+                    } else if (T->track[h.x][h.y] == '=') {
 
                         C = createCell(h, 1, *next(L, t));
                         *next(L, t) = C;
