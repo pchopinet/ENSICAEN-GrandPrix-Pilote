@@ -1,6 +1,7 @@
 
 #include "../include/track.h"
 #include "../include/print.h"
+#include "../include/graph.h"
 
 int main() {
     //Track t = initTrackFromFile("starter_droit_au_but.txt");

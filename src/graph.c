@@ -1,7 +1,6 @@
 #include "../include/graph.h"
 
-
-Ladj *initLadj(Track t) {
+Ladj* initLadj(Track t) {
 
     int i, j, k ,l;
     Ladj *L = malloc(sizeof(Ladj));

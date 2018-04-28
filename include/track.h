@@ -40,5 +40,4 @@ int isSand(Track t, Point p);
 int isFinishingLine(Track t, Point p);
 
 
-
 #endif
