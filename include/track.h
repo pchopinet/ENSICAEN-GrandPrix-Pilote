@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "driver.h"
-
+#include "../lib/graph/file.h"
+#include "../include/point.h"
 #include "../lib/graph/liste_ajdacence.h"
 
 typedef struct track_t {
@@ -35,11 +36,6 @@ int calculDistance(Ladj* L);
 
 Queue* calculRoute(Ladj* L, point p);
 
-int printTag(Ladj *L);
-
-int printDistance(Ladj* l);
-
-int printRoute(Track T, Queue* Q);
 
 /**
  * @warning this function doesn't test if there is a car !
