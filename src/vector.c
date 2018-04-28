@@ -27,6 +27,11 @@ double VectorGetNorm(Vector this) {
     return this->norm;
 }
 
+void VectorAdd(Vector this, Vector v) {
+    this->x+=v->x;
+    this->y+=v->y;
+}
+
 double Norm(int x, int y) {
     return sqrt((double) (x * x + y * y));
 }

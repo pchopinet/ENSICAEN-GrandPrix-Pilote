@@ -15,5 +15,6 @@ int VectorGetX(Vector this);
 
 int VectorGetY(Vector this);
 
+void VectorAdd(Vector this, Vector v);
 
 #endif //ENSICAEN_GRANDPRIX_PILOTE_VECTOR_H
