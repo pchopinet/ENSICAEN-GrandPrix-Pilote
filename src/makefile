@@ -6,7 +6,7 @@ CFLAGS=-Wall -Wextra -pedantic -fpic -g
 
 PATHOBJ=../obj/
 PATHSRC= ./
-OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o)
+OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o point.o)
 all: testTrack
 
 testTrack: $(OBJ)
@@ -18,12 +18,14 @@ $(PATHOBJ)liste_adjacence.o: ../lib/graph/liste_adjacence.c
 $(PATHOBJ)file.o: ../lib/graph/file.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-$(PATHOBJ)track.o: $(PATHSRC)track.c
+$(PATHOBJ)track.o: track.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-$(PATHOBJ)testTrack.o: $(PATHSRC)testTrack.c
+$(PATHOBJ)testTrack.o: testTrack.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
+$(PATHOBJ)point.o: point.c
+	$(CC) -c $(CFLAGS) -o $@ $^
 
 
 clean:

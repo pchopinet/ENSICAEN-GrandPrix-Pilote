@@ -29,9 +29,17 @@ int readTrackFromFile(Track t, char *file);
 
 Ladj *initLadj(Track t);
 
-int loadLadj(Ladj *l, Track T, Point p);
+int loadLadj(Ladj *l, Track T, point p);
+
+int calculDistance(Ladj* L);
+
+Queue* calculRoute(Ladj* L, point p);
 
 int printTag(Ladj *L);
+
+int printDistance(Ladj* l);
+
+int printRoute(Track T, Queue* Q);
 
 /**
  * @warning this function doesn't test if there is a car !

@@ -23,7 +23,7 @@
 #include<assert.h>
 #include"file.h"
 
-int pointIn(Point p,int x,int y) {
+int pointIn(point p,int x,int y) {
     return (p.x>=0 && p.y>=0 && p.x<x && p.y<y);
 }
 
@@ -34,21 +34,21 @@ Node* createNode(T value, Node* next) {
     return n;
 }
 
-Queue createQueue() {
-    Queue Q;
-    Q.last=NULL;
-    Q.first=NULL;
+Queue* createQueue() {
+    Queue* Q = malloc(sizeof(Queue));
+    Q->last=NULL;
+    Q->first=NULL;
     return Q;
 }
 
-int isEmpty(Queue Q) {
-    return Q.last==NULL;
+int isEmpty(Queue* Q) {
+    return Q->last==NULL;
 }
 
 void put(T value, Queue* Q) {
     if (Q==NULL) {
         fprintf(stderr,"error Q==NULL");
-    } else if (isEmpty(*Q)) {
+    } else if (isEmpty(Q)) {
         Q->first=createNode(value,NULL);
         Q->last=Q->first;
     } else {
@@ -59,7 +59,7 @@ void put(T value, Queue* Q) {
 }
 
 T push(Queue* Q) {
-    assert(Q!=NULL && !isEmpty(*Q));
+    assert(Q!=NULL && !isEmpty(Q));
     Node* first=Q->first;
     if (first->next!=NULL) {
         Q->first = first->next;

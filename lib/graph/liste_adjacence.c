@@ -1,10 +1,9 @@
 
 #include "liste_ajdacence.h"
 
-Cell *createCell(Point head, float weight, Cell* next) {
+Cell *createCell(point head, float weight, Cell* next) {
     Cell* C;
     C = (Cell *) malloc(sizeof(Cell));
-    if (C == NULL) exit(-1);
     C->head = head;
     C->weight = weight;
     C->next = next;
@@ -26,13 +25,29 @@ void printLadj(Ladj L) {
     int i, j;
     for (i = 0; i < L.height; i++) {
         for (j = 0; j < L.width; j++) {
-            if (L.tab[i][j][0][0]) {
+            if (L.next[i][j][0][0]) {
                 printf("Successeurs de %d.%d : ", i, j);
-                printCell(L.tab[i][j][0][0]);
+                printCell(L.next[i][j][0][0]);
             }
         }
     }
     printf("\n");
+}
+
+int* tag(Ladj* L, point p) {
+    return &(L->tag[p.x][p.y][p.vx+5][p.vy+5]);
+}
+
+int* distance(Ladj* L, point p) {
+    return &(L->distance[p.x][p.y][p.vx+5][p.vy+5]);
+}
+
+Cell** next(Ladj* L, point p) {
+    return &(L->next[p.x][p.y][p.vx+5][p.vy+5]);
+}
+
+Cell** prev(Ladj* L, point p) {
+    return &(L->prev[p.x][p.y][p.vx+5][p.vy+5]);
 }
 
 /*
@@ -52,8 +67,8 @@ Ladj loadGraph(char* fileName) {
     L = initLadj(nbNode, nbArc);
     for (i = 0; i < nbArc; i++) {
         fscanf(f, "%d %d %f", &tail, &head, &weight);
-        C = createCell(head, weight, L.tab[tail]);
-        L.tab[tail] = C;
+        C = createCell(head, weight, L.next[tail]);
+        L.next[tail] = C;
         L.indegree[head]++;
     }
     fclose(f);

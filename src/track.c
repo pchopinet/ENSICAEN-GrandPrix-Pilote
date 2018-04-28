@@ -2,7 +2,9 @@
 #include <unistd.h>
 #include <string.h>
 #include "../include/track.h"
+#include "../lib/graph/file.h"
 #include "../include/point.h"
+
 
 Track initTrack() {
     Track t = malloc(sizeof(struct track_t));
@@ -83,8 +85,7 @@ int readTrackFromFile(Track t, char *file) {
 
 Ladj *initLadj(Track t) {
 
-    int i, j;
-    int k = 0;
+    int i, j, k ,l;
     Ladj *L = malloc(sizeof(Ladj));
 
     L->nbNode = t->width * t->height;
@@ -104,10 +105,6 @@ Ladj *initLadj(Track t) {
             } else if (t->track[i][j] == '3') {
                 L->start[2].x = i;
                 L->start[2].y = j;
-            } else if (t->track[i][j] == '=') {
-                L->finish[k].x = i;
-                L->finish[k].y = j;
-                k++;
             }
         }
     }
@@ -117,74 +114,149 @@ Ladj *initLadj(Track t) {
         L->start[i].vy = 0;
     }
 
-    L->tag = malloc(t->height * sizeof(int ***));
-    L->tab = malloc(t->height * sizeof(Cell ****));
-    for (i = 0; i < t->height; i++) {
+    L->next = malloc(t->height*sizeof(Cell****));
+    L->prev = malloc(t->height*sizeof(Cell****));
+    L->tag = malloc(t->height*sizeof(int***));
+    L->distance = malloc(t->height*sizeof(int***));
+    for (i=0; i<t->height; i++) {
+        L->next[i] = malloc(t->width * sizeof(Cell ***));
+        L->prev[i] = malloc(t->width * sizeof(Cell ***));
         L->tag[i] = malloc(t->width * sizeof(int **));
-        L->tab[i] = malloc(t->width * sizeof(Cell ***));
-        for (j = 0; j < t->width; j++) {
-            L->tag[i][j] = malloc(11 * sizeof(int *));
-            L->tab[i][j] = malloc(11 * sizeof(Cell **));
-            for (k = 0; k < 11; k++) {
+        L->distance[i] = malloc(t->width * sizeof(int **));
+        for (j=0; j<t->width; j++) {
+            L->next[i][j] = malloc(11*sizeof(Cell**));
+            L->prev[i][j] = malloc(11*sizeof(Cell**));
+            L->tag[i][j] = malloc(11*sizeof(int*));
+            L->distance[i][j] = malloc(11*sizeof(int*));
+            for (k=0; k<11; k++) {
+                L->next[i][j][k] = calloc(11, sizeof(Cell*));
+                L->prev[i][j][k] = calloc(11, sizeof(Cell*));
                 L->tag[i][j][k] = calloc(11, sizeof(int));
-                L->tab[i][j][k] = calloc(11, sizeof(Cell *));
+                L->distance[i][j][k] = malloc(11*sizeof(int));
+                for (l=0; l<11; l++) {
+                    L->distance[i][j][k][l] = -1;
+                }
             }
         }
     }
-
-
     return L;
 }
 
-int loadLadj(Ladj *L, Track T, Point p) {
+int loadLadj(Ladj *L, Track T, point p) {
 
-    int normeVit2;
-    Point t, h;
-    Cell *C;
-    Queue Q = createQueue();
-
-    put(p, &Q);
+    int normSpeed2;
+    int f=0;
+    point t, h;
+    Cell* C;
+    Queue* Q = createQueue();
+    put(p, Q);
 
     while (!isEmpty(Q)) {
 
-        t = push(&Q);
-        L->tag[t.x][t.y][t.vx + 5][t.vy + 5] = 2;
+        t=push(Q);
+        *tag(L,t)=2;
 
         //printTag(L);
         //usleep(100000);
         //system("clear");
 
-        for (h.vx = t.vx - 1; h.vx < t.vx + 2; h.vx++) {
-            for (h.vy = t.vy - 1; h.vy < t.vy + 2; h.vy++) {
+        //printf("-%d %d %d %d-\n",t.x,t.y,t.vx,t.vy);
 
-                normeVit2 = h.vx * h.vx + h.vy * h.vy;
+        for (h.vx=t.vx-1; h.vx<t.vx+2; h.vx++) {
+            for (h.vy=t.vy-1; h.vy<t.vy+2; h.vy++) {
 
-                if (normeVit2 <= 25) {
+                normSpeed2 = h.vx*h.vx + h.vy*h.vy;
+
+                if (normSpeed2 <= 25) {
 
                     h.x = t.x + h.vx;
                     h.y = t.y + h.vy;
 
-                    if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '#' &&
-                        L->tag[h.x][h.y][h.vx + 5][h.vy + 5] != 2) {
+                    if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '#' && *tag(L, h) != 2) {
 
-                        if (L->tag[h.x][h.y][h.vx + 5][h.vy + 5] == 0) {
-                            put(h, &Q);
-                            L->tag[h.x][h.y][h.vx + 5][h.vy + 5] = 1;
+
+                        if (*tag(L, h) == 0) {
+                            put(h, Q);
+                            *tag(L, h) = 1;
                         }
 
-                        C = createCell(h, 1, L->tab[t.x][t.y][t.vx + 5][t.vy + 5]);
-                        L->tab[t.x][t.y][t.vx + 5][t.vy + 5] = C;
+                        C = createCell(h, 1, *next(L, t));
+                        *next(L, t) = C;
+
+                        C = createCell(t, 1, *prev(L, h));
+                        *prev(L, h) = C;
 
                     } else if (pointIn(h, L->height, L->width) && T->track[h.x][h.y] == '=') {
 
-                        C = createCell(h, 1, L->tab[t.x][t.y][t.vx + 5][t.vy + 5]);
-                        L->tab[t.x][t.y][t.vx + 5][t.vy + 5] = C;
+                        C = createCell(h, 1, *next(L, t));
+                        *next(L, t) = C;
+
+                        C = createCell(t, 1, *prev(L, h));
+                        *prev(L, h) = C;
+                        L->finish[f]=h;
+
+                        f++;
                     }
                 }
             }
         }
     }
+
+    L->nbFinish=f;
     return 0;
+}
+
+int calculDistance(Ladj* L){
+
+    Queue* Q = createQueue();
+    Cell* C;
+    point p, q;
+    int i;
+    int d=0;
+
+    for (i=0; i<L->nbFinish; i++) {
+        put(L->finish[i],Q);
+        *distance(L,L->finish[i]) = 0;
+    }
+
+    while (!isEmpty(Q)) {
+        p = push(Q);
+        d = *distance(L,p);
+        C = *prev(L,p);
+        while (C!=NULL) {
+            q = C->head;
+            if (*distance(L,q) == -1) {
+                *distance(L,q) = d+1;
+                put(q,Q);
+            }
+            C = C->next;
+
+        }
+    }
+    return 0;
+}
+
+Queue* calculRoute(Ladj* L, point p) {
+
+    Queue* Q = createQueue();
+    Cell* C;
+    int d;
+
+    do {
+        put(p,Q);
+        d = *distance(L,p);
+        C = *next(L,p);
+        p = C->head;
+
+        while (*distance(L,p) != d-1) {
+            C = C->next;
+            p = C->head;
+        }
+    } while (d!=1);
+
+    put(p,Q);
+
+    return Q;
 }
 
 int printTag(Ladj *L) {
@@ -205,6 +277,44 @@ int printTag(Ladj *L) {
                 printf("\n");
             }
         }
+    }
+    return 0;
+}
+
+int printDistance(Ladj* L) {
+
+    int i, j, k, l;
+
+
+    for (k = 0; k < 11; k++) {
+        for (l = 0; l < 11; l++) {
+
+            printf("\nDistance vx:%d vy:%d \n\n", k - 5, l - 5);
+
+            for (i = 0; i < L->height; i++) {
+                for (j = 0; j < L->width; j++) {
+                    printf("%d", L->tag[i][j][k][l]);
+                }
+                printf("\n");
+            }
+        }
+    }
+    return 0;
+}
+
+int printRoute(Track T, Queue* Q) {
+    point p;
+    int i, j;
+    while (!isEmpty(Q)) {
+        p = push(Q);
+        T->track[p.x][p.y] = '0';
+    }
+
+    for (i=0; i<T->height; i++) {
+        for (j=0; j<T->width; j++) {
+            printf("%c",T->track[i][j]);
+        }
+        printf("\n");
     }
     return 0;
 }
