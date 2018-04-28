@@ -32,6 +32,6 @@ void VectorAdd(Vector this, Vector v) {
     this->y+=v->y;
 }
 
-double Norm(int x, int y) {
+double norm(int x, int y) {
     return sqrt((double) (x * x + y * y));
 }
