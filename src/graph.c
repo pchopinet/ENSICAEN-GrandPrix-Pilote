@@ -61,7 +61,7 @@ Ladj* initLadj(Track t) {
 
 int loadLadj(Ladj *L, Track T, point p) {
 
-    int normSpeed2;
+    int normSpeed2, ax, ay, fuel;
     int f=0;
     point t, h;
     Cell* C;
@@ -73,22 +73,19 @@ int loadLadj(Ladj *L, Track T, point p) {
         t=push(Q);
         *tag(L,t)=2;
 
-        //printTag(L);
-        //usleep(100000);
-        //system("clear");
+        for (ax=-1; ax<2; ax++) {
+            for (ay=-1; ay<2; ay++) {
 
-
-        for (h.vx=t.vx-1; h.vx<t.vx+2; h.vx++) {
-            for (h.vy=t.vy-1; h.vy<t.vy+2; h.vy++) {
-
-                normSpeed2 = h.vx*h.vx + h.vy*h.vy;
-
+                h.vx = t.vx + ax;
+                h.vy = t.vy + ay;
                 h.x = t.x + h.vx;
                 h.y = t.y + h.vy;
+                normSpeed2 = h.vx*h.vx + h.vy*h.vy;
+                fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
 
                 if (pointInTrack(h, L) && normSpeed2 <= 25 && reachable2(T, t, h)) {
 
-                    if (T->track[h.x][h.y] == '#' && *tag(L, h) != 2) {
+                    if (testPt(T,h,'#') && *tag(L, h) != 2) {
 
 
                         if (*tag(L, h) == 0) {
@@ -96,18 +93,20 @@ int loadLadj(Ladj *L, Track T, point p) {
                             *tag(L, h) = 1;
                         }
 
-                        C = createCell(h, 1, *next(L, t));
+                        C = createCell(h, fuel, ax, ay, *next(L, t));
                         *next(L, t) = C;
+                        L->nbArc++;
 
-                        C = createCell(t, 1, *prev(L, h));
+                        C = createCell(t, fuel, ax, ay, *prev(L, h));
                         *prev(L, h) = C;
 
-                    } else if (T->track[h.x][h.y] == '=') {
+                    } else if (testPt(T,h,'=')) {
 
-                        C = createCell(h, 1, *next(L, t));
+                        C = createCell(h, fuel, ax, ay, *next(L, t));
                         *next(L, t) = C;
+                        L->nbArc++;
 
-                        C = createCell(t, 1, *prev(L, h));
+                        C = createCell(t, fuel, ax, ay, *prev(L, h));
                         *prev(L, h) = C;
                         L->finish[f]=h;
 
@@ -156,21 +155,28 @@ Queue* calculRoute(Ladj* L, point p) {
 
     Queue* Q = createQueue();
     Cell* C;
-    int d;
+    int d, fuel, fuelTot=0;
+    put(p,Q);
 
     do {
-        put(p,Q);
+
         d = *distance(L,p);
         C = *next(L,p);
         p = C->head;
-
+        fuel = C->fuel;
         while (*distance(L,p) != d-1) {
             C = C->next;
             p = C->head;
+            fuel = C->fuel;
         }
+        fuelTot += fuel;
+        put(p,Q);
+
     } while (d!=1);
 
-    put(p,Q);
+
+    printf("\nFuel : %d\n\n",fuelTot);
 
     return Q;
 }
+

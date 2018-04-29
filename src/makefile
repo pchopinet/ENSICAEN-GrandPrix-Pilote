@@ -10,7 +10,7 @@ OBJ=$(addprefix $(PATHOBJ),testTrack.o track.o liste_adjacence.o file.o point.o 
 all: testTrack
 
 testTrack: $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lm
 
 $(PATHOBJ)%.o: ../lib/graph/%.c
 	$(CC) -c $(CFLAGS) -o $@ $^

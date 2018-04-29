@@ -1,37 +1,15 @@
 
 #include "liste_ajdacence.h"
 
-Cell *createCell(point head, float weight, Cell* next) {
+Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
     Cell* C;
     C = (Cell *) malloc(sizeof(Cell));
     C->head = head;
-    C->weight = weight;
+    C->fuel = fuel;
+    C->ax = ax;
+    C->ay = ay;
     C->next = next;
     return C;
-}
-
-void printCell(Cell *C) {
-    while (C) {
-        printf("<%d.%d - %5.1f>\t", C->head.x, C->head.y, C->weight);
-        C = C->next;
-    }
-    printf("\n");
-}
-
-/* allocation dynamique et initialisation */
-
-
-void printLadj(Ladj L) {
-    int i, j;
-    for (i = 0; i < L.height; i++) {
-        for (j = 0; j < L.width; j++) {
-            if (L.next[i][j][0][0]) {
-                printf("Successeurs de %d.%d : ", i, j);
-                printCell(L.next[i][j][0][0]);
-            }
-        }
-    }
-    printf("\n");
 }
 
 int* tag(Ladj* L, point p) {
@@ -54,6 +32,10 @@ int pointInTrack(point p, Ladj* L) {
     int x = L->height;
     int y = L->width;
     return (p.x>=0 && p.y>=0 && p.x<x && p.y<y);
+}
+
+int testPt(Track t, point p, char c) {
+    return t->track[p.x][p.y] == c;
 }
 
 int reachable1(Track t, point p, point q) { //essayer avec des conditions plus permissives

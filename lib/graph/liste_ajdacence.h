@@ -13,7 +13,9 @@
 typedef struct cell {
     point head;
     char c;
-    float weight;
+    float fuel;
+    int ax;
+    int ay;
     struct cell *next;
 } Cell;
 
@@ -29,7 +31,7 @@ typedef struct ladj {
     int nbFinish;
 } Ladj;
 
-Cell *createCell(point head, float weight, Cell* next);
+Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 
 int* tag(Ladj* L, point p);
 
@@ -40,6 +42,8 @@ Cell** next(Ladj* L, point p);
 Cell** prev(Ladj* L, point p);
 
 int pointInTrack(point p, Ladj* L);
+
+int testPt(Track t, point p, char c);
 
 int reachable1(Track t, point p, point q);
 

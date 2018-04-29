@@ -15,5 +15,6 @@ int main() {
     //printDistance(L);
     Queue* route = calculRoute(L,L->start[0]);
     printRoute(t,route);
+    printf("\nnb arc %d : \n\n",L->nbArc);
     return 0;
 }
