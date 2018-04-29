@@ -31,9 +31,9 @@ ArrayList readPosition() {
 
 }
 
-void sendAcceleration(Vector acceleration) {
+void sendAcceleration(int x, int y) {
     char action[5];
-    sprintf(action, "%d %d", VectorX(acceleration), VectorY(acceleration));
+    sprintf(action, "%d %d", x, y);
     fprintf(stdout, "%s\n", action);
 }
 

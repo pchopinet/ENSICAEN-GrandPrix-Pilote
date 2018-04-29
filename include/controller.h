@@ -11,16 +11,15 @@
 #define ENSICAEN_GRANDPRIX_PILOTE_CONTROLLER_H
 
 
-void sendAcceleration(Vector acceleration);
+void sendAcceleration(int x, int y);
 
 ArrayList readPosition();
 
 ArrayList getPointAccessible(Track t, Point position, Vector speed);
 
-void Dijkstra(Track t, Point p, Vector speed);
+Point *Dijkstra(Track t, Point p, Vector speed);
 
 int deltaFuelAcceleration(Vector acc, Vector velocity, int inSand);
-
 
 
 #endif //ENSICAEN_GRANDPRIX_PILOTE_CONTROLLER_H
