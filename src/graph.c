@@ -82,8 +82,9 @@ int loadLadj(Ladj *L, Track T, point p) {
                 h.y = t.y + h.vy;
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
                 fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
+                fuel += testPt(T,t,'~') ? 1 : 0;
 
-                if (pointInTrack(h, L) && normSpeed2 <= 25 && reachable2(T, t, h)) {
+                if ((pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h)) || (testPt(T,t,'~') && normSpeed2<=1)) {
 
                     if (testPt(T,h,'#') && *tag(L, h) != 2) {
 
@@ -102,6 +103,8 @@ int loadLadj(Ladj *L, Track T, point p) {
 
                     } else if (testPt(T,h,'=')) {
 
+                        f++;
+
                         C = createCell(h, fuel, ax, ay, *next(L, t));
                         *next(L, t) = C;
                         L->nbArc++;
@@ -109,9 +112,22 @@ int loadLadj(Ladj *L, Track T, point p) {
                         C = createCell(t, fuel, ax, ay, *prev(L, h));
                         *prev(L, h) = C;
                         L->finish[f]=h;
-
-                        f++;
                     }
+                } else {
+                    h = t;
+                    h.vx = 0;
+                    h.vy = 0;
+                    if (*tag(L, h) == 0) {
+                        put(h, Q);
+                        *tag(L, h) = 1;
+                    }
+
+                    C = createCell(h, fuel, ax, ay, *next(L, t));
+                    *next(L, t) = C;
+                    L->nbArc++;
+
+                    C = createCell(t, fuel, ax, ay, *prev(L, h));
+                    *prev(L, h) = C;
                 }
             }
         }
