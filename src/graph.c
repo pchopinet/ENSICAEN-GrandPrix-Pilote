@@ -5,7 +5,7 @@ Ladj* initLadj(Track t) {
     int i, j, k ,l;
     Ladj *L = malloc(sizeof(Ladj));
 
-    L->nbNode = t->width * t->height;
+    L->nbNode = t->width * t->height * 11 * 11;
     L->nbArc = 0;
     L->width = t->width;
     L->height = t->height;

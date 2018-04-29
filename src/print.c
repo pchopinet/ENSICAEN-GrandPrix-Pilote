@@ -45,10 +45,11 @@ int printDistance(Ladj* L) {
 
 int printRoute(Track T, Queue* Q) {
     point p;
-    int i, j;
+    int i, j, k=0;
     while (!isEmpty(Q)) {
         p = push(Q);
         T->track[p.x][p.y] = '0';
+        k++;
     }
 
     for (i=0; i<T->height; i++) {
@@ -57,5 +58,7 @@ int printRoute(Track T, Queue* Q) {
         }
         printf("\n");
     }
+    printf("\nnb tour : %d\n",k);
+
     return 0;
 }
