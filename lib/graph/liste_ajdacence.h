@@ -22,12 +22,12 @@ typedef struct cell {
 typedef struct ladj {
     int nbNode, nbArc;
     int height, width;
-    Cell***** next; //[x][y][vx][vy]
-    Cell***** prev;
-    int**** tag;
-    int**** distance;
+    Cell****** next; //[x][y][vx][vy]
+    Cell****** prev;
+    int***** tag;
+    int***** distance;
     point start[3];
-    point finish[1210]; // Faire une allocationS dynamique !!
+    point finish[10000]; // Faire une allocationS dynamique !!
     int nbFinish;
 } Ladj;
 
@@ -48,5 +48,7 @@ int testPt(Track t, point p, char c);
 int reachable1(Track t, point p, point q);
 
 int reachable2(Track t, point p, point q);
+
+int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L);
 
 #endif

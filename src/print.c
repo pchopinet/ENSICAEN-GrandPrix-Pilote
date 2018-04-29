@@ -4,8 +4,6 @@ int printTag(Ladj *L) {
 
     int i, j, k, l;
 
-    printf("%d\n", L->tag[15][31][7][0]);
-
     for (k = 0; k < 11; k++) {
         for (l = 0; l < 11; l++) {
 
@@ -13,7 +11,7 @@ int printTag(Ladj *L) {
 
             for (i = 0; i < L->height; i++) {
                 for (j = 0; j < L->width; j++) {
-                    printf("%d", L->tag[i][j][k][l]);
+                    printf("%d", L->tag[i][j][k][l][5]);
                 }
                 printf("\n");
             }
@@ -34,7 +32,7 @@ int printDistance(Ladj* L) {
 
             for (i = 0; i < L->height; i++) {
                 for (j = 0; j < L->width; j++) {
-                    printf("%d", L->tag[i][j][k][l]);
+                    printf("%d", L->tag[i][j][k][l][5]);
                 }
                 printf("\n");
             }
@@ -48,7 +46,7 @@ int printRoute(Track T, Queue* Q) {
     int i, j, k=0;
     while (!isEmpty(Q)) {
         p = push(Q);
-        T->track[p.x][p.y] = '0';
+        T->track[p.x][p.y] = p.boost + '0';
         k++;
     }
 

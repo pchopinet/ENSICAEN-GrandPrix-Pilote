@@ -13,19 +13,19 @@ Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
 }
 
 int* tag(Ladj* L, point p) {
-    return &(L->tag[p.x][p.y][p.vx+5][p.vy+5]);
+    return &(L->tag[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
 }
 
 int* distance(Ladj* L, point p) {
-    return &(L->distance[p.x][p.y][p.vx+5][p.vy+5]);
+    return &(L->distance[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
 }
 
 Cell** next(Ladj* L, point p) {
-    return &(L->next[p.x][p.y][p.vx+5][p.vy+5]);
+    return &(L->next[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
 }
 
 Cell** prev(Ladj* L, point p) {
-    return &(L->prev[p.x][p.y][p.vx+5][p.vy+5]);
+    return &(L->prev[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
 }
 
 int pointInTrack(point p, Ladj* L) {
@@ -92,4 +92,15 @@ int reachable2(Track t, point p, point q) {
         }
     }
     return b;
+}
+
+
+int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
+    Cell* C;
+    C = createCell(h, fuel, ax, ay, *next(L, t));
+    *next(L, t) = C;
+    C = createCell(t, fuel, ax, ay, *prev(L, h));
+    *prev(L, h) = C;
+    L->nbArc++;
+    return 0;
 }

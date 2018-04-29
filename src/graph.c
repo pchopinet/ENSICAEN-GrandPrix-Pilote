@@ -2,10 +2,10 @@
 
 Ladj* initLadj(Track t) {
 
-    int i, j, k ,l;
+    int i, j, k ,l, m;
     Ladj *L = malloc(sizeof(Ladj));
 
-    L->nbNode = t->width * t->height * 11 * 11;
+    L->nbNode = t->width*t->height*11*11*5;
     L->nbArc = 0;
     L->width = t->width;
     L->height = t->height;
@@ -29,29 +29,36 @@ Ladj* initLadj(Track t) {
     for (i = 0; i < 3; i++) {
         L->start[i].vx = 0;
         L->start[i].vy = 0;
+        L->start[i].boost = 5;
     }
 
-    L->next = malloc(t->height*sizeof(Cell****));
-    L->prev = malloc(t->height*sizeof(Cell****));
-    L->tag = malloc(t->height*sizeof(int***));
-    L->distance = malloc(t->height*sizeof(int***));
+    L->next = malloc(t->height*sizeof(Cell*****));
+    L->prev = malloc(t->height*sizeof(Cell*****));
+    L->tag = malloc(t->height*sizeof(int****));
+    L->distance = malloc(t->height*sizeof(int****));
     for (i=0; i<t->height; i++) {
-        L->next[i] = malloc(t->width * sizeof(Cell ***));
-        L->prev[i] = malloc(t->width * sizeof(Cell ***));
-        L->tag[i] = malloc(t->width * sizeof(int **));
-        L->distance[i] = malloc(t->width * sizeof(int **));
+        L->next[i] = malloc(t->width * sizeof(Cell ****));
+        L->prev[i] = malloc(t->width * sizeof(Cell ****));
+        L->tag[i] = malloc(t->width * sizeof(int ***));
+        L->distance[i] = malloc(t->width * sizeof(int ***));
         for (j=0; j<t->width; j++) {
-            L->next[i][j] = malloc(11*sizeof(Cell**));
-            L->prev[i][j] = malloc(11*sizeof(Cell**));
-            L->tag[i][j] = malloc(11*sizeof(int*));
-            L->distance[i][j] = malloc(11*sizeof(int*));
+            L->next[i][j] = malloc(11*sizeof(Cell***));
+            L->prev[i][j] = malloc(11*sizeof(Cell***));
+            L->tag[i][j] = malloc(11*sizeof(int**));
+            L->distance[i][j] = malloc(11*sizeof(int**));
             for (k=0; k<11; k++) {
-                L->next[i][j][k] = calloc(11, sizeof(Cell*));
-                L->prev[i][j][k] = calloc(11, sizeof(Cell*));
-                L->tag[i][j][k] = calloc(11, sizeof(int));
-                L->distance[i][j][k] = malloc(11*sizeof(int));
+                L->next[i][j][k] = calloc(11, sizeof(Cell**));
+                L->prev[i][j][k] = calloc(11, sizeof(Cell**));
+                L->tag[i][j][k] = calloc(11, sizeof(int*));
+                L->distance[i][j][k] = malloc(11*sizeof(int*));
                 for (l=0; l<11; l++) {
-                    L->distance[i][j][k][l] = -1;
+                    L->next[i][j][k][l] = calloc(6, sizeof(Cell*));
+                    L->prev[i][j][k][l] = calloc(6, sizeof(Cell*));
+                    L->tag[i][j][k][l] = calloc(6, sizeof(int));
+                    L->distance[i][j][k][l] = malloc(6*sizeof(int));
+                    for (m=0; m<6; m++) {
+                        L->distance[i][j][k][l][m] = -1;
+                    }
                 }
             }
         }
@@ -64,7 +71,6 @@ int loadLadj(Ladj *L, Track T, point p) {
     int normSpeed2, ax, ay, fuel;
     int f=0;
     point t, h;
-    Cell* C;
     Queue* Q = createQueue();
     put(p, Q);
 
@@ -73,45 +79,36 @@ int loadLadj(Ladj *L, Track T, point p) {
         t=push(Q);
         *tag(L,t)=2;
 
-        for (ax=-1; ax<2; ax++) {
-            for (ay=-1; ay<2; ay++) {
+        for (ax=-2; ax<3; ax++) {
+            for (ay=-2; ay<3; ay++) {
 
                 h.vx = t.vx + ax;
                 h.vy = t.vy + ay;
                 h.x = t.x + h.vx;
                 h.y = t.y + h.vy;
+                h.boost = t.boost;
+                if ((abs(ax)==2 || abs(ay)==2) && h.boost>0) {
+                    h.boost--;
+                }
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
                 fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
-                if ((pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h)) || (testPt(T,t,'~') && normSpeed2<=1)) {
+                if (pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h) &&
+                    (!testPt(T,t,'~') || normSpeed2<=1) && ((abs(ax)<2 || abs(ay)<2) || t.boost>0)) {
 
-                    if (testPt(T,h,'#') && *tag(L, h) != 2) {
-
+                    if ((testPt(T,h,'#') || testPt(T,h,'~')) && *tag(L, h) != 2) {
 
                         if (*tag(L, h) == 0) {
                             put(h, Q);
                             *tag(L, h) = 1;
                         }
-
-                        C = createCell(h, fuel, ax, ay, *next(L, t));
-                        *next(L, t) = C;
-                        L->nbArc++;
-
-                        C = createCell(t, fuel, ax, ay, *prev(L, h));
-                        *prev(L, h) = C;
+                        newArc(h, t, fuel, ax, ay, L);
 
                     } else if (testPt(T,h,'=')) {
-
-                        f++;
-
-                        C = createCell(h, fuel, ax, ay, *next(L, t));
-                        *next(L, t) = C;
-                        L->nbArc++;
-
-                        C = createCell(t, fuel, ax, ay, *prev(L, h));
-                        *prev(L, h) = C;
+                        newArc(h, t, fuel, ax, ay, L);
                         L->finish[f]=h;
+                        f++;
                     }
                 } else {
                     h = t;
@@ -121,20 +118,19 @@ int loadLadj(Ladj *L, Track T, point p) {
                         put(h, Q);
                         *tag(L, h) = 1;
                     }
-
-                    C = createCell(h, fuel, ax, ay, *next(L, t));
-                    *next(L, t) = C;
-                    L->nbArc++;
-
-                    C = createCell(t, fuel, ax, ay, *prev(L, h));
-                    *prev(L, h) = C;
+                    newArc(h, t, fuel, ax, ay, L);
                 }
             }
         }
     }
 
     L->nbFinish=f;
-    return 0;
+    if (f==0) {
+        printf("Erreur arrivée non atteinte!\n");
+        return -1;
+    } else {
+        return 0;
+    }
 }
 
 int calculDistance(Ladj* L){

@@ -7,6 +7,7 @@ typedef struct point {
     int y;
     int vx;
     int vy;
+    int boost;
 } point;
 
 
