@@ -2,62 +2,48 @@
 
 Ladj* initLadj(Track t) {
 
-    int i, j, k ,l, m;
+    point p;
     Ladj *L = malloc(sizeof(Ladj));
 
-    L->nbNode = t->width*t->height*11*11*5;
+    //L->nbNode = t->width*t->height*11*11*5;
+    L->nbNode = 0;
     L->nbArc = 0;
     L->width = t->width;
     L->height = t->height;
 
-    for (i = 0; i < t->height; i++) {
-        for (j = 0; j < t->width; j++) {
+    for (p.x = 0; p.x < t->height; p.x++) {
+        for (p.y = 0; p.y < t->width; p.y++) {
 
-            if (t->track[i][j] == '1') {
-                L->start[0].x = i;
-                L->start[0].y = j;
-            } else if (t->track[i][j] == '2') {
-                L->start[1].x = i;
-                L->start[1].y = j;
-            } else if (t->track[i][j] == '3') {
-                L->start[2].x = i;
-                L->start[2].y = j;
+            if (t->track[p.x][p.y] == '1') {
+                L->start[0].x = p.x;
+                L->start[0].y = p.y;
+            } else if (t->track[p.x][p.y] == '2') {
+                L->start[1].x = p.x;
+                L->start[1].y = p.y;
+            } else if (t->track[p.x][p.y] == '3') {
+                L->start[2].x = p.x;
+                L->start[2].y = p.y;
             }
         }
     }
 
-    for (i = 0; i < 3; i++) {
-        L->start[i].vx = 0;
-        L->start[i].vy = 0;
-        L->start[i].boost = 5;
+    for (p.x = 0; p.x < 3; p.x++) {
+        L->start[p.x].vx = 0;
+        L->start[p.x].vy = 0;
+        L->start[p.x].boost = 5;
     }
 
-    L->next = malloc(t->height*sizeof(Cell*****));
-    L->prev = malloc(t->height*sizeof(Cell*****));
-    L->tag = malloc(t->height*sizeof(int****));
-    L->distance = malloc(t->height*sizeof(int****));
-    for (i=0; i<t->height; i++) {
-        L->next[i] = malloc(t->width * sizeof(Cell ****));
-        L->prev[i] = malloc(t->width * sizeof(Cell ****));
-        L->tag[i] = malloc(t->width * sizeof(int ***));
-        L->distance[i] = malloc(t->width * sizeof(int ***));
-        for (j=0; j<t->width; j++) {
-            L->next[i][j] = malloc(11*sizeof(Cell***));
-            L->prev[i][j] = malloc(11*sizeof(Cell***));
-            L->tag[i][j] = malloc(11*sizeof(int**));
-            L->distance[i][j] = malloc(11*sizeof(int**));
-            for (k=0; k<11; k++) {
-                L->next[i][j][k] = calloc(11, sizeof(Cell**));
-                L->prev[i][j][k] = calloc(11, sizeof(Cell**));
-                L->tag[i][j][k] = calloc(11, sizeof(int*));
-                L->distance[i][j][k] = malloc(11*sizeof(int*));
-                for (l=0; l<11; l++) {
-                    L->next[i][j][k][l] = calloc(6, sizeof(Cell*));
-                    L->prev[i][j][k][l] = calloc(6, sizeof(Cell*));
-                    L->tag[i][j][k][l] = calloc(6, sizeof(int));
-                    L->distance[i][j][k][l] = malloc(6*sizeof(int));
-                    for (m=0; m<6; m++) {
-                        L->distance[i][j][k][l][m] = -1;
+    L->node = (Lnode******) malloc(t->height*sizeof(Lnode*****));
+    for (p.x=0; p.x<t->height; p.x++) {
+        L->node[p.x] = (Lnode*****) malloc(t->width * sizeof(Lnode****));
+        for (p.y=0; p.y<t->width; p.y++) {
+            L->node[p.x][p.y] = (Lnode****) malloc(11*sizeof(Lnode***));
+            for (p.vx=0; p.vx<11; p.vx++) {
+                L->node[p.x][p.y][p.vx] = (Lnode***) malloc(11*sizeof(Lnode**));
+                for (p.vy=0; p.vy<11; p.vy++) {
+                    L->node[p.x][p.y][p.vx][p.vy] = (Lnode**) calloc(6,sizeof(Lnode*));
+                    for (p.boost=0; p.boost<6; p.boost++) {
+                        L->node[p.x][p.y][p.vx][p.vy][p.boost] = createLnode();
                     }
                 }
             }
@@ -77,7 +63,11 @@ int loadLadj(Ladj *L, Track T, point p) {
     while (!isEmpty(Q)) {
 
         t=push(Q);
+
+        //initNode(L,t,NULL,NULL);
+
         *tag(L,t)=2;
+        L->nbNode++;
 
         for (ax=-2; ax<3; ax++) {
             for (ay=-2; ay<3; ay++) {
@@ -191,4 +181,5 @@ Queue* calculRoute(Ladj* L, point p) {
 
     return Q;
 }
+
 

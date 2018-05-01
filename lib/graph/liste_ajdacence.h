@@ -19,17 +19,24 @@ typedef struct cell {
     struct cell *next;
 } Cell;
 
+typedef struct lnode {
+    Cell* next;
+    Cell* prev;
+    int distance;
+    int tag;
+} Lnode;
+
 typedef struct ladj {
     int nbNode, nbArc;
     int height, width;
-    Cell****** next; //[x][y][vx][vy]
-    Cell****** prev;
-    int***** tag;
-    int***** distance;
+    Lnode* ***** node; //[x][y][vx][vy][boost]
     point start[3];
     point finish[10000]; // Faire une allocationS dynamique !!
     int nbFinish;
 } Ladj;
+
+Lnode* createLnode();
+
 
 Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 

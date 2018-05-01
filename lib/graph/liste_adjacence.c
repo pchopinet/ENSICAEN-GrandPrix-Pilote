@@ -12,20 +12,29 @@ Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
     return C;
 }
 
+Lnode* createLnode() {
+    Lnode* node = (Lnode*) malloc(sizeof(Lnode));
+    node->next = NULL;
+    node->prev = NULL;
+    node->distance = -1;
+    node->tag = 0;
+    return node;
+}
+
 int* tag(Ladj* L, point p) {
-    return &(L->tag[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->tag);
 }
 
 int* distance(Ladj* L, point p) {
-    return &(L->distance[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->distance);
 }
 
 Cell** next(Ladj* L, point p) {
-    return &(L->next[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->next);
 }
 
 Cell** prev(Ladj* L, point p) {
-    return &(L->prev[p.x][p.y][p.vx+5][p.vy+5][p.boost]);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->prev);
 }
 
 int pointInTrack(point p, Ladj* L) {

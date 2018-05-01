@@ -2,16 +2,17 @@
 
 int printTag(Ladj *L) {
 
-    int i, j, k, l;
+    point p;
+    p.boost=5;
 
-    for (k = 0; k < 11; k++) {
-        for (l = 0; l < 11; l++) {
+    for (p.vx = 0; p.vx < 11; p.vx++) {
+        for (p.vy = 0; p.vy < 11; p.vy++) {
 
-            printf("\nTag table vx:%d vy:%d \n\n", k - 5, l - 5);
+            printf("\nTag table vx:%d vy:%d \n\n", p.vx, p.vy);
 
-            for (i = 0; i < L->height; i++) {
-                for (j = 0; j < L->width; j++) {
-                    printf("%d", L->tag[i][j][k][l][5]);
+            for (p.x = 0; p.x < L->height; p.x++) {
+                for (p.y = 0; p.y < L->width; p.y++) {
+                    printf("%d", *tag(L,p));
                 }
                 printf("\n");
             }
@@ -22,17 +23,17 @@ int printTag(Ladj *L) {
 
 int printDistance(Ladj* L) {
 
-    int i, j, k, l;
+    point p;
+    p.boost=5;
 
+    for (p.vx = 0; p.vx < 11; p.vx++) {
+        for (p.vy = 0; p.vy < 11; p.vy++) {
 
-    for (k = 0; k < 11; k++) {
-        for (l = 0; l < 11; l++) {
+            printf("\nDistance vx:%d vy:%d \n\n", p.vx, p.vy);
 
-            printf("\nDistance vx:%d vy:%d \n\n", k - 5, l - 5);
-
-            for (i = 0; i < L->height; i++) {
-                for (j = 0; j < L->width; j++) {
-                    printf("%d", L->tag[i][j][k][l][5]);
+            for (p.x = 0; p.x < L->height; p.x++) {
+                for (p.y = 0; p.y < L->width; p.y++) {
+                    printf("%d", *tag(L,p));
                 }
                 printf("\n");
             }
