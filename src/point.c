@@ -4,6 +4,7 @@
 
 #include <wchar.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "../include/point.h"
 
 struct point_t {
@@ -31,6 +32,10 @@ int *PointGetXY(Point this) {
     xy[0] = this->x;
     xy[1] = this->y;
     return xy;
+}
+
+void PointPrint(Point this) {
+    printf("Point p : %d %d\n", this->x, this->y);
 }
 
 

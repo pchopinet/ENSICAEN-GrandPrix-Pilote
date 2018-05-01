@@ -4,18 +4,21 @@
 
 
 #include "../include/track.h"
+#include "../include/controller.h"
 
 int main() {
 
     Track t = initTrack();
     FILE *f = fopen("../anakin.log", "w");
-    fprintf(f, "%d %d %d\n", t->width, t->height, t->fuel);
+    fprintf(f, "Map : %d %d %d\n", t->width, t->height, t->fuel);
 
-    for (int i = 0; i < t->height; i++) {
-        printf("%d : ",i);
-        for (int j = 0; j < t->width; j++) {
-            printf("%c", t->track[i][j]);
-        }
-        printf("\n");
+    fflush(f);
+
+    while (!feof(stdin)) {
+        ArrayList a = readPosition();
+        Point p1 = ArrayListGet(a, 0);
+        //PointPrint(p1);
+        sendAcceleration(1, 0);
+
     }
 }

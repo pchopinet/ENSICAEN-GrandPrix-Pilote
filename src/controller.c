@@ -12,29 +12,24 @@
  * @return Arraylist with the position of cars
  */
 ArrayList readPosition() {
-    ArrayList position = newArrayList(3, 1, sizeof(struct point_t));
+    ArrayList position = newArrayList(3, 1, sizeof(Point));
 
     char c;
-    int x = 0, y = 0, i = 0;
-    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
-        if (c < '9' && c > '0') {
-            if (i % 2 == 0) {
-                x = c - '0';
-            } else {
-                y = c - '0';
-                ArrayListAppend(position, newPoint(x, y));
-            }
-            i++;
-        }
-    }
-    return position;
+    int x = 0, y = 0;
+    do {
+        fscanf(stdin, "%d %d", &x, &y);
+        ArrayListAppend(position, newPoint(x, y));
 
+    } while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
+    return position;
 }
+
 
 void sendAcceleration(int x, int y) {
     char action[5];
     sprintf(action, "%d %d", x, y);
     fprintf(stdout, "%s\n", action);
+    fflush(stdout);
 }
 
 ArrayList getPointAccessible(Track t, Point position, Vector speed) {
@@ -44,7 +39,7 @@ ArrayList getPointAccessible(Track t, Point position, Vector speed) {
     int x = PointX(position);
     int y = PointY(position);
 
-    ArrayList accessible = newArrayList(4, 1, sizeof(struct point_t));
+    ArrayList accessible = newArrayList(4, 1, sizeof(Point));
     Point p1 = newPoint(x + 1, y);
     Point p2 = newPoint(x - 1, y);
     Point p3 = newPoint(x, y + 1);
@@ -61,6 +56,8 @@ ArrayList getPointAccessible(Track t, Point position, Vector speed) {
 
     return accessible;
 }
+
+//Pathfinding(Track t, Point p, Vector speed, unsigned int fuel)
 
 Point *Dijkstra(Track t, Point p, Vector speed) {
 

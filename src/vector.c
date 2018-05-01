@@ -41,5 +41,5 @@ int VectorY(Vector this) {
 }
 
 double norm(int x, int y) {
-    return sqrt((double) (x * x + y * y));
+    return ((double) sqrt(x * x + y * y));
 }
