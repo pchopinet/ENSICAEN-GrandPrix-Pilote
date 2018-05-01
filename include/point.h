@@ -17,4 +17,6 @@ int PointY(Point this);
 
 int* PointGetXY(Point this);
 
+void PointPrint(Point this);
+
 #endif //ENSICAEN_GRANDPRIX_PILOTE_POINT_H
