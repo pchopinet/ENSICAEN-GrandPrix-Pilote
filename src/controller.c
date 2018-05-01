@@ -8,7 +8,6 @@
 
 /**
  *
- * @warning NOT TESTED
  * @return Arraylist with the position of cars
  */
 ArrayList readPosition() {
