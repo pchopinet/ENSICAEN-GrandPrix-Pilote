@@ -7,13 +7,14 @@
 #define LADJ_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "file.h"
 #include "../../include/track.h"
 
 typedef struct cell {
     point head;
     char c;
-    float fuel;
+    int fuel;
     int ax;
     int ay;
     struct cell *next;
@@ -22,8 +23,11 @@ typedef struct cell {
 typedef struct lnode {
     Cell* next;
     Cell* prev;
+    Cell* dijNext;
+    Cell* dijPrev;
     int distance;
     int tag;
+    int totFuel;
 } Lnode;
 
 typedef struct ladj {
@@ -44,7 +48,13 @@ int* tag(Ladj* L, point p);
 
 int* distance(Ladj* L, point p);
 
+int* totFuel(Ladj* L, point p);
+
 Cell** next(Ladj* L, point p);
+
+Cell** dijNext(Ladj* L, point p);
+
+Cell** dijPrev(Ladj* L, point p);
 
 Cell** prev(Ladj* L, point p);
 
@@ -57,5 +67,7 @@ int reachable1(Track t, point p, point q);
 int reachable2(Track t, point p, point q);
 
 int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L);
+
+int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj* L);
 
 #endif

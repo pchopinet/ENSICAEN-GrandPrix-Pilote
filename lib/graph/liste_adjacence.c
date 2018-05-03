@@ -18,6 +18,7 @@ Lnode* createLnode() {
     node->prev = NULL;
     node->distance = -1;
     node->tag = 0;
+    node->totFuel = INT_MAX;
     return node;
 }
 
@@ -29,8 +30,20 @@ int* distance(Ladj* L, point p) {
     return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->distance);
 }
 
+int* totFuel(Ladj* L, point p) {
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->totFuel);
+}
+
 Cell** next(Ladj* L, point p) {
     return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->next);
+}
+
+Cell** dijNext(Ladj* L, point p) {
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->dijNext);
+}
+
+Cell** dijPrev(Ladj* L, point p) {
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->dijPrev);
 }
 
 Cell** prev(Ladj* L, point p) {
@@ -108,8 +121,20 @@ int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
     Cell* C;
     C = createCell(h, fuel, ax, ay, *next(L, t));
     *next(L, t) = C;
+
     C = createCell(t, fuel, ax, ay, *prev(L, h));
     *prev(L, h) = C;
+    L->nbArc++;
+    return 0;
+}
+
+int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj* L) {
+    Cell* C;
+    C = createCell(h, fuel, ax, ay, *next(L, t));
+    *dijNext(L, t) = C;
+
+    C = createCell(t, fuel, ax, ay, *prev(L, h));
+    *dijPrev(L, h) = C;
     L->nbArc++;
     return 0;
 }

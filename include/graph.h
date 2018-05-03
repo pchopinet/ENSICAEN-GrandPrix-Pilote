@@ -8,6 +8,7 @@
 #include "track.h"
 #include "../lib/graph/file.h"
 #include "../lib/graph/liste_ajdacence.h"
+#include "dijkstra.h"
 
 
 Ladj* initLadj(Track t);
@@ -16,6 +17,8 @@ int loadLadj(Ladj *l, Track T, point p);
 
 int calculDistance(Ladj* L);
 
-Queue* calculRoute(Ladj* L, point p);
+Queue* findRoute(Ladj* L, point p);
+
+point dijkstra(Ladj* L, Track t, point a);
 
 #endif

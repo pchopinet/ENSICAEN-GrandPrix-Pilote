@@ -69,13 +69,11 @@ int readTrackFromFile(Track t, char *file) {
         t->track[i] = calloc(sizeof(char), t->width);
         for (j = 0; j < t->width; j++) {
             fscanf(f, "%c", &c);
-            printf("%c ", c);
             t->track[i][j] = c;
         }
         if (!feof(f)) {
             fscanf(f, "%c", &c);
         }
-        printf("\n");
     }
     fclose(f);
     return 0;

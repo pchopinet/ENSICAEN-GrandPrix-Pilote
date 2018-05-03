@@ -85,7 +85,7 @@ int loadLadj(Ladj *L, Track T, point p) {
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
                 if (pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h) &&
-                    (!testPt(T,t,'~') || normSpeed2<=1) && ((abs(ax)<2 || abs(ay)<2) || t.boost>0)) {
+                    (!testPt(T,t,'~') || normSpeed2<=1) && ((abs(ax)<2 && abs(ay)<2) || t.boost>0)) {
 
                     if ((testPt(T,h,'#') || testPt(T,h,'~')) && *tag(L, h) != 2) {
 
@@ -153,33 +153,54 @@ int calculDistance(Ladj* L){
     return 0;
 }
 
-Queue* calculRoute(Ladj* L, point p) {
+Queue* findRoute(Ladj* L, point p) {
 
     Queue* Q = createQueue();
     Cell* C;
-    int d, fuel, fuelTot=0;
-    put(p,Q);
 
     do {
-
-        d = *distance(L,p);
-        C = *next(L,p);
-        p = C->head;
-        fuel = C->fuel;
-        while (*distance(L,p) != d-1) {
-            C = C->next;
-            p = C->head;
-            fuel = C->fuel;
-        }
-        fuelTot += fuel;
         put(p,Q);
+        C = *dijPrev(L,p);
+        p = C->head;
+    } while (*totFuel(L,p) != 0);
 
-    } while (d!=1);
-
-
-    printf("\nFuel : %d\n\n",fuelTot);
+    put(p,Q);
 
     return Q;
 }
 
+point dijkstra(Ladj* L, Track t, point a) {
+    int d1, d2;
+    point b;
+    Cell* C;
+    List* list = createList();
+    putInList(list, a, 0);
+    *totFuel(L,a) = 0;
+    while (!testPt(t,a,'=')) {
+        a = getMin(list);
+        *tag(L,a)=4;
 
+        d1 = *distance(L,a);
+        C = *next(L,a);
+        while (C!=NULL) {
+            b = C->head;
+            d2 = *distance(L,b);
+            if ((d2 == d1 - 1) && *tag(L,b)!=4) {
+
+                newArcDij(b, a, C->fuel, C->ax, C->ay, L);
+
+                if ((*totFuel(L, a) + C->fuel) < *totFuel(L, b)) {
+                    *totFuel(L, b) = *totFuel(L, a) + C->fuel;
+                    if (*tag(L, b) < 3) {
+                        putInList(list,b,*totFuel(L, b));
+                        *tag(L,b)=3;
+                    } else if (*tag(L, b) == 3){
+                        changeDistance(list,b,*totFuel(L, b));
+                    }
+                }
+            }
+            C = C->next;
+        }
+    }
+    return a;
+}

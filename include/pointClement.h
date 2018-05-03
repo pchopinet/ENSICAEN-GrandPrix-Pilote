@@ -10,5 +10,6 @@ typedef struct point {
     int boost;
 } point;
 
+int ptEqual(point p, point q);
 
 #endif
