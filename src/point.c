@@ -38,5 +38,9 @@ void PointPrint(Point this) {
     printf("Point p : %d %d\n", this->x, this->y);
 }
 
+int PointEqual(Point this, Point test) {
+    return this->y = test->y && this->x == test->x;
+}
+
 
 
