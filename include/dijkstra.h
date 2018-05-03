@@ -6,7 +6,7 @@
 #include "pointClement.h"
 
 typedef struct dnode {
-    int distance;
+    int totFuel;
     point point;
     struct dnode* next;
 } Dnode;
@@ -15,16 +15,16 @@ typedef struct list {
     Dnode* first;
 } List;
 
-Dnode* createDnode(int d, point p, Dnode* next);
+Dnode* createDnode(int tot, point p, Dnode* next);
 
 List* createList();
 
-void putInList(List* L, point p, int d);
+void putInList(List* L, point p, int tot);
 
 point getMin(List* L);
 
 int removeFromList(point p, List* L);
 
-void changeDistance(List* L, point p, int d);
+void changeTotFuel(List* L, point p, int tot);
 
 #endif

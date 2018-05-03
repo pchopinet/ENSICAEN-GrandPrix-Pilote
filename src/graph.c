@@ -171,31 +171,42 @@ Queue* findRoute(Ladj* L, point p) {
 
 point dijkstra(Ladj* L, Track t, point a) {
     int d1, d2;
+    int *TFa, *TFb;
     point b;
     Cell* C;
     List* list = createList();
     putInList(list, a, 0);
     *totFuel(L,a) = 0;
     while (!testPt(t,a,'=')) {
+
         a = getMin(list);
         *tag(L,a)=4;
 
         d1 = *distance(L,a);
         C = *next(L,a);
+        TFa = totFuel(L, a);
+
         while (C!=NULL) {
             b = C->head;
             d2 = *distance(L,b);
+            TFb = totFuel(L, b);
+
             if ((d2 == d1 - 1) && *tag(L,b)!=4) {
 
-                newArcDij(b, a, C->fuel, C->ax, C->ay, L);
+                if ((*TFa + C->fuel) < *TFb) {
 
-                if ((*totFuel(L, a) + C->fuel) < *totFuel(L, b)) {
-                    *totFuel(L, b) = *totFuel(L, a) + C->fuel;
+                    *TFb = *TFa + C->fuel;
+
                     if (*tag(L, b) < 3) {
-                        putInList(list,b,*totFuel(L, b));
+
                         *tag(L,b)=3;
+                        putInList(list,b,*TFb);
+                        newArcDij(b, a, C->fuel, C->ax, C->ay, L);
+
                     } else if (*tag(L, b) == 3){
-                        changeDistance(list,b,*totFuel(L, b));
+
+                        changeTotFuel(list,b,*totFuel(L, b));
+                        newArcDij(b, a, C->fuel, C->ax, C->ay, L);
                     }
                 }
             }

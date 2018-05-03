@@ -124,6 +124,7 @@ int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
 
     C = createCell(t, fuel, ax, ay, *prev(L, h));
     *prev(L, h) = C;
+
     L->nbArc++;
     return 0;
 }
@@ -133,8 +134,8 @@ int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj* L) {
     C = createCell(h, fuel, ax, ay, *next(L, t));
     *dijNext(L, t) = C;
 
-    C = createCell(t, fuel, ax, ay, *prev(L, h));
-    *dijPrev(L, h) = C;
-    L->nbArc++;
+    free(*dijPrev(L, h));
+    *dijPrev(L, h) = createCell(t, fuel, ax, ay, NULL);
+
     return 0;
 }
