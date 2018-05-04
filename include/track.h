@@ -36,7 +36,7 @@ int readTrackFromFile(Track t, char *file);
  * @return
  */
 
-/*
+
 int isAccessible(Track t, Point p);
 
 int isSand(Track t, Point p);
@@ -44,6 +44,5 @@ int isSand(Track t, Point p);
 int isFinishingLine(Track t, Point p);
 
 ArrayList FindFinishingLine(Track t);
- */
 
 #endif
