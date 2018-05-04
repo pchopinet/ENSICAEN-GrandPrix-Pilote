@@ -18,7 +18,7 @@ int PointY(Point this);
 
 int *PointGetXY(Point this);
 
-void PointPrint(Point this);
+void PointPrint(Point this, FILE *ouput);
 
 int PointEqual(Point this, Point test);
 
