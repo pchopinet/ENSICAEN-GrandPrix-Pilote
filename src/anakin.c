@@ -14,22 +14,18 @@ int main() {
     point a, b;
     int carburant=0;
 
-    //Track T = initTrack();
+    Track T = initTrack(stdin);
     FILE *f = fopen("anakin.log", "w");
-    /*fprintf(f, "Map : %d %d %d\n\n", t->width, t->height, t->fuel);
+    fprintf(f, "Map : %d %d %d\n\n", T->width, T->height, T->fuel);
 
-    for (i=0; i<t->height; i++) {
-        for (j = 0; j < t->width; j++) {
-            fprintf(f,"%c",t->track[i][j]);
+    for (i=0; i<T->height; i++) {
+        for (j = 0; j < T->width; j++) {
+            fprintf(f,"%c",T->track[i][j]);
         }
         fprintf(f,"\n");
     }
-    fflush(f);*/
+    fflush(f);
 
-    //Track t = initTrackFromFile("../track/starter_droit_au_but.txt");
-    Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
-    //Track t = initTrackFromFile("../track/sand.txt");
-    //Track T = initTrackFromFile("../track/test.txt");
 
     Ladj* L = initLadj(T);
     loadLadj(L,T,L->start[0]);
