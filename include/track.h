@@ -7,6 +7,7 @@
 #include <string.h>
 #include "driver.h"
 #include "../include/point.h"
+#include "../lib/CCollections/include/ArrayList.h"
 
 typedef struct track_t {
     int height;
@@ -15,11 +16,11 @@ typedef struct track_t {
     char **track;
 } *Track;
 
-Track initTrack();
+Track initTrack(FILE *input);
 
-int readHeader(Track t);
+int readHeader(Track t, FILE *input);
 
-int readTrack(Track t);
+int readTrack(Track t, FILE *input);
 
 Track initTrackFromFile(char *file);
 
@@ -40,5 +41,6 @@ int isSand(Track t, Point p);
 
 int isFinishingLine(Track t, Point p);
 
+ArrayList FindFinishingLine(Track t);
 
 #endif

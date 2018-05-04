@@ -5,6 +5,8 @@
 #ifndef ENSICAEN_GRANDPRIX_PILOTE_POINT_H
 #define ENSICAEN_GRANDPRIX_PILOTE_POINT_H
 
+#include <stdio.h>
+
 
 typedef struct point_t *Point;
 

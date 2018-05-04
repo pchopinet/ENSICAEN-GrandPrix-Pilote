@@ -14,9 +14,9 @@ int main() {
     point a, b;
     int carburant=0;
 
-    Track t = initTrack();
+    //Track T = initTrack();
     FILE *f = fopen("anakin.log", "w");
-    fprintf(f, "Map : %d %d %d\n\n", t->width, t->height, t->fuel);
+    /*fprintf(f, "Map : %d %d %d\n\n", t->width, t->height, t->fuel);
 
     for (i=0; i<t->height; i++) {
         for (j = 0; j < t->width; j++) {
@@ -24,7 +24,7 @@ int main() {
         }
         fprintf(f,"\n");
     }
-    fflush(f);
+    fflush(f);*/
 
     //Track t = initTrackFromFile("../track/starter_droit_au_but.txt");
     Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");

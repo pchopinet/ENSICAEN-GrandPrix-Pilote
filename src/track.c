@@ -4,30 +4,30 @@
 #include "../include/track.h"
 
 
-Track initTrack() {
+Track initTrack(FILE *input) {
     Track t = malloc(sizeof(struct track_t));
     if (t == NULL) {
         exit(1);
     }
-    readHeader(t);
-    readTrack(t);
+    readHeader(t, input);
+    readTrack(t, input);
     return t;
 }
 
-int readHeader(Track t) {
-    fscanf(stdin, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
+int readHeader(Track t, FILE *input) {
+    fscanf(input, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
 
     if (t->height == 0 || t->width == 0 || t->fuel == 0) {
         return 1;
     }
 
     char c;
-    while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n');
+    while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n');
 
     return 0;
 }
 
-int readTrack(Track t) {
+int readTrack(Track t, FILE *input) {
     int i, j;
     char c;
 
@@ -35,7 +35,7 @@ int readTrack(Track t) {
     for (i = 0; i < t->height; i++) {           /* Lecture de la carte ligne par ligne */
         j = 0;
         t->track[i] = malloc(sizeof(char) * t->width);
-        while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
+        while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n') {
             t->track[i][j] = c;
             j++;
         }
@@ -69,11 +69,13 @@ int readTrackFromFile(Track t, char *file) {
         t->track[i] = calloc(sizeof(char), t->width);
         for (j = 0; j < t->width; j++) {
             fscanf(f, "%c", &c);
+            printf("%c ", c);
             t->track[i][j] = c;
         }
         if (!feof(f)) {
             fscanf(f, "%c", &c);
         }
+        printf("\n");
     }
     fclose(f);
     return 0;
@@ -101,5 +103,18 @@ int isFinishingLine(Track t, Point p) {
     int x = PointX(p);
     int y = PointY(p);
     return isInTrack(t, p) && t->track[y][x] == '=';
+}
+
+ArrayList FindFinishingLine(Track t) {
+    ArrayList finish = newArrayList(sizeof(Point));
+
+    for (int y = 0; y < t->height; y++) {
+        for (int x = 0; x < t->width; x++) {
+            if (t->track[y][x] == '=') {
+                ArrayListAppend(finish, newPoint(x, y));
+            }
+        }
+    }
+    return finish;
 }
 
