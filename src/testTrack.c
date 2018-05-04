@@ -13,6 +13,8 @@ int main() {
     //Track t = initTrackFromFile("../track/starter_droit_au_but.txt");
     Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
     //Track t = initTrackFromFile("../track/sand.txt");
+    //Track T = initTrackFromFile("../track/test.txt");
+
     Ladj* L = initLadj(T);
     loadLadj(L,T,L->start[0]);
 

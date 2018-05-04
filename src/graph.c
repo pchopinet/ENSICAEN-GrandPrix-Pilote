@@ -101,6 +101,10 @@ int loadLadj(Ladj *L, Track T, point p) {
                         f++;
                     }
                 } else {
+                    /* peut etre supprimer pour gagner du temps de calcul
+                     * mais utile pour virage en epingle
+                     * ou reprise en cas de crash
+                     */
                     h = t;
                     h.vx = 0;
                     h.vy = 0;
@@ -156,6 +160,7 @@ int calculDistance(Ladj* L){
 Queue* findRoute(Ladj* L, point p) {
 
     Queue* Q = createQueue();
+    Queue* Q2 = createQueue();
     Cell* C;
 
     do {
@@ -166,7 +171,11 @@ Queue* findRoute(Ladj* L, point p) {
 
     put(p,Q);
 
-    return Q;
+    while(!isEmpty(Q)) {
+        put(push(Q),Q2);
+    }
+
+    return Q2;
 }
 
 point dijkstra(Ladj* L, Track t, point a) {
