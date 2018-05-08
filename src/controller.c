@@ -66,7 +66,7 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
 
 
 
-Point getFirstPoint(struct point_t *finish, FILE *log, Point **previous);
+Point getFirstPoint(Point finish, Point anakin, FILE *log, Point **previous);
 
 void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **previous, int **unqueue);
 
@@ -102,12 +102,15 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
             if (unqueue[PointY(n)][PointX(n)] == 0) {
 
                 int length = distance[PointY(p)][PointX(p)] + 1;
-
+                PointPrint(p, log);
+                PointPrint(n, log);
+                fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                 if (length < distance[PointY(n)][PointX(n)]) {
                     distance[PointY(n)][PointX(n)] = length;
                     previous[PointY(n)][PointX(n)] = p;
-                    PriorityQueueChangePrio(q, n, length);
+                    PriorityQueueChangePrioSpecificSearch(q, n, length, (int (*)(T, T)) PointEqual);
                 }
+                //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
             }
         }
     }
@@ -115,7 +118,7 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
     fprintf(log, "Trouvé !\n");
     fflush(log);
 
-    Point p = getFirstPoint(finish, log, previous);
+    Point p = getFirstPoint(finish, anakin, log, previous);
     return p;
 }
 
@@ -135,7 +138,6 @@ void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **pr
                 distance[y][x] = INT_MAX;
             } else {
                 distance[y][x] = 0;
-                printf("temp : ");
             }
             previous[y][x] = NULL;
             if (isAccessible(t, p)) {
@@ -149,10 +151,10 @@ void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **pr
 
 }
 
-Point getFirstPoint(struct point_t *finish, FILE *log, Point **previous) {
+Point getFirstPoint(Point finish, Point anakin, FILE *log, Point **previous) {
     Stack stack = newStack();
     Point p = newPoint(PointX(finish), PointY(finish));
-    while (previous[PointY(p)][PointX(p)] != NULL) {
+    while (!PointEqual(previous[PointY(p)][PointX(p)], anakin)) {
         StackAdd(stack, p);
         p = previous[PointY(p)][PointX(p)];
         PointPrint(p, log);

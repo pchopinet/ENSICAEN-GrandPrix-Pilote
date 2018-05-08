@@ -1,0 +1,2220 @@
+Map : 32 16 35
+Finish -> Point p : 27 4
+readPosition Point p : 7 5
+Done!
+Dijkstra Allocation
+Recherche chemin...
+Point p : 7 5
+Point p : 8 5
+length : 1 2147483647
+Point p : 7 5
+Point p : 6 5
+length : 1 2147483647
+Point p : 7 5
+Point p : 7 6
+length : 1 2147483647
+Point p : 7 5
+Point p : 7 4
+length : 1 2147483647
+Point p : 8 5
+Point p : 9 5
+length : 2 2147483647
+Point p : 8 5
+Point p : 8 6
+length : 2 2147483647
+Point p : 8 5
+Point p : 8 4
+length : 2 2147483647
+Point p : 7 6
+Point p : 8 6
+length : 2 2
+Point p : 7 6
+Point p : 6 6
+length : 2 2147483647
+Point p : 7 6
+Point p : 7 7
+length : 2 2147483647
+Point p : 7 4
+Point p : 8 4
+length : 2 2
+Point p : 7 4
+Point p : 6 4
+length : 2 2147483647
+Point p : 6 5
+Point p : 5 5
+length : 2 2147483647
+Point p : 6 5
+Point p : 6 6
+length : 2 2
+Point p : 6 5
+Point p : 6 4
+length : 2 2
+Point p : 9 5
+Point p : 10 5
+length : 3 2147483647
+Point p : 9 5
+Point p : 9 6
+length : 3 2147483647
+Point p : 9 5
+Point p : 9 4
+length : 3 2147483647
+Point p : 8 4
+Point p : 9 4
+length : 3 3
+Point p : 6 4
+Point p : 5 4
+length : 3 2147483647
+Point p : 8 6
+Point p : 9 6
+length : 3 3
+Point p : 8 6
+Point p : 8 7
+length : 3 2147483647
+Point p : 6 6
+Point p : 5 6
+length : 3 2147483647
+Point p : 6 6
+Point p : 6 7
+length : 3 2147483647
+Point p : 7 7
+Point p : 8 7
+length : 3 3
+Point p : 7 7
+Point p : 6 7
+length : 3 3
+Point p : 7 7
+Point p : 7 8
+length : 3 2147483647
+Point p : 5 5
+Point p : 4 5
+length : 3 2147483647
+Point p : 5 5
+Point p : 5 6
+length : 3 3
+Point p : 5 5
+Point p : 5 4
+length : 3 3
+Point p : 10 5
+Point p : 11 5
+length : 4 2147483647
+Point p : 10 5
+Point p : 10 6
+length : 4 2147483647
+Point p : 10 5
+Point p : 10 4
+length : 4 2147483647
+Point p : 5 4
+Point p : 4 4
+length : 4 2147483647
+Point p : 7 8
+Point p : 8 8
+length : 4 2147483647
+Point p : 7 8
+Point p : 6 8
+length : 4 2147483647
+Point p : 7 8
+Point p : 7 9
+length : 4 2147483647
+Point p : 9 4
+Point p : 10 4
+length : 4 4
+Point p : 9 6
+Point p : 10 6
+length : 4 4
+Point p : 9 6
+Point p : 9 7
+length : 4 2147483647
+Point p : 5 6
+Point p : 4 6
+length : 4 2147483647
+Point p : 5 6
+Point p : 5 7
+length : 4 2147483647
+Point p : 8 7
+Point p : 9 7
+length : 4 4
+Point p : 8 7
+Point p : 8 8
+length : 4 4
+Point p : 6 7
+Point p : 5 7
+length : 4 4
+Point p : 6 7
+Point p : 6 8
+length : 4 4
+Point p : 4 5
+Point p : 3 5
+length : 4 2147483647
+Point p : 4 5
+Point p : 4 6
+length : 4 4
+Point p : 4 5
+Point p : 4 4
+length : 4 4
+Point p : 11 5
+Point p : 12 5
+length : 5 2147483647
+Point p : 11 5
+Point p : 11 6
+length : 5 2147483647
+Point p : 11 5
+Point p : 11 4
+length : 5 2147483647
+Point p : 4 4
+Point p : 3 4
+length : 5 2147483647
+Point p : 8 8
+Point p : 9 8
+length : 5 2147483647
+Point p : 8 8
+Point p : 8 9
+length : 5 2147483647
+Point p : 6 8
+Point p : 5 8
+length : 5 2147483647
+Point p : 6 8
+Point p : 6 9
+length : 5 2147483647
+Point p : 10 4
+Point p : 11 4
+length : 5 5
+Point p : 7 9
+Point p : 8 9
+length : 5 5
+Point p : 7 9
+Point p : 6 9
+length : 5 5
+Point p : 7 9
+Point p : 7 10
+length : 5 2147483647
+Point p : 4 6
+Point p : 3 6
+length : 5 2147483647
+Point p : 4 6
+Point p : 4 7
+length : 5 2147483647
+Point p : 10 6
+Point p : 11 6
+length : 5 5
+Point p : 10 6
+Point p : 10 7
+length : 5 2147483647
+Point p : 9 7
+Point p : 10 7
+length : 5 5
+Point p : 9 7
+Point p : 9 8
+length : 5 5
+Point p : 5 7
+Point p : 4 7
+length : 5 5
+Point p : 5 7
+Point p : 5 8
+length : 5 5
+Point p : 3 5
+Point p : 2 5
+length : 5 2147483647
+Point p : 3 5
+Point p : 3 6
+length : 5 5
+Point p : 3 5
+Point p : 3 4
+length : 5 5
+Point p : 12 5
+Point p : 13 5
+length : 6 2147483647
+Point p : 12 5
+Point p : 12 6
+length : 6 2147483647
+Point p : 12 5
+Point p : 12 4
+length : 6 2147483647
+Point p : 3 4
+Point p : 2 4
+length : 6 2147483647
+Point p : 9 8
+Point p : 10 8
+length : 6 2147483647
+Point p : 9 8
+Point p : 9 9
+length : 6 2147483647
+Point p : 5 8
+Point p : 4 8
+length : 6 2147483647
+Point p : 5 8
+Point p : 5 9
+length : 6 2147483647
+Point p : 7 10
+Point p : 8 10
+length : 6 2147483647
+Point p : 7 10
+Point p : 6 10
+length : 6 2147483647
+Point p : 11 4
+Point p : 12 4
+length : 6 6
+Point p : 6 9
+Point p : 5 9
+length : 6 6
+Point p : 6 9
+Point p : 6 10
+length : 6 6
+Point p : 8 9
+Point p : 9 9
+length : 6 6
+Point p : 8 9
+Point p : 8 10
+length : 6 6
+Point p : 3 6
+Point p : 2 6
+length : 6 2147483647
+Point p : 3 6
+Point p : 3 7
+length : 6 2147483647
+Point p : 11 6
+Point p : 12 6
+length : 6 6
+Point p : 11 6
+Point p : 11 7
+length : 6 2147483647
+Point p : 4 7
+Point p : 3 7
+length : 6 6
+Point p : 4 7
+Point p : 4 8
+length : 6 6
+Point p : 10 7
+Point p : 11 7
+length : 6 6
+Point p : 10 7
+Point p : 10 8
+length : 6 6
+Point p : 2 5
+Point p : 2 6
+length : 6 6
+Point p : 2 5
+Point p : 2 4
+length : 6 6
+Point p : 13 5
+Point p : 14 5
+length : 7 2147483647
+Point p : 13 5
+Point p : 13 6
+length : 7 2147483647
+Point p : 13 5
+Point p : 13 4
+length : 7 2147483647
+Point p : 4 8
+Point p : 3 8
+length : 7 2147483647
+Point p : 4 8
+Point p : 4 9
+length : 7 2147483647
+Point p : 6 10
+Point p : 5 10
+length : 7 2147483647
+Point p : 10 8
+Point p : 11 8
+length : 7 2147483647
+Point p : 10 8
+Point p : 10 9
+length : 7 2147483647
+Point p : 5 9
+Point p : 4 9
+length : 7 7
+Point p : 5 9
+Point p : 5 10
+length : 7 7
+Point p : 12 4
+Point p : 13 4
+length : 7 7
+Point p : 9 9
+Point p : 10 9
+length : 7 7
+Point p : 9 9
+Point p : 9 10
+length : 7 2147483647
+Point p : 2 6
+Point p : 2 7
+length : 7 2147483647
+Point p : 12 6
+Point p : 13 6
+length : 7 7
+Point p : 12 6
+Point p : 12 7
+length : 7 2147483647
+Point p : 3 7
+Point p : 2 7
+length : 7 7
+Point p : 3 7
+Point p : 3 8
+length : 7 7
+Point p : 8 10
+Point p : 9 10
+length : 7 7
+Point p : 11 7
+Point p : 12 7
+length : 7 7
+Point p : 11 7
+Point p : 11 8
+length : 7 7
+Point p : 14 5
+Point p : 15 5
+length : 8 2147483647
+Point p : 14 5
+Point p : 14 6
+length : 8 2147483647
+Point p : 14 5
+Point p : 14 4
+length : 8 2147483647
+Point p : 3 8
+Point p : 2 8
+length : 8 2147483647
+Point p : 3 8
+Point p : 3 9
+length : 8 2147483647
+Point p : 5 10
+Point p : 4 10
+length : 8 2147483647
+Point p : 11 8
+Point p : 12 8
+length : 8 2147483647
+Point p : 11 8
+Point p : 11 9
+length : 8 2147483647
+Point p : 4 9
+Point p : 3 9
+length : 8 8
+Point p : 4 9
+Point p : 4 10
+length : 8 8
+Point p : 13 4
+Point p : 14 4
+length : 8 8
+Point p : 13 6
+Point p : 14 6
+length : 8 8
+Point p : 13 6
+Point p : 13 7
+length : 8 2147483647
+Point p : 10 9
+Point p : 11 9
+length : 8 8
+Point p : 10 9
+Point p : 10 10
+length : 8 2147483647
+Point p : 2 7
+Point p : 2 8
+length : 8 8
+Point p : 9 10
+Point p : 10 10
+length : 8 8
+Point p : 12 7
+Point p : 13 7
+length : 8 8
+Point p : 12 7
+Point p : 12 8
+length : 8 8
+Point p : 15 5
+Point p : 16 5
+length : 9 2147483647
+Point p : 15 5
+Point p : 15 6
+length : 9 2147483647
+Point p : 15 5
+Point p : 15 4
+length : 9 2147483647
+Point p : 2 8
+Point p : 2 9
+length : 9 2147483647
+Point p : 12 8
+Point p : 13 8
+length : 9 2147483647
+Point p : 12 8
+Point p : 12 9
+length : 9 2147483647
+Point p : 3 9
+Point p : 2 9
+length : 9 9
+Point p : 3 9
+Point p : 3 10
+length : 9 2147483647
+Point p : 4 10
+Point p : 3 10
+length : 9 9
+Point p : 14 4
+Point p : 15 4
+length : 9 9
+Point p : 14 6
+Point p : 15 6
+length : 9 9
+Point p : 14 6
+Point p : 14 7
+length : 9 2147483647
+Point p : 11 9
+Point p : 12 9
+length : 9 9
+Point p : 11 9
+Point p : 11 10
+length : 9 2147483647
+Point p : 13 7
+Point p : 14 7
+length : 9 9
+Point p : 13 7
+Point p : 13 8
+length : 9 9
+Point p : 10 10
+Point p : 11 10
+length : 9 9
+Point p : 16 5
+Point p : 17 5
+length : 10 2147483647
+Point p : 16 5
+Point p : 16 6
+length : 10 2147483647
+Point p : 16 5
+Point p : 16 4
+length : 10 2147483647
+Point p : 15 4
+Point p : 16 4
+length : 10 10
+Point p : 3 10
+Point p : 2 10
+length : 10 2147483647
+Point p : 2 9
+Point p : 2 10
+length : 10 10
+Point p : 11 10
+Point p : 12 10
+length : 10 2147483647
+Point p : 15 6
+Point p : 16 6
+length : 10 10
+Point p : 15 6
+Point p : 15 7
+length : 10 2147483647
+Point p : 13 8
+Point p : 14 8
+length : 10 2147483647
+Point p : 13 8
+Point p : 13 9
+length : 10 2147483647
+Point p : 12 9
+Point p : 13 9
+length : 10 10
+Point p : 12 9
+Point p : 12 10
+length : 10 10
+Point p : 14 7
+Point p : 15 7
+length : 10 10
+Point p : 14 7
+Point p : 14 8
+length : 10 10
+Point p : 16 4
+Point p : 17 4
+length : 11 2147483647
+Point p : 13 9
+Point p : 14 9
+length : 11 2147483647
+Point p : 13 9
+Point p : 13 10
+length : 11 2147483647
+Point p : 12 10
+Point p : 13 10
+length : 11 11
+Point p : 17 5
+Point p : 18 5
+length : 11 2147483647
+Point p : 17 5
+Point p : 17 6
+length : 11 2147483647
+Point p : 17 5
+Point p : 17 4
+length : 11 11
+Point p : 16 6
+Point p : 17 6
+length : 11 11
+Point p : 16 6
+Point p : 16 7
+length : 11 2147483647
+Point p : 15 7
+Point p : 16 7
+length : 11 11
+Point p : 15 7
+Point p : 15 8
+length : 11 2147483647
+Point p : 14 8
+Point p : 15 8
+length : 11 11
+Point p : 14 8
+Point p : 14 9
+length : 11 11
+Point p : 13 10
+Point p : 14 10
+length : 12 2147483647
+Point p : 18 5
+Point p : 19 5
+length : 12 2147483647
+Point p : 18 5
+Point p : 18 6
+length : 12 2147483647
+Point p : 18 5
+Point p : 18 4
+length : 12 2147483647
+Point p : 17 4
+Point p : 18 4
+length : 12 12
+Point p : 14 9
+Point p : 15 9
+length : 12 2147483647
+Point p : 14 9
+Point p : 14 10
+length : 12 12
+Point p : 16 7
+Point p : 17 7
+length : 12 2147483647
+Point p : 16 7
+Point p : 16 8
+length : 12 2147483647
+Point p : 17 6
+Point p : 18 6
+length : 12 12
+Point p : 17 6
+Point p : 17 7
+length : 12 12
+Point p : 15 8
+Point p : 16 8
+length : 12 12
+Point p : 15 8
+Point p : 15 9
+length : 12 12
+Point p : 19 5
+Point p : 20 5
+length : 13 2147483647
+Point p : 19 5
+Point p : 19 6
+length : 13 2147483647
+Point p : 19 5
+Point p : 19 4
+length : 13 2147483647
+Point p : 16 8
+Point p : 17 8
+length : 13 2147483647
+Point p : 16 8
+Point p : 16 9
+length : 13 2147483647
+Point p : 14 10
+Point p : 15 10
+length : 13 2147483647
+Point p : 17 7
+Point p : 18 7
+length : 13 2147483647
+Point p : 17 7
+Point p : 17 8
+length : 13 13
+Point p : 15 9
+Point p : 16 9
+length : 13 13
+Point p : 15 9
+Point p : 15 10
+length : 13 13
+Point p : 18 6
+Point p : 19 6
+length : 13 13
+Point p : 18 6
+Point p : 18 7
+length : 13 13
+Point p : 18 4
+Point p : 19 4
+length : 13 13
+Point p : 20 5
+Point p : 21 5
+length : 14 2147483647
+Point p : 20 5
+Point p : 20 6
+length : 14 2147483647
+Point p : 20 5
+Point p : 20 4
+length : 14 2147483647
+Point p : 15 10
+Point p : 16 10
+length : 14 2147483647
+Point p : 18 7
+Point p : 19 7
+length : 14 2147483647
+Point p : 18 7
+Point p : 18 8
+length : 14 2147483647
+Point p : 17 8
+Point p : 18 8
+length : 14 14
+Point p : 17 8
+Point p : 17 9
+length : 14 2147483647
+Point p : 16 9
+Point p : 17 9
+length : 14 14
+Point p : 16 9
+Point p : 16 10
+length : 14 14
+Point p : 19 6
+Point p : 20 6
+length : 14 14
+Point p : 19 6
+Point p : 19 7
+length : 14 14
+Point p : 19 4
+Point p : 20 4
+length : 14 14
+Point p : 21 5
+Point p : 22 5
+length : 15 2147483647
+Point p : 21 5
+Point p : 21 6
+length : 15 2147483647
+Point p : 21 5
+Point p : 21 4
+length : 15 2147483647
+Point p : 16 10
+Point p : 17 10
+length : 15 2147483647
+Point p : 17 9
+Point p : 18 9
+length : 15 2147483647
+Point p : 17 9
+Point p : 17 10
+length : 15 15
+Point p : 18 8
+Point p : 19 8
+length : 15 2147483647
+Point p : 18 8
+Point p : 18 9
+length : 15 15
+Point p : 20 6
+Point p : 21 6
+length : 15 15
+Point p : 20 6
+Point p : 20 7
+length : 15 2147483647
+Point p : 19 7
+Point p : 20 7
+length : 15 15
+Point p : 19 7
+Point p : 19 8
+length : 15 15
+Point p : 20 4
+Point p : 21 4
+length : 15 15
+Point p : 22 5
+Point p : 23 5
+length : 16 2147483647
+Point p : 22 5
+Point p : 22 6
+length : 16 2147483647
+Point p : 22 5
+Point p : 22 4
+length : 16 2147483647
+Point p : 21 6
+Point p : 22 6
+length : 16 16
+Point p : 21 6
+Point p : 21 7
+length : 16 2147483647
+Point p : 18 9
+Point p : 19 9
+length : 16 2147483647
+Point p : 18 9
+Point p : 18 10
+length : 16 2147483647
+Point p : 17 10
+Point p : 18 10
+length : 16 16
+Point p : 21 4
+Point p : 22 4
+length : 16 16
+Point p : 19 8
+Point p : 20 8
+length : 16 2147483647
+Point p : 19 8
+Point p : 19 9
+length : 16 16
+Point p : 20 7
+Point p : 21 7
+length : 16 16
+Point p : 20 7
+Point p : 20 8
+length : 16 16
+Point p : 22 6
+Point p : 23 6
+length : 17 2147483647
+Point p : 22 6
+Point p : 22 7
+length : 17 2147483647
+Point p : 19 9
+Point p : 20 9
+length : 17 2147483647
+Point p : 19 9
+Point p : 19 10
+length : 17 2147483647
+Point p : 20 8
+Point p : 21 8
+length : 17 2147483647
+Point p : 20 8
+Point p : 20 9
+length : 17 17
+Point p : 23 5
+Point p : 24 5
+length : 17 2147483647
+Point p : 23 5
+Point p : 23 6
+length : 17 17
+Point p : 23 5
+Point p : 23 4
+length : 17 2147483647
+Point p : 22 4
+Point p : 23 4
+length : 17 17
+Point p : 18 10
+Point p : 19 10
+length : 17 17
+Point p : 21 7
+Point p : 22 7
+length : 17 17
+Point p : 21 7
+Point p : 21 8
+length : 17 17
+Point p : 21 8
+Point p : 22 8
+length : 18 2147483647
+Point p : 21 8
+Point p : 21 9
+length : 18 2147483647
+Point p : 24 5
+Point p : 25 5
+length : 18 2147483647
+Point p : 24 5
+Point p : 24 6
+length : 18 2147483647
+Point p : 24 5
+Point p : 24 4
+length : 18 2147483647
+Point p : 23 6
+Point p : 24 6
+length : 18 18
+Point p : 23 6
+Point p : 23 7
+length : 18 2147483647
+Point p : 20 9
+Point p : 21 9
+length : 18 18
+Point p : 20 9
+Point p : 20 10
+length : 18 2147483647
+Point p : 23 4
+Point p : 24 4
+length : 18 18
+Point p : 22 7
+Point p : 23 7
+length : 18 18
+Point p : 22 7
+Point p : 22 8
+length : 18 18
+Point p : 19 10
+Point p : 20 10
+length : 18 18
+Point p : 22 8
+Point p : 23 8
+length : 19 2147483647
+Point p : 22 8
+Point p : 22 9
+length : 19 2147483647
+Point p : 21 9
+Point p : 22 9
+length : 19 19
+Point p : 21 9
+Point p : 21 10
+length : 19 2147483647
+Point p : 25 5
+Point p : 26 5
+length : 19 2147483647
+Point p : 25 5
+Point p : 25 6
+length : 19 2147483647
+Point p : 25 5
+Point p : 25 4
+length : 19 2147483647
+Point p : 23 7
+Point p : 24 7
+length : 19 2147483647
+Point p : 23 7
+Point p : 23 8
+length : 19 19
+Point p : 24 6
+Point p : 25 6
+length : 19 19
+Point p : 24 6
+Point p : 24 7
+length : 19 19
+Point p : 24 4
+Point p : 25 4
+length : 19 19
+Point p : 20 10
+Point p : 21 10
+length : 19 19
+Point p : 21 10
+Point p : 22 10
+length : 20 2147483647
+Point p : 26 5
+Point p : 27 5
+length : 20 2147483647
+Point p : 26 5
+Point p : 26 6
+length : 20 2147483647
+Point p : 26 5
+Point p : 26 4
+length : 20 2147483647
+Point p : 25 4
+Point p : 26 4
+length : 20 20
+Point p : 24 7
+Point p : 25 7
+length : 20 2147483647
+Point p : 24 7
+Point p : 24 8
+length : 20 2147483647
+Point p : 25 6
+Point p : 26 6
+length : 20 20
+Point p : 25 6
+Point p : 25 7
+length : 20 20
+Point p : 23 8
+Point p : 24 8
+length : 20 20
+Point p : 23 8
+Point p : 23 9
+length : 20 2147483647
+Point p : 22 9
+Point p : 23 9
+length : 20 20
+Point p : 22 9
+Point p : 22 10
+length : 20 20
+Point p : 22 10
+Point p : 23 10
+length : 21 2147483647
+Point p : 25 7
+Point p : 26 7
+length : 21 2147483647
+Point p : 25 7
+Point p : 25 8
+length : 21 2147483647
+Point p : 26 6
+Point p : 27 6
+length : 21 2147483647
+Point p : 26 6
+Point p : 26 7
+length : 21 21
+Point p : 24 8
+Point p : 25 8
+length : 21 21
+Point p : 24 8
+Point p : 24 9
+length : 21 2147483647
+Point p : 27 5
+Point p : 27 6
+length : 21 21
+Point p : 27 5
+Point p : 27 4
+length : 21 2147483647
+Point p : 26 4
+Point p : 27 4
+length : 21 21
+Point p : 23 9
+Point p : 24 9
+length : 21 21
+Point p : 23 9
+Point p : 23 10
+length : 21 21
+Point p : 26 7
+Point p : 27 7
+length : 22 2147483647
+Point p : 26 7
+Point p : 26 8
+length : 22 2147483647
+Point p : 27 6
+Point p : 27 7
+length : 22 22
+Point p : 23 10
+Point p : 24 10
+length : 22 2147483647
+Point p : 24 9
+Point p : 25 9
+length : 22 2147483647
+Point p : 24 9
+Point p : 24 10
+length : 22 22
+Point p : 25 8
+Point p : 26 8
+length : 22 22
+Point p : 25 8
+Point p : 25 9
+length : 22 22
+Point p : 27 7
+Point p : 27 8
+length : 23 2147483647
+Point p : 26 8
+Point p : 27 8
+length : 23 23
+Point p : 26 8
+Point p : 26 9
+length : 23 2147483647
+Point p : 24 10
+Point p : 25 10
+length : 23 2147483647
+Point p : 25 9
+Point p : 26 9
+length : 23 23
+Point p : 25 9
+Point p : 25 10
+length : 23 23
+Point p : 26 9
+Point p : 27 9
+length : 24 2147483647
+Point p : 26 9
+Point p : 26 10
+length : 24 2147483647
+Point p : 27 8
+Point p : 27 9
+length : 24 24
+Point p : 25 10
+Point p : 26 10
+length : 24 24
+Point p : 26 10
+Point p : 27 10
+length : 25 2147483647
+Point p : 27 9
+Point p : 27 10
+length : 25 25
+Point p : 13 1
+Point p : 14 1
+length : -2147483648 2147483647
+Point p : 13 1
+Point p : 12 1
+length : -2147483648 2147483647
+Point p : 14 1
+Point p : 15 1
+length : -2147483647 2147483647
+Point p : 12 1
+Point p : 11 1
+length : -2147483647 2147483647
+Point p : 15 1
+Point p : 16 1
+length : -2147483646 2147483647
+Point p : 11 1
+Point p : 10 1
+length : -2147483646 2147483647
+Point p : 16 1
+Point p : 17 1
+length : -2147483645 2147483647
+Point p : 10 1
+Point p : 9 1
+length : -2147483645 2147483647
+Point p : 17 1
+Point p : 18 1
+length : -2147483644 2147483647
+Point p : 9 1
+Point p : 8 1
+length : -2147483644 2147483647
+Point p : 18 1
+Point p : 19 1
+length : -2147483643 2147483647
+Point p : 8 1
+Point p : 7 1
+length : -2147483643 2147483647
+Point p : 19 1
+Point p : 20 1
+length : -2147483642 2147483647
+Point p : 7 1
+Point p : 6 1
+length : -2147483642 2147483647
+Point p : 20 1
+Point p : 21 1
+length : -2147483641 2147483647
+Point p : 6 1
+Point p : 5 1
+length : -2147483641 2147483647
+Point p : 21 1
+Point p : 22 1
+length : -2147483640 2147483647
+Point p : 5 1
+Point p : 4 1
+length : -2147483640 2147483647
+Point p : 22 1
+Point p : 23 1
+length : -2147483639 2147483647
+Point p : 4 1
+Point p : 3 1
+length : -2147483639 2147483647
+Point p : 23 1
+Point p : 24 1
+length : -2147483638 2147483647
+Point p : 3 1
+Point p : 2 1
+length : -2147483638 2147483647
+Point p : 24 1
+Point p : 25 1
+length : -2147483637 2147483647
+Point p : 2 1
+Point p : 1 1
+length : -2147483637 2147483647
+Point p : 25 1
+Point p : 26 1
+length : -2147483636 2147483647
+Point p : 26 1
+Point p : 27 1
+length : -2147483635 2147483647
+Point p : 27 1
+Point p : 28 1
+length : -2147483634 2147483647
+Point p : 28 1
+Point p : 29 1
+length : -2147483633 2147483647
+Point p : 29 1
+Point p : 30 1
+length : -2147483632 2147483647
+Point p : 30 1
+Point p : 31 1
+length : -2147483631 2147483647
+Trouvé !
+Point p : 27 5
+Point p : 26 5
+Point p : 25 5
+Point p : 24 5
+Point p : 23 5
+Point p : 22 5
+Point p : 21 5
+Point p : 20 5
+Point p : 19 5
+Point p : 18 5
+Point p : 17 5
+Point p : 16 5
+Point p : 15 5
+Point p : 14 5
+Point p : 13 5
+Point p : 12 5
+Point p : 11 5
+Point p : 10 5
+Point p : 9 5
+Point p : 8 5
+Done!
+readPosition Point p : 8 5
+Done!
+Dijkstra Allocation
+Recherche chemin...
+Point p : 8 5
+Point p : 9 5
+length : 1 2147483647
+Point p : 8 5
+Point p : 7 5
+length : 1 2147483647
+Point p : 8 5
+Point p : 8 6
+length : 1 2147483647
+Point p : 8 5
+Point p : 8 4
+length : 1 2147483647
+Point p : 9 5
+Point p : 10 5
+length : 2 2147483647
+Point p : 9 5
+Point p : 9 6
+length : 2 2147483647
+Point p : 9 5
+Point p : 9 4
+length : 2 2147483647
+Point p : 8 6
+Point p : 9 6
+length : 2 2
+Point p : 8 6
+Point p : 7 6
+length : 2 2147483647
+Point p : 8 6
+Point p : 8 7
+length : 2 2147483647
+Point p : 8 4
+Point p : 9 4
+length : 2 2
+Point p : 8 4
+Point p : 7 4
+length : 2 2147483647
+Point p : 7 5
+Point p : 6 5
+length : 2 2147483647
+Point p : 7 5
+Point p : 7 6
+length : 2 2
+Point p : 7 5
+Point p : 7 4
+length : 2 2
+Point p : 10 5
+Point p : 11 5
+length : 3 2147483647
+Point p : 10 5
+Point p : 10 6
+length : 3 2147483647
+Point p : 10 5
+Point p : 10 4
+length : 3 2147483647
+Point p : 9 4
+Point p : 10 4
+length : 3 3
+Point p : 7 4
+Point p : 6 4
+length : 3 2147483647
+Point p : 9 6
+Point p : 10 6
+length : 3 3
+Point p : 9 6
+Point p : 9 7
+length : 3 2147483647
+Point p : 7 6
+Point p : 6 6
+length : 3 2147483647
+Point p : 7 6
+Point p : 7 7
+length : 3 2147483647
+Point p : 8 7
+Point p : 9 7
+length : 3 3
+Point p : 8 7
+Point p : 7 7
+length : 3 3
+Point p : 8 7
+Point p : 8 8
+length : 3 2147483647
+Point p : 6 5
+Point p : 5 5
+length : 3 2147483647
+Point p : 6 5
+Point p : 6 6
+length : 3 3
+Point p : 6 5
+Point p : 6 4
+length : 3 3
+Point p : 11 5
+Point p : 12 5
+length : 4 2147483647
+Point p : 11 5
+Point p : 11 6
+length : 4 2147483647
+Point p : 11 5
+Point p : 11 4
+length : 4 2147483647
+Point p : 6 4
+Point p : 5 4
+length : 4 2147483647
+Point p : 8 8
+Point p : 9 8
+length : 4 2147483647
+Point p : 8 8
+Point p : 7 8
+length : 4 2147483647
+Point p : 8 8
+Point p : 8 9
+length : 4 2147483647
+Point p : 10 4
+Point p : 11 4
+length : 4 4
+Point p : 10 6
+Point p : 11 6
+length : 4 4
+Point p : 10 6
+Point p : 10 7
+length : 4 2147483647
+Point p : 6 6
+Point p : 5 6
+length : 4 2147483647
+Point p : 6 6
+Point p : 6 7
+length : 4 2147483647
+Point p : 9 7
+Point p : 10 7
+length : 4 4
+Point p : 9 7
+Point p : 9 8
+length : 4 4
+Point p : 7 7
+Point p : 6 7
+length : 4 4
+Point p : 7 7
+Point p : 7 8
+length : 4 4
+Point p : 5 5
+Point p : 4 5
+length : 4 2147483647
+Point p : 5 5
+Point p : 5 6
+length : 4 4
+Point p : 5 5
+Point p : 5 4
+length : 4 4
+Point p : 12 5
+Point p : 13 5
+length : 5 2147483647
+Point p : 12 5
+Point p : 12 6
+length : 5 2147483647
+Point p : 12 5
+Point p : 12 4
+length : 5 2147483647
+Point p : 5 4
+Point p : 4 4
+length : 5 2147483647
+Point p : 9 8
+Point p : 10 8
+length : 5 2147483647
+Point p : 9 8
+Point p : 9 9
+length : 5 2147483647
+Point p : 7 8
+Point p : 6 8
+length : 5 2147483647
+Point p : 7 8
+Point p : 7 9
+length : 5 2147483647
+Point p : 11 4
+Point p : 12 4
+length : 5 5
+Point p : 8 9
+Point p : 9 9
+length : 5 5
+Point p : 8 9
+Point p : 7 9
+length : 5 5
+Point p : 8 9
+Point p : 8 10
+length : 5 2147483647
+Point p : 5 6
+Point p : 4 6
+length : 5 2147483647
+Point p : 5 6
+Point p : 5 7
+length : 5 2147483647
+Point p : 11 6
+Point p : 12 6
+length : 5 5
+Point p : 11 6
+Point p : 11 7
+length : 5 2147483647
+Point p : 10 7
+Point p : 11 7
+length : 5 5
+Point p : 10 7
+Point p : 10 8
+length : 5 5
+Point p : 6 7
+Point p : 5 7
+length : 5 5
+Point p : 6 7
+Point p : 6 8
+length : 5 5
+Point p : 4 5
+Point p : 3 5
+length : 5 2147483647
+Point p : 4 5
+Point p : 4 6
+length : 5 5
+Point p : 4 5
+Point p : 4 4
+length : 5 5
+Point p : 13 5
+Point p : 14 5
+length : 6 2147483647
+Point p : 13 5
+Point p : 13 6
+length : 6 2147483647
+Point p : 13 5
+Point p : 13 4
+length : 6 2147483647
+Point p : 4 4
+Point p : 3 4
+length : 6 2147483647
+Point p : 6 8
+Point p : 5 8
+length : 6 2147483647
+Point p : 6 8
+Point p : 6 9
+length : 6 2147483647
+Point p : 10 8
+Point p : 11 8
+length : 6 2147483647
+Point p : 10 8
+Point p : 10 9
+length : 6 2147483647
+Point p : 12 4
+Point p : 13 4
+length : 6 6
+Point p : 7 9
+Point p : 6 9
+length : 6 6
+Point p : 7 9
+Point p : 7 10
+length : 6 2147483647
+Point p : 9 9
+Point p : 10 9
+length : 6 6
+Point p : 9 9
+Point p : 9 10
+length : 6 2147483647
+Point p : 4 6
+Point p : 3 6
+length : 6 2147483647
+Point p : 4 6
+Point p : 4 7
+length : 6 2147483647
+Point p : 12 6
+Point p : 13 6
+length : 6 6
+Point p : 12 6
+Point p : 12 7
+length : 6 2147483647
+Point p : 8 10
+Point p : 9 10
+length : 6 6
+Point p : 8 10
+Point p : 7 10
+length : 6 6
+Point p : 5 7
+Point p : 4 7
+length : 6 6
+Point p : 5 7
+Point p : 5 8
+length : 6 6
+Point p : 11 7
+Point p : 12 7
+length : 6 6
+Point p : 11 7
+Point p : 11 8
+length : 6 6
+Point p : 3 5
+Point p : 2 5
+length : 6 2147483647
+Point p : 3 5
+Point p : 3 6
+length : 6 6
+Point p : 3 5
+Point p : 3 4
+length : 6 6
+Point p : 14 5
+Point p : 15 5
+length : 7 2147483647
+Point p : 14 5
+Point p : 14 6
+length : 7 2147483647
+Point p : 14 5
+Point p : 14 4
+length : 7 2147483647
+Point p : 3 4
+Point p : 2 4
+length : 7 2147483647
+Point p : 5 8
+Point p : 4 8
+length : 7 2147483647
+Point p : 5 8
+Point p : 5 9
+length : 7 2147483647
+Point p : 7 10
+Point p : 6 10
+length : 7 2147483647
+Point p : 11 8
+Point p : 12 8
+length : 7 2147483647
+Point p : 11 8
+Point p : 11 9
+length : 7 2147483647
+Point p : 6 9
+Point p : 5 9
+length : 7 7
+Point p : 6 9
+Point p : 6 10
+length : 7 7
+Point p : 13 4
+Point p : 14 4
+length : 7 7
+Point p : 10 9
+Point p : 11 9
+length : 7 7
+Point p : 10 9
+Point p : 10 10
+length : 7 2147483647
+Point p : 3 6
+Point p : 2 6
+length : 7 2147483647
+Point p : 3 6
+Point p : 3 7
+length : 7 2147483647
+Point p : 13 6
+Point p : 14 6
+length : 7 7
+Point p : 13 6
+Point p : 13 7
+length : 7 2147483647
+Point p : 9 10
+Point p : 10 10
+length : 7 7
+Point p : 4 7
+Point p : 3 7
+length : 7 7
+Point p : 4 7
+Point p : 4 8
+length : 7 7
+Point p : 2 5
+Point p : 2 6
+length : 7 7
+Point p : 2 5
+Point p : 2 4
+length : 7 7
+Point p : 12 7
+Point p : 13 7
+length : 7 7
+Point p : 12 7
+Point p : 12 8
+length : 7 7
+Point p : 15 5
+Point p : 16 5
+length : 8 2147483647
+Point p : 15 5
+Point p : 15 6
+length : 8 2147483647
+Point p : 15 5
+Point p : 15 4
+length : 8 2147483647
+Point p : 4 8
+Point p : 3 8
+length : 8 2147483647
+Point p : 4 8
+Point p : 4 9
+length : 8 2147483647
+Point p : 6 10
+Point p : 5 10
+length : 8 2147483647
+Point p : 2 6
+Point p : 2 7
+length : 8 2147483647
+Point p : 12 8
+Point p : 13 8
+length : 8 2147483647
+Point p : 12 8
+Point p : 12 9
+length : 8 2147483647
+Point p : 5 9
+Point p : 4 9
+length : 8 8
+Point p : 5 9
+Point p : 5 10
+length : 8 8
+Point p : 14 4
+Point p : 15 4
+length : 8 8
+Point p : 14 6
+Point p : 15 6
+length : 8 8
+Point p : 14 6
+Point p : 14 7
+length : 8 2147483647
+Point p : 3 7
+Point p : 2 7
+length : 8 8
+Point p : 3 7
+Point p : 3 8
+length : 8 8
+Point p : 11 9
+Point p : 12 9
+length : 8 8
+Point p : 11 9
+Point p : 11 10
+length : 8 2147483647
+Point p : 10 10
+Point p : 11 10
+length : 8 8
+Point p : 13 7
+Point p : 14 7
+length : 8 8
+Point p : 13 7
+Point p : 13 8
+length : 8 8
+Point p : 3 8
+Point p : 2 8
+length : 9 2147483647
+Point p : 3 8
+Point p : 3 9
+length : 9 2147483647
+Point p : 5 10
+Point p : 4 10
+length : 9 2147483647
+Point p : 11 10
+Point p : 12 10
+length : 9 2147483647
+Point p : 16 5
+Point p : 17 5
+length : 9 2147483647
+Point p : 16 5
+Point p : 16 6
+length : 9 2147483647
+Point p : 16 5
+Point p : 16 4
+length : 9 2147483647
+Point p : 13 8
+Point p : 14 8
+length : 9 2147483647
+Point p : 13 8
+Point p : 13 9
+length : 9 2147483647
+Point p : 4 9
+Point p : 3 9
+length : 9 9
+Point p : 4 9
+Point p : 4 10
+length : 9 9
+Point p : 15 4
+Point p : 16 4
+length : 9 9
+Point p : 15 6
+Point p : 16 6
+length : 9 9
+Point p : 15 6
+Point p : 15 7
+length : 9 2147483647
+Point p : 2 7
+Point p : 2 8
+length : 9 9
+Point p : 12 9
+Point p : 13 9
+length : 9 9
+Point p : 12 9
+Point p : 12 10
+length : 9 9
+Point p : 14 7
+Point p : 15 7
+length : 9 9
+Point p : 14 7
+Point p : 14 8
+length : 9 9
+Point p : 2 8
+Point p : 2 9
+length : 10 2147483647
+Point p : 14 8
+Point p : 15 8
+length : 10 2147483647
+Point p : 14 8
+Point p : 14 9
+length : 10 2147483647
+Point p : 3 9
+Point p : 2 9
+length : 10 10
+Point p : 3 9
+Point p : 3 10
+length : 10 2147483647
+Point p : 4 10
+Point p : 3 10
+length : 10 10
+Point p : 12 10
+Point p : 13 10
+length : 10 2147483647
+Point p : 16 4
+Point p : 17 4
+length : 10 2147483647
+Point p : 16 6
+Point p : 17 6
+length : 10 2147483647
+Point p : 16 6
+Point p : 16 7
+length : 10 2147483647
+Point p : 13 9
+Point p : 14 9
+length : 10 10
+Point p : 13 9
+Point p : 13 10
+length : 10 10
+Point p : 17 5
+Point p : 18 5
+length : 10 2147483647
+Point p : 17 5
+Point p : 17 6
+length : 10 10
+Point p : 17 5
+Point p : 17 4
+length : 10 10
+Point p : 15 7
+Point p : 16 7
+length : 10 10
+Point p : 15 7
+Point p : 15 8
+length : 10 10
+Point p : 15 8
+Point p : 16 8
+length : 11 2147483647
+Point p : 15 8
+Point p : 15 9
+length : 11 2147483647
+Point p : 18 5
+Point p : 19 5
+length : 11 2147483647
+Point p : 18 5
+Point p : 18 6
+length : 11 2147483647
+Point p : 18 5
+Point p : 18 4
+length : 11 2147483647
+Point p : 2 9
+Point p : 2 10
+length : 11 2147483647
+Point p : 14 9
+Point p : 15 9
+length : 11 11
+Point p : 14 9
+Point p : 14 10
+length : 11 2147483647
+Point p : 13 10
+Point p : 14 10
+length : 11 11
+Point p : 17 4
+Point p : 18 4
+length : 11 11
+Point p : 17 6
+Point p : 18 6
+length : 11 11
+Point p : 17 6
+Point p : 17 7
+length : 11 2147483647
+Point p : 3 10
+Point p : 2 10
+length : 11 11
+Point p : 16 7
+Point p : 17 7
+length : 11 11
+Point p : 16 7
+Point p : 16 8
+length : 11 11
+Point p : 19 5
+Point p : 20 5
+length : 12 2147483647
+Point p : 19 5
+Point p : 19 6
+length : 12 2147483647
+Point p : 19 5
+Point p : 19 4
+length : 12 2147483647
+Point p : 15 9
+Point p : 16 9
+length : 12 2147483647
+Point p : 15 9
+Point p : 15 10
+length : 12 2147483647
+Point p : 16 8
+Point p : 17 8
+length : 12 2147483647
+Point p : 16 8
+Point p : 16 9
+length : 12 12
+Point p : 14 10
+Point p : 15 10
+length : 12 12
+Point p : 18 6
+Point p : 19 6
+length : 12 12
+Point p : 18 6
+Point p : 18 7
+length : 12 2147483647
+Point p : 18 4
+Point p : 19 4
+length : 12 12
+Point p : 17 7
+Point p : 18 7
+length : 12 12
+Point p : 17 7
+Point p : 17 8
+length : 12 12
+Point p : 20 5
+Point p : 21 5
+length : 13 2147483647
+Point p : 20 5
+Point p : 20 6
+length : 13 2147483647
+Point p : 20 5
+Point p : 20 4
+length : 13 2147483647
+Point p : 17 8
+Point p : 18 8
+length : 13 2147483647
+Point p : 17 8
+Point p : 17 9
+length : 13 2147483647
+Point p : 15 10
+Point p : 16 10
+length : 13 2147483647
+Point p : 16 9
+Point p : 17 9
+length : 13 13
+Point p : 16 9
+Point p : 16 10
+length : 13 13
+Point p : 18 7
+Point p : 19 7
+length : 13 2147483647
+Point p : 18 7
+Point p : 18 8
+length : 13 13
+Point p : 19 6
+Point p : 20 6
+length : 13 13
+Point p : 19 6
+Point p : 19 7
+length : 13 13
+Point p : 19 4
+Point p : 20 4
+length : 13 13
+Point p : 21 5
+Point p : 22 5
+length : 14 2147483647
+Point p : 21 5
+Point p : 21 6
+length : 14 2147483647
+Point p : 21 5
+Point p : 21 4
+length : 14 2147483647
+Point p : 16 10
+Point p : 17 10
+length : 14 2147483647
+Point p : 18 8
+Point p : 19 8
+length : 14 2147483647
+Point p : 18 8
+Point p : 18 9
+length : 14 2147483647
+Point p : 17 9
+Point p : 18 9
+length : 14 14
+Point p : 17 9
+Point p : 17 10
+length : 14 14
+Point p : 19 7
+Point p : 20 7
+length : 14 2147483647
+Point p : 19 7
+Point p : 19 8
+length : 14 14
+Point p : 20 6
+Point p : 21 6
+length : 14 14
+Point p : 20 6
+Point p : 20 7
+length : 14 14
+Point p : 20 4
+Point p : 21 4
+length : 14 14
+Point p : 22 5
+Point p : 23 5
+length : 15 2147483647
+Point p : 22 5
+Point p : 22 6
+length : 15 2147483647
+Point p : 22 5
+Point p : 22 4
+length : 15 2147483647
+Point p : 19 8
+Point p : 20 8
+length : 15 2147483647
+Point p : 19 8
+Point p : 19 9
+length : 15 2147483647
+Point p : 21 6
+Point p : 22 6
+length : 15 15
+Point p : 21 6
+Point p : 21 7
+length : 15 2147483647
+Point p : 21 4
+Point p : 22 4
+length : 15 15
+Point p : 18 9
+Point p : 19 9
+length : 15 15
+Point p : 18 9
+Point p : 18 10
+length : 15 2147483647
+Point p : 17 10
+Point p : 18 10
+length : 15 15
+Point p : 20 7
+Point p : 21 7
+length : 15 15
+Point p : 20 7
+Point p : 20 8
+length : 15 15
+Point p : 23 5
+Point p : 24 5
+length : 16 2147483647
+Point p : 23 5
+Point p : 23 6
+length : 16 2147483647
+Point p : 23 5
+Point p : 23 4
+length : 16 2147483647
+Point p : 20 8
+Point p : 21 8
+length : 16 2147483647
+Point p : 20 8
+Point p : 20 9
+length : 16 2147483647
+Point p : 22 6
+Point p : 23 6
+length : 16 16
+Point p : 22 6
+Point p : 22 7
+length : 16 2147483647
+Point p : 19 9
+Point p : 20 9
+length : 16 16
+Point p : 19 9
+Point p : 19 10
+length : 16 2147483647
+Point p : 21 7
+Point p : 22 7
+length : 16 16
+Point p : 21 7
+Point p : 21 8
+length : 16 16
+Point p : 22 4
+Point p : 23 4
+length : 16 16
+Point p : 18 10
+Point p : 19 10
+length : 16 16
+Point p : 21 8
+Point p : 22 8
+length : 17 2147483647
+Point p : 21 8
+Point p : 21 9
+length : 17 2147483647
+Point p : 20 9
+Point p : 21 9
+length : 17 17
+Point p : 20 9
+Point p : 20 10
+length : 17 2147483647
+Point p : 24 5
+Point p : 25 5
+length : 17 2147483647
+Point p : 24 5
+Point p : 24 6
+length : 17 2147483647
+Point p : 24 5
+Point p : 24 4
+length : 17 2147483647
+Point p : 22 7
+Point p : 23 7
+length : 17 2147483647
+Point p : 22 7
+Point p : 22 8
+length : 17 17
+Point p : 23 6
+Point p : 24 6
+length : 17 17
+Point p : 23 6
+Point p : 23 7
+length : 17 17
+Point p : 19 10
+Point p : 20 10
+length : 17 17
+Point p : 23 4
+Point p : 24 4
+length : 17 17
+Point p : 21 9
+Point p : 22 9
+length : 18 2147483647
+Point p : 21 9
+Point p : 21 10
+length : 18 2147483647
+Point p : 20 10
+Point p : 21 10
+length : 18 18
+Point p : 23 7
+Point p : 24 7
+length : 18 2147483647
+Point p : 23 7
+Point p : 23 8
+length : 18 2147483647
+Point p : 25 5
+Point p : 26 5
+length : 18 2147483647
+Point p : 25 5
+Point p : 25 6
+length : 18 2147483647
+Point p : 25 5
+Point p : 25 4
+length : 18 2147483647
+Point p : 22 8
+Point p : 23 8
+length : 18 18
+Point p : 22 8
+Point p : 22 9
+length : 18 18
+Point p : 24 4
+Point p : 25 4
+length : 18 18
+Point p : 24 6
+Point p : 25 6
+length : 18 18
+Point p : 24 6
+Point p : 24 7
+length : 18 18
+Point p : 22 9
+Point p : 23 9
+length : 19 2147483647
+Point p : 22 9
+Point p : 22 10
+length : 19 2147483647
+Point p : 24 7
+Point p : 25 7
+length : 19 2147483647
+Point p : 24 7
+Point p : 24 8
+length : 19 2147483647
+Point p : 26 5
+Point p : 27 5
+length : 19 2147483647
+Point p : 26 5
+Point p : 26 6
+length : 19 2147483647
+Point p : 26 5
+Point p : 26 4
+length : 19 2147483647
+Point p : 25 4
+Point p : 26 4
+length : 19 19
+Point p : 21 10
+Point p : 22 10
+length : 19 19
+Point p : 25 6
+Point p : 26 6
+length : 19 19
+Point p : 25 6
+Point p : 25 7
+length : 19 19
+Point p : 23 8
+Point p : 24 8
+length : 19 19
+Point p : 23 8
+Point p : 23 9
+length : 19 19
+Point p : 24 8
+Point p : 25 8
+length : 20 2147483647
+Point p : 24 8
+Point p : 24 9
+length : 20 2147483647
+Point p : 27 5
+Point p : 27 6
+length : 20 2147483647
+Point p : 27 5
+Point p : 27 4
+length : 20 2147483647
+Point p : 26 6
+Point p : 27 6
+length : 20 20
+Point p : 26 6
+Point p : 26 7
+length : 20 2147483647
+Point p : 26 4
+Point p : 27 4
+length : 20 20
+Point p : 22 10
+Point p : 23 10
+length : 20 2147483647
+Point p : 23 9
+Point p : 24 9
+length : 20 20
+Point p : 23 9
+Point p : 23 10
+length : 20 20
+Point p : 25 7
+Point p : 26 7
+length : 20 20
+Point p : 25 7
+Point p : 25 8
+length : 20 20
+Point p : 24 9
+Point p : 25 9
+length : 21 2147483647
+Point p : 24 9
+Point p : 24 10
+length : 21 2147483647
+Point p : 26 7
+Point p : 27 7
+length : 21 2147483647
+Point p : 26 7
+Point p : 26 8
+length : 21 2147483647
+Point p : 27 6
+Point p : 27 7
+length : 21 21
+Point p : 25 8
+Point p : 26 8
+length : 21 21
+Point p : 25 8
+Point p : 25 9
+length : 21 21
+Point p : 23 10
+Point p : 24 10
+length : 21 21
+Point p : 25 9
+Point p : 26 9
+length : 22 2147483647
+Point p : 25 9
+Point p : 25 10
+length : 22 2147483647
+Point p : 27 7
+Point p : 27 8
+length : 22 2147483647
+Point p : 26 8
+Point p : 27 8
+length : 22 22
+Point p : 26 8
+Point p : 26 9
+length : 22 22
+Point p : 24 10
+Point p : 25 10
+length : 22 22
+Point p : 27 8
+Point p : 27 9
+length : 23 2147483647
+Point p : 26 9
+Point p : 27 9
+length : 23 23
+Point p : 26 9
+Point p : 26 10
+length : 23 2147483647
+Point p : 25 10
+Point p : 26 10
+length : 23 23
+Point p : 27 9
+Point p : 27 10
+length : 24 2147483647
+Point p : 26 10
+Point p : 27 10
+length : 24 24
+Point p : 10 1
+Point p : 11 1
+length : -2147483648 2147483647
+Point p : 10 1
+Point p : 9 1
+length : -2147483648 2147483647
+Point p : 11 1
+Point p : 12 1
+length : -2147483647 2147483647
+Point p : 9 1
+Point p : 8 1
+length : -2147483647 2147483647
+Point p : 12 1
+Point p : 13 1
+length : -2147483646 2147483647
+Point p : 8 1
+Point p : 7 1
+length : -2147483646 2147483647
+Point p : 13 1
+Point p : 14 1
+length : -2147483645 2147483647
+Point p : 7 1
+Point p : 6 1
+length : -2147483645 2147483647
+Point p : 14 1
+Point p : 15 1
+length : -2147483644 2147483647
+Point p : 6 1
+Point p : 5 1
+length : -2147483644 2147483647
+Point p : 15 1
+Point p : 16 1
+length : -2147483643 2147483647
+Point p : 5 1
+Point p : 4 1
+length : -2147483643 2147483647
+Point p : 16 1
+Point p : 17 1
+length : -2147483642 2147483647
+Point p : 4 1
+Point p : 3 1
+length : -2147483642 2147483647
+Point p : 17 1
+Point p : 18 1
+length : -2147483641 2147483647
+Point p : 3 1
+Point p : 2 1
+length : -2147483641 2147483647
+Point p : 18 1
+Point p : 19 1
+length : -2147483640 2147483647
+Point p : 2 1
+Point p : 1 1
+length : -2147483640 2147483647
+Point p : 19 1
+Point p : 20 1
+length : -2147483639 2147483647
+Point p : 20 1
+Point p : 21 1
+length : -2147483638 2147483647
+Point p : 21 1
+Point p : 22 1
+length : -2147483637 2147483647
+Point p : 22 1
+Point p : 23 1
+length : -2147483636 2147483647
+Point p : 23 1
+Point p : 24 1
+length : -2147483635 2147483647
+Point p : 24 1
+Point p : 25 1
+length : -2147483634 2147483647
+Point p : 25 1
+Point p : 26 1
+length : -2147483633 2147483647
+Point p : 26 1
+Point p : 27 1
+length : -2147483632 2147483647
+Point p : 27 1
+Point p : 28 1
+length : -2147483631 2147483647
+Point p : 28 1
+Point p : 29 1
+length : -2147483630 2147483647
+Point p : 29 1
+Point p : 30 1
+length : -2147483629 2147483647
+Point p : 30 1
+Point p : 31 1
+length : -2147483628 2147483647
+Trouvé !
+Point p : 27 5
+Point p : 26 5
+Point p : 25 5
+Point p : 24 5
+Point p : 23 5
+Point p : 22 5
+Point p : 21 5
+Point p : 20 5
+Point p : 19 5
+Point p : 18 5
+Point p : 17 5
+Point p : 16 5
+Point p : 15 5
+Point p : 14 5
+Point p : 13 5
+Point p : 12 5
+Point p : 11 5
+Point p : 10 5
+Point p : 9 5
+Done!
+readPosition 
