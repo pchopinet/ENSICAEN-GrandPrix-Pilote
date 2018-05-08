@@ -102,9 +102,9 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
             if (unqueue[PointY(n)][PointX(n)] == 0) {
 
                 int length = distance[PointY(p)][PointX(p)] + 1;
-                PointPrint(p, log);
-                PointPrint(n, log);
-                fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                //PointPrint(p, log);
+                //PointPrint(n, log);
+                //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                 if (length < distance[PointY(n)][PointX(n)]) {
                     distance[PointY(n)][PointX(n)] = length;
                     previous[PointY(n)][PointX(n)] = p;
@@ -157,7 +157,7 @@ Point getFirstPoint(Point finish, Point anakin, FILE *log, Point **previous) {
     while (!PointEqual(previous[PointY(p)][PointX(p)], anakin)) {
         StackAdd(stack, p);
         p = previous[PointY(p)][PointX(p)];
-        PointPrint(p, log);
+        //PointPrint(p, log);
     }
     return p;
 }

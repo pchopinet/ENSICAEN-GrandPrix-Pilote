@@ -17,4 +17,6 @@ int VectorY(Vector this);
 
 void VectorAdd(Vector this, Vector v);
 
+Vector VectorDiff(Vector v1, Vector v2);
+
 #endif //ENSICAEN_GRANDPRIX_PILOTE_VECTOR_H

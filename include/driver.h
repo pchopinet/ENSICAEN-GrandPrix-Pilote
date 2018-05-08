@@ -10,7 +10,9 @@
 
 typedef struct driver_t *Driver;
 
-void move(Driver p, Vector acceleration);
+Driver newDriver(Point p, Vector speed, int fuel);
+
+Vector DriverCalculateAcceleration(Driver this, Point newPosition);
 
 Vector DriverGetSpeed(Driver this);
 
@@ -18,6 +20,10 @@ double DriverGetSpeedNorm(Driver this);
 
 int DriverGetFuel(Driver this);
 
-Point DriverGetCoordinate(Driver this);
+void DriverSetPosition(Driver this, Point p);
+
+Point DriverGetPosition(Driver this);
+
+void DriverPrint(Driver this, FILE *output);
 
 #endif //ENSICAEN_GRANDPRIX_PILOTE_PILOTE_H

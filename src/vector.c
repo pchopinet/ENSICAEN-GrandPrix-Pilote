@@ -40,6 +40,11 @@ int VectorY(Vector this) {
     return this->y;
 }
 
+Vector VectorDiff(Vector v1, Vector v2) {
+    return newVector(v2->x - v1->x, v2->y - v1->y);
+
+}
+
 double norm(int x, int y) {
     return ((double) sqrt(x * x + y * y));
 }
