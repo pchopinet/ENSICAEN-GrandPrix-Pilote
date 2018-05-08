@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ArrayList.h>
 #include "driver.h"
 #include "../include/point.h"
 //#include "../lib/CCollections/include/ArrayList.h"
