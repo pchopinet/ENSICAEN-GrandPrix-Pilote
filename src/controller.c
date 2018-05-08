@@ -84,7 +84,7 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
 
     allocate(t, anakin, q, distance, previous, unqueue);
 
-    fprintf(log, "Recherche chemin...\n");
+    fprintf(log, "Creating connexion\n");
     fflush(log);
 
     while (!PriorityQueueIsEmpty(q)) {
@@ -115,7 +115,7 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
         }
     }
 
-    fprintf(log, "Trouvé !\n");
+    fprintf(log, "end !\n");
     fflush(log);
 
     Point p = getFirstPoint(finish, anakin, log, previous);
