@@ -15,7 +15,7 @@ void sendAcceleration(int x, int y);
 
 ArrayList readPosition();
 
-ArrayList getPointAccessible(Track t, Point position, Vector speed);
+ArrayList getPointAccessible(Track t, Point position, Point position_before, Vector speed);
 
 Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE *log);
 

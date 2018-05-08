@@ -2,7 +2,7 @@
 // Created by pierre on 04/05/18.
 //
 
-
+#include <math.h>
 #include "../include/track.h"
 #include "../include/controller.h"
 

@@ -39,7 +39,10 @@ void PointPrint(Point this, FILE *ouput) {
 }
 
 int PointEqual(Point this, Point test) {
-    return this->y = test->y && this->x == test->x;
+    if (this == NULL || test == NULL) {
+        return 0;
+    }
+    return this->y == test->y && this->x == test->x;
 }
 
 

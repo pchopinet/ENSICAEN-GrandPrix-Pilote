@@ -4,11 +4,10 @@
 
 #include "../include/controller.h"
 #include <math.h>
+#include <limits.h>
 #include "../lib/CCollections/include/PriorityQueue.h"
 #include "../lib/CCollections/include/Stack.h"
 #include "../lib/CCollections/include/util.h"
-
-Point getFirstPoint(const struct point_t *finish, const FILE *log, Point *const *previous);
 
 /**
  *
@@ -35,12 +34,15 @@ void sendAcceleration(int x, int y) {
     fflush(stdout);
 }
 
-ArrayList getPointAccessible(Track t, Point position, Vector speed) {
+ArrayList getPointAccessible(Track t, Point position, Point position_before, Vector speed) {
 
     //TODO : all the possibilities !
 
     int x = PointX(position);
     int y = PointY(position);
+    int vx = VectorX(speed);
+    int vy = VectorY(speed);
+
 
     ArrayList accessible = newArrayList(sizeof(Point));
     Point p1 = newPoint(x + 1, y);
@@ -48,19 +50,25 @@ ArrayList getPointAccessible(Track t, Point position, Vector speed) {
     Point p3 = newPoint(x, y + 1);
     Point p4 = newPoint(x, y - 1);
 
-    if (isAccessible(t, p1))
+    if (isAccessible(t, p1) && !PointEqual(p1, position_before))
         ArrayListAppend(accessible, p1);
-    if (isAccessible(t, p2))
+    if (isAccessible(t, p2) && !PointEqual(p2, position_before))
         ArrayListAppend(accessible, p2);
-    if (isAccessible(t, p3))
+    if (isAccessible(t, p3) && !PointEqual(p3, position_before))
         ArrayListAppend(accessible, p3);
-    if (isAccessible(t, p4))
+    if (isAccessible(t, p4) && !PointEqual(p4, position_before))
         ArrayListAppend(accessible, p4);
 
     return accessible;
 }
 
 //Pathfinding(Track t, Point p, Vector speed, unsigned int fuel)
+
+
+
+Point getFirstPoint(struct point_t *finish, FILE *log, Point **previous);
+
+void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **previous, int **unqueue);
 
 
 Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE *log) {
@@ -70,38 +78,12 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
     fprintf(log, "Allocation\n");
     fflush(log);
 
-    int **distance = malloc(sizeof(int *));
-    Point **previous = malloc(sizeof(Point *));
-    int **unqueue = malloc(sizeof(int *));
+    int **distance = malloc(sizeof(int *) * t->height);
+    Point **previous = malloc(sizeof(Point *) * t->height);
+    int **unqueue = malloc(sizeof(int *) * t->height);
 
-    for (int y = 0; y < t->height; y++) {
-        //fprintf(log, "\n%d : ", y);
-        fflush(log);
-        distance[y] = malloc(sizeof(int) * t->width);
-        previous[y] = malloc(sizeof(Point) * t->width);
-        unqueue[y] = calloc((size_t) t->width, sizeof(int));
+    allocate(t, anakin, q, distance, previous, unqueue);
 
-        for (int x = 0; x < t->width; x++) {
-            //fprintf(log, "%d ", x);
-
-            previous[y][x] = NULL;
-
-            Point p = newPoint(x, y);
-
-            if (!PointEqual(anakin, p)) {
-                distance[y][x] = INFINITY;
-            } else {
-                distance[y][x] = 0;
-            }
-            previous[y][x] = NULL;
-            if (isAccessible(t, p)) {
-                int temp = distance[y][x];
-                PriorityQueueAdd(q, p, temp);
-            } else {
-                //free(p);
-            }
-        }
-    }
     fprintf(log, "Recherche chemin...\n");
     fflush(log);
 
@@ -110,7 +92,8 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
         Point p = PriorityQueuePop(q);
         //PointPrint(p, log);
         unqueue[PointY(p)][PointX(p)] = 1;
-        ArrayList neighbor = getPointAccessible(t, p, newVector(1, 1));
+
+        ArrayList neighbor = getPointAccessible(t, p, previous[PointY(p)][PointY(p)], newVector(1, 1));
 
         for (unsigned int i = 0; i < ArrayListGetLength(neighbor); i++) {
 
@@ -136,7 +119,37 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
     return p;
 }
 
-Point getFirstPoint(const struct point_t *finish, const FILE *log, Point *const *previous) {
+void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **previous, int **unqueue) {
+
+    for (int y = 0; y < t->height; y++) {
+        distance[y] = malloc(sizeof(int) * t->width);
+        previous[y] = malloc(sizeof(Point) * t->width);
+        unqueue[y] = calloc((size_t) t->width, sizeof(int));
+
+        for (int x = 0; x < t->width; x++) {
+
+            previous[y][x] = NULL;
+
+            Point p = newPoint(x, y);
+            if (!PointEqual(anakin, p)) {
+                distance[y][x] = INT_MAX;
+            } else {
+                distance[y][x] = 0;
+                printf("temp : ");
+            }
+            previous[y][x] = NULL;
+            if (isAccessible(t, p)) {
+                int temp = distance[y][x];
+                PriorityQueueAdd(q, p, temp);
+            } else {
+                //free(p);
+            }
+        }
+    }
+
+}
+
+Point getFirstPoint(struct point_t *finish, FILE *log, Point **previous) {
     Stack stack = newStack();
     Point p = newPoint(PointX(finish), PointY(finish));
     while (previous[PointY(p)][PointX(p)] != NULL) {
