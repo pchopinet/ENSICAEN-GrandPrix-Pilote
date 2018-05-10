@@ -23,6 +23,8 @@ int readHeader(Track t, FILE *input);
 
 int readTrack(Track t, FILE *input);
 
+void TrackPrint(Track t, FILE *output);
+
 Track initTrackFromFile(char *file);
 
 int readHeaderFromFile(Track t, char *file);

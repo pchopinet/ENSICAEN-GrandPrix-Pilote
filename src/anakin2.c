@@ -9,19 +9,18 @@
 
 int main() {
     FILE *track = fopen("../track/starter_droit_au_but.txt", "r");
-    Track t = initTrack(stdin);
+    Track t = initTrack(track);
     FILE *f = fopen("../anakin.log", "w");
-    //f = stdout;
+    f = stdout;
     fprintf(f, "Map : %d %d %d\n", t->width, t->height, t->fuel);
     fflush(f);
+    TrackPrint(t, f);
 
     ArrayList finishingLine = FindFinishingLine(t);
     Point finish1 = ArrayListGet(finishingLine, 0);
 
     fprintf(f, "Finish -> ");
     PointPrint(finish1, f);
-
-
     Driver anakin = newDriver(NULL, newVector(0, 0), t->fuel);
 
     while (!feof(stdin)) {
