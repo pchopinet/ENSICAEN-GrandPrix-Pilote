@@ -10,12 +10,15 @@
 int main() {
     int turn = 1;
     FILE *track = fopen("../track/f-Zero_Death_Wind.txt", "r");
-    Track t = initTrack(track);
+    Track t = initTrack(stdin);
     FILE *f = fopen("../anakin.log", "w");
-    f = stdout;
+    //f = stdout;
     fprintf(f, "Map : %d %d %d\n", t->width, t->height, t->fuel);
     fflush(f);
     TrackPrint(t, f);
+
+
+    fprintf(f, "%d \n", isInTrack(t, newPoint(38, 0)));
 
     ArrayList finishingLine = FindFinishingLine(t);
     Point finish1 = ArrayListGet(finishingLine, 0);

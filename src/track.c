@@ -86,17 +86,21 @@ int readTrackFromFile(Track t, char *file) {
     return 0;
 }
 
+
 int isInTrack(Track t, Point p) {
     int x = PointX(p);
     int y = PointY(p);
-    return x < t->width && y < t->height && x > 0 && y > 0;
+    return x < t->width && y < t->height && x >= 0 && y >= 0;
 }
 
 int isAccessible(Track t, Point p) {
     int x = PointX(p);
     int y = PointY(p);
-    char value = t->track[y][x];
-    return isInTrack(t, p) && value != '.';
+    if (isInTrack(t, p)) {
+        char value = t->track[y][x];
+        return value != '.';
+    }
+    return 0;
 }
 
 int isSand(Track t, Point p) {

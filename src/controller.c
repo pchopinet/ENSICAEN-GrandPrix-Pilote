@@ -151,9 +151,9 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
                     if (isSand(t, n)) {
                         length++;
                     }
-                    //PointPrint(p, log);
-                    //PointPrint(n, log);
-                    //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                    PointPrint(p, log);
+                    PointPrint(n, log);
+                    fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                     if (length < distance[PointY(n)][PointX(n)]) {
                         distance[PointY(n)][PointX(n)] = length;
                         previous[PointY(n)][PointX(n)] = p;
@@ -191,7 +191,7 @@ void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **pr
             } else {
                 distance[y][x] = 0;
             }
-            previous[y][x] = NULL;
+
             if (isAccessible(t, p)) {
                 int temp = distance[y][x];
                 PriorityQueueAdd(q, p, temp);
