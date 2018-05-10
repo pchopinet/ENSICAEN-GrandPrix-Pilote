@@ -44,7 +44,8 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     int vy = VectorY(speed);
 
     ArrayList accessible = newArrayList(sizeof(Point));
-    Point p0 = newPoint(x + vx, y + vy);
+    Point p0;
+    p0 = newPoint(x + vx, y + vy);
     Point p1 = newPoint(x + vx + 1, y + vy);
     Point p2 = newPoint(x + vx - 1, y + vy);
     Point p3 = newPoint(x + vx, y + vy + 1);
@@ -56,7 +57,7 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
 
     if (VectorGetNorm(speed) < 4) {
 
-        if (isAccessible(t, p0) && !PointEqual(p0, position_before))
+        if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
             ArrayListAppend(accessible, p0);
         if (isAccessible(t, p1) && !PointEqual(p1, position_before))
             ArrayListAppend(accessible, p1);
@@ -103,7 +104,7 @@ void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **pr
 
 int testIfPointIsCar(ArrayList cars, Point p) {
     for (unsigned i = 1; i < ArrayListGetLength(cars); i++) {
-        if (ArrayListGet(cars, i) == p) {
+        if (PointEqual(ArrayListGet(cars, i), p)) {
             return 1;
         }
     }
@@ -146,8 +147,10 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
 
             if (!testIfPointIsCar(carPosition, n)) {
                 if (unqueue[PointY(n)][PointX(n)] == 0) {
-
                     int length = distance[PointY(p)][PointX(p)] + 1;
+                    if (isSand(t, n)) {
+                        length++;
+                    }
                     //PointPrint(p, log);
                     //PointPrint(n, log);
                     //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);

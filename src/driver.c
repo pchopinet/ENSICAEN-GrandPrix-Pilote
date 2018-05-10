@@ -70,3 +70,8 @@ void DriverPrint(Driver this, FILE *output) {
     );
 }
 
+void DriverSetSpeed(Driver this, Vector speed) {
+    free(this->speed);
+    this->speed = speed;
+}
+

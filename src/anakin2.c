@@ -8,7 +8,8 @@
 #include "../include/controller.h"
 
 int main() {
-    FILE *track = fopen("../track/starter_droit_au_but.txt", "r");
+    int turn = 1;
+    FILE *track = fopen("../track/f-Zero_Death_Wind.txt", "r");
     Track t = initTrack(track);
     FILE *f = fopen("../anakin.log", "w");
     f = stdout;
@@ -25,13 +26,17 @@ int main() {
 
     while (!feof(stdin)) {
 
-        fprintf(f, "readPosition : \n");
+        fprintf(f, "===== Turn : %d =====\nreadPosition : \n", turn);
+        turn++;
         ArrayList a = readPosition();
         for (unsigned int i = 0; i < ArrayListGetLength(a); i++) {
             PointPrint(ArrayListGet(a, i), f);
         }
         fflush(f);
         DriverSetPosition(anakin, ArrayListGet(a, 0));
+        if (isSand(t, DriverGetPosition(anakin))) {
+            DriverSetSpeed(anakin, newVector(0, 0));
+        }
 
         DriverPrint(anakin, f);
 

@@ -7,6 +7,7 @@
 
 #include "vector.h"
 #include "point.h"
+#include "track.h"
 
 typedef struct driver_t *Driver;
 
@@ -23,6 +24,8 @@ int DriverGetFuel(Driver this);
 void DriverSetPosition(Driver this, Point p);
 
 Point DriverGetPosition(Driver this);
+
+void DriverSetSpeed(Driver this, Vector speed);
 
 void DriverPrint(Driver this, FILE *output);
 
