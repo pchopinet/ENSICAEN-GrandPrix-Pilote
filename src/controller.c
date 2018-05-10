@@ -43,33 +43,51 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     int vx = VectorX(speed);
     int vy = VectorY(speed);
 
-
     ArrayList accessible = newArrayList(sizeof(Point));
-    Point p1 = newPoint(x + 1, y);
-    Point p2 = newPoint(x - 1, y);
-    Point p3 = newPoint(x, y + 1);
-    Point p4 = newPoint(x, y - 1);
-    /*Point p5 = newPoint(x + vx - 1, y + vy - 1);
+    Point p0 = newPoint(x + vx, y + vy);
+    Point p1 = newPoint(x + vx + 1, y + vy);
+    Point p2 = newPoint(x + vx - 1, y + vy);
+    Point p3 = newPoint(x + vx, y + vy + 1);
+    Point p4 = newPoint(x + vx, y + vy - 1);
+    Point p5 = newPoint(x + vx - 1, y + vy - 1);
     Point p6 = newPoint(x + vx + 1, y + vy + 1);
     Point p7 = newPoint(x + vx + 1, y + vy - 1);
     Point p8 = newPoint(x + vx - 1, y + vy + 1);
-    */
-    if (isAccessible(t, p1) && !PointEqual(p1, position_before))
-        ArrayListAppend(accessible, p1);
-    if (isAccessible(t, p2) && !PointEqual(p2, position_before))
-        ArrayListAppend(accessible, p2);
-    if (isAccessible(t, p3) && !PointEqual(p3, position_before))
-        ArrayListAppend(accessible, p3);
-    if (isAccessible(t, p4) && !PointEqual(p4, position_before))
-        ArrayListAppend(accessible, p4);
-    /*if (isAccessible(t, p5) && !PointEqual(p5, position_before))
-        ArrayListAppend(accessible, p5);
-    if (isAccessible(t, p6) && !PointEqual(p6, position_before))
-        ArrayListAppend(accessible, p6);
-    if (isAccessible(t, p7) && !PointEqual(p7, position_before))
-        ArrayListAppend(accessible, p7);
-    if (isAccessible(t, p8) && !PointEqual(p8, position_before))
-        ArrayListAppend(accessible, p8);*/
+
+    if (VectorGetNorm(speed) < 4) {
+
+        if (isAccessible(t, p0) && !PointEqual(p0, position_before))
+            ArrayListAppend(accessible, p0);
+        if (isAccessible(t, p1) && !PointEqual(p1, position_before))
+            ArrayListAppend(accessible, p1);
+        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
+            ArrayListAppend(accessible, p2);
+        if (isAccessible(t, p3) && !PointEqual(p3, position_before))
+            ArrayListAppend(accessible, p3);
+        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
+            ArrayListAppend(accessible, p4);
+        if (isAccessible(t, p5) && !PointEqual(p5, position_before))
+            ArrayListAppend(accessible, p5);
+        if (isAccessible(t, p6) && !PointEqual(p6, position_before))
+            ArrayListAppend(accessible, p6);
+        if (isAccessible(t, p7) && !PointEqual(p7, position_before))
+            ArrayListAppend(accessible, p7);
+        if (isAccessible(t, p8) && !PointEqual(p8, position_before))
+            ArrayListAppend(accessible, p8);
+
+    } else {
+
+        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
+            ArrayListAppend(accessible, p2);
+        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
+            ArrayListAppend(accessible, p4);
+        if (isAccessible(t, p5) && !PointEqual(p5, position_before))
+            ArrayListAppend(accessible, p5);
+        if (isAccessible(t, p7) && !PointEqual(p7, position_before))
+            ArrayListAppend(accessible, p7);
+        if (isAccessible(t, p8) && !PointEqual(p8, position_before))
+            ArrayListAppend(accessible, p8);
+    }
 
 
     return accessible;
@@ -83,6 +101,14 @@ Point getFirstPoint(Point finish, Point anakin, FILE *log, Point **previous);
 
 void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **previous, int **unqueue);
 
+int testIfPointIsCar(ArrayList cars, Point p) {
+    for (unsigned i = 1; i < ArrayListGetLength(cars); i++) {
+        if (ArrayListGet(cars, i) == p) {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE *log) {
     Point anakin = ArrayListGet(carPosition, 0);
@@ -112,25 +138,28 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
         unqueue[PointY(p)][PointX(p)] = 1;
         Vector velocity = newVector(PointX(p) - PointX(prev), PointY(p) - PointY(prev));
 
-        ArrayList neighbor = getPointAccessible(t, p, prev, velocity);
+        ArrayList neighbor = getPointAccessible(t, p, prev, newVector(0, 0));
 
         for (unsigned int i = 0; i < ArrayListGetLength(neighbor); i++) {
 
             Point n = ArrayListGet(neighbor, i);
 
-            if (unqueue[PointY(n)][PointX(n)] == 0) {
+            if (!testIfPointIsCar(carPosition, n)) {
+                if (unqueue[PointY(n)][PointX(n)] == 0) {
 
-                int length = distance[PointY(p)][PointX(p)] + 1;
-                //PointPrint(p, log);
-                //PointPrint(n, log);
-                //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
-                if (length < distance[PointY(n)][PointX(n)]) {
-                    distance[PointY(n)][PointX(n)] = length;
-                    previous[PointY(n)][PointX(n)] = p;
-                    PriorityQueueChangePrioSpecificSearch(q, n, length, (int (*)(T, T)) PointEqual);
+                    int length = distance[PointY(p)][PointX(p)] + 1;
+                    //PointPrint(p, log);
+                    //PointPrint(n, log);
+                    //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                    if (length < distance[PointY(n)][PointX(n)]) {
+                        distance[PointY(n)][PointX(n)] = length;
+                        previous[PointY(n)][PointX(n)] = p;
+                        PriorityQueueChangePrioSpecificSearch(q, n, length, (int (*)(T, T)) PointEqual);
+                    }
+                    //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                 }
-                //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
             }
+
         }
         free((velocity));
     }
