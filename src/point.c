@@ -36,6 +36,7 @@ int *PointGetXY(Point this) {
 
 void PointPrint(Point this, FILE *ouput) {
     fprintf(ouput, "Point p : %d %d\n", this->x, this->y);
+    fflush(ouput);
 }
 
 int PointEqual(Point this, Point test) {

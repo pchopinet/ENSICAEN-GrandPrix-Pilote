@@ -33,9 +33,11 @@ Point DriverGetPosition(Driver this) {
 void DriverSetPosition(Driver this, Point p) {
 
     if (this->position != NULL) {
-        int x = PointX(p) - PointX(this->position);
-        int y = PointY(p) - PointY(this->position);
-        this->speed = newVector(x, y);
+        if (PointY(this->position) || PointX(this->position)) {
+            int x = PointX(p) - PointX(this->position);
+            int y = PointY(p) - PointY(this->position);
+            this->speed = newVector(x, y);
+        }
     }
     this->position = p;
 }

@@ -28,7 +28,7 @@ ArrayList readPosition() {
 
 
 void sendAcceleration(int x, int y) {
-    char action[5];
+    char action[10];
     sprintf(action, "%d %d", x, y);
     fprintf(stdout, "%s\n", action);
     fflush(stdout);
@@ -49,7 +49,11 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     Point p2 = newPoint(x - 1, y);
     Point p3 = newPoint(x, y + 1);
     Point p4 = newPoint(x, y - 1);
-
+    /*Point p5 = newPoint(x + vx - 1, y + vy - 1);
+    Point p6 = newPoint(x + vx + 1, y + vy + 1);
+    Point p7 = newPoint(x + vx + 1, y + vy - 1);
+    Point p8 = newPoint(x + vx - 1, y + vy + 1);
+    */
     if (isAccessible(t, p1) && !PointEqual(p1, position_before))
         ArrayListAppend(accessible, p1);
     if (isAccessible(t, p2) && !PointEqual(p2, position_before))
@@ -58,6 +62,15 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
         ArrayListAppend(accessible, p3);
     if (isAccessible(t, p4) && !PointEqual(p4, position_before))
         ArrayListAppend(accessible, p4);
+    /*if (isAccessible(t, p5) && !PointEqual(p5, position_before))
+        ArrayListAppend(accessible, p5);
+    if (isAccessible(t, p6) && !PointEqual(p6, position_before))
+        ArrayListAppend(accessible, p6);
+    if (isAccessible(t, p7) && !PointEqual(p7, position_before))
+        ArrayListAppend(accessible, p7);
+    if (isAccessible(t, p8) && !PointEqual(p8, position_before))
+        ArrayListAppend(accessible, p8);*/
+
 
     return accessible;
 }
@@ -90,10 +103,16 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
     while (!PriorityQueueIsEmpty(q)) {
 
         Point p = PriorityQueuePop(q);
+        Point prev = previous[PointY(p)][PointY(p)];
+        if (prev == NULL) {
+            prev = newPoint(PointX(p), PointY(p));
+        }
         //PointPrint(p, log);
-        unqueue[PointY(p)][PointX(p)] = 1;
 
-        ArrayList neighbor = getPointAccessible(t, p, previous[PointY(p)][PointY(p)], newVector(1, 1));
+        unqueue[PointY(p)][PointX(p)] = 1;
+        Vector velocity = newVector(PointX(p) - PointX(prev), PointY(p) - PointY(prev));
+
+        ArrayList neighbor = getPointAccessible(t, p, prev, velocity);
 
         for (unsigned int i = 0; i < ArrayListGetLength(neighbor); i++) {
 
@@ -102,9 +121,9 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
             if (unqueue[PointY(n)][PointX(n)] == 0) {
 
                 int length = distance[PointY(p)][PointX(p)] + 1;
-                PointPrint(p, log);
-                PointPrint(n, log);
-                fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                //PointPrint(p, log);
+                //PointPrint(n, log);
+                //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                 if (length < distance[PointY(n)][PointX(n)]) {
                     distance[PointY(n)][PointX(n)] = length;
                     previous[PointY(n)][PointX(n)] = p;
@@ -113,6 +132,7 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
                 //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
             }
         }
+        free((velocity));
     }
 
     fprintf(log, "end !\n");
@@ -152,12 +172,13 @@ void allocate(Track t, Point anakin, PriorityQueue q, int **distance, Point **pr
 }
 
 Point getFirstPoint(Point finish, Point anakin, FILE *log, Point **previous) {
-    Stack stack = newStack();
     Point p = newPoint(PointX(finish), PointY(finish));
-    while (!PointEqual(previous[PointY(p)][PointX(p)], anakin)) {
-        StackAdd(stack, p);
-        p = previous[PointY(p)][PointX(p)];
-        PointPrint(p, log);
+    Point prev = previous[PointY(p)][PointX(p)];
+    if (prev != NULL) {
+        while (!PointEqual(previous[PointY(p)][PointX(p)], anakin)) {
+            p = previous[PointY(p)][PointX(p)];
+            // PointPrint(p, log);
+        }
     }
     return p;
 }

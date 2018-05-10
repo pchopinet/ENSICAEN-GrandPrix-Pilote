@@ -9,9 +9,9 @@
 
 int main() {
     FILE *track = fopen("../track/starter_droit_au_but.txt", "r");
-    Track t = initTrack(track);
+    Track t = initTrack(stdin);
     FILE *f = fopen("../anakin.log", "w");
-    f = stdout;
+    //f = stdout;
     fprintf(f, "Map : %d %d %d\n", t->width, t->height, t->fuel);
     fflush(f);
     TrackPrint(t, f);
