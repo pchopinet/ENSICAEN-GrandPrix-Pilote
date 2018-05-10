@@ -55,7 +55,18 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     Point p7 = newPoint(x + vx + 1, y + vy - 1);
     Point p8 = newPoint(x + vx - 1, y + vy + 1);
 
-    if (VectorGetNorm(speed) < 4) {
+    if (isSand(t, position)) {
+        if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
+            ArrayListAppend(accessible, p0);
+        if (isAccessible(t, p1) && !PointEqual(p1, position_before))
+            ArrayListAppend(accessible, p1);
+        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
+            ArrayListAppend(accessible, p2);
+        if (isAccessible(t, p3) && !PointEqual(p3, position_before))
+            ArrayListAppend(accessible, p3);
+        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
+            ArrayListAppend(accessible, p4);
+    } else if (VectorGetNorm(speed) < 4) {
 
         if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
             ArrayListAppend(accessible, p0);
@@ -151,9 +162,9 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
                     if (isSand(t, n)) {
                         length++;
                     }
-                    PointPrint(p, log);
-                    PointPrint(n, log);
-                    fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                    //PointPrint(p, log);
+                    //PointPrint(n, log);
+                    //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                     if (length < distance[PointY(n)][PointX(n)]) {
                         distance[PointY(n)][PointX(n)] = length;
                         previous[PointY(n)][PointX(n)] = p;
