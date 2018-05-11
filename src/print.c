@@ -3,7 +3,7 @@
 int printTag(Ladj *L) {
 
     point p;
-    p.boost=5;
+    //p.boost=5;
 
     for (p.vx = 0; p.vx < 11; p.vx++) {
         for (p.vy = 0; p.vy < 11; p.vy++) {
@@ -24,7 +24,7 @@ int printTag(Ladj *L) {
 int printDistance(Ladj* L) {
 
     point p;
-    p.boost=5;
+    //p.boost=5;
 
     for (p.vx = 0; p.vx < 11; p.vx++) {
         for (p.vy = 0; p.vy < 11; p.vy++) {
@@ -47,7 +47,7 @@ int printRoute(Track T, Queue* Q) {
     int i, j, k=0;
     while (!isEmpty(Q)) {
         p = push(Q);
-        T->track[p.x][p.y] = p.boost + '0';
+        T->track[p.x][p.y] = '0';
         k++;
     }
 

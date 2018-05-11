@@ -23,31 +23,31 @@ Lnode* createLnode() {
 }
 
 int* tag(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->tag);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->tag);
 }
 
 int* distance(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->distance);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->distance);
 }
 
 int* totFuel(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->totFuel);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->totFuel);
 }
 
 Cell** next(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->next);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->next);
 }
 
 Cell** dijNext(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->dijNext);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->dijNext);
 }
 
 Cell** dijPrev(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->dijPrev);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->dijPrev);
 }
 
 Cell** prev(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5][p.boost]->prev);
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->prev);
 }
 
 int pointInTrack(point p, Ladj* L) {

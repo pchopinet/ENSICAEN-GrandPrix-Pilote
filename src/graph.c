@@ -30,21 +30,17 @@ Ladj* initLadj(Track t) {
     for (p.x = 0; p.x < 3; p.x++) {
         L->start[p.x].vx = 0;
         L->start[p.x].vy = 0;
-        L->start[p.x].boost = 5;
     }
 
-    L->node = (Lnode******) malloc(t->height*sizeof(Lnode*****));
+    L->node = (Lnode*****) malloc(t->height*sizeof(Lnode****));
     for (p.x=0; p.x<t->height; p.x++) {
-        L->node[p.x] = (Lnode*****) malloc(t->width * sizeof(Lnode****));
+        L->node[p.x] = (Lnode****) malloc(t->width*sizeof(Lnode***));
         for (p.y=0; p.y<t->width; p.y++) {
-            L->node[p.x][p.y] = (Lnode****) malloc(11*sizeof(Lnode***));
+            L->node[p.x][p.y] = (Lnode***) malloc(11*sizeof(Lnode**));
             for (p.vx=0; p.vx<11; p.vx++) {
-                L->node[p.x][p.y][p.vx] = (Lnode***) malloc(11*sizeof(Lnode**));
+                L->node[p.x][p.y][p.vx] = (Lnode**) calloc(11,sizeof(Lnode*));
                 for (p.vy=0; p.vy<11; p.vy++) {
-                    L->node[p.x][p.y][p.vx][p.vy] = (Lnode**) calloc(6,sizeof(Lnode*));
-                    for (p.boost=0; p.boost<6; p.boost++) {
-                        L->node[p.x][p.y][p.vx][p.vy][p.boost] = createLnode();
-                    }
+                    L->node[p.x][p.y][p.vx][p.vy] = createLnode();
                 }
             }
         }
@@ -69,23 +65,20 @@ int loadLadj(Ladj *L, Track T, point p) {
         *tag(L,t)=2;
         L->nbNode++;
 
-        for (ax=-2; ax<3; ax++) {
-            for (ay=-2; ay<3; ay++) {
+        for (ax=-1; ax<2; ax++) {
+            for (ay=-1; ay<2; ay++) {
 
                 h.vx = t.vx + ax;
                 h.vy = t.vy + ay;
                 h.x = t.x + h.vx;
                 h.y = t.y + h.vy;
-                h.boost = t.boost;
-                if ((abs(ax)==2 || abs(ay)==2) && h.boost>0) {
-                    h.boost--;
-                }
+
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
                 fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
                 if (pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h) &&
-                    (!testPt(T,t,'~') || normSpeed2<=1) && ((abs(ax)<2 && abs(ay)<2) || t.boost>0)) {
+                    (!testPt(T,t,'~') || normSpeed2<=1)) {
 
                     if ((testPt(T,h,'#') || testPt(T,h,'~')) && *tag(L, h) != 2) {
 
@@ -104,6 +97,8 @@ int loadLadj(Ladj *L, Track T, point p) {
                     /* peut etre supprimer pour gagner du temps de calcul
                      * mais utile pour virage en epingle
                      * ou reprise en cas de crash
+                     *
+                     * possiblement a metre dans tout les cas meme en dehors du else
                      */
                     h = t;
                     h.vx = 0;

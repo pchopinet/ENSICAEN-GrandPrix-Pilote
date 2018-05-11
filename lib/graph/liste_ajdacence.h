@@ -33,7 +33,7 @@ typedef struct lnode {
 typedef struct ladj {
     int nbNode, nbArc;
     int height, width;
-    Lnode* ***** node; //[x][y][vx][vy][boost]
+    Lnode* **** node; //[x][y][vx][vy]
     point start[3];
     point finish[10000]; // Faire une allocationS dynamique !!
     int nbFinish;

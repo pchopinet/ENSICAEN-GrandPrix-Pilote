@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "../lib/CCollections/include/ArrayList.h"
 #include "driver.h"
 #include "../include/point.h"
 //#include "../lib/CCollections/include/ArrayList.h"
@@ -38,7 +37,7 @@ int readTrackFromFile(Track t, char *file);
  * @param p
  * @return
  */
-
+/*
 int isInTrack(Track t, Point p);
 
 int isAccessible(Track t, Point p);
@@ -47,6 +46,6 @@ int isSand(Track t, Point p);
 
 int isFinishingLine(Track t, Point p);
 
-ArrayList FindFinishingLine(Track t);
+ArrayList FindFinishingLine(Track t);*/
 
 #endif

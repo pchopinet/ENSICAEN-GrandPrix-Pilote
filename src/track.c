@@ -86,7 +86,7 @@ int readTrackFromFile(Track t, char *file) {
     return 0;
 }
 
-
+/*
 int isInTrack(Track t, Point p) {
     int x = PointX(p);
     int y = PointY(p);
@@ -137,3 +137,4 @@ void TrackPrint(Track t, FILE *output) {
     }
 }
 
+*/
