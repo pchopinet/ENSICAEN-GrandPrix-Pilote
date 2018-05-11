@@ -127,7 +127,7 @@ ArrayList FindFinishingLine(Track t) {
     }
     return finish;
 }
-
+*/
 void TrackPrint(Track t, FILE *output) {
     for (int y = 0; y < t->height; ++y) {
         for (int x = 0; x < t->width; ++x) {
@@ -137,4 +137,3 @@ void TrackPrint(Track t, FILE *output) {
     }
 }
 
-*/

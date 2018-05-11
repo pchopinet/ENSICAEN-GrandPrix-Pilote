@@ -46,4 +46,23 @@ add_executable(ENSICAEN_GrandPrix_Pilote
         src/track.c
         src/vector.c)
 
+add_executable(anakin
+        src/anakin.c
+        src/graph.c
+        src/pointClement.c
+        src/print.c
+        src/dijkstra.c
+        src/track.c
+        include/graph.h
+        include/pointClement.h
+        include/print.h
+        include/dijkstra.h
+        include/track.h
+        lib/graph/file.c
+        lib/graph/file.h
+        lib/graph/liste_adjacence.c
+        lib/graph/liste_ajdacence.h
+        )
+target_link_libraries(anakin m)
+
 target_link_libraries(ENSICAEN_GrandPrix_Pilote m)
