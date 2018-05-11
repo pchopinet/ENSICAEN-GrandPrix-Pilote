@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <ArrayList.h>
+#include "../lib/CCollections/include/ArrayList.h"
 #include "driver.h"
 #include "../include/point.h"
 //#include "../lib/CCollections/include/ArrayList.h"
@@ -39,6 +39,7 @@ int readTrackFromFile(Track t, char *file);
  * @return
  */
 
+int isInTrack(Track t, Point p);
 
 int isAccessible(Track t, Point p);
 

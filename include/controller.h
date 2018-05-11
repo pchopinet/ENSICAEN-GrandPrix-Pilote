@@ -17,7 +17,7 @@ ArrayList readPosition();
 
 ArrayList getPointAccessible(Track t, Point position, Point position_before, Vector speed);
 
-Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE *log);
+Point Dijkstra(Track t, Point finish, ArrayList carPosition, FILE *log);
 
 int deltaFuelAcceleration(Vector acc, Vector velocity, int inSand);
 

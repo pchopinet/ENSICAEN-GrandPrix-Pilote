@@ -56,6 +56,7 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     Point p8 = newPoint(x + vx - 1, y + vy + 1);
 
     if (isSand(t, position)) {
+
         if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
             ArrayListAppend(accessible, p0);
         if (isAccessible(t, p1) && !PointEqual(p1, position_before))
@@ -66,6 +67,7 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
             ArrayListAppend(accessible, p3);
         if (isAccessible(t, p4) && !PointEqual(p4, position_before))
             ArrayListAppend(accessible, p4);
+
     } else if (VectorGetNorm(speed) < 4) {
 
         if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
@@ -122,7 +124,7 @@ int testIfPointIsCar(ArrayList cars, Point p) {
     return 0;
 }
 
-Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE *log) {
+Point Dijkstra(Track t, Point finish, ArrayList carPosition, FILE *log) {
     Point anakin = ArrayListGet(carPosition, 0);
     PriorityQueue q = newPriorityQueue();
 
@@ -141,7 +143,7 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
     while (!PriorityQueueIsEmpty(q)) {
 
         Point p = PriorityQueuePop(q);
-        Point prev = previous[PointY(p)][PointY(p)];
+        Point prev = previous[PointY(p)][PointX(p)];
         if (prev == NULL) {
             prev = newPoint(PointX(p), PointY(p));
         }
@@ -162,9 +164,9 @@ Point Dijkstra(Track t, Point finish, Vector speed, ArrayList carPosition, FILE 
                     if (isSand(t, n)) {
                         length++;
                     }
-                    //PointPrint(p, log);
-                    //PointPrint(n, log);
-                    //fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
+                    PointPrint(p, log);
+                    PointPrint(n, log);
+                    fprintf(log, "length : %d %d\n", length, distance[PointY(n)][PointX(n)]);
                     if (length < distance[PointY(n)][PointX(n)]) {
                         distance[PointY(n)][PointX(n)] = length;
                         previous[PointY(n)][PointX(n)] = p;

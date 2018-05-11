@@ -9,16 +9,13 @@
 
 int main() {
     int turn = 1;
-    FILE *track = fopen("../track/f-Zero_Death_Wind.txt", "r");
+    FILE *track = fopen("../track/starter_droit_au_but.txt", "r");
     Track t = initTrack(stdin);
     FILE *f = fopen("../anakin.log", "w");
     //f = stdout;
     fprintf(f, "Map : %d %d %d\n", t->width, t->height, t->fuel);
     fflush(f);
     TrackPrint(t, f);
-
-
-    fprintf(f, "%d \n", isInTrack(t, newPoint(38, 0)));
 
     ArrayList finishingLine = FindFinishingLine(t);
     Point finish1 = ArrayListGet(finishingLine, 0);
@@ -30,7 +27,6 @@ int main() {
     while (!feof(stdin)) {
 
         fprintf(f, "===== Turn : %d =====\nreadPosition : \n", turn);
-        turn++;
         ArrayList a = readPosition();
         for (unsigned int i = 0; i < ArrayListGetLength(a); i++) {
             PointPrint(ArrayListGet(a, i), f);
@@ -45,7 +41,7 @@ int main() {
 
         fprintf(f, "Done!\nDijkstra ");
         fflush(f);
-        Point p = Dijkstra(t, finish1, NULL, a, f);
+        Point p = Dijkstra(t, finish1, a, f);
         PointPrint(p, f);
         fflush(f);
 
@@ -53,6 +49,7 @@ int main() {
         fprintf(f, "acc : %d %d\n", VectorX(acc), VectorY(acc));
         sendAcceleration(VectorX(acc), VectorY(acc));
 
+        turn++;
 
     }
 }
