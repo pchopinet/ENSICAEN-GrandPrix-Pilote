@@ -44,8 +44,7 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
     int vy = VectorY(speed);
 
     ArrayList accessible = newArrayList(sizeof(Point));
-    Point p0;
-    p0 = newPoint(x + vx, y + vy);
+    Point p0 = newPoint(x + vx, y + vy);
     Point p1 = newPoint(x + vx + 1, y + vy);
     Point p2 = newPoint(x + vx - 1, y + vy);
     Point p3 = newPoint(x + vx, y + vy + 1);
@@ -57,50 +56,47 @@ ArrayList getPointAccessible(Track t, Point position, Point position_before, Vec
 
     if (isSand(t, position)) {
 
-        if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
+        if (isAccessible(t, p0) && !PointEqual(p0, position))
             ArrayListAppend(accessible, p0);
-        if (isAccessible(t, p1) && !PointEqual(p1, position_before))
+        if (isAccessible(t, p1) && !PointEqual(p1, position))
             ArrayListAppend(accessible, p1);
-        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
+        if (isAccessible(t, p2) && !PointEqual(p2, position))
             ArrayListAppend(accessible, p2);
-        if (isAccessible(t, p3) && !PointEqual(p3, position_before))
+        if (isAccessible(t, p3) && !PointEqual(p3, position))
             ArrayListAppend(accessible, p3);
-        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
+        if (isAccessible(t, p4) && !PointEqual(p4, position))
             ArrayListAppend(accessible, p4);
 
-    } else if (VectorGetNorm(speed) < 4) {
+    } else if (VectorGetNorm(speed) < 2) {
 
-        if (isAccessible(t, p0) && !PointEqual(p0, position_before) && !PointEqual(p0, position))
+        if (isAccessible(t, p0) && !PointEqual(p0, position))
             ArrayListAppend(accessible, p0);
-        if (isAccessible(t, p1) && !PointEqual(p1, position_before))
+        if (isAccessible(t, p1) && !PointEqual(p1, position))
             ArrayListAppend(accessible, p1);
-        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
+        if (isAccessible(t, p2) && !PointEqual(p2, position))
             ArrayListAppend(accessible, p2);
-        if (isAccessible(t, p3) && !PointEqual(p3, position_before))
+        if (isAccessible(t, p3) && !PointEqual(p3, position))
             ArrayListAppend(accessible, p3);
-        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
+        if (isAccessible(t, p4) && !PointEqual(p4, position))
             ArrayListAppend(accessible, p4);
-        if (isAccessible(t, p5) && !PointEqual(p5, position_before))
+        if (isAccessible(t, p5) && !PointEqual(p5, position))
             ArrayListAppend(accessible, p5);
-        if (isAccessible(t, p6) && !PointEqual(p6, position_before))
+        if (isAccessible(t, p6) && !PointEqual(p6, position))
             ArrayListAppend(accessible, p6);
-        if (isAccessible(t, p7) && !PointEqual(p7, position_before))
+        if (isAccessible(t, p7) && !PointEqual(p7, position))
             ArrayListAppend(accessible, p7);
-        if (isAccessible(t, p8) && !PointEqual(p8, position_before))
+        if (isAccessible(t, p8) && !PointEqual(p8, position))
             ArrayListAppend(accessible, p8);
 
     } else {
-
-        if (isAccessible(t, p2) && !PointEqual(p2, position_before))
-            ArrayListAppend(accessible, p2);
-        if (isAccessible(t, p4) && !PointEqual(p4, position_before))
-            ArrayListAppend(accessible, p4);
-        if (isAccessible(t, p5) && !PointEqual(p5, position_before))
+        if (isAccessible(t, p0) && !PointEqual(p0, position) && !PointEqual(p0, position))
+            ArrayListAppend(accessible, p0);
+        if (isAccessible(t, p5) && !PointEqual(p5, position))
             ArrayListAppend(accessible, p5);
-        if (isAccessible(t, p7) && !PointEqual(p7, position_before))
+        /*if (isAccessible(t, p7) && !PointEqual(p7, position))
             ArrayListAppend(accessible, p7);
-        if (isAccessible(t, p8) && !PointEqual(p8, position_before))
-            ArrayListAppend(accessible, p8);
+        if (isAccessible(t, p8) && !PointEqual(p8, position))
+            ArrayListAppend(accessible, p8);*/
     }
 
 

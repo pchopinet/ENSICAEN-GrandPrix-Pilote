@@ -9,7 +9,7 @@
 
 int main() {
     int turn = 1;
-    FILE *track = fopen("../track/starter_droit_au_but.txt", "r");
+    FILE *track = fopen("../track/starter_deux_virages.txt", "r");
     Track t = initTrack(stdin);
     FILE *f = fopen("../anakin.log", "w");
     //f = stdout;
