@@ -60,8 +60,6 @@ int loadLadj(Ladj *L, Track T, point p) {
 
         t=push(Q);
 
-        //initNode(L,t,NULL,NULL);
-
         *tag(L,t)=2;
         L->nbNode++;
 
@@ -77,7 +75,7 @@ int loadLadj(Ladj *L, Track T, point p) {
                 fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
-                if (pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h) &&
+                if (pointInTrack(h, L) && normSpeed2<=25 && reachable1(T, t, h) &&
                     (!testPt(T,t,'~') || normSpeed2<=1)) {
 
                     if ((testPt(T,h,'#') || testPt(T,h,'~')) && *tag(L, h) != 2) {

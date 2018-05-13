@@ -44,6 +44,9 @@ int main() {
     float temps;
     clock_t t0, t;
     t0 = clock();
+
+    char str[10];
+    char tmp[2] = "\0";
     //------------------------------------------------------------------------------------------------------------------
 
     nbrBoosts = nbrBoosts;
@@ -83,17 +86,28 @@ int main() {
     tour++;
     fprintf(info, "\n === Tour %d === \n", tour);
 
+    strcpy(str,"");
 
-    fread(&c, sizeof(char), 1, stdin);
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c!=' ' && c!='\n') {
+        fprintf(info, "%c", c);
+        tmp[0] = c;
+        strcat(str,tmp);
+    }
+    start.y = atoi(str);
     fprintf(info, "%c", c);
-    start.y = atoi(&c);
 
-    fread(&c, sizeof(char), 1, stdin);
+    strcpy(str,"");
+
+    while (fread(&c, sizeof(char), 1, stdin) == 1 && c!=' ' && c!='\n') {
+        fprintf(info, "%c", c);
+        tmp[0] = c;
+        strcat(str,tmp);
+    }
+    start.x = atoi(str);
     fprintf(info, "%c", c);
 
-    fread(&c, sizeof(char), 1, stdin);
-    fprintf(info, "%c", c);
-    start.x = atoi(&c);
+
+    fflush(info);
 
     start.vx = 0;
     start.vy = 0;
@@ -107,13 +121,14 @@ int main() {
     loadLadj(L, T, start);
     calculDistance(L);
     finalPoint = dijkstra(L,T,start);
-    route = findRoute(L,finalPoint);
 
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     fprintf(info, "\ntemps = %f\n", temps);
-    fflush(stdout);
     fflush(info);
+
+    route = findRoute(L,finalPoint);
+
 
     fprintf(info, "\n === Action === \n");
 

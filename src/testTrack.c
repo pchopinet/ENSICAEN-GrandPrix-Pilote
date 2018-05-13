@@ -20,8 +20,8 @@ int main() {
     clock_t t0, t;
     t0 = clock();
 
-    Track T = initTrackFromFile("../track/starter_droit_au_but.txt");
-    //Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
+    //Track T = initTrackFromFile("../track/starter_droit_au_but.txt");
+    Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
     //Track T = initTrackFromFile("../track/sand.txt");
     //Track T = initTrackFromFile("../track/test.txt");
 
