@@ -42,13 +42,15 @@ int printDistance(Ladj* L) {
     return 0;
 }
 
-int printRoute(Track T, Queue* Q) {
+int printRoute(Track T, Stack* S) {
     point p;
     int i, j, k=0;
-    while (!isEmpty(Q)) {
-        p = push(Q);
+    while (!isEmptyStack(S)) {
+        p = pushStack(S);
         T->track[p.x][p.y] = '0';
         k++;
+
+        printf("p: %d %d %d %d\n",p.x,p.y,p.vx,p.vy);
     }
 
     for (i=0; i<T->height; i++) {

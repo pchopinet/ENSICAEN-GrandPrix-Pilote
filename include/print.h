@@ -10,6 +10,6 @@ int printTag(Ladj *L);
 
 int printDistance(Ladj* l);
 
-int printRoute(Track T, Queue* Q);
+int printRoute(Track T, Stack* S);
 
 #endif

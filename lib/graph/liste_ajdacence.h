@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "file.h"
+#include "stack.h"
 #include "../../include/track.h"
 
 typedef struct cell {

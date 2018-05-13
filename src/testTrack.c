@@ -51,7 +51,7 @@ int main() {
     printf("temps = %f\n", temps);
 
 
-    Queue* route = findRoute(L,finalPoint);
+    Stack* route = findRoute(L,finalPoint);
     printRoute(T,route);
 
     t = clock();

@@ -39,7 +39,7 @@ int main() {
 
     Ladj *L;
     point finalPoint;
-    Queue* route;
+    Stack* route;
 
     float temps;
     clock_t t0, t;
@@ -117,12 +117,15 @@ int main() {
 
     fprintf(info, "\n === Action === \n");
 
-    p1 = push(route);
-    p2 = push(route);
-    accY = p1.vx-p2.vx;
-    accX = p1.vy-p2.vy;
+    p1 = pushStack(route);
+    p2 = pushStack(route);
+    accY = p2.vx-p1.vx;
+    accX = p2.vy-p1.vy;
     velY = p1.vx;
     velX = p1.vy;
+
+
+    fprintf(info, "p1: %d %d %d %d\np2: %d %d %d %d\n",p1.x, p1.y, p1.vx, p1.vy, p2.x, p2.y, p2.vx, p2.vy);
 
     carburant += deltaCarburantAcceleration(accX, accY, velX, velY, 0);
 
@@ -147,9 +150,9 @@ int main() {
         fprintf(info, "\n === Action === \n");
 
         p1 = p2;
-        p2 = push(route);
-        accY = p1.vx-p2.vx;
-        accX = p1.vy-p2.vy;
+        p2 = pushStack(route);
+        accY = p2.vx-p1.vx;
+        accX = p2.vy-p1.vy;
         velY = p1.vx;
         velX = p1.vy;
 

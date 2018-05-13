@@ -152,25 +152,20 @@ int calculDistance(Ladj* L){
     return 0;
 }
 
-Queue* findRoute(Ladj* L, point p) {
+Stack* findRoute(Ladj* L, point p) {
 
-    Queue* Q = createQueue();
-    Queue* Q2 = createQueue();
+    Stack* S = createStack();
     Cell* C;
 
     do {
-        put(p,Q);
+        putStack(p,S);
         C = *dijPrev(L,p);
         p = C->head;
     } while (*totFuel(L,p) != 0);
 
-    put(p,Q);
+    putStack(p,S);
 
-    while(!isEmpty(Q)) {
-        put(push(Q),Q2);
-    }
-
-    return Q2;
+    return S;
 }
 
 point dijkstra(Ladj* L, Track t, point a) {
