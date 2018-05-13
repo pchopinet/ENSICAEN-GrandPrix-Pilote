@@ -6,17 +6,27 @@
 
 int main() {
 
+
+    //-----------
+    point start;
+
+    start.x = 5;
+    start.y = 3;
+    start.vx = 0;
+    start.vy = 0;
+    //-----------
+
     float temps;
     clock_t t0, t;
     t0 = clock();
 
-    //Track t = initTrackFromFile("../track/starter_droit_au_but.txt");
-    Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
-    //Track t = initTrackFromFile("../track/sand.txt");
+    Track T = initTrackFromFile("../track/starter_droit_au_but.txt");
+    //Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
+    //Track T = initTrackFromFile("../track/sand.txt");
     //Track T = initTrackFromFile("../track/test.txt");
 
     Ladj* L = initLadj(T);
-    loadLadj(L,T,L->start[0]);
+    loadLadj(L,T,start);
 
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
@@ -47,6 +57,8 @@ int main() {
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     printf("temps = %f\n", temps);
+
+    printf("%d %d \n",L->start[0].x,L->start[0].y);
 
     return 0;
 }

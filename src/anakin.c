@@ -21,7 +21,7 @@ int main() {
     clock_t t0, t;
     t0 = clock();
 
-    int i, j, tour = 0;
+    int tour = 0;
     char c;
     char action[100];
     point a, b;
@@ -33,7 +33,7 @@ int main() {
         exit(1);
     }
 
-    Track T = initTrack(track);
+    Track T = initTrack(stdin);
     FILE *f = fopen("anakin.log", "w");
     f = stdout; //pour debug
     fprintf(f, "Map : %d %d %d\n\n", T->width, T->height, T->fuel);

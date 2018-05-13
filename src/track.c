@@ -22,7 +22,7 @@ int readHeader(Track t, FILE *input) {
     }
 
     char c;
-    //while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n');
+    while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n');
 
     return 0;
 }
