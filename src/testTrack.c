@@ -7,14 +7,7 @@
 int main() {
 
 
-    //-----------
-    point start;
 
-    start.x = 5;
-    start.y = 3;
-    start.vx = 0;
-    start.vy = 0;
-    //-----------
 
     float temps;
     clock_t t0, t;
@@ -26,7 +19,7 @@ int main() {
     //Track T = initTrackFromFile("../track/test.txt");
 
     Ladj* L = initLadj(T);
-    loadLadj(L,T,start);
+    loadLadj(L,T,L->start[0]);
 
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
