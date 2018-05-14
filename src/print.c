@@ -5,31 +5,10 @@ int printTag(Ladj *L) {
     point p;
     //p.boost=5;
 
-    for (p.vx = 0; p.vx < 11; p.vx++) {
-        for (p.vy = 0; p.vy < 11; p.vy++) {
+    for (p.vx = -5; p.vx < 6; p.vx++) {
+        for (p.vy = -5; p.vy < 6; p.vy++) {
 
             printf("\nTag table vx:%d vy:%d \n\n", p.vx, p.vy);
-
-            for (p.x = 0; p.x < L->height; p.x++) {
-                for (p.y = 0; p.y < L->width; p.y++) {
-                    printf("%d", *tag(L,p));
-                }
-                printf("\n");
-            }
-        }
-    }
-    return 0;
-}
-
-int printDistance(Ladj* L) {
-
-    point p;
-    //p.boost=5;
-
-    for (p.vx = 0; p.vx < 11; p.vx++) {
-        for (p.vy = 0; p.vy < 11; p.vy++) {
-
-            printf("\nDistance vx:%d vy:%d \n\n", p.vx, p.vy);
 
             for (p.x = 0; p.x < L->height; p.x++) {
                 for (p.y = 0; p.y < L->width; p.y++) {
@@ -50,7 +29,7 @@ int printRoute(Track T, Stack* S) {
         T->track[p.x][p.y] = '0';
         k++;
 
-        printf("p: %d %d %d %d\n",p.x,p.y,p.vx,p.vy);
+        //printf("p: %d %d %d %d\n",p.x,p.y,p.vx,p.vy);
     }
 
     for (i=0; i<T->height; i++) {

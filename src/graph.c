@@ -75,6 +75,8 @@ int loadLadj(Ladj *L, Track T, point p) {
                 fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
+
+
                 if (pointInTrack(h, L) && normSpeed2<=25 && reachable2(T, t, h) &&
                     (!testPt(T,t,'~') || normSpeed2<=1)) {
 
@@ -120,35 +122,6 @@ int loadLadj(Ladj *L, Track T, point p) {
     }
 }
 
-int calculDistance(Ladj* L){
-
-    Queue* Q = createQueue();
-    Cell* C;
-    point p, q;
-    int i;
-    int d=0;
-
-    for (i=0; i<L->nbFinish; i++) {
-        put(L->finish[i],Q);
-        *distance(L,L->finish[i]) = 0;
-    }
-
-    while (!isEmpty(Q)) {
-        p = push(Q);
-        d = *distance(L,p);
-        C = *prev(L,p);
-        while (C!=NULL) {
-            q = C->head;
-            if (*distance(L,q) == -1) {
-                *distance(L,q) = d+1;
-                put(q,Q);
-            }
-            C = C->next;
-
-        }
-    }
-    return 0;
-}
 
 Stack* findRoute(Ladj* L, point p) {
 
@@ -167,43 +140,51 @@ Stack* findRoute(Ladj* L, point p) {
 }
 
 point dijkstra(Ladj* L, Track t, point a) {
-    int d1, d2;
+    float w;
     int *TFa, *TFb;
+    float *TWa, *TWb;
     point b;
     Cell* C;
     List* list = createList();
+
+
     putInList(list, a, 0);
     *totFuel(L,a) = 0;
+    *totWeight(L,a) = 0;
     while (!testPt(t,a,'=')) {
 
         a = getMin(list);
         *tag(L,a)=4;
 
-        d1 = *distance(L,a);
+
         C = *next(L,a);
         TFa = totFuel(L, a);
+        TWa = totWeight(L, a);
 
         while (C!=NULL) {
             b = C->head;
-            d2 = *distance(L,b);
             TFb = totFuel(L, b);
+            TWb = totWeight(L, b);
 
-            if ((d2 == d1 - 1) && *tag(L,b)!=4) {
+            if (*tag(L,b)!=4) {
 
-                if ((*TFa + C->fuel) < *TFb) {
+                w = weight(C->fuel);
+
+                if ((*totWeight(L,a) + w) < *totWeight(L,b)) {
 
                     *TFb = *TFa + C->fuel;
+                    *TWb = *TWa + w;
 
                     if (*tag(L, b) < 3) {
 
                         *tag(L,b)=3;
-                        putInList(list,b,*TFb);
-                        newArcDij(b, a, C->fuel, C->ax, C->ay, L);
+                        putInList(list,b,*TWb);
+                        newArcDij(b, a, w, C->ax, C->ay, L);
 
                     } else if (*tag(L, b) == 3){
 
-                        changeTotFuel(list,b,*totFuel(L, b));
-                        newArcDij(b, a, C->fuel, C->ax, C->ay, L);
+                        changeTotWeight(list,b,*TWb);
+                        newArcDij(b, a, w, C->ax, C->ay, L);
                     }
                 }
             }
@@ -211,4 +192,8 @@ point dijkstra(Ladj* L, Track t, point a) {
         }
     }
     return a;
+}
+
+float weight(int fuel) {
+    return (float)fuel+0.5;
 }

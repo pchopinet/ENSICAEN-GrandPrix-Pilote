@@ -1,8 +1,8 @@
 #include "../include/dijkstra.h"
 
-Dnode* createDnode(int tot, point p, Dnode* next) {
+Dnode* createDnode(float tot, point p, Dnode* next) {
     Dnode* n = malloc(sizeof(Dnode));
-    n->totFuel = tot;
+    n->totWeight = tot;
     n->point = p;
     n->next = next;
     return n;
@@ -14,14 +14,14 @@ List* createList() {
     return L;
 }
 
-void putInList(List* L, point p, int tot) {
+void putInList(List* L, point p, float tot) {
     Dnode *n;
     Dnode *tmp;
     if (L->first == NULL) {
         L->first = createDnode(tot, p, NULL);
     } else {
         n = L->first;
-        while (n->next != NULL && n->next->totFuel < tot) {
+        while (n->next != NULL && n->next->totWeight < tot) {
             n = n->next;
         }
         tmp = n->next;
@@ -66,7 +66,7 @@ int removeFromList(point p, List* L) {
     return 0;
 }
 
-void changeTotFuel(List* L, point p, int tot) {
+void changeTotWeight(List* L, point p, float tot) {
     removeFromList(p,L);
     putInList(L, p, tot);
 }

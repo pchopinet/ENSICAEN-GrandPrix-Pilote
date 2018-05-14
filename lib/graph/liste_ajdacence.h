@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <float.h>
 #include "file.h"
 #include "stack.h"
 #include "../../include/track.h"
@@ -26,9 +27,9 @@ typedef struct lnode {
     Cell* prev;
     Cell* dijNext;
     Cell* dijPrev;
-    int distance;
     int tag;
     int totFuel;
+    float totWeight;
 } Lnode;
 
 typedef struct ladj {
@@ -42,14 +43,13 @@ typedef struct ladj {
 
 Lnode* createLnode();
 
-
 Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 
 int* tag(Ladj* L, point p);
 
-int* distance(Ladj* L, point p);
-
 int* totFuel(Ladj* L, point p);
+
+float* totWeight(Ladj* L, point p);
 
 Cell** next(Ladj* L, point p);
 

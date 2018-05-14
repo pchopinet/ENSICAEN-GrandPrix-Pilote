@@ -15,6 +15,7 @@ int main() {
 
     //Track T = initTrackFromFile("../track/starter_droit_au_but.txt");
     Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
+    //Track T = initTrackFromFile("../track/starter_serpent.txt");
     //Track T = initTrackFromFile("../track/sand.txt");
     //Track T = initTrackFromFile("../track/test.txt");
 
@@ -28,8 +29,7 @@ int main() {
     //printTag(L);
     //printLadj(L);
     //printTag(L);
-    calculDistance(L);
-    //printDistance(L);
+
     printf("\nnb arc %d - nb node %d\n\n",L->nbArc,L->nbNode);
 
     t = clock();

@@ -6,8 +6,8 @@
 #include "pointClement.h"
 
 typedef struct dnode {
-    int totFuel;
     point point;
+    float totWeight;
     struct dnode* next;
 } Dnode;
 
@@ -15,16 +15,16 @@ typedef struct list {
     Dnode* first;
 } List;
 
-Dnode* createDnode(int tot, point p, Dnode* next);
+Dnode* createDnode(float tot, point p, Dnode* next);
 
 List* createList();
 
-void putInList(List* L, point p, int tot);
+void putInList(List* L, point p, float tot);
 
 point getMin(List* L);
 
 int removeFromList(point p, List* L);
 
-void changeTotFuel(List* L, point p, int tot);
+void changeTotWeight(List* L, point p, float tot);
 
 #endif

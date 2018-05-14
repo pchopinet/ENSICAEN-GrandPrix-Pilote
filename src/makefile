@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -fpic -g
+CFLAGS=-Wall -Wextra -pedantic -fpic -g -O3
 
 #-fno-stack-protector
 #-fno-stack-protector pour supprimer le stack smashing

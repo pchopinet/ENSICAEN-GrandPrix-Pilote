@@ -16,9 +16,9 @@ Lnode* createLnode() {
     Lnode* node = (Lnode*) malloc(sizeof(Lnode));
     node->next = NULL;
     node->prev = NULL;
-    node->distance = -1;
     node->tag = 0;
     node->totFuel = INT_MAX;
+    node->totWeight = INT_MAX;
     return node;
 }
 
@@ -26,12 +26,12 @@ int* tag(Ladj* L, point p) {
     return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->tag);
 }
 
-int* distance(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->distance);
-}
-
 int* totFuel(Ladj* L, point p) {
     return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->totFuel);
+}
+
+float* totWeight(Ladj* L, point p) {
+    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->totWeight);
 }
 
 Cell** next(Ladj* L, point p) {

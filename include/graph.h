@@ -16,10 +16,10 @@ Ladj* initLadj(Track t);
 
 int loadLadj(Ladj *l, Track T, point p);
 
-int calculDistance(Ladj* L);
-
 Stack* findRoute(Ladj* L, point p);
 
 point dijkstra(Ladj* L, Track t, point a);
+
+float weight(int fuel);
 
 #endif
