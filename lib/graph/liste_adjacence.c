@@ -92,28 +92,38 @@ int reachable1(Track t, point p, point q) { //essayer avec des conditions plus p
 
 int reachable2(Track t, point p, point q) {
 
-    int i, x, y, s;
-    int b=1;
-    int dx = q.x-p.x;
-    float dy = q.y-p.y;
+    int i, x, y;
+    int len, dx, dy;
+    float fx, fy, deltax, deltay;
 
-    s = dx>0 ? 1 : -1;
+    x = p.x;
+    y = p.y;
 
-    if (dx!=0) {
-        for (i=0; abs(i)<=abs(dx); i+=s) { // < ou <=
-            x = p.x + i;
-            y = p.y + (int) i * dy / dx;
-            b = b && (t->track[x][y] != '.');
-        }
-    } else {
-        s = dy>0 ? 1 : -1;
-        x = p.x;
-        for (i=0; abs(i)<abs(dy); i+=s) {
-            y = p.y + i;
-            b = b && (t->track[x][y]!='.');
+    dx = q.x-p.x;
+    dy = q.y-p.y;
+
+    fx = x + 0.5;
+    fy = y + 0.5;
+
+    len = abs(dx)>abs(dy) ? abs(dx) : abs(dy);
+
+    deltax = ((float)dx)/len;
+    deltay = ((float)dy)/len;
+
+    if (len!=0) {
+        for (i=0; i<len; i++) {
+
+            fx = fx + deltax;
+            fy = fy + deltay;
+            x = (int)fx;
+            y = (int)fy;
+
+            if (t->track[x][y] == '.') {
+                return 0;
+            }
         }
     }
-    return b;
+    return 1;
 }
 
 
