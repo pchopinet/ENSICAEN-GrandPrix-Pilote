@@ -119,6 +119,7 @@ int main() {
 
     L = initLadj(T);
     loadLadj(L, T, start);
+    calculDistance(L);
     finalPoint = dijkstra(L,T,start);
 
     t = clock();

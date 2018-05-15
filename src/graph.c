@@ -72,7 +72,8 @@ int loadLadj(Ladj *L, Track T, point p) {
                 h.y = t.y + h.vy;
 
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
-                fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
+                //fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
+                fuel = ax*ax+ay*ay + (int) (sqrt(t.vx*t.vx + t.vy*t.vy)*3/2);
                 fuel += testPt(T,t,'~') ? 1 : 0;
 
 
@@ -120,6 +121,36 @@ int loadLadj(Ladj *L, Track T, point p) {
     } else {
         return 0;
     }
+}
+
+int calculDistance(Ladj* L){
+
+    Queue* Q = createQueue();
+    Cell* C;
+    point p, q;
+    int i;
+    int d=0;
+
+    for (i=0; i<L->nbFinish; i++) {
+        put(L->finish[i],Q);
+        *distance(L,L->finish[i]) = 0;
+    }
+
+    while (!isEmpty(Q)) {
+        p = push(Q);
+        d = *distance(L,p);
+        C = *prev(L,p);
+        while (C!=NULL) {
+            q = C->head;
+            if (*distance(L,q) == -1) {
+                *distance(L,q) = d+1;
+                put(q,Q);
+            }
+            C = C->next;
+
+        }
+    }
+    return 0;
 }
 
 
@@ -195,5 +226,5 @@ point dijkstra(Ladj* L, Track t, point a) {
 }
 
 float weight(int fuel) {
-    return (float)fuel+0.5;
+    return (float)fuel+0.75;
 }

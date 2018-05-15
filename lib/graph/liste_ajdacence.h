@@ -27,6 +27,7 @@ typedef struct lnode {
     Cell* prev;
     Cell* dijNext;
     Cell* dijPrev;
+    int distance;
     int tag;
     int totFuel;
     float totWeight;
@@ -46,6 +47,8 @@ Lnode* createLnode();
 Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 
 int* tag(Ladj* L, point p);
+
+int* distance(Ladj* L, point p);
 
 int* totFuel(Ladj* L, point p);
 

@@ -21,6 +21,8 @@ int main() {
 
     Ladj* L = initLadj(T);
     loadLadj(L,T,L->start[0]);
+    calculDistance(L);
+
 
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
@@ -51,7 +53,7 @@ int main() {
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     printf("temps = %f\n", temps);
 
-    printf("%d %d \n",L->start[0].x,L->start[0].y);
+    printf("Distance min: %d\n", *distance(L,L->start[0]));
 
     return 0;
 }
