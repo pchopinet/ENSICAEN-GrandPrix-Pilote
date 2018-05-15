@@ -27,18 +27,14 @@ void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
 
 int main() {
 
-    float temps;
-    clock_t t0, t;
-    t0 = clock();
-
     int tour = 0;
-    char c;
-    point a1, a2, b1, b2, c1, c2;
+    point a1, a2, b, c;
     point finalPoint;
     int ax, ay, vx, vy;
     int fuel = 0;
     Stack *route;
     Ladj *L;
+    char vb, vc;
 
     FILE *log = fopen("anakin.log", "w");
 
@@ -51,13 +47,12 @@ int main() {
     fprintf(log, "\n === Tour %d === \n", tour);
 
 
-    fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
-    fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
+    fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
+    fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
     fflush(log);
 
     a1.vx=0;
     a1.vy=0;
-
 
     L = initLadj(T);
     loadLadj(L, T, a1);
@@ -79,12 +74,49 @@ int main() {
         tour++;
         fprintf(log, "\nTour: %d\n", tour);
 
-        fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
-        fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
+        fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
+        fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
         fflush(log);
+// Pour repartir en cas de crash
+        /*
+        if (a1.x!=a2.x || a1.y!=a2.y) {
 
-        a1 = a2;
+            a1.vx=0;
+            a1.vy=0;
+
+            L = initLadj(T);
+            loadLadj(L, T, a1);
+            finalPoint = dijkstra(L,T,a1);
+            route = findRoute(L, finalPoint);
+            a1 = pushStack(route);
+        } else {*/
+            a1 = a2;
+        //}
+
         a2 = pushStack(route);
+
+// pour ne pas se crash dans une autre voiture
+
+/*
+        if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y)) {
+            vb = T->track[b.x][b.y];
+            vc = T->track[c.x][c.y];
+            T->track[b.x][b.y] = '.';
+            T->track[c.x][c.y] = '.';
+
+            L = initLadj(T);
+            loadLadj(L, T, a1);
+            finalPoint = dijkstra(L,T,a1);
+            route = findRoute(L, finalPoint);
+
+
+            T->track[b.x][b.y] = vb;
+            T->track[c.x][c.y] = vc;
+
+            a1 = pushStack(route);
+            a2 = pushStack(route);
+        }*/
+
         ay = a2.vx-a1.vx;
         ax = a2.vy-a1.vy;
         vy = a1.vx;

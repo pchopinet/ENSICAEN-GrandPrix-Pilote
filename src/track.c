@@ -38,7 +38,7 @@ int readTrack(Track t, FILE *input) {
         j = 0;
         t->track[i] = calloc(sizeof(char), t->width);
 
-        while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
+        while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n') {
             t->track[i][j]=c;
             j++;
         }
