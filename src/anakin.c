@@ -51,8 +51,8 @@ int main() {
     fprintf(log, "\n === Tour %d === \n", tour);
 
 
-    fscanf(stdin,"%d %d\t%d %d\t%d %d\n",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
-    fprintf(log,"%d %d\t%d %d\t%d %d\n\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
+    fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
+    fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
     fflush(log);
 
     a1.vx=0;
@@ -79,7 +79,7 @@ int main() {
         tour++;
         fprintf(log, "\nTour: %d\n", tour);
 
-        fscanf(stdin,"%d %d\t%d %d\t%d %d\n",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
+        fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
         fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
         fflush(log);
 
