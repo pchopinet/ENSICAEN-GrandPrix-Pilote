@@ -22,7 +22,7 @@ int deltaCarburantAcceleration(int accX, int accY, int velX, int velY, int dansS
 int main() {
     char c;
     int i, j;
-    FILE *info = fopen("anakin.log", "w");
+    FILE *info = fopen("anakin3.log", "w");
 
     point start, p1, p2;
 
@@ -119,7 +119,6 @@ int main() {
 
     L = initLadj(T);
     loadLadj(L, T, start);
-    calculDistance(L);
     finalPoint = dijkstra(L,T,start);
 
     t = clock();
@@ -151,6 +150,7 @@ int main() {
     fprintf(info, "%s (carburant restant %d)\n", action, carburant);
     fflush(stdout);
     fflush(info);
+
     //------------------------------------------------------------------------------------------------------------------
 
     while (!feof(stdin)) {

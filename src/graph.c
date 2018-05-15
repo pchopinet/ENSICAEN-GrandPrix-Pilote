@@ -180,7 +180,7 @@ point dijkstra(Ladj* L, Track t, point a) {
     Cell* C;
     List* list = createList();
 
-    dmin = *distance(L,p);
+    dmin = *distance(L,a);
 
 
     putInList(list, a, 0);

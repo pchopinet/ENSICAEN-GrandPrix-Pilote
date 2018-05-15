@@ -8,11 +8,21 @@
 #include "../include/print.h"
 #include "../include/graph.h"
 
-void sendAcceleration(int x, int y) {
+int deltaCarburantAcceleration(int accX, int accY, int velX, int velY, int dansSable) {
+    int valeur = accX * accX + accY * accY;
+    valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
+    if (dansSable)
+        valeur += 1;
+    return -valeur;
+}
+
+void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
     char action[10];
-    sprintf(action, "%d %d", x, y);
+    sprintf(action, "%d %d", ax, ay);
     fprintf(stdout, "%s\n", action);
+    fprintf(log, "%s (carburant restant %d)\n", action, fuel);
     fflush(stdout);
+    fflush(log);
 }
 
 int main() {
@@ -23,72 +33,65 @@ int main() {
 
     int tour = 0;
     char c;
-    char action[100];
-    point a, b;
-    int carburant = 0;
-    FILE *track = fopen("../track/f-Zero_Crossroad_Circuit.txt", "r");
+    point a1, a2, b1, b2, c1, c2;
+    point finalPoint;
+    int ax, ay, vx, vy;
+    int fuel = 0;
+    Stack *route;
+    Ladj *L;
 
-    if (track == NULL) {
-        printf("Error loading file.\n");
-        exit(1);
-    }
+    FILE *log = fopen("anakin.log", "w");
 
     Track T = initTrack(stdin);
-    FILE *f = fopen("anakin.log", "w");
-    f = stdout; //pour debug
-    fprintf(f, "Map : %d %d %d\n\n", T->width, T->height, T->fuel);
+    TrackPrint(T, log);
 
-    TrackPrint(T, f);
+    fuel = T->fuel;
 
-    Ladj *L = initLadj(T);
-    loadLadj(L, T, L->start[0]);
+    tour++;
+    fprintf(log, "\n === Tour %d === \n", tour);
 
-    t = clock();
-    temps = (float) (t - t0) / CLOCKS_PER_SEC;
-    fprintf(f, "temps = %f\n", temps);
 
-    calculDistance(L);
-    fprintf(f, "\nnb arc %d - nb node %d\n\n", L->nbArc, L->nbNode);
+    fscanf(stdin,"%d %d\t%d %d\t%d %d\n",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
+    fprintf(log,"%d %d\t%d %d\t%d %d\n\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
+    fflush(log);
 
-    t = clock();
-    temps = (float) (t - t0) / CLOCKS_PER_SEC;
-    fprintf(f, "temps = %f\n", temps);
+    a1.vx=0;
+    a1.vy=0;
 
-    point finalPoint = dijkstra(L, T, L->start[0]);
-    fprintf(f, "Fuel total : %d\n", *totFuel(L, finalPoint));
 
-    t = clock();
-    temps = (float) (t - t0) / CLOCKS_PER_SEC;
-    fprintf(f, "temps = %f\n", temps);
+    L = initLadj(T);
+    loadLadj(L, T, a1);
+    finalPoint = dijkstra(L,T,a1);
+    route = findRoute(L, finalPoint);
 
-    Queue *route = findRoute(L, finalPoint);
-    //printRoute(T, route);
+    a1 = pushStack(route);
+    a2 = pushStack(route);
+    ay = a2.vx-a1.vx;
+    ax = a2.vy-a1.vy;
+    vy = a1.vx;
+    vx = a1.vy;
 
-    t = clock();
-    temps = (float) (t - t0) / CLOCKS_PER_SEC;
-    fprintf(f, "temps = %f\n", temps);
+    fuel += deltaCarburantAcceleration(ax, ay, vx, vy, 0);
 
-    b = push(route);
-
+    sendAcceleration(ax,ay,fuel,log);
 
     while (!feof(stdin)) {
         tour++;
-        fprintf(f, "\nTour: %d\n", tour);
-        while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
-            fprintf(f, "%c", c);
-        }
-        fprintf(f, "\n === Action === \n");
+        fprintf(log, "\nTour: %d\n", tour);
 
-        a = b;
-        b = push(route);
-        /* Écriture de l'accélération. */
-        sprintf(action, "%d %d", b.vx - a.vx, b.vy - a.vy);
-        fprintf(stdout, "%s\n", action);
-        fprintf(f, "%s (carburant restant %d)\n", action, carburant);
-        fflush(stdout); /* Vidage du buffer nécessaire. */
-        fflush(f);
+        fscanf(stdin,"%d %d\t%d %d\t%d %d\n",&(a1.y),&(a1.x),&(b1.y),&(b1.x),&(c1.y),&(c1.x));
+        fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b1.y,b1.x,c1.y,c1.x);
+        fflush(log);
+
+        a1 = a2;
+        a2 = pushStack(route);
+        ay = a2.vx-a1.vx;
+        ax = a2.vy-a1.vy;
+        vy = a1.vx;
+        vx = a1.vy;
+
+        fuel += deltaCarburantAcceleration(ax, ay, vx, vy, 0);
+        sendAcceleration(ax,ay,fuel,log);
     }
-
     return 0;
-
 }

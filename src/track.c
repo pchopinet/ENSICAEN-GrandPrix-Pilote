@@ -15,13 +15,14 @@ Track initTrack(FILE *input) {
 }
 
 int readHeader(Track t, FILE *input) {
-    fscanf(input, "%d %d %d\n", &(t->width), &(t->height), &(t->fuel));
+    char c;
+
+    fscanf(input, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
 
     if (t->height == 0 || t->width == 0 || t->fuel == 0) {
-        return 1;
+        exit(1);
     }
 
-    char c;
     while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n');
 
     return 0;
@@ -34,16 +35,13 @@ int readTrack(Track t, FILE *input) {
     t->track = calloc(sizeof(char *), t->height);
 
     for (i = 0; i < t->height; i++) {
+        j = 0;
         t->track[i] = calloc(sizeof(char), t->width);
-        for (j = 0; j < t->width; j++) {
-            fscanf(input, "%c", &c);
-            //printf("%c ", c);
-            t->track[i][j] = c;
+
+        while (fread(&c, sizeof(char), 1, stdin) == 1 && c != '\n') {
+            t->track[i][j]=c;
+            j++;
         }
-        if (!feof(input)) {
-            fscanf(input, "%c", &c);
-        }
-        //printf("\n");
     }
     return 0;
 }
@@ -129,11 +127,13 @@ ArrayList FindFinishingLine(Track t) {
 }
 */
 void TrackPrint(Track t, FILE *output) {
-    for (int y = 0; y < t->height; ++y) {
-        for (int x = 0; x < t->width; ++x) {
+    fprintf(output, "Map : %d %d %d\n\n", t->width, t->height, t->fuel);
+    for (int y = 0; y < t->height; y++) {
+        for (int x = 0; x < t->width; x++) {
             fprintf(output, "%c", t->track[y][x]);
         }
         fprintf(output, "\n");
     }
+    fflush(output);
 }
 
