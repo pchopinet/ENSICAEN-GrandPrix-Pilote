@@ -22,6 +22,6 @@ Stack* findRoute(Ladj* L, point p);
 
 point dijkstra(Ladj* L, Track t, point a);
 
-float weight(int fuel);
+float weight(int fuel, int totfuel, int dmin);
 
 #endif

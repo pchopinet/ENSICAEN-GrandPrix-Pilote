@@ -56,6 +56,7 @@ int loadLadj(Ladj *L, Track T, point p) {
     Queue* Q = createQueue();
     put(p, Q);
 
+
     while (!isEmpty(Q)) {
 
         t=push(Q);
@@ -173,10 +174,13 @@ Stack* findRoute(Ladj* L, point p) {
 point dijkstra(Ladj* L, Track t, point a) {
     float w;
     int *TFa, *TFb;
+    int dmin;
     float *TWa, *TWb;
     point b;
     Cell* C;
     List* list = createList();
+
+    dmin = *distance(L,p);
 
 
     putInList(list, a, 0);
@@ -199,7 +203,7 @@ point dijkstra(Ladj* L, Track t, point a) {
 
             if (*tag(L,b)!=4) {
 
-                w = weight(C->fuel);
+                w = weight(C->fuel, t->fuel, dmin);
 
                 if ((*totWeight(L,a) + w) < *totWeight(L,b)) {
 
@@ -225,6 +229,6 @@ point dijkstra(Ladj* L, Track t, point a) {
     return a;
 }
 
-float weight(int fuel) {
+float weight(int fuel, int totfuel, int dmin) {
     return (float)fuel+0.75;
 }
