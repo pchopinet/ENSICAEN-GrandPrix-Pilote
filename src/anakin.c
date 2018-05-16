@@ -78,8 +78,13 @@ int main() {
         fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
         fflush(log);
 // Pour repartir en cas de crash
-        /*
+
         if (a1.x!=a2.x || a1.y!=a2.y) {
+
+            vb = T->track[b.x][b.y];
+            vc = T->track[c.x][c.y];
+            T->track[b.x][b.y] = '.';
+            T->track[c.x][c.y] = '.';
 
             a1.vx=0;
             a1.vy=0;
@@ -89,15 +94,20 @@ int main() {
             finalPoint = dijkstra(L,T,a1);
             route = findRoute(L, finalPoint);
             a1 = pushStack(route);
-        } else {*/
+
+            fprintf(log,"--Recalcul de route\n--a1 = %d %d\n",a1.y,a1.x);
+            fflush(log);
+
+            T->track[b.x][b.y] = vb;
+            T->track[c.x][c.y] = vc;
+        } else {
             a1 = a2;
-        //}
+        }
 
         a2 = pushStack(route);
 
 // pour ne pas se crash dans une autre voiture
 
-/*
         if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y)) {
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
@@ -115,7 +125,7 @@ int main() {
 
             a1 = pushStack(route);
             a2 = pushStack(route);
-        }*/
+        }
 
         ay = a2.vx-a1.vx;
         ax = a2.vy-a1.vy;

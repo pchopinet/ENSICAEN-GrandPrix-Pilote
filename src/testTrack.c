@@ -7,6 +7,7 @@
 int main() {
 
 
+    point depart;
 
 
     float temps;
@@ -20,7 +21,15 @@ int main() {
     //Track T = initTrackFromFile("../track/test.txt");
 
     Ladj* L = initLadj(T);
-    loadLadj(L,T,L->start[0]);
+
+    depart.x=4;
+    depart.y=61;
+    depart.vx=0;
+    depart.vy=0;
+
+    //depart = L->start[0];
+
+    loadLadj(L,T,depart);
     calculDistance(L);
 
 
@@ -38,7 +47,7 @@ int main() {
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     printf("temps = %f\n", temps);
 
-    point finalPoint = dijkstra(L,T,L->start[0]);
+    point finalPoint = dijkstra(L,T,depart);
     printf("Fuel total : %d\n",*totFuel(L,finalPoint));
 
     t = clock();
