@@ -64,6 +64,8 @@ int loadLadj(Ladj *L, Track T, point p) {
         *tag(L,t)=2;
         L->nbNode++;
 
+
+
         for (ax=-1; ax<2; ax++) {
             for (ay=-1; ay<2; ay++) {
 
@@ -172,7 +174,7 @@ Stack* findRoute(Ladj* L, point p) {
 }
 
 point dijkstra(Ladj* L, Track t, point a) {
-    float w;
+    int w;
     int *TFa, *TFb;
     int dmin;
     float *TWa, *TWb;
@@ -181,8 +183,6 @@ point dijkstra(Ladj* L, Track t, point a) {
     List* list = createList();
 
     dmin = *distance(L,a);
-
-
     putInList(list, a, 0);
     *totFuel(L,a) = 0;
     *totWeight(L,a) = 0;
@@ -229,6 +229,9 @@ point dijkstra(Ladj* L, Track t, point a) {
     return a;
 }
 
-float weight(int fuel, int totfuel, int dmin) {
-    return (float)fuel+0.75;
+int weight(int fuel, int totfuel, int dmin) {
+
+    return 10000*fuel/dmin;
+
+
 }

@@ -27,7 +27,7 @@ int main() {
     depart.vx=0;
     depart.vy=0;
 
-    //depart = L->start[0];
+    depart = L->start[0];
 
     loadLadj(L,T,depart);
     calculDistance(L);

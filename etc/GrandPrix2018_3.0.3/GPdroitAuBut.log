@@ -116,1016 +116,626 @@ Carburant de départ 650
  === Debut Course === 
 
  === Tour 1 === 
-11 64	7 58	9 63
+11 64	7 61	10 64
  === Action === 
 1 0 (carburant restant 649)
 
  === Tour 2 === 
-11 64	7 55	9 61
+11 64	7 58	10 64
  === Action === 
 1 0 (carburant restant 647)
 
  === Tour 3 === 
-11 64	7 55	9 58
+11 64	9 52	10 64
  === Action === 
 1 0 (carburant restant 643)
 
  === Tour 4 === 
-11 64	8 52	9 55
+11 64	10 49	10 64
  === Action === 
-1 0 (carburant restant 638)
-
+1 0 (carburant restant 638
+ 
  === Tour 5 === 
-11 64	9 49	9 52
+11 64	11 46	10 64
  === Action === 
 1 0 (carburant restant 631)
 
  === Tour 6 === 
-11 64	10 46	9 52
+11 64	11 43	10 64
  === Action === 
 1 0 (carburant restant 623)
 
  === Tour 7 === 
-11 64	10 43	9 51
+11 64	11 43	10 64
  === Action === 
 1 0 (carburant restant 613)
 
  === Tour 8 === 
-11 64	10 37	9 47
+11 64	11 40	10 64
  === Action === 
 1 0 (carburant restant 602)
 
  === Tour 9 === 
-11 64	10 34	9 44
+11 64	11 37	10 64
  === Action === 
-1 0 (carburant restant 589)
-
+1 0 (carburant restant 589
+ 
  === Tour 10 === 
-11 64	10 34	9 44
+11 64	11 31	10 64
  === Action === 
 1 0 (carburant restant 575)
 
  === Tour 11 === 
-11 64	11 31	10 41
+11 64	11 31	10 64
  === Action === 
-1 0 (carburant restant 559)
-
+1 0 (carburant restant 559
+ 
  === Tour 12 === 
-11 64	13 28	11 38
+11 64	12 28	10 64
  === Action === 
 1 0 (carburant restant 542)
 
  === Tour 13 === 
-11 64	16 25	11 35
+11 64	14 25	10 64
  === Action === 
-1 0 (carburant restant 523)
-
+1 0 (carburant restant 523
+ 
  === Tour 14 === 
-11 64	22 20	12 29
+11 64	16 22	10 64
  === Action === 
-1 0 (carburant restant 503)
-
+1 0 (carburant restant 503
+ 
  === Tour 15 === 
-11 64	25 19	14 26
+11 64	18 19	10 64
  === Action === 
-1 0 (carburant restant 481)
-
+1 0 (carburant restant 481
+ 
  === Tour 16 === 
-11 64	25 19	14 26
+11 64	20 16	10 64
  === Action === 
-1 0 (carburant restant 458)
-
+1 0 (carburant restant 458
+ 
  === Tour 17 === 
-11 64	31 17	20 21
+11 64	20 16	10 64
  === Action === 
 1 0 (carburant restant 433)
 
  === Tour 18 === 
-11 64	31 17	23 20
+11 64	21 16	10 64
  === Action === 
-1 0 (carburant restant 407)
-
+1 0 (carburant restant 407
+ 
  === Tour 19 === 
-11 64	34 17	26 19
+11 64	23 16	10 64
  === Action === 
 1 0 (carburant restant 379)
 
  === Tour 20 === 
-11 64	37 17	26 19
+11 64	23 16	10 64
  === Action === 
-1 0 (carburant restant 350)
-
+1 0 (carburant restant 350
+ 
  === Tour 21 === 
-11 64	43 17	29 18
+11 64	25 16	10 64
  === Action === 
 1 0 (carburant restant 319)
 
  === Tour 22 === 
-11 64	43 17	32 17
+11 64	25 16	10 64
  === Action === 
-1 0 (carburant restant 287)
-
+1 0 (carburant restant 287
+ 
  === Tour 23 === 
-11 64	46 16	35 16
+11 64	26 16	10 64
  === Action === 
-1 0 (carburant restant 253)
-
+1 0 (carburant restant 253
+ 
  === Tour 24 === 
-11 64	49 14	38 16
+11 64	28 16	10 64
  === Action === 
-1 0 (carburant restant 218)
-
+1 0 (carburant restant 218
+ 
  === Tour 25 === 
-11 64	53 8	44 16
+11 64	28 16	10 64
  === Action === 
-1 0 (carburant restant 181)
-
+1 0 (carburant restant 181
+ 
  === Tour 26 === 
-11 64	53 8	44 16
+11 64	29 16	10 64
  === Action === 
 1 0 (carburant restant 143)
 
  === Tour 27 === 
-11 64	55 4	49 15
+11 64	31 16	10 64
  === Action === 
 1 0 (carburant restant 103)
 
  === Tour 28 === 
-11 64	56 4	49 15
+11 64	31 16	10 64
  === Action === 
-1 0 (carburant restant 62)
-
+1 0 (carburant restant 62
+ 
  === Tour 29 === 
-11 64	58 4	51 11
+11 64	32 16	10 64
  === Action === 
-1 0 (carburant restant 19)
-
+1 0 (carburant restant 19
+ 
  === Tour 30 === 
-11 64	61 4	51 11
+11 64	34 16	10 64
  === Action === 
 1 0 (carburant restant -25)
 
  === Tour 31 === 
-11 64	64 5	53 7
+11 64	35 16	10 64
  === Action === 
 1 0 (carburant restant -71)
 
  === Tour 32 === 
-11 64	67 7	53 7
+11 64	36 16	10 64
  === Action === 
 1 0 (carburant restant -118)
 
  === Tour 33 === 
-11 64	67 7	56 4
+11 64	36 16	10 64
  === Action === 
-1 0 (carburant restant -167)
-
+1 0 (carburant restant -167
+ 
  === Tour 34 === 
-11 64	73 13	56 4
+11 64	38 16	10 64
  === Action === 
-1 0 (carburant restant -217)
-
+1 0 (carburant restant -217
+ 
  === Tour 35 === 
-11 64	73 13	61 4
+11 64	38 16	10 64
  === Action === 
-1 0 (carburant restant -269)
-
+1 0 (carburant restant -269
+ 
  === Tour 36 === 
-11 64	76 16	61 4
+11 64	40 16	10 64
  === Action === 
 1 0 (carburant restant -322)
 
  === Tour 37 === 
-11 64	79 19	67 7
+11 64	41 16	10 64
  === Action === 
 1 0 (carburant restant -377)
 
  === Tour 38 === 
-11 64	81 22	70 10
+11 64	42 16	10 64
  === Action === 
 1 0 (carburant restant -433)
 
  === Tour 39 === 
-11 64	83 25	73 13
+11 64	43 16	10 64
  === Action === 
 1 0 (carburant restant -491)
 
  === Tour 40 === 
-11 64	84 28	76 16
+11 64	43 16	10 64
  === Action === 
 1 0 (carburant restant -550)
 
  === Tour 41 === 
-11 64	85 31	76 16
+11 64	44 16	10 64
  === Action === 
 1 0 (carburant restant -611)
 
  === Tour 42 === 
-11 64	86 34	81 22
+11 64	45 16	10 64
  === Action === 
 1 0 (carburant restant -673)
 
  === Tour 43 === 
-11 64	88 40	81 22
+11 64	47 16	10 64
  === Action === 
-1 0 (carburant restant -737)
-
+1 0 (carburant restant -737
+ 
  === Tour 44 === 
-11 64	88 40	84 28
+11 64	47 16	10 64
  === Action === 
-1 0 (carburant restant -802)
-
+1 0 (carburant restant -802
+ 
  === Tour 45 === 
-11 64	89 46	85 31
+11 64	48 16	10 64
  === Action === 
-1 0 (carburant restant -869)
-
+1 0 (carburant restant -869
+ 
  === Tour 46 === 
-11 64	89 46	85 31
+11 64	49 15	10 64
  === Action === 
-1 0 (carburant restant -937)
-
+1 0 (carburant restant -937
+ 
  === Tour 47 === 
-11 64	89 52	86 34
+11 64	51 12	10 64
  === Action === 
 1 0 (carburant restant -1007)
 
  === Tour 48 === 
-11 64	89 52	87 37
+11 64	52 10	10 64
  === Action === 
 1 0 (carburant restant -1078)
 
  === Tour 49 === 
-11 64	89 56	88 40
+11 64	53 8	10 64
  === Action === 
 1 0 (carburant restant -1151)
 
  === Tour 50 === 
-11 64	89 60	89 43
+11 64	54 6	10 64
  === Action === 
 1 0 (carburant restant -1225)
 
  === Tour 51 === 
-11 64	89 63	89 49
+11 64	55 4	10 64
  === Action === 
 1 0 (carburant restant -1301)
 
  === Tour 52 === 
-11 64	89 66	89 52
+11 64	55 4	10 64
  === Action === 
 1 0 (carburant restant -1378)
 
  === Tour 53 === 
-11 64	89 69	89 52
+11 64	57 3	10 64
  === Action === 
 1 0 (carburant restant -1457)
 
  === Tour 54 === 
-11 64	89 75	89 60
+11 64	58 3	10 64
  === Action === 
 1 0 (carburant restant -1537)
 
  === Tour 55 === 
-11 64	89 75	89 60
+11 64	58 3	10 64
  === Action === 
 1 0 (carburant restant -1619)
 
  === Tour 56 === 
-11 64	88 78	89 63
+11 64	59 3	10 64
  === Action === 
 1 0 (carburant restant -1702)
 
  === Tour 57 === 
-11 64	86 84	89 66
+11 64	61 3	10 64
  === Action === 
 1 0 (carburant restant -1787)
 
  === Tour 58 === 
-11 64	85 87	89 72
+11 64	62 3	10 64
  === Action === 
 1 0 (carburant restant -1873)
 
  === Tour 59 === 
-11 64	84 90	89 75
+11 64	63 3	10 64
  === Action === 
 1 0 (carburant restant -1961)
 
  === Tour 60 === 
-11 64	83 93	88 78
+11 64	63 3	10 64
  === Action === 
 1 0 (carburant restant -2050)
 
  === Tour 61 === 
-11 64	83 93	87 81
+11 64	64 4	10 64
  === Action === 
 1 0 (carburant restant -2141)
 
  === Tour 62 === 
-11 64	82 96	86 84
+11 64	65 5	10 64
  === Action === 
 1 0 (carburant restant -2233)
 
  === Tour 63 === 
-11 64	80 99	85 87
+11 64	66 6	10 64
  === Action === 
 1 0 (carburant restant -2327)
 
  === Tour 64 === 
-11 64	76 102	85 87
+11 64	67 7	10 64
  === Action === 
 1 0 (carburant restant -2422)
 
  === Tour 65 === 
-11 64	74 102	83 93
+11 64	69 9	10 64
  === Action === 
 1 0 (carburant restant -2519)
 
  === Tour 66 === 
-11 64	74 102	83 93
+11 64	70 10	10 64
  === Action === 
-1 0 (carburant restant -2617)
-
+1 0 (carburant restant -2617
+ 
  === Tour 67 === 
-11 64	72 102	80 99
+11 64	71 11	10 64
  === Action === 
 1 0 (carburant restant -2717)
 
  === Tour 68 === 
-11 64	72 102	80 99
+11 64	72 12	10 64
  === Action === 
-1 0 (carburant restant -2818)
-
+1 0 (carburant restant -2818
+ 
  === Tour 69 === 
-11 64	71 102	78 101
+11 64	72 12	10 64
  === Action === 
 1 0 (carburant restant -2921)
 
  === Tour 70 === 
-11 64	70 101	74 102
+11 64	74 14	10 64
  === Action === 
 1 0 (carburant restant -3025)
 
  === Tour 71 === 
-11 64	69 99	73 102
+11 64	74 14	10 64
  === Action === 
-1 0 (carburant restant -3131)
-
+1 0 (carburant restant -3131
+ 
  === Tour 72 === 
-11 64	67 93	72 102
+11 64	75 15	10 64
  === Action === 
-1 0 (carburant restant -3238)
-
+1 0 (carburant restant -3238
+ 
  === Tour 73 === 
-11 64	66 90	71 102
+11 64	77 17	10 64
  === Action === 
 1 0 (carburant restant -3347)
 
  === Tour 74 === 
-11 64	66 90	70 101
+11 64	78 18	10 64
  === Action === 
 1 0 (carburant restant -3457)
 
  === Tour 75 === 
-11 64	65 87	69 99
+11 64	78 18	10 64
  === Action === 
-1 0 (carburant restant -3569)
-
+1 0 (carburant restant -3569
+ 
  === Tour 76 === 
-11 64	62 81	69 99
+11 64	80 20	10 64
  === Action === 
 1 0 (carburant restant -3682)
 
  === Tour 77 === 
-11 64	61 77	67 93
+11 64	80 20	10 64
  === Action === 
 1 0 (carburant restant -3797)
 
  === Tour 78 === 
-11 64	61 72	66 90
+11 64	82 22	10 64
  === Action === 
 1 0 (carburant restant -3913)
 
  === Tour 79 === 
-11 64	61 72	65 87
+11 64	82 23	10 64
  === Action === 
 1 0 (carburant restant -4031)
 
  === Tour 80 === 
-11 64	61 62	65 87
+11 64	82 23	10 64
  === Action === 
-1 0 (carburant restant -4150)
-
+1 0 (carburant restant -4150
+ 
  === Tour 81 === 
-11 64	61 57	62 81
+11 64	82 24	10 64
  === Action === 
-1 0 (carburant restant -4271)
-
+1 0 (carburant restant -4271
+ 
  === Tour 82 === 
-11 64	61 57	62 81
+11 64	82 25	10 64
  === Action === 
-1 0 (carburant restant -4393)
-
+1 0 (carburant restant -4393
+ 
  === Tour 83 === 
-11 64	61 52	61 77
+11 64	82 27	10 64
  === Action === 
-1 0 (carburant restant -4517)
-
+1 0 (carburant restant -4517
+ 
  === Tour 84 === 
-11 64	61 52	61 72
+11 64	82 28	10 64
  === Action === 
-1 0 (carburant restant -4642)
-
+1 0 (carburant restant -4642
+ 
  === Tour 85 === 
-11 64	60 52	61 62
+11 64	82 28	10 64
  === Action === 
-1 0 (carburant restant -4769)
-
+1 0 (carburant restant -4769
+ 
  === Tour 86 === 
-11 64	57 52	61 57
+11 64	82 29	10 64
  === Action === 
 1 0 (carburant restant -4897)
 
  === Tour 87 === 
-11 64	57 52	61 57
+11 64	82 31	10 64
  === Action === 
 1 0 (carburant restant -5027)
 
  === Tour 88 === 
-11 64	51 52	61 52
+11 64	82 31	10 64
  === Action === 
-1 0 (carburant restant -5158)
-
+1 0 (carburant restant -5158
+ 
  === Tour 89 === 
-11 64	51 52	61 52
+11 64	82 33	10 64
  === Action === 
-1 0 (carburant restant -5291)
-
+1 0 (carburant restant -5291
+ 
  === Tour 90 === 
-11 64	45 53	59 52
+11 64	82 34	10 64
  === Action === 
 1 0 (carburant restant -5425)
 
  === Tour 91 === 
-11 64	45 53	59 52
+11 64	82 35	10 64
  === Action === 
 1 0 (carburant restant -5561)
 
  === Tour 92 === 
-11 64	43 55	57 52
+11 64	82 35	10 64
  === Action === 
-1 0 (carburant restant -5698)
-
+1 0 (carburant restant -5698
+ 
  === Tour 93 === 
-11 64	41 57	51 52
+11 64	82 36	10 64
  === Action === 
-1 0 (carburant restant -5837)
-
+1 0 (carburant restant -5837
+ 
  === Tour 94 === 
-11 64	38 62	48 52
+11 64	82 38	10 64
  === Action === 
-1 0 (carburant restant -5977)
-
+1 0 (carburant restant -5977
+ 
  === Tour 95 === 
-11 64	38 62	48 52
+11 64	82 39	10 64
  === Action === 
 1 0 (carburant restant -6119)
 
  === Tour 96 === 
-11 64	36 68	43 55
+11 64	81 40	10 64
  === Action === 
-1 0 (carburant restant -6262)
-
+1 0 (carburant restant -6262
+ 
  === Tour 97 === 
-11 64	35 71	41 57
+11 64	80 41	10 64
  === Action === 
 1 0 (carburant restant -6407)
 
  === Tour 98 === 
-11 64	35 71	41 57
+11 64	80 41	10 64
  === Action === 
 1 0 (carburant restant -6553)
 
  === Tour 99 === 
-11 64	32 78	38 62
+11 64	79 43	10 64
  === Action === 
 1 0 (carburant restant -6701)
 
  === Tour 100 === 
-11 64	30 82	37 65
+11 64	79 44	10 64
  === Action === 
-1 0 (carburant restant -6850)
-
+1 0 (carburant restant -6850
+ 
  === Tour 101 === 
-11 64	30 82	36 68
+11 64	79 44	10 64
  === Action === 
-1 0 (carburant restant -7001)
-
+1 0 (carburant restant -7001
+ 
  === Tour 102 === 
-11 64	28 86	36 68
+11 64	79 46	10 64
  === Action === 
 1 0 (carburant restant -7153)
 
  === Tour 103 === 
-11 64	28 86	35 71
+11 64	79 47	10 64
  === Action === 
 1 0 (carburant restant -7307)
 
  === Tour 104 === 
-11 64	30 87	34 74
+11 64	79 47	10 64
  === Action === 
-1 0 (carburant restant -7462)
-
+1 0 (carburant restant -7462
+ 
  === Tour 105 === 
-11 64	30 87	32 78
+11 64	79 49	10 64
  === Action === 
 1 0 (carburant restant -7619)
 
  === Tour 106 === 
-11 64	31 89	30 82
+11 64	79 49	10 64
  === Action === 
 1 0 (carburant restant -7777)
 
  === Tour 107 === 
-11 64	32 91	28 86
+11 64	79 50	10 64
  === Action === 
-1 0 (carburant restant -7937)
-
+1 0 (carburant restant -7937
+ 
  === Tour 108 === 
-11 64	33 93	29 86
+11 64	79 52	10 64
  === Action === 
 1 0 (carburant restant -8098)
 
  === Tour 109 === 
-11 64	34 97	29 86
+11 64	79 52	10 64
  === Action === 
-1 0 (carburant restant -8261)
-
+1 0 (carburant restant -8261
+ 
  === Tour 110 === 
-11 64	34 97	30 87
+11 64	79 54	10 64
  === Action === 
 1 0 (carburant restant -8425)
 
  === Tour 111 === 
-11 64	34 101	31 89
+11 64	79 55	10 64
  === Action === 
 1 0 (carburant restant -8591)
 
  === Tour 112 === 
-11 64	33 103	32 91
+11 64	79 55	10 64
  === Action === 
 1 0 (carburant restant -8758)
 
  === Tour 113 === 
-11 64	33 103	33 93
+11 64	79 57	10 64
  === Action === 
 1 0 (carburant restant -8927)
 
  === Tour 114 === 
-11 64	31 104	34 95
+11 64	79 58	10 64
  === Action === 
-1 0 (carburant restant -9097)
-
+1 0 (carburant restant -9097
+ 
  === Tour 115 === 
-11 64	25 103	34 97
+11 64	79 59	10 64
  === Action === 
-1 0 (carburant restant -9269)
-
+1 0 (carburant restant -9269
+ 
  === Tour 116 === 
-11 64	25 103	34 99
+11 64	79 60	10 64
  === Action === 
 1 0 (carburant restant -9442)
 
  === Tour 117 === 
-11 64	19 101	33 103
+11 64	79 60	10 64
  === Action === 
-1 0 (carburant restant -9617)
-
+1 0 (carburant restant -9617
+ 
  === Tour 118 === 
-11 64	19 101	33 103
+11 64	79 62	10 64
  === Action === 
 1 0 (carburant restant -9793)
 
  === Tour 119 === 
-11 64	13 98	28 104
+11 64	79 62	10 64
  === Action === 
-1 0 (carburant restant -9971)
-
+1 0 (carburant restant -9971
+ 
  === Tour 120 === 
-11 64	11 96	28 104
+11 64	79 64	10 64
  === Action === 
-1 0 (carburant restant -10150)
-
+1 0 (carburant restant -10150
+ 
  === Tour 121 === 
-11 64	11 96	25 103
+11 64	79 66	10 64
  === Action === 
-1 0 (carburant restant -10331)
-
+1 0 (carburant restant -10331
+ 
  === Tour 122 === 
-11 64	10 93	19 101
+11 64	79 67	10 64
  === Action === 
 1 0 (carburant restant -10513)
 
  === Tour 123 === 
-11 64	10 84	19 101
+11 64	79 68	10 64
  === Action === 
 1 0 (carburant restant -10697)
 
  === Tour 124 === 
-11 64	10 79	16 100
+11 64	79 68	10 64
  === Action === 
 1 0 (carburant restant -10882)
 
  === Tour 125 === 
-11 64	10 79	13 98
+11 64	79 69	10 64
  === Action === 
 1 0 (carburant restant -11069)
-
- === Tour 126 === 
-11 64	10 74	11 96
- === Action === 
-1 0 (carburant restant -11257)
-
- === Tour 127 === 
-11 64	10 74	10 93
- === Action === 
-1 0 (carburant restant -11447)
-
- === Tour 128 === 
-11 64	10 74	10 89
- === Action === 
-1 0 (carburant restant -11638)
-
- === Tour 129 === 
-11 64	10 74	10 84
- === Action === 
-1 0 (carburant restant -11831)
-
- === Tour 130 === 
-11 64	10 74	10 79
- === Action === 
-1 0 (carburant restant -12025)
-
- === Tour 131 === 
-11 64	10 74	10 79
- === Action === 
-1 0 (carburant restant -12221)
-
- === Tour 132 === 
-11 64	10 74	10 78
- === Action === 
-1 0 (carburant restant -12418)
-
- === Tour 133 === 
-11 64	10 74	10 77
- === Action === 
-1 0 (carburant restant -12617)
-
- === Tour 134 === 
-11 64	10 74	10 76
- === Action === 
-1 0 (carburant restant -12817)
-
- === Tour 135 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -13019)
-
- === Tour 136 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -13222)
-
- === Tour 137 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -13427)
-
- === Tour 138 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -13633)
-
- === Tour 139 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -13841)
-
- === Tour 140 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -14050)
-
- === Tour 141 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -14261)
-
- === Tour 142 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -14473)
-
- === Tour 143 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -14687)
-
- === Tour 144 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -14902)
-
- === Tour 145 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -15119)
-
- === Tour 146 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -15337)
-
- === Tour 147 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -15557)
-
- === Tour 148 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -15778)
-
- === Tour 149 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -16001)
-
- === Tour 150 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -16225)
-
- === Tour 151 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -16451)
-
- === Tour 152 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -16678)
-
- === Tour 153 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -16907)
-
- === Tour 154 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -17137)
-
- === Tour 155 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -17369)
-
- === Tour 156 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -17602)
-
- === Tour 157 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -17837)
-
- === Tour 158 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -18073)
-
- === Tour 159 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -18311)
-
- === Tour 160 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -18550)
-
- === Tour 161 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -18791)
-
- === Tour 162 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -19033)
-
- === Tour 163 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -19277)
-
- === Tour 164 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -19522)
-
- === Tour 165 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -19769)
-
- === Tour 166 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -20017)
-
- === Tour 167 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -20267)
-
- === Tour 168 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -20518)
-
- === Tour 169 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -20771)
-
- === Tour 170 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -21025)
-
- === Tour 171 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -21281)
-
- === Tour 172 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -21538)
-
- === Tour 173 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -21797)
-
- === Tour 174 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -22057)
-
- === Tour 175 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -22319)
-
- === Tour 176 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -22582)
-
- === Tour 177 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -22847)
-
- === Tour 178 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -23113)
-
- === Tour 179 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -23381)
-
- === Tour 180 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -23650)
-
- === Tour 181 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -23921)
-
- === Tour 182 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -24193)
-
- === Tour 183 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -24467)
-
- === Tour 184 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -24742)
-
- === Tour 185 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -25019)
-
- === Tour 186 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -25297)
-
- === Tour 187 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -25577)
-
- === Tour 188 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -25858)
-
- === Tour 189 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -26141)
-
- === Tour 190 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -26425)
-
- === Tour 191 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -26711)
-
- === Tour 192 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -26998)
-
- === Tour 193 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -27287)
-
- === Tour 194 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -27577)
-
- === Tour 195 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -27869)
-
- === Tour 196 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -28162)
-
- === Tour 197 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -28457)
-
- === Tour 198 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -28753)
-
- === Tour 199 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -29051)
-
- === Tour 200 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -29350)
-
- === Tour 201 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -29651)
-
- === Tour 202 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -29953)
-
- === Tour 203 === 
-11 64	10 74	9 74
- === Action === 
-1 0 (carburant restant -30257)

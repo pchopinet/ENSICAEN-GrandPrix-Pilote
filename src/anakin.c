@@ -56,8 +56,10 @@ int main() {
 
     L = initLadj(T);
     loadLadj(L, T, a1);
+    calculDistance(L);
     finalPoint = dijkstra(L,T,a1);
     route = findRoute(L, finalPoint);
+
 
     a1 = pushStack(route);
     a2 = pushStack(route);
