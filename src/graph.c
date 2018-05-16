@@ -169,7 +169,6 @@ Stack* findRoute(Ladj* L, point p) {
     } while (*totFuel(L,p) != 0);
 
     putStack(p,S);
-
     return S;
 }
 
@@ -201,7 +200,7 @@ point dijkstra(Ladj* L, Track t, point a, float x) {
 
             if (*tag(L,b)!=4) {
 
-                w = 10000*C->fuel + (int)(1000*x);
+                w = 1000*C->fuel + (int)(1000*x);
 
                 if ((*totWeight(L,a) + w) < *totWeight(L,b)) {
 
