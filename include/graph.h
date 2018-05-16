@@ -20,8 +20,7 @@ int calculDistance(Ladj* L);
 
 Stack* findRoute(Ladj* L, point p);
 
-point dijkstra(Ladj* L, Track t, point a);
+point dijkstra(Ladj* L, Track t, point a, float x);
 
-int weight(int fuel, int totfuel, int dmin);
 
 #endif

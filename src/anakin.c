@@ -36,6 +36,8 @@ int main() {
     Ladj *L;
     char vb, vc;
 
+    float x;
+
     FILE *log = fopen("anakin.log", "w");
 
     Track T = initTrack(stdin);
@@ -57,7 +59,10 @@ int main() {
     L = initLadj(T);
     loadLadj(L, T, a1);
     calculDistance(L);
-    finalPoint = dijkstra(L,T,a1);
+
+    x = fuel/(*distance(L,a1));
+
+    finalPoint = dijkstra(L,T,a1,x);
     route = findRoute(L, finalPoint);
 
 
@@ -79,9 +84,9 @@ int main() {
         fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
         fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
         fflush(log);
-// Pour repartir en cas de crash
 
-        if (a1.x!=a2.x || a1.y!=a2.y) {
+
+        if (a1.x!=a2.x || a1.y!=a2.y) {// Pour repartir en cas de crash
 
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
@@ -93,7 +98,10 @@ int main() {
 
             L = initLadj(T);
             loadLadj(L, T, a1);
-            finalPoint = dijkstra(L,T,a1);
+
+            //x = fuel/(*distance(L,a1));
+
+            finalPoint = dijkstra(L,T,a1,x);
             route = findRoute(L, finalPoint);
             a1 = pushStack(route);
 
@@ -108,9 +116,10 @@ int main() {
 
         a2 = pushStack(route);
 
-// pour ne pas se crash dans une autre voiture
 
-        if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y)) {
+
+        if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y)) {// pour ne pas se crash dans une autre voiture
+
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
             T->track[b.x][b.y] = '.';
@@ -118,7 +127,10 @@ int main() {
 
             L = initLadj(T);
             loadLadj(L, T, a1);
-            finalPoint = dijkstra(L,T,a1);
+
+            //x = fuel/(*distance(L,a1));
+
+            finalPoint = dijkstra(L,T,a1,x);
             route = findRoute(L, finalPoint);
 
 

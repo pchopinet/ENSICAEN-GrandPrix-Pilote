@@ -173,7 +173,7 @@ Stack* findRoute(Ladj* L, point p) {
     return S;
 }
 
-point dijkstra(Ladj* L, Track t, point a) {
+point dijkstra(Ladj* L, Track t, point a, float x) {
     int w;
     int *TFa, *TFb;
     int dmin;
@@ -203,7 +203,7 @@ point dijkstra(Ladj* L, Track t, point a) {
 
             if (*tag(L,b)!=4) {
 
-                w = weight(C->fuel, t->fuel, dmin);
+                w = 10000*C->fuel + (int)(1000*x);
 
                 if ((*totWeight(L,a) + w) < *totWeight(L,b)) {
 
@@ -230,8 +230,8 @@ point dijkstra(Ladj* L, Track t, point a) {
 }
 
 int weight(int fuel, int totfuel, int dmin) {
+    float x = totfuel/dmin;
 
-    return 10000*fuel/dmin;
-
-
+    //return 10000*fuel + (int)1000*x; très bon sauf sur les circuits les plus courts
+    return 10000*fuel + (int)1000*x;
 }

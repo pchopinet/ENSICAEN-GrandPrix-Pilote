@@ -8,14 +8,11 @@ PATHOBJ=../obj/
 PATHSRC= ./
 PATHDRIVERS= ../etc/GrandPrix2018_3.0.3/drivers/
 OBJ=$(addprefix $(PATHOBJ),track.o stack.o liste_adjacence.o file.o point.o print.o graph.o dijkstra.o pointClement.o)
-all: testTrack anakin3 anakin
+all: testTrack anakin
 
 
 testTrack: $(OBJ) $(PATHOBJ)testTrack.o
 	$(CC) -o $@ $^ -lm
-
-anakin3: $(OBJ) $(PATHOBJ)anakin3.o
-	$(CC) -o $(PATHDRIVERS)$@ $^ -lm
 
 anakin: $(OBJ) $(PATHOBJ)anakin.o
 	$(CC) -o $(PATHDRIVERS)$@ $^ -lm

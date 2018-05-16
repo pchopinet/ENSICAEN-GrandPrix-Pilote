@@ -10,7 +10,7 @@ int main() {
     point depart;
 
 
-    float temps;
+    float temps,x;
     clock_t t0, t;
     t0 = clock();
 
@@ -47,7 +47,9 @@ int main() {
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     printf("temps = %f\n", temps);
 
-    point finalPoint = dijkstra(L,T,depart);
+    x = T->fuel/(*distance(L,depart));
+
+    point finalPoint = dijkstra(L,T,depart,x);
     printf("Fuel total : %d\n",*totFuel(L,finalPoint));
 
     t = clock();
