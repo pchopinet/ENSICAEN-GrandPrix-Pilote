@@ -16,8 +16,9 @@ Track initTrack(FILE *input) {
 
 int readHeader(Track t, FILE *input) {
     char c;
+    int sf;
 
-    fscanf(input, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
+    sf = fscanf(input, "%d %d %d", &(t->width), &(t->height), &(t->fuel));
 
     if (t->height == 0 || t->width == 0 || t->fuel == 0) {
         exit(1);
@@ -25,7 +26,7 @@ int readHeader(Track t, FILE *input) {
 
     while (fread(&c, sizeof(char), 1, input) == 1 && c != '\n');
 
-    return 0;
+    return sf;
 }
 
 int readTrack(Track t, FILE *input) {
@@ -57,7 +58,7 @@ Track initTrackFromFile(char *file) {
 
 
 int readTrackFromFile(Track t, char *file) {
-    int i, j;
+    int i, j, sf;
     char c;
     FILE *f = fopen(file, "r");
     if (f == NULL) {
@@ -65,23 +66,23 @@ int readTrackFromFile(Track t, char *file) {
         exit(1);
     }
 
-    fscanf(f, "%d %d %d%c", &(t->width), &(t->height), &(t->fuel), &c);
+    sf = fscanf(f, "%d %d %d%c", &(t->width), &(t->height), &(t->fuel), &c);
     t->track = calloc(sizeof(char *), t->height);
 
     for (i = 0; i < t->height; i++) {
         t->track[i] = calloc(sizeof(char), t->width);
         for (j = 0; j < t->width; j++) {
-            fscanf(f, "%c", &c);
+            sf = fscanf(f, "%c", &c);
             printf("%c ", c);
             t->track[i][j] = c;
         }
         if (!feof(f)) {
-            fscanf(f, "%c", &c);
+            sf = fscanf(f, "%c", &c);
         }
         printf("\n");
     }
     fclose(f);
-    return 0;
+    return sf;
 }
 
 /*

@@ -23,7 +23,6 @@ $(PATHOBJ)%.o: ../lib/graph/%.c
 $(PATHOBJ)%.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $^
 
-
 clean:
 	rm -rf $(PATHDRIVERS)anakin $(PATHDRIVERS)anakin3 testTrack
 	rm -rf $(PATHOBJ)*.o

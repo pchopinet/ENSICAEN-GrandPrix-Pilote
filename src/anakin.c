@@ -26,7 +26,7 @@ void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
 
 int main() {
 
-    int tour = 0, bool=1;
+    int tour = 0, bool=1, sf;
     point a1, a2, b, c;
     point finalPoint;
     int ax, ay, vx, vy;
@@ -49,7 +49,7 @@ int main() {
     fprintf(log, "\n === Tour %d === \n", tour);
 
 
-    fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
+    sf = fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
     fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
     fflush(log);
 
@@ -84,7 +84,7 @@ int main() {
         tour++;
         fprintf(log, "\nTour: %d\n", tour);
 
-        fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
+        sf = fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
         fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
         fflush(log);
 
@@ -140,9 +140,6 @@ int main() {
             L = initLadj(T);
             loadLadj(L, T, a1);
 
-            fprintf(log,"---------------%d\n",*distance(L,a1));
-            fflush(log);
-
             x = fuel/dist;
 
             finalPoint = dijkstra(L,T,a1,x);
@@ -165,5 +162,5 @@ int main() {
         fuel += deltaCarburantAcceleration(ax, ay, vx, vy, testPt(T,a1,'~'));
         sendAcceleration(ax,ay,fuel,log);
     }
-    return 0;
+    return sf;
 }
