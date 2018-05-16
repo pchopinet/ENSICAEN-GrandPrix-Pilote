@@ -8,11 +8,10 @@
 #include "../include/print.h"
 #include "../include/graph.h"
 
-int deltaCarburantAcceleration(int accX, int accY, int velX, int velY, int dansSable) {
+int deltaCarburantAcceleration(int accX, int accY, int velX, int velY, int sable) {
     int valeur = accX * accX + accY * accY;
     valeur += (int)(sqrt(velX * velX + velY * velY) * 3.0 / 2.0);
-    if (dansSable)
-        valeur += 1;
+    valeur += sable;
     return -valeur;
 }
 
@@ -27,7 +26,7 @@ void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
 
 int main() {
 
-    int tour = 0;
+    int tour = 0, bool=1;
     point a1, a2, b, c;
     point finalPoint;
     int ax, ay, vx, vy;
@@ -37,6 +36,7 @@ int main() {
     char vb, vc;
 
     float x;
+    int dist;
 
     FILE *log = fopen("anakin.log", "w");
 
@@ -60,11 +60,14 @@ int main() {
     loadLadj(L, T, a1);
     calculDistance(L);
 
-    x = fuel/(*distance(L,a1));
+    dist = *distance(L,a1);
+
+    x = fuel/dist;
 
     finalPoint = dijkstra(L,T,a1,x);
     route = findRoute(L, finalPoint);
 
+    dist = route->size;
 
     a1 = pushStack(route);
     a2 = pushStack(route);
@@ -73,7 +76,7 @@ int main() {
     vy = a1.vx;
     vx = a1.vy;
 
-    fuel += deltaCarburantAcceleration(ax, ay, vx, vy, 0);
+    fuel += deltaCarburantAcceleration(ax, ay, vx, vy, testPt(T,a1,'~'));
 
     sendAcceleration(ax,ay,fuel,log);
 
@@ -88,6 +91,8 @@ int main() {
 
         if (a1.x!=a2.x || a1.y!=a2.y) {// Pour repartir en cas de crash
 
+
+
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
             T->track[b.x][b.y] = '.';
@@ -99,10 +104,13 @@ int main() {
             L = initLadj(T);
             loadLadj(L, T, a1);
 
-            //x = fuel/(*distance(L,a1));
+            x = fuel/dist;
 
             finalPoint = dijkstra(L,T,a1,x);
             route = findRoute(L, finalPoint);
+
+            dist = route->size;
+
             a1 = pushStack(route);
 
             fprintf(log,"--Recalcul de route\n--a1 = %d %d\n",a1.y,a1.x);
@@ -110,15 +118,19 @@ int main() {
 
             T->track[b.x][b.y] = vb;
             T->track[c.x][c.y] = vc;
+
         } else {
             a1 = a2;
+            dist--;
         }
 
         a2 = pushStack(route);
 
 
 
-        if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y)) {// pour ne pas se crash dans une autre voiture
+        if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y) || bool == 1) {// pour ne pas se crash dans une autre voiture
+
+            bool=0;
 
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
@@ -128,11 +140,15 @@ int main() {
             L = initLadj(T);
             loadLadj(L, T, a1);
 
-            //x = fuel/(*distance(L,a1));
+            fprintf(log,"---------------%d\n",*distance(L,a1));
+            fflush(log);
+
+            x = fuel/dist;
 
             finalPoint = dijkstra(L,T,a1,x);
             route = findRoute(L, finalPoint);
 
+            dist = route->size;
 
             T->track[b.x][b.y] = vb;
             T->track[c.x][c.y] = vc;
@@ -146,7 +162,7 @@ int main() {
         vy = a1.vx;
         vx = a1.vy;
 
-        fuel += deltaCarburantAcceleration(ax, ay, vx, vy, 0);
+        fuel += deltaCarburantAcceleration(ax, ay, vx, vy, testPt(T,a1,'~'));
         sendAcceleration(ax,ay,fuel,log);
     }
     return 0;

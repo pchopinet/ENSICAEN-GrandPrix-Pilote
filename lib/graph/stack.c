@@ -13,40 +13,43 @@ SNode* createSNode(T value, SNode* next) {
 }
 
 Stack* createStack() {
-    Stack* Q = malloc(sizeof(Stack));
-    Q->last=NULL;
-    Q->first=NULL;
-    return Q;
+    Stack* S = malloc(sizeof(Stack));
+    S->last=NULL;
+    S->first=NULL;
+    S->size=0;
+    return S;
 }
 
-int isEmptyStack(Stack* Q) {
-    return Q->last==NULL;
+int isEmptyStack(Stack* S) {
+    return S->last==NULL;
 }
 
-void putStack(T value, Stack* Q) {
-    if (Q==NULL) {
-        fprintf(stderr,"error Q==NULL");
-    } else if (isEmptyStack(Q)) {
-        Q->first=createSNode(value,NULL);
-        Q->last=Q->first;
+void putStack(T value, Stack* S) {
+    if (S==NULL) {
+        fprintf(stderr,"error S==NULL");
+    } else if (isEmptyStack(S)) {
+        S->first=createSNode(value,NULL);
+        S->last=S->first;
     } else {
         SNode* n=createSNode(value,NULL);
-	n->next = Q->first;
-	Q->first = n;
+	n->next = S->first;
+	S->first = n;
     }
+    S->size++;
 }
 
-T pushStack(Stack* Q) {
-    assert(Q!=NULL && !isEmptyStack(Q));
-    SNode* first=Q->first;
+T pushStack(Stack* S) {
+    assert(S!=NULL && !isEmptyStack(S));
+    SNode* first=S->first;
     if (first->next!=NULL) {
-        Q->first = first->next;
+        S->first = first->next;
     } else {
-        Q->first=NULL;
-        Q->last=NULL;
+        S->first=NULL;
+        S->last=NULL;
     }
     T value = first->val;
     free(first);
+    S->size--;
     return value;
 
 }

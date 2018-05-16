@@ -13,11 +13,13 @@ typedef struct snode{
 typedef struct stack{
     SNode* first;
     SNode* last;
+    int size;
 } Stack;
 
 SNode* createSNode(T value, SNode* next);
 
 Stack* createStack();
+
 
 void putStack(T value, Stack*);
 
