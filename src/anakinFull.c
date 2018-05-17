@@ -65,7 +65,7 @@ int main() {
     calculDistance(L);
     finalPoint = dijkstra(L,T,a1,x);
     route = findRoute(L, finalPoint);
-    lowerFuel = *totFuel(L,finalPoint) < fuel ? 0 : 1;
+    lowerFuel = ((float)*totFuel(L,finalPoint) < 0.95f * (float)fuel) ? 0 : 1;
 
     a1 = pushStack(route);
     a2 = pushStack(route);
@@ -89,7 +89,11 @@ int main() {
 
         if (a1.x!=a2.x || a1.y!=a2.y) {// Pour repartir en cas de crash
 
-
+            if (lowerFuel) {
+                x = 0.5*x;
+                fprintf(log,"lowerFuel x = %.0f\n",x);
+                fflush(log);
+            }
 
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
@@ -103,7 +107,7 @@ int main() {
             loadLadj(L, T, a1);
             finalPoint = dijkstra(L,T,a1,x);
             route = findRoute(L, finalPoint);
-            lowerFuel = *totFuel(L,finalPoint) < fuel ? 0 : 1;
+            lowerFuel = ((float)*totFuel(L,finalPoint) < 0.95f * (float)fuel) ? 0 : 1;
 
             a1 = pushStack(route);
 
@@ -123,8 +127,8 @@ int main() {
         if ((a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y) || lowerFuel) {// pour ne pas se crash dans une autre voiture
 
             if (lowerFuel) {
-                x = 0.5*x;
-                fprintf(log,"lowerFuel x = %.0f\n",x);
+                x = 0.5 * x;
+                fprintf(log, "lowerFuel x = %.0f\n", x);
                 fflush(log);
             }
 
@@ -135,15 +139,17 @@ int main() {
 
             L = initLadj(T);
             loadLadj(L, T, a1);
-            finalPoint = dijkstra(L,T,a1,x);
+            finalPoint = dijkstra(L, T, a1, x);
             route = findRoute(L, finalPoint);
-            lowerFuel = *totFuel(L,finalPoint) < fuel ? 0 : 1;
+            lowerFuel = ((float)*totFuel(L,finalPoint) < 0.95f * (float)fuel) ? 0 : 1;
 
             T->track[b.x][b.y] = vb;
             T->track[c.x][c.y] = vc;
 
             a1 = pushStack(route);
             a2 = pushStack(route);
+
+
         }
 
         ay = a2.vx-a1.vx;

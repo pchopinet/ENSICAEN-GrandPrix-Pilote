@@ -76,7 +76,7 @@ int loadLadj(Ladj *L, Track T, point p) {
 
                 normSpeed2 = h.vx*h.vx + h.vy*h.vy;
                 //fuel = ax*ax+ay*ay + (int) (sqrt(normSpeed2)*3/2);
-                fuel = ax*ax+ay*ay + (int) (sqrt(t.vx*t.vx + t.vy*t.vy)*3/2);
+                fuel = ax*ax+ay*ay + (int) (sqrt(h.vx*h.vx + h.vy*h.vy)*3/2);
                 fuel += testPt(T,t,'~');
 
 
