@@ -30,6 +30,13 @@ int haveEnoughFuel(int fuelMax, float totalfuelConso) {
     return lowerFuel;
 }
 
+Stack *calculateRoute(point *a1, float x, Track T, point *finalPoint, Ladj **L) { // generé par clion
+    (*L) = initLadj(T);
+    loadLadj((*L), T, (*a1));
+    (*finalPoint) = dijkstra((*L), T, (*a1), x);
+    return findRoute((*L), (*finalPoint));
+}
+
 int main() {
 
     int tour = 0, sf;
@@ -67,11 +74,16 @@ int main() {
 
     x = 10;
 
-    L = initLadj(T);
+
+    /*L = initLadj(T);
     loadLadj(L, T, a1);
     calculDistance(L);
     finalPoint = dijkstra(L, T, a1, x);
-    route = findRoute(L, finalPoint);
+    route = findRoute(L, finalPoint);*/
+
+    route = calculateRoute(&a1, x, T, &finalPoint, &L);
+    calculDistance(L);
+
     totalfuelConso = (float) *totFuel(L, finalPoint);
     haveenoughFuel = haveEnoughFuel(fuel, totalfuelConso);
 
@@ -111,10 +123,8 @@ int main() {
             a1.vx = 0;
             a1.vy = 0;
 
-            L = initLadj(T);
-            loadLadj(L, T, a1);
-            finalPoint = dijkstra(L, T, a1, x);
-            route = findRoute(L, finalPoint);
+            route = calculateRoute(&a1, x, T, &finalPoint, &L);
+
             totalfuelConso = (float) *totFuel(L, finalPoint);
             haveenoughFuel = haveEnoughFuel(fuel, totalfuelConso);
 
@@ -147,12 +157,13 @@ int main() {
             T->track[b.x][b.y] = '.';
             T->track[c.x][c.y] = '.';
 
-            L = initLadj(T);
+            /*L = initLadj(T);
             loadLadj(L, T, a1);
             finalPoint = dijkstra(L, T, a1, x);
-            route = findRoute(L, finalPoint);
-            totalfuelConso = (float) *totFuel(L, finalPoint);
+            route = findRoute(L, finalPoint);*/
 
+            route = calculateRoute(&a1, x, T, &finalPoint, &L);
+            totalfuelConso = (float) *totFuel(L, finalPoint);
             haveenoughFuel = haveEnoughFuel(fuel, totalfuelConso);
 
             T->track[b.x][b.y] = vb;
