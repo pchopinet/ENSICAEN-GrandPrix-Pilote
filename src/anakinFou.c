@@ -24,8 +24,6 @@ void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
     fflush(log);
 }
 
-
-
 int main() {
 
     int lowerFuel = 0, increaseFuel = 0, tour = 0, crash = 1;
@@ -37,7 +35,7 @@ int main() {
     Stack *route;
     Ladj *L;
 
-    FILE *log = fopen("anakinFull.log", "w");
+    FILE *log = fopen("anakinFou.log", "w");
 
     Track T = initTrack(stdin);
     TrackPrint(T, log);
@@ -53,7 +51,7 @@ int main() {
 
         if (tour == 1 || a1.x!=a2.x || a1.y!=a2.y) {
             crash = 1;
-            fprintf(log,"craaaaaaaaaaaaaaaaaaaash\n");
+            fprintf(log,"\tCRASH\n");
             fflush(log);
         } else {
             a1 = a2;
@@ -63,15 +61,17 @@ int main() {
 
         if (crash == 1 || (a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y) || lowerFuel || increaseFuel) {
 
+            fprintf(log,"\t-Recalcul de la route\n");
+            fflush(log);
             if (lowerFuel) {
                 x1 = x;
                 x = (x0+x1)/2;
-                fprintf(log,"----------lowerFuel x = %.2f\n", x);
+                fprintf(log,"\t\t-lowerFuel x = %.2f\n", x);
                 fflush(log);
             } else if (increaseFuel) {
                 x0 = x;
                 x = (x0+x1)/2;
-                fprintf(log,"++++++++++increaseFuel x = %.2f\n",x);
+                fprintf(log,"\t\t+increaseFuel x = %.2f\n",x);
                 fflush(log);
             }
 
@@ -94,9 +94,6 @@ int main() {
 
             a1 = pushStack(route);
             a2 = pushStack(route);
-
-            //fprintf(log,"--Recalcul de route\n--a1 = %d %d\n",a1.y,a1.x);
-            //fflush(log);
 
             T->track[b.x][b.y] = vb;
             T->track[c.x][c.y] = vc;
