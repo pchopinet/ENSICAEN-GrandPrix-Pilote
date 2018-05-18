@@ -47,7 +47,7 @@ add_executable(ENSICAEN_GrandPrix_Pilote
         src/vector.c)
 
 add_executable(anakin
-        src/anakin.c
+        src/anakinFull.c
         src/graph.c
         src/pointClement.c
         src/print.c
