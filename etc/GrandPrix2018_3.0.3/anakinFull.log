@@ -43,1189 +43,714 @@ Map : 180 42 550
 .......######################################################################################################################################################################.......
 ......................................#####################################################################################################################################.........
 
- === Tour 1 === 
-86 2	87 4	92 0
+Tour: 1
+86 0	86 2	86 4
+craaaaaaaaaaaaaaaaaaaash
 1 0 (carburant restant 549)
 
 Tour: 2
-87 2	89 3	92 0
-lowerFuel x = 8
+87 0	87 2	86 4
+----------lowerFuel x = 2.50
 1 0 (carburant restant 547)
 
-
 Tour: 3
-89 3	101 0	92 2
-lowerFuel x = 6
-1 1 (carburant restant 541
+89 0	89 2	87 4
+----------lowerFuel x = 1.25
+1 0 (carburant restant 543)
+
 Tour: 4
-92 2	96 2	101 0
-lowerFuel x = 4
-1 -1 (carburant restant 537)
+92 0	92 2	92 3
+----------lowerFuel x = 0.62
+0 0 (carburant restant 539)
 
-T
 Tour: 5
-96 2	106 0	101 1
-lowerFuel x = 3
-0 1 (carburant restant 52
-Tour: 6
-101 1	104 1	116 0
-lowerFuel x = 2
--1 1 (carburant restant 520)
+95 0	92 2	92 3
+----------lowerFuel x = 0.31
+-1 0 (carburant restant 534)
 
-To
+Tour: 6
+97 0	96 1	100 1
+++++++++++increaseFuel x = 0.47
+0 0 (carburant restant 531)
+
 Tour: 7
-104 1	121 0	110 2
-lowerFuel x = 2
-1 1 (carburant restant 513
+99 0	97 1	105 1
+++++++++++increaseFuel x = 0.55
+1 0 (carburant restant 527)
+
 Tour: 8
-110 2	114 1	126 0
-lowerFuel x = 1
-0 0 (carburant restant 505)
+102 0	97 1	105 1
+----------lowerFuel x = 0.51
+0 0 (carburant restant 523)
 
 Tour: 9
-115 2	119 1	126 0
-lowerFuel x = 1
-0 0 (carburant restant 498)
+105 0	102 2	110 1
+0 0 (carburant restant 519)
 
-T
 Tour: 10
-119 1	135 0	125 2
-lowerFuel x = 1
-0 0 (carburant restant 492
-T
+108 0	106 1	120 1
+0 0 (carburant restant 515)
+
 Tour: 11
-124 1	138 0	129 2
-lowerFuel x = 1
-0 0 (carburant restant 485)
+111 0	111 1	125 1
+0 0 (carburant restant 511)
+
 Tour: 12
-129 2	134 1	138 0
-lowerFuel x = 0
--1 -1 (carburant restant 475)
+114 0	116 1	130 1
+0 0 (carburant restant 507)
 
 Tour: 13
-132 1	138 1	144 2
-0 0 (carburant restant 471)
+117 0	116 1	130 1
+0 0 (carburant restant 503)
 
 Tour: 14
-135 0	141 1	144 2
--1 1 (carburant restant 465)
+120 0	121 1	135 1
+0 0 (carburant restant 499)
 
 Tour: 15
-141 1	150 3	139 1
-0 1 (carburant restant 458)
+123 0	126 1	140 1
+0 0 (carburant restant 495)
 
 Tour: 16
-144 2	153 3	141 2
-0 0 (carburant restant 454)
+126 0	131 1	144 2
+0 0 (carburant restant 491)
 
 Tour: 17
-147 3	156 3	144 3
-0 -1 (carburant restant 449)
+129 0	136 1	148 3
+0 0 (carburant restant 487)
+
 Tour: 18
-144 3	153 3	156 3
-0 -1 (carburant restant 449)
+132 0	145 2	152 3
+0 0 (carburant restant 483)
 
 Tour: 19
-147 3	156 3	159 2
-0 0 (carburant restant 445)
+135 0	145 2	156 2
+0 0 (carburant restant 479)
 
 Tour: 20
-150 3	159 2	165 1
-0 0 (carburant restant 441)
-
+138 0	153 3	164 1
+0 1 (carburant restant 474)
 
 Tour: 21
-159 2	165 1	156 3
-0 0 (carburant restant 432)
+141 1	153 3	168 2
+0 0 (carburant restant 470)
 
 Tour: 22
-162 1	170 3	159 2
-0 1 (carburant restant 427)
+144 2	161 1	171 4
+0 0 (carburant restant 466)
 
 Tour: 23
-159 2	168 2	172 4
-0 0 (carburant restant 428)
+147 3	165 1	174 7
+0 -1 (carburant restant 461)
 
 Tour: 24
-162 1	170 3	173 5
-0 1 (carburant restant 423)
-
+150 3	165 1	174 7
+0 0 (carburant restant 457)
 
 Tour: 25
-170 3	174 6	168 2
-0 0 (carburant restant 414)
+153 3	168 2	176 11
+0 0 (carburant restant 453)
 
 Tour: 26
-172 4	175 7	170 3
--1 0 (carburant restant 410)
+156 3	171 4	177 15
+0 -1 (carburant restant 448)
 
 Tour: 27
-173 5	175 7	172 4
-0 0 (carburant restant 408)
+159 2	174 7	177 20
+0 0 (carburant restant 444)
+
 Tour: 28
-172 4	175 7	175 9
--1 0 (carburant restant 406)
+162 1	177 15	176 29
+0 1 (carburant restant 439)
 
 Tour: 29
-173 5	175 8	175 10
-0 0 (carburant restant 404)
+165 1	177 15	174 33
+0 1 (carburant restant 434)
 
 Tour: 30
-174 6	175 9	175 11
-0 0 (carburant restant 402)
+168 2	177 25	171 36
+0 1 (carburant restant 429)
 
 Tour: 31
-175 9	175 12	175 8
-0 0 (carburant restant 401)
-
+171 4	177 25	171 36
+-1 1 (carburant restant 422)
 
 Tour: 32
-175 8	175 11	175 13
-0 0 (carburant restant 398)
+173 7	176 29	163 39
+0 0 (carburant restant 417)
 
 Tour: 33
-175 9	175 12	175 14
-0 0 (carburant restant 397)
+175 10	171 36	158 39
+-1 0 (carburant restant 411)
 
 Tour: 34
-175 10	175 13	175 14
-0 0 (carburant restant 396)
+176 13	167 38	153 39
+-1 0 (carburant restant 406)
 
 Tour: 35
-175 11	175 14	175 16
-0 0 (carburant restant 395)
+176 16	167 38	153 39
+0 0 (carburant restant 402)
+
 Tour: 36
-175 14	175 16	175 13
-0 0 (carburant restant 396)
+176 19	163 39	148 39
+0 0 (carburant restant 398)
 
 Tour: 37
-175 15	175 18	175 14
-0 0 (carburant restant 395)
-
+176 22	153 39	138 39
+0 0 (carburant restant 394)
 
 Tour: 38
-175 14	175 17	175 19
-0 0 (carburant restant 392)
-Tour: 39
-175 17	175 19	175 16
-0 0 (carburant restant 393)
-
-Tour: 40
-175 18	175 21	175 17
-0 0 (carburant restant 392)
-
-Tour: 41
-175 19	175 21	175 18
-0 0 (carburant restant 391)
-
-Tour: 42
-175 20	175 23	175 19
+176 25	148 39	133 39
 0 0 (carburant restant 390)
 
+Tour: 39
+176 28	143 39	128 39
+-1 0 (carburant restant 385)
+
+Tour: 40
+175 31	143 39	128 39
+-1 0 (carburant restant 380)
+
+Tour: 41
+173 34	133 39	118 39
+0 -1 (carburant restant 374)
+
+Tour: 42
+171 36	133 39	118 39
+-1 -1 (carburant restant 368)
 
 Tour: 43
-175 19	175 22	175 23
-0 0 (carburant restant 387)
-Tour: 44
-175 22	175 25	175 21
-0 0 (carburant restant 388)
+168 37	123 39	108 39
+0 0 (carburant restant 364)
 
+Tour: 44
+165 38	118 39	103 39
+0 -1 (carburant restant 359)
 
 Tour: 45
-175 21	175 24	175 26
-0 0 (carburant restant 385)
-Tour: 46
-175 24	175 27	175 23
-0 0 (carburant restant 386)
+162 38	118 39	98 39
+0 0 (carburant restant 355)
 
+Tour: 46
+159 38	113 39	98 39
+0 0 (carburant restant 351)
 
 Tour: 47
-175 23	175 26	175 28
-0 0 (carburant restant 383)
-Tour: 48
-175 26	175 29	175 25
-0 0 (carburant restant 384)
+156 38	108 39	88 39
+0 0 (carburant restant 347)
 
+Tour: 48
+153 38	98 39	83 39
+0 0 (carburant restant 343)
 
 Tour: 49
-175 25	175 28	175 30
-0 0 (carburant restant 381)
+150 38	93 39	83 39
+0 0 (carburant restant 339)
+
 Tour: 50
-175 28	175 31	175 27
-0 0 (carburant restant 382)
-
-
-Tour: 51
-175 27	175 30	175 32
-0 0 (carburant restant 379)
-Tour: 52
-175 30	174 33	175 29
-0 0 (carburant restant 380)
-
-Tour: 53
-175 31	174 33	175 30
-0 0 (carburant restant 379)
-
-
-Tour: 54
-175 30	174 33	172 35
-0 0 (carburant restant 376)
-
-Tour: 55
-174 33	170 36	175 32
-0 0 (carburant restant 375)
-
-Tour: 56
-173 34	168 37	174 33
-0 0 (carburant restant 373)
-
-Tour: 57
-172 35	168 37	173 34
--1 0 (carburant restant 370)
-
-Tour: 58
-170 36	162 37	172 35
-0 0 (carburant restant 367)
-
-Tour: 59
-172 35	165 37	159 37
--1 0 (carburant restant 366)
-
-Tour: 60
-170 36	162 37	156 37
-0 0 (carburant restant 363)
-
-
-Tour: 61
-162 37	153 37	165 37
-0 0 (carburant restant 354)
-
-
-Tour: 62
-165 37	156 37	153 37
-0 0 (carburant restant 354)
-
-Tour: 63
-162 37	153 37	151 37
-0 0 (carburant restant 350)
-Tour: 64
-153 37	150 37	156 37
-1 0 (carburant restant 341)
-
-Tour: 65
-151 37	148 37	153 37
-1 0 (carburant restant 337)
-
-
-Tour: 66
-153 37	149 37	147 37
-1 0 (carburant restant 337)
-Tour: 67
-149 37	147 37	150 37
+147 38	93 39	78 39
 0 0 (carburant restant 335)
 
-
-Tour: 68
-150 37	147 37	145 37
-0 0 (carburant restant 332)
-
-Tour: 69
-149 37	146 37	144 37
+Tour: 51
+144 38	88 39	73 39
 0 0 (carburant restant 331)
 
-Tour: 70
-148 37	145 37	143 37
-0 0 (carburant restant 330)
-
-Tour: 71
-147 37	144 37	142 37
-0 0 (carburant restant 329)
-
-Tour: 72
-146 37	143 37	141 37
-0 0 (carburant restant 328)
-
-Tour: 73
-145 37	142 37	141 37
+Tour: 52
+141 38	83 39	68 39
 0 0 (carburant restant 327)
 
-Tour: 74
-144 37	141 37	139 37
-0 0 (carburant restant 326)
-
-Tour: 75
-143 37	140 37	138 37
-0 0 (carburant restant 325)
-
-Tour: 76
-142 37	139 37	137 37
-0 0 (carburant restant 324)
-
-Tour: 77
-141 37	138 37	137 37
+Tour: 53
+138 38	78 39	58 39
 0 0 (carburant restant 323)
 
-Tour: 78
-140 37	137 37	136 37
-0 0 (carburant restant 322)
-
-Tour: 79
-139 37	136 37	134 37
-0 0 (carburant restant 321)
-Tour: 80
-136 37	133 37	137 37
-0 0 (carburant restant 322)
-
-
-Tour: 81
-137 37	134 37	132 37
-0 0 (carburant restant 319)
-Tour: 82
-134 37	131 37	135 37
-0 0 (carburant restant 320)
-
-Tour: 83
-133 37	130 37	134 37
+Tour: 54
+135 38	68 39	53 39
 0 0 (carburant restant 319)
 
-Tour: 84
-132 37	129 37	133 37
-0 0 (carburant restant 318)
-
-Tour: 85
-131 37	129 37	132 37
-0 0 (carburant restant 317)
-
-Tour: 86
-130 37	127 37	131 37
-0 0 (carburant restant 316)
-
-Tour: 87
-129 37	127 37	130 37
+Tour: 55
+132 38	63 39	48 39
 0 0 (carburant restant 315)
 
-
-Tour: 88
-130 37	127 37	126 37
-0 0 (carburant restant 312)
-Tour: 89
-127 37	125 37	128 37
-0 0 (carburant restant 313)
-
-
-Tour: 90
-128 37	125 37	123 37
-0 0 (carburant restant 310)
-Tour: 91
-125 37	122 37	126 37
+Tour: 56
+129 38	63 39	48 39
 0 0 (carburant restant 311)
 
-Tour: 92
-124 37	122 37	125 37
-0 0 (carburant restant 310)
-
-
-Tour: 93
-125 37	122 37	120 37
-0 0 (carburant restant 307)
-Tour: 94
-122 37	120 37	123 37
-0 0 (carburant restant 308)
-
-Tour: 95
-121 37	119 37	122 37
+Tour: 57
+126 38	53 39	38 39
 0 0 (carburant restant 307)
 
-
-Tour: 96
-122 37	119 37	118 37
-0 0 (carburant restant 304)
-
-Tour: 97
-121 37	118 37	116 37
+Tour: 58
+123 38	48 39	33 39
 0 0 (carburant restant 303)
 
-Tour: 98
-120 37	117 37	115 37
-0 0 (carburant restant 302)
-
-Tour: 99
-119 37	116 37	115 37
-0 0 (carburant restant 301)
-
-Tour: 100
-118 37	115 37	113 37
-0 0 (carburant restant 300)
-
-Tour: 101
-117 37	114 37	113 37
+Tour: 59
+120 38	48 39	33 39
 0 0 (carburant restant 299)
-Tour: 102
-114 37	111 37	115 37
-0 0 (carburant restant 300)
 
-
-Tour: 103
-115 37	112 37	111 37
-0 0 (carburant restant 297)
-
-Tour: 104
-114 37	111 37	110 37
-0 0 (carburant restant 296)
-
-Tour: 105
-113 37	110 37	108 37
-0 0 (carburant restant 295)
-Tour: 106
-110 37	108 37	111 37
-0 0 (carburant restant 296)
-
-Tour: 107
-109 37	107 37	110 37
+Tour: 60
+117 38	38 39	23 39
 0 0 (carburant restant 295)
 
-
-Tour: 108
-110 37	107 37	105 37
-0 0 (carburant restant 292)
-
-Tour: 109
-109 37	106 37	104 37
-0 0 (carburant restant 291)
-Tour: 110
-106 37	104 37	107 37
-0 0 (carburant restant 292)
-
-Tour: 111
-105 37	102 37	106 37
+Tour: 61
+114 38	38 39	23 39
 0 0 (carburant restant 291)
 
-
-Tour: 112
-106 37	103 37	101 37
-0 0 (carburant restant 288)
-Tour: 113
-103 37	101 37	104 37
-0 0 (carburant restant 289)
-
-Tour: 114
-102 37	99 37	103 37
-0 0 (carburant restant 288)
-
-Tour: 115
-101 37	98 37	102 37
+Tour: 62
+111 38	33 39	18 39
 0 0 (carburant restant 287)
 
-Tour: 116
-100 37	98 37	101 37
-0 0 (carburant restant 286)
+Tour: 63
+108 38	23 39	13 39
+0 0 (carburant restant 283)
 
-Tour: 117
-99 37	97 37	100 37
-0 0 (carburant restant 285)
+Tour: 64
+105 38	18 39	6 36
+0 0 (carburant restant 279)
 
-T
-Tour: 118
-100 37	97 37	95 37
-0 0 (carburant restant 282
-T
-Tour: 119
-99 37	96 37	95 37
-0 0 (carburant restant 281
-Tour: 120
-96 37	93 37	97 37
-0 0 (carburant restant 282)
+Tour: 65
+102 38	18 39	4 33
+0 0 (carburant restant 275)
 
-Tour: 121
-95 37	93 37	96 37
-0 0 (carburant restant 281)
+Tour: 66
+99 38	13 39	4 33
+0 0 (carburant restant 271)
 
-Tour: 122
-94 37	92 37	95 37
-0 0 (carburant restant 280)
-
-T
-Tour: 123
-95 37	92 37	91 37
-0 0 (carburant restant 277
-Tour: 124
-92 37	89 37	93 37
-0 0 (carburant restant 278)
-
-T
-Tour: 125
-93 37	90 37	88 37
-0 0 (carburant restant 275
-T
-Tour: 126
-92 37	89 37	87 37
-0 0 (carburant restant 274
-T
-Tour: 127
-91 37	88 37	87 37
-0 0 (carburant restant 273
-Tour: 128
-88 37	85 37	89 37
-0 0 (carburant restant 274)
-
-Tour: 129
-87 37	84 37	88 37
-0 0 (carburant restant 273)
-
-Tour: 130
-86 37	84 37	87 37
-0 0 (carburant restant 272)
-
-T
-Tour: 131
-87 37	84 37	82 37
-0 0 (carburant restant 269
-Tour: 132
-84 37	81 37	85 37
-0 0 (carburant restant 270)
-
-T
-Tour: 133
-85 37	82 37	80 37
-0 0 (carburant restant 267
-Tour: 134
-82 37	80 37	83 37
-0 0 (carburant restant 268)
-
-Tour: 135
-81 37	78 37	82 37
+Tour: 67
+96 38	6 36	2 26
 0 0 (carburant restant 267)
 
-Tour: 136
-80 37	78 37	81 37
-0 0 (carburant restant 266)
-
-Tour: 137
-79 37	76 37	80 37
-0 0 (carburant restant 265)
-
-Tour: 138
-78 37	75 37	79 37
-0 0 (carburant restant 264)
-
-Tour: 139
-77 37	74 37	78 37
+Tour: 68
+93 38	4 33	2 21
 0 0 (carburant restant 263)
 
-Tour: 140
-76 37	73 37	77 37
-0 0 (carburant restant 262)
-
-Tour: 141
-75 37	72 37	76 37
-0 0 (carburant restant 261)
-
-Tour: 142
-74 37	72 37	75 37
-0 0 (carburant restant 260)
-
-Tour: 143
-73 37	70 37	74 37
+Tour: 69
+90 38	3 30	2 16
 0 0 (carburant restant 259)
 
-Tour: 144
-72 37	69 37	73 37
-0 0 (carburant restant 258)
-
-Tour: 145
-71 37	68 37	72 37
-0 0 (carburant restant 257)
-
-Tour: 146
-70 37	68 37	71 37
-0 0 (carburant restant 256)
-
-Tour: 147
-69 37	66 37	70 37
+Tour: 70
+87 38	2 26	3 12
 0 0 (carburant restant 255)
 
-Tour: 148
-68 37	65 37	69 37
-0 0 (carburant restant 254)
+Tour: 71
+84 38	2 26	5 8
+0 0 (carburant restant 251)
 
-T
-Tour: 149
-69 37	66 37	64 37
-0 0 (carburant restant 251
-T
-Tour: 150
-68 37	65 37	63 37
-0 0 (carburant restant 250
-T
-Tour: 151
-67 37	64 37	62 37
-0 0 (carburant restant 249
-T
-Tour: 152
-66 37	63 37	61 37
-0 0 (carburant restant 248
-Tour: 153
-63 37	60 37	64 37
-0 0 (carburant restant 249)
-
-Tour: 154
-62 37	60 37	63 37
-0 0 (carburant restant 248)
-
-Tour: 155
-61 37	59 37	62 37
+Tour: 72
+81 38	2 21	5 8
 0 0 (carburant restant 247)
 
-Tour: 156
-60 37	58 37	61 37
-0 0 (carburant restant 246)
-
-T
-Tour: 157
-61 37	58 37	57 37
-0 0 (carburant restant 243
-Tour: 158
-58 37	55 37	59 37
-0 0 (carburant restant 244)
-
-Tour: 159
-57 37	54 37	58 37
+Tour: 73
+78 38	3 12	12 3
 0 0 (carburant restant 243)
 
-Tour: 160
-56 37	53 37	57 37
-0 0 (carburant restant 242)
-
-Tour: 161
-55 37	52 37	56 37
-0 0 (carburant restant 241)
-
-T
-Tour: 162
-56 37	53 37	51 37
-0 0 (carburant restant 238
-Tour: 163
-53 37	50 37	54 37
+Tour: 74
+75 38	3 12	16 2
 0 0 (carburant restant 239)
 
-T
-Tour: 164
-54 37	51 37	49 37
-0 0 (carburant restant 236
-Tour: 165
-51 37	48 37	52 37
-0 0 (carburant restant 237)
-
-Tour: 166
-50 37	48 37	51 37
-0 0 (carburant restant 236)
-
-Tour: 167
-49 37	46 37	50 37
+Tour: 75
+72 38	8 5	21 2
 0 0 (carburant restant 235)
 
-Tour: 168
-48 37	45 37	49 37
-0 0 (carburant restant 234)
+Tour: 76
+69 38	8 5	21 2
+0 0 (carburant restant 231)
 
-Tour: 169
-47 37	45 37	48 37
-0 0 (carburant restant 233)
-
-T
-Tour: 170
-48 37	45 37	43 37
-0 0 (carburant restant 230
-T
-Tour: 171
-47 37	44 37	43 37
-0 0 (carburant restant 229
-T
-Tour: 172
-46 37	43 37	42 37
-0 0 (carburant restant 228
-T
-Tour: 173
-45 37	42 37	40 37
-0 0 (carburant restant 227
-Tour: 174
-42 37	40 37	43 37
-0 0 (carburant restant 228)
-
-Tour: 175
-41 37	38 37	42 37
+Tour: 77
+66 38	16 2	31 2
 0 0 (carburant restant 227)
 
-Tour: 176
-40 37	37 37	41 37
-0 0 (carburant restant 226)
-
-Tour: 177
-39 37	37 37	40 37
-0 0 (carburant restant 225)
-
-T
-Tour: 178
-40 37	37 37	35 37
-0 0 (carburant restant 222
-Tour: 179
-37 37	35 37	38 37
+Tour: 78
+63 38	16 2	31 2
 0 0 (carburant restant 223)
 
-T
-Tour: 180
-38 37	35 37	34 37
-0 0 (carburant restant 220
-Tour: 181
-35 37	32 37	36 37
-0 0 (carburant restant 221)
-
-T
-Tour: 182
-36 37	33 37	31 37
-0 0 (carburant restant 218
-Tour: 183
-33 37	30 37	34 37
+Tour: 79
+60 38	21 2	36 2
 0 0 (carburant restant 219)
 
-Tour: 184
-32 37	29 37	33 37
-0 0 (carburant restant 218)
-
-Tour: 185
-31 37	28 37	32 37
-0 0 (carburant restant 217)
-
-T
-Tour: 186
-32 37	29 37	27 37
-0 0 (carburant restant 214
-Tour: 187
-29 37	26 37	30 37
+Tour: 80
+57 38	26 2	41 2
 0 0 (carburant restant 215)
 
-Tour: 188
-28 37	25 37	29 37
-0 0 (carburant restant 214)
-
-T
-Tour: 189
-29 37	26 37	25 37
-0 0 (carburant restant 211
-T
-Tour: 190
-28 37	25 37	23 37
-0 0 (carburant restant 210
-Tour: 191
-25 37	22 37	26 37
+Tour: 81
+54 38	31 2	41 2
 0 0 (carburant restant 211)
 
-T
-Tour: 192
-26 37	23 37	21 37
-0 0 (carburant restant 208
-T
-Tour: 193
-25 37	22 37	20 37
-0 0 (carburant restant 207
-Tour: 194
-22 37	19 37	23 37
-0 0 (carburant restant 208)
+Tour: 82
+51 38	36 2	41 2
+0 0 (carburant restant 207)
 
-T
-Tour: 195
-23 37	20 37	18 37
-0 0 (carburant restant 205
-Tour: 196
-20 37	17 37	21 37
-0 0 (carburant restant 206)
-
-T
-Tour: 197
-21 37	18 37	16 37
-0 0 (carburant restant 203
-Tour: 198
-18 37	15 37	19 37
-0 0 (carburant restant 204)
-
-Tour: 199
-17 37	15 37	18 37
+Tour: 83
+48 38	36 2	41 2
 0 0 (carburant restant 203)
 
-T
-Tour: 200
-18 37	15 37	13 37
-0 0 (carburant restant 200
-T
-Tour: 201
-17 37	14 37	13 37
-0 0 (carburant restant 199
-Tour: 202
-14 37	12 37	15 37
-0 0 (carburant restant 200)
-
-Tour: 203
-13 37	11 37	14 37
+Tour: 84
+45 38	36 2	41 2
 0 0 (carburant restant 199)
 
-T
-Tour: 204
-14 37	11 37	10 37
-0 0 (carburant restant 196
-T
-Tour: 205
-13 37	10 37	8 37
-0 0 (carburant restant 195
-Tour: 206
-10 37	8 37	11 37
-0 0 (carburant restant 196)
-
-Tour: 207
-9 37	6 35	10 37
+Tour: 85
+42 38	36 2	41 2
 0 0 (carburant restant 195)
 
-T
-Tour: 208
-10 37	7 36	6 35
-0 0 (carburant restant 192)
-Tour: 209
-7 36	4 32	8 37
+Tour: 86
+39 38	36 2	41 2
 0 0 (carburant restant 191)
 
+Tour: 87
+36 38	36 2	41 2
+0 0 (carburant restant 187)
 
-Tour: 210
-8 37	5 34	3 29
-0 -1 (carburant restant 189
-Tour: 211
-5 34	3 26	6 35
-0 -1 (carburant restant 186)
+Tour: 88
+33 38	36 2	41 2
+0 0 (carburant restant 183)
 
+Tour: 89
+30 38	36 2	41 2
+0 0 (carburant restant 179)
 
-Tour: 212
-6 35	3 29	3 26
-0 0 (carburant restant 185)
+Tour: 90
+27 38	36 2	41 2
+0 0 (carburant restant 175)
 
-Tour: 213
-3 29	3 23	4 32
-1 0 (carburant restant 177)
+Tour: 91
+24 38	36 2	41 2
+0 0 (carburant restant 171)
 
-Tour: 214
-3 26	3 17	3 29
-0 0 (carburant restant 173)
+Tour: 92
+21 38	36 2	41 2
+0 0 (carburant restant 167)
 
-Tour: 215
-3 23	3 17	3 26
-0 0 (carburant restant 169)
+Tour: 93
+18 38	36 2	41 2
+0 0 (carburant restant 163)
 
-T
-Tour: 216
-3 26	3 17	4 11
-0 0 (carburant restant 169
-T
-Tour: 217
-3 23	3 14	5 8
-0 0 (carburant restant 165)
-Tour: 218
-3 14	5 8	3 17
-1 0 (carburant restant 156)
+Tour: 94
+15 38	36 2	41 2
+0 0 (carburant restant 159)
 
-Tour: 219
-4 11	7 5	3 14
-0 0 (carburant restant 152)
+Tour: 95
+12 38	36 2	41 2
+0 -1 (carburant restant 154)
 
-Tour: 220
-5 8	8 4	4 11
-0 1 (carburant restant 147)
+Tour: 96
+9 37	36 2	41 2
+0 -1 (carburant restant 149)
 
-Tour: 221
-6 6	9 4	5 8
-0 1 (carburant restant 143)
+Tour: 97
+6 35	36 2	41 2
+1 -1 (carburant restant 142)
 
-Tour: 222
-7 5	10 4	6 6
-0 0 (carburant restant 141)
+Tour: 98
+4 32	36 2	41 2
+1 0 (carburant restant 136)
 
+Tour: 99
+3 29	36 2	41 2
+1 0 (carburant restant 131)
 
-Tour: 223
-6 6	9 4	11 4
-0 1 (carburant restant 139)
-Tour: 224
-9 4	11 4	8 4
-0 0 (carburant restant 137)
-
-
-Tour: 225
-8 4	11 4	13 4
-0 1 (carburant restant 134)
-
-Tour: 226
-9 4	12 4	14 4
-0 0 (carburant restant 133)
-Tour: 227
-12 4	15 4	11 4
-0 0 (carburant restant 134)
-
-Tour: 228
-13 4	16 4	12 4
-0 0 (carburant restant 133)
-
-Tour: 229
-14 4	17 4	13 4
-0 0 (carburant restant 132)
-
-
-Tour: 230
-13 4	16 4	18 4
-0 0 (carburant restant 129)
-
-Tour: 231
-14 4	17 4	19 4
-0 0 (carburant restant 128)
-
-Tour: 232
-15 4	18 4	20 4
+Tour: 100
+3 26	36 2	41 2
 0 0 (carburant restant 127)
 
-Tour: 233
-16 4	19 4	20 4
-0 0 (carburant restant 126)
+Tour: 101
+3 23	36 2	41 2
+0 0 (carburant restant 123)
 
-Tour: 234
-17 4	20 4	21 4
-0 0 (carburant restant 125)
-Tour: 235
-20 4	23 4	19 4
-0 0 (carburant restant 126)
-
-Tour: 236
-21 4	24 4	20 4
-0 0 (carburant restant 125)
-
-Tour: 237
-22 4	24 4	21 4
-0 0 (carburant restant 124)
-
-
-Tour: 238
-21 4	24 4	25 4
-0 0 (carburant restant 121)
-
-Tour: 239
-22 4	25 4	26 4
-0 0 (carburant restant 120)
-
-Tour: 240
-23 4	26 4	28 4
-0 0 (carburant restant 119)
-Tour: 241
-26 4	29 4	25 4
-0 0 (carburant restant 120)
-
-Tour: 242
-27 4	29 4	26 4
+Tour: 102
+3 20	36 2	41 2
 0 0 (carburant restant 119)
 
-Tour: 243
-28 4	31 4	27 4
-0 0 (carburant restant 118)
-
-
-Tour: 244
-27 4	30 4	32 4
+Tour: 103
+3 17	36 2	41 2
 0 0 (carburant restant 115)
 
-Tour: 245
-28 4	31 4	33 4
-0 0 (carburant restant 114)
-Tour: 246
-31 4	33 4	30 4
-0 0 (carburant restant 115)
+Tour: 104
+3 14	36 2	41 2
+1 0 (carburant restant 110)
 
-Tour: 247
-32 4	35 4	31 4
-0 0 (carburant restant 114)
-
-
-Tour: 248
-31 4	34 4	36 4
-0 0 (carburant restant 111)
-Tour: 249
-34 4	36 4	33 4
-0 0 (carburant restant 112)
-
-
-Tour: 250
-33 4	36 4	38 4
-0 0 (carburant restant 109)
-Tour: 251
-36 4	38 4	35 4
-0 0 (carburant restant 110)
-
-Tour: 252
-37 4	39 4	36 4
-0 0 (carburant restant 109)
-
-
-Tour: 253
-36 4	39 4	41 4
-0 0 (carburant restant 106)
-Tour: 254
-39 4	41 4	38 4
-0 0 (carburant restant 107)
-
-Tour: 255
-40 4	43 4	39 4
+Tour: 105
+4 11	36 2	41 2
 0 0 (carburant restant 106)
 
+Tour: 106
+5 8	36 2	41 2
+0 1 (carburant restant 101)
 
-Tour: 256
-39 4	42 4	44 4
-0 0 (carburant restant 103)
+Tour: 107
+6 6	36 2	41 2
+0 1 (carburant restant 97)
 
-Tour: 257
-40 4	43 4	45 4
-0 0 (carburant restant 102)
-
-Tour: 258
-41 4	44 4	46 4
-0 0 (carburant restant 101)
-
-Tour: 259
-42 4	45 4	47 4
-0 0 (carburant restant 100)
-
-Tour: 260
-43 4	46 4	47 4
-0 0 (carburant restant 99)
-
-Tour: 261
-44 4	47 4	49 4
-0 0 (carburant restant 98)
-
-Tour: 262
-45 4	48 4	49 4
-0 0 (carburant restant 97)
-
-
-Tour: 263
-48 4	50 4	47 4
-0 0 (carburant restant 98)
-Tour: 264
-47 4	50 4	51 4
+Tour: 108
+7 5	36 2	41 2
 0 0 (carburant restant 95)
 
-Tour: 265
-48 4	51 4	52 4
-0 0 (carburant restant 94)
+Tour: 109
+8 4	36 2	41 2
+0 1 (carburant restant 92)
 
-
-Tour: 266
-51 4	53 4	50 4
-0 0 (carburant restant 95)
-
-Tour: 267
-52 4	54 4	51 4
-0 0 (carburant restant 94)
-Tour: 268
-51 4	54 4	56 4
+Tour: 110
+9 4	36 2	41 2
 0 0 (carburant restant 91)
 
-Tour: 269
-52 4	55 4	57 4
+Tour: 111
+10 4	36 2	41 2
 0 0 (carburant restant 90)
 
-
-Tour: 270
-55 4	58 4	54 4
-0 0 (carburant restant 91)
-Tour: 271
-54 4	57 4	59 4
-0 0 (carburant restant 88)
-
-
-Tour: 272
-57 4	60 4	56 4
+Tour: 112
+11 4	36 2	41 2
 0 0 (carburant restant 89)
 
-Tour: 273
-58 4	60 4	57 4
+Tour: 113
+12 4	36 2	41 2
 0 0 (carburant restant 88)
 
-Tour: 274
-59 4	61 4	58 4
+Tour: 114
+13 4	36 2	41 2
 0 0 (carburant restant 87)
 
-Tour: 275
-60 4	62 4	59 4
+Tour: 115
+14 4	36 2	41 2
 0 0 (carburant restant 86)
-Tour: 276
-59 4	62 4	64 4
-0 0 (carburant restant 83)
 
+Tour: 116
+15 4	36 2	41 2
+0 0 (carburant restant 85)
 
-Tour: 277
-62 4	65 4	61 4
+Tour: 117
+16 4	36 2	41 2
 0 0 (carburant restant 84)
 
-Tour: 278
-63 4	66 4	62 4
+Tour: 118
+17 4	36 2	41 2
 0 0 (carburant restant 83)
 
-Tour: 279
-64 4	67 4	63 4
+Tour: 119
+18 4	36 2	41 2
 0 0 (carburant restant 82)
-Tour: 280
-63 4	66 4	68 4
-0 0 (carburant restant 79)
 
+Tour: 120
+19 4	36 2	41 2
+0 0 (carburant restant 81)
 
-Tour: 281
-66 4	69 4	65 4
+Tour: 121
+20 4	36 2	41 2
 0 0 (carburant restant 80)
 
-Tour: 282
-67 4	70 4	66 4
+Tour: 122
+21 4	36 2	41 2
 0 0 (carburant restant 79)
 
-Tour: 283
-68 4	71 4	67 4
+Tour: 123
+22 4	36 2	41 2
 0 0 (carburant restant 78)
-Tour: 284
-67 4	70 4	71 4
+
+Tour: 124
+23 4	36 2	41 2
+0 0 (carburant restant 77)
+
+Tour: 125
+24 4	36 2	41 2
+0 0 (carburant restant 76)
+
+Tour: 126
+25 4	36 2	41 2
 0 0 (carburant restant 75)
 
-Tour: 285
-68 4	71 4	73 4
+Tour: 127
+26 4	36 2	41 2
 0 0 (carburant restant 74)
 
+Tour: 128
+27 4	36 2	41 2
+0 0 (carburant restant 73)
 
-Tour: 286
-71 4	74 4	70 4
-0 0 (carburant restant 75)
-Tour: 287
-70 4	73 4	74 4
+Tour: 129
+28 4	36 2	41 2
 0 0 (carburant restant 72)
 
+Tour: 130
+29 4	36 2	41 2
+0 0 (carburant restant 71)
 
-Tour: 288
-73 4	76 4	72 4
-0 0 (carburant restant 73)
-Tour: 289
-72 4	75 4	76 4
+Tour: 131
+30 4	36 2	41 2
 0 0 (carburant restant 70)
 
-Tour: 290
-73 4	76 3	76 4
+Tour: 132
+31 4	36 2	41 2
 0 0 (carburant restant 69)
 
-Tour: 291
-74 4	76 3	76 4
+Tour: 133
+32 4	36 2	41 2
 0 0 (carburant restant 68)
 
-Tour: 292
-75 4	76 3	76 4
--1 -1 (carburant restant 65)
+Tour: 134
+33 4	36 2	41 2
+0 0 (carburant restant 67)
 
-Tour: 293
-75 3	76 3	76 4
-1 0 (carburant restant 63)
+Tour: 135
+34 4	36 2	41 2
+0 0 (carburant restant 66)
+
+Tour: 136
+35 4	36 2	41 2
+0 0 (carburant restant 65)
+
+Tour: 137
+36 4	36 2	41 2
+0 0 (carburant restant 64)
+
+Tour: 138
+37 4	36 2	41 2
+0 0 (carburant restant 63)
+
+Tour: 139
+38 4	36 2	41 2
+0 0 (carburant restant 62)
+
+Tour: 140
+39 4	36 2	41 2
+0 0 (carburant restant 61)
+
+Tour: 141
+40 4	36 2	41 2
+0 0 (carburant restant 60)
+
+Tour: 142
+41 4	36 2	41 2
+0 0 (carburant restant 59)
+
+Tour: 143
+42 4	36 2	41 2
+0 0 (carburant restant 58)
+
+Tour: 144
+43 4	36 2	41 2
+0 0 (carburant restant 57)
+
+Tour: 145
+44 4	36 2	41 2
+0 0 (carburant restant 56)
+
+Tour: 146
+45 4	36 2	41 2
+0 0 (carburant restant 55)
+
+Tour: 147
+46 4	36 2	41 2
+0 0 (carburant restant 54)
+
+Tour: 148
+47 4	36 2	41 2
+0 0 (carburant restant 53)
+
+Tour: 149
+48 4	36 2	41 2
+0 0 (carburant restant 52)
+
+Tour: 150
+49 4	36 2	41 2
+0 0 (carburant restant 51)
+
+Tour: 151
+50 4	36 2	41 2
+0 0 (carburant restant 50)
+
+Tour: 152
+51 4	36 2	41 2
+0 0 (carburant restant 49)
+
+Tour: 153
+52 4	36 2	41 2
+0 0 (carburant restant 48)
+
+Tour: 154
+53 4	36 2	41 2
+0 0 (carburant restant 47)
+
+Tour: 155
+54 4	36 2	41 2
+0 0 (carburant restant 46)
+
+Tour: 156
+55 4	36 2	41 2
+0 0 (carburant restant 45)
+
+Tour: 157
+56 4	36 2	41 2
+0 0 (carburant restant 44)
+
+Tour: 158
+57 4	36 2	41 2
+0 0 (carburant restant 43)
+
+Tour: 159
+58 4	36 2	41 2
+0 0 (carburant restant 42)
+
+Tour: 160
+59 4	36 2	41 2
+0 0 (carburant restant 41)
+
+Tour: 161
+60 4	36 2	41 2
+0 0 (carburant restant 40)
+
+Tour: 162
+61 4	36 2	41 2
+0 0 (carburant restant 39)
+
+Tour: 163
+62 4	36 2	41 2
+0 0 (carburant restant 38)
+
+Tour: 164
+63 4	36 2	41 2
+0 0 (carburant restant 37)
+
+Tour: 165
+64 4	36 2	41 2
+0 0 (carburant restant 36)
+
+Tour: 166
+65 4	36 2	41 2
+0 0 (carburant restant 35)
+
+Tour: 167
+66 4	36 2	41 2
+0 0 (carburant restant 34)
+
+Tour: 168
+67 4	36 2	41 2
+0 0 (carburant restant 33)
+
+Tour: 169
+68 4	36 2	41 2
+0 0 (carburant restant 32)
+
+Tour: 170
+69 4	36 2	41 2
+0 0 (carburant restant 31)
+
+Tour: 171
+70 4	36 2	41 2
+0 0 (carburant restant 30)
+
+Tour: 172
+71 4	36 2	41 2
+0 0 (carburant restant 29)
+
+Tour: 173
+72 4	36 2	41 2
+0 0 (carburant restant 28)
+
+Tour: 174
+73 4	36 2	41 2
+0 0 (carburant restant 27)
+
+Tour: 175
+74 4	36 2	41 2
+0 0 (carburant restant 26)
+
+Tour: 176
+75 4	36 2	41 2
+0 0 (carburant restant 25)

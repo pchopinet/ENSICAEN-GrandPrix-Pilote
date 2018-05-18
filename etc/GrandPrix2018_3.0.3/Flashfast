@@ -1,1028 +1,1570 @@
  === >Carte< === 
-taille 60 x 60
-Carburant de départ 240 
+taille 42 x 180
+Carburant de départ 550 
 
-............................................................
-............................................................
-............................................................
-............................................................
-.......................#############........................
-.....................###################....................
-...................#######################..................
-..................######~~~~~~~~~~~########.................
-.................#####~~~.........~~~~######................
-................######................######................
-...............######...................#####...............
-..............######.....................#####..............
-..............#####......................#####..............
-.............#####........................#####.............
-............######........................#####.............
-............#####..........................~####............
-............#####..........................~~###............
-.............###............................~###............
-............................................~###............
-............................................~###............
-...........................................~~###............
-...........................................~####............
-...........................................~###.............
-...........................................####.............
-...........................................####.............
-...........................................####.............
-...........................................####.............
-.................########.................#####.............
-................##########..............######..............
-...............#############~~~~.....~~~~#####..............
-..............####~~~~~~#######~~~~~~~#######...............
-.............###~~~....~~###################................
-............####~.......~~################..................
-............###~~.............#########.....................
-............###~............................................
-...........####~............................................
-...........###~~............................................
-...........###~.............................................
-..........####~.............................................
-..........###~~.............................................
-..........###~..............................................
-..........###~................................=.............
-..........###~...............................===............
-..........###~~.............................##===...........
-..........####~............................####==...........
-...........####~..........................######............
-...........#####~........................######.............
-............#####~......................######..............
-.............#######...................######...............
-..............#########..............#######................
-...............############################.................
-................##########################..................
-..................#######################...................
-.....................##################.....................
-............................................................
-............................................................
-............................................................
-............................................................
-............................................................
-............................................................
+.........###################################################################=.........############################################################~~~~~~~##################.........
+.......#####################################################################=.........############################################################~~~~~~~####################.......
+.....#######################################################################=.........#############################################~~~~~~~########~~~~~~~########~~~~~~~#######.....
+....########################################################################=.........#############################################~~~~~~~#######################~~~~~~~########....
+...#########################################################################=.........#############################################~~~~~~~#######################~~~~~~~#########...
+..########................................................................................................................................................................########..
+..######....................................................................................................................................................................######..
+.######......................................................................................................................................................................######.
+.#####........................................................................................................................................................................#####.
+######........................................................................................................................................................................######
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+#####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####..........................................................................................................................................................................#####
+.####.........................................................................................................................................................................######
+.#####........................................................................................................................................................................#####.
+.#####.......................................................................................................................................................................######.
+..#####.....................................................................................................................................................................######..
+..#######.................................................................................................................................................................########..
+...##############################################################################################################################################################################...
+....############################################################################################################################################################################....
+.....##########################################################################################################################################################################.....
+.......######################################################################################################################################################################.......
+......................................#####################################################################################################################################.........
 
  === Debut Course === 
 taille carte
  === Tour 1 === 
-pos j1 = 15 14
-pos j2 = 16 16
-pos j3 = 12 14
+pos j1 = 2 86
+pos j2 = 4 86
+pos j3 = 0 87
 calcul de trajet c'est bon 
 calcul des points ok 
-Vitesse : 15 14Prochain point : 7 22 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 8
+Vitesse : 2 86Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 44
  === Action === 
--1 1 (carburant restant 240)
+-1 0 (carburant restant 550)
 
  === Tour 2 === 
-pos j1 = 15 14
-pos j2 = 16 16
-pos j3 = 10 17
-Vitesse : 0 0Prochain point : 7 22 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 8
+pos j1 = 2 86
+pos j2 = 4 87
+pos j3 = 0 89
+Vitesse : 0 0Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 44
  === Action === 
-1 -1 (carburant restant 240)
+1 0 (carburant restant 550)
 
  === Tour 3 === 
-pos j1 = 14 15
-pos j2 = 16 16
-pos j3 = 9 19
-Vitesse : -1 1Prochain point : 7 22 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 7
+pos j1 = 2 87
+pos j2 = 4 92
+pos j3 = 0 95
+Vitesse : 0 1Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 43
  === Action === 
-1 -1 (carburant restant 240)
+1 0 (carburant restant 550)
 
  === Tour 4 === 
-pos j1 = 12 17
-pos j2 = 16 16
-pos j3 = 8 21
-Vitesse : -2 2Prochain point : 7 22 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 5
+pos j1 = 2 89
+pos j2 = 4 92
+pos j3 = 0 95
+Vitesse : 0 2Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 41
  === Action === 
-0 0 (carburant restant 240)
+1 0 (carburant restant 550)
 
  === Tour 5 === 
-pos j1 = 10 19
-pos j2 = 16 16
-pos j3 = 8 21
-Vitesse : -2 2Prochain point : 7 22 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 3
+pos j1 = 2 92
+pos j2 = 4 101
+pos j3 = 0 97
+Vitesse : 0 3Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 38
  === Action === 
--1 1 (carburant restant 240)
+1 0 (carburant restant 550)
 
  === Tour 6 === 
-pos j1 = 9 20
-pos j2 = 16 16
-pos j3 = 7 23
-Vitesse : -1 1Prochain point : 7 22 
-v_max= 1 1Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 2
+pos j1 = 2 96
+pos j2 = 4 101
+pos j3 = 0 102
+Vitesse : 0 4Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 34
  === Action === 
-0 0 (carburant restant 240)
-
+1 0 (carburant restant 55
+ =
  === Tour 7 === 
-pos j1 = 8 21
-pos j2 = 16 16
-pos j3 = 6 26
-Vitesse : -1 1Prochain point : 7 22 
-v_max= 1 1Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 1
+pos j1 = 2 101
+pos j2 = 4 111
+pos j3 = 0 105
+Vitesse : 0 5Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 29
  === Action === 
-0 0 (carburant restant 240)
+0 0 (carburant restant 550)
 
  === Tour 8 === 
-pos j1 = 7 22
-pos j2 = 16 16
-pos j3 = 6 29
-Vitesse : -1 1Prochain point : 7 23 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 1
+pos j1 = 2 106
+pos j2 = 4 115
+pos j3 = 0 105
+Vitesse : 0 5Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 24
  === Action === 
-0 1 (carburant restant 240)
+0 0 (carburant restant 550)
 
  === Tour 9 === 
-pos j1 = 7 23
-pos j2 = 16 16
-pos j3 = 6 32
-Vitesse : 0 1Prochain point : 6 24 
-v_max= 1 1Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 1
+pos j1 = 2 111
+pos j2 = 4 118
+pos j3 = 0 111
+Vitesse : 0 5Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 19
  === Action === 
-0 -1 (carburant restant 240)
+-1 0 (carburant restant 550)
 
  === Tour 10 === 
-pos j1 = 6 24
-pos j2 = 16 16
-pos j3 = 7 35
-Vitesse : -1 1Prochain point : 6 34 
-v_max= 1 4Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 10
+pos j1 = 2 115
+pos j2 = 4 121
+pos j3 = 0 114
+Vitesse : 0 4Prochain point : 2 130 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 15
  === Action === 
-0 1 (carburant restant 240)
+0 0 (carburant restant 550)
 
  === Tour 11 === 
-pos j1 = 6 25
-pos j2 = 16 16
-pos j3 = 10 40
-Vitesse : 0 1Prochain point : 6 34 
-v_max= 1 3Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 9
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 12 === 
-pos j1 = 6 27
-pos j2 = 16 16
-pos j3 = 12 42
-Vitesse : 0 2Prochain point : 6 34 
-v_max= 1 3Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 7
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 13 === 
-pos j1 = 6 29
-pos j2 = 16 16
-pos j3 = 12 42
-Vitesse : 0 2Prochain point : 6 34 
-v_max= 1 2Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 14 === 
-pos j1 = 6 31
-pos j2 = 16 16
-pos j3 = 17 45
-Vitesse : 0 2Prochain point : 6 34 
-v_max= 1 2Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 15 === 
-pos j1 = 6 32
-pos j2 = 16 16
-pos j3 = 20 45
-Vitesse : 0 1Prochain point : 6 34 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 16 === 
-pos j1 = 6 33
-pos j2 = 16 16
-pos j3 = 23 44
-Vitesse : 0 1Prochain point : 6 34 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 17 === 
-pos j1 = 6 34
-pos j2 = 16 16
-pos j3 = 23 44
-Vitesse : 0 1Prochain point : 7 35 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 18 === 
-pos j1 = 7 35
-pos j2 = 16 16
-pos j3 = 26 43
-Vitesse : 1 1Prochain point : 7 37 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 19 === 
-pos j1 = 7 36
-pos j2 = 16 16
-pos j3 = 28 41
-Vitesse : 0 1Prochain point : 7 37 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 20 === 
-pos j1 = 7 37
-pos j2 = 16 16
-pos j3 = 31 36
-Vitesse : 0 1Prochain point : 11 41 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 21 === 
-pos j1 = 8 38
-pos j2 = 16 16
-pos j3 = 31 36
-Vitesse : 1 1Prochain point : 11 41 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 22 === 
-pos j1 = 9 39
-pos j2 = 16 16
-pos j3 = 31 30
-Vitesse : 1 1Prochain point : 11 41 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 23 === 
-pos j1 = 10 40
-pos j2 = 16 16
-pos j3 = 31 30
-Vitesse : 1 1Prochain point : 11 41 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 24 === 
-pos j1 = 11 41
-pos j2 = 16 16
-pos j3 = 30 24
-Vitesse : 1 1Prochain point : 12 41 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 25 === 
-pos j1 = 12 41
-pos j2 = 16 16
-pos j3 = 30 24
-Vitesse : 1 0Prochain point : 16 45 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 26 === 
-pos j1 = 13 42
-pos j2 = 16 16
-pos j3 = 29 18
-Vitesse : 1 1Prochain point : 16 45 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 27 === 
-pos j1 = 14 43
-pos j2 = 16 16
-pos j3 = 29 18
-Vitesse : 1 1Prochain point : 16 45 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 28 === 
-pos j1 = 15 44
-pos j2 = 16 16
-pos j3 = 32 12
-Vitesse : 1 1Prochain point : 16 45 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 29 === 
-pos j1 = 16 45
-pos j2 = 16 16
-pos j3 = 32 12
-Vitesse : 1 1Prochain point : 20 45 
-v_max= 2 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 30 === 
-pos j1 = 18 46
-pos j2 = 16 16
-pos j3 = 32 12
-Vitesse : 2 1Prochain point : 20 45 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
--1 -1 (carburant restant 240)
-
- === Tour 31 === 
-pos j1 = 19 46
-pos j2 = 16 16
-pos j3 = 33 12
-Vitesse : 1 0Prochain point : 20 45 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 32 === 
-pos j1 = 20 45
-pos j2 = 16 16
-pos j3 = 35 12
-Vitesse : 1 -1Prochain point : 21 44 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 33 === 
-pos j1 = 21 44
-pos j2 = 16 16
-pos j3 = 35 12
-Vitesse : 1 -1Prochain point : 26 44 
-v_max= 2 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 34 === 
-pos j1 = 23 43
-pos j2 = 16 16
-pos j3 = 36 12
-Vitesse : 2 -1Prochain point : 26 44 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-1 -1 (carburant restant 240)
-
- === Tour 35 === 
-pos j1 = 24 43
-pos j2 = 16 16
-pos j3 = 37 12
-Vitesse : 1 0Prochain point : 26 44 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 36 === 
-pos j1 = 25 44
-pos j2 = 16 16
-pos j3 = 39 12
-Vitesse : 1 1Prochain point : 26 44 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 37 === 
-pos j1 = 26 44
-pos j2 = 16 16
-pos j3 = 39 12
-Vitesse : 1 0Prochain point : 30 40 
-v_max= 2 2Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 38 === 
-pos j1 = 27 43
-pos j2 = 16 16
-pos j3 = 41 12
-Vitesse : 1 -1Prochain point : 30 40 
-v_max= 2 2Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 39 === 
-pos j1 = 28 42
-pos j2 = 16 16
-pos j3 = 42 12
-Vitesse : 1 -1Prochain point : 30 40 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 40 === 
-pos j1 = 29 41
-pos j2 = 16 16
-pos j3 = 43 12
-Vitesse : 1 -1Prochain point : 30 40 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 41 === 
-pos j1 = 30 40
-pos j2 = 16 16
-pos j3 = 44 13
-Vitesse : 1 -1Prochain point : 30 38 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 42 === 
-pos j1 = 30 39
-pos j2 = 16 16
-pos j3 = 44 13
-Vitesse : 0 -1Prochain point : 30 38 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 43 === 
-pos j1 = 30 38
-pos j2 = 16 16
-pos j3 = 45 14
-Vitesse : 0 -1Prochain point : 31 37 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 44 === 
-pos j1 = 31 37
-pos j2 = 16 16
-pos j3 = 46 15
-Vitesse : 1 -1Prochain point : 31 31 
-v_max= 1 3Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 6
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 45 === 
-pos j1 = 31 36
-pos j2 = 16 16
-pos j3 = 47 16
-Vitesse : 0 -1Prochain point : 31 31 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 46 === 
-pos j1 = 31 34
-pos j2 = 16 16
-pos j3 = 49 21
-Vitesse : 0 -2Prochain point : 31 31 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 47 === 
-pos j1 = 31 33
-pos j2 = 16 16
-pos j3 = 50 24
-Vitesse : 0 -1Prochain point : 31 31 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 48 === 
-pos j1 = 31 32
-pos j2 = 16 16
-pos j3 = 51 27
-Vitesse : 0 -1Prochain point : 31 31 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 49 === 
-pos j1 = 31 31
-pos j2 = 16 16
-pos j3 = 51 27
-Vitesse : 0 -1Prochain point : 30 30 
-v_max= 1 1Direction : -1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 50 === 
-pos j1 = 30 30
-pos j2 = 16 16
-pos j3 = 51 30
-Vitesse : -1 -1Prochain point : 30 24 
-v_max= 1 3Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 6
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 51 === 
-pos j1 = 30 29
-pos j2 = 16 16
-pos j3 = 51 33
-Vitesse : 0 -1Prochain point : 30 24 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 52 === 
-pos j1 = 30 27
-pos j2 = 16 16
-pos j3 = 50 36
-Vitesse : 0 -2Prochain point : 30 24 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 53 === 
-pos j1 = 30 26
-pos j2 = 16 16
-pos j3 = 48 39
-Vitesse : 0 -1Prochain point : 30 24 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 54 === 
-pos j1 = 30 25
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 30 24 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 55 === 
-pos j1 = 30 24
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 29 23 
-v_max= 1 1Direction : -1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 56 === 
-pos j1 = 29 23
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : -1 -1Prochain point : 29 18 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 57 === 
-pos j1 = 29 22
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 29 18 
-v_max= 1 2Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 58 === 
-pos j1 = 29 20
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -2Prochain point : 29 18 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 59 === 
-pos j1 = 29 19
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 29 18 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 60 === 
-pos j1 = 29 18
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 30 17 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 61 === 
-pos j1 = 30 17
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 -1Prochain point : 30 16 
-v_max= 1 1Direction : 0 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 62 === 
-pos j1 = 30 16
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 -1Prochain point : 31 15 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 63 === 
-pos j1 = 31 15
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 -1Prochain point : 32 15 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 64 === 
-pos j1 = 32 15
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 33 14 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 65 === 
-pos j1 = 33 14
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 -1Prochain point : 35 14 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 66 === 
-pos j1 = 34 14
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 35 14 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 67 === 
-pos j1 = 35 14
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 36 13 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 68 === 
-pos j1 = 36 13
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 -1Prochain point : 38 13 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 69 === 
-pos j1 = 37 13
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 38 13 
-v_max= 1 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 70 === 
-pos j1 = 38 13
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 39 12 
-v_max= 1 1Direction : 1 -1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
--1 0 (carburant restant 240)
-
- === Tour 71 === 
-pos j1 = 39 12
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 -1Prochain point : 43 12 
-v_max= 2 1Direction : 1 0 
-Distance a parcourir jusqu'au prochain cp : 4
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 72 === 
-pos j1 = 41 11
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 2 -1Prochain point : 43 12 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-1 -1 (carburant restant 240)
-
- === Tour 73 === 
-pos j1 = 42 11
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 0Prochain point : 43 12 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 74 === 
-pos j1 = 43 12
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 48 17 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 5
- === Action === 
-1 1 (carburant restant 240)
-
- === Tour 75 === 
-pos j1 = 45 14
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 2 2Prochain point : 48 17 
-v_max= 2 2Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 3
- === Action === 
--1 -1 (carburant restant 240)
-
- === Tour 76 === 
-pos j1 = 46 15
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 48 17 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 77 === 
-pos j1 = 47 16
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 48 17 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 78 === 
-pos j1 = 48 17
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 48 19 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 79 === 
-pos j1 = 48 18
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 48 19 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 80 === 
-pos j1 = 48 19
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 49 20 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 81 === 
-pos j1 = 49 20
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 49 22 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 2
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 82 === 
-pos j1 = 49 21
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 49 22 
-v_max= 1 1Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 0 (carburant restant 240)
-
- === Tour 83 === 
-pos j1 = 49 22
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 50 23 
-v_max= 1 1Direction : 1 1 
-Distance a parcourir jusqu'au prochain cp : 1
- === Action === 
-0 1 (carburant restant 240)
-
- === Tour 84 === 
-pos j1 = 50 23
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 1 1Prochain point : 50 37 
-v_max= 1 4Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 14
- === Action === 
-0 -1 (carburant restant 240)
-
- === Tour 85 === 
-pos j1 = 50 24
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 50 37 
-v_max= 1 4Direction : 0 1 
-Distance a parcourir jusqu'au prochain cp : 13
- === Action === 
-1 0 (carburant restant 240)
-
- === Tour 86 === 
-pos j1 = 50 26
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 2Prochain point : 50 37 
+pos j1 = 2 119
+pos j2 = 4 121
+pos j3 = 0 114
+Vitesse : 0 4Prochain point : 2 130 
 v_max= 1 4Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 11
  === Action === 
-1 0 (carburant restant 240)
-
- === Tour 87 === 
-pos j1 = 50 29
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 3Prochain point : 50 37 
+-1 0 (carburant restant 55
+ =
+ === Tour 12 === 
+pos j1 = 2 122
+pos j2 = 4 123
+pos j3 = 0 117
+Vitesse : 0 3Prochain point : 2 130 
 v_max= 1 3Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 8
  === Action === 
--1 0 (carburant restant 240)
-
- === Tour 88 === 
-pos j1 = 50 31
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 2Prochain point : 50 37 
+-1 0 (carburant restant 55
+ =
+ === Tour 13 === 
+pos j1 = 2 124
+pos j2 = 4 126
+pos j3 = 0 123
+Vitesse : 0 2Prochain point : 2 130 
 v_max= 1 3Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 6
  === Action === 
-0 0 (carburant restant 240)
+0 0 (carburant restant 550)
 
- === Tour 89 === 
-pos j1 = 50 33
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 2Prochain point : 50 37 
+ === Tour 14 === 
+pos j1 = 2 126
+pos j2 = 4 126
+pos j3 = 0 123
+Vitesse : 0 2Prochain point : 2 130 
 v_max= 1 2Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 4
  === Action === 
--1 0 (carburant restant 240)
-
- === Tour 90 === 
-pos j1 = 50 34
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 50 37 
+-1 0 (carburant restant 55
+ =
+ === Tour 15 === 
+pos j1 = 2 127
+pos j2 = 4 128
+pos j3 = 0 129
+Vitesse : 0 1Prochain point : 2 130 
 v_max= 1 2Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 3
  === Action === 
-0 0 (carburant restant 240)
+0 0 (carburant restant 550)
 
- === Tour 91 === 
-pos j1 = 50 35
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 50 37 
+ === Tour 16 === 
+pos j1 = 2 128
+pos j2 = 3 129
+pos j3 = 0 129
+Vitesse : 0 1Prochain point : 2 130 
 v_max= 1 1Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 2
  === Action === 
-0 0 (carburant restant 240)
+0 0 (carburant restant 550)
 
- === Tour 92 === 
-pos j1 = 50 36
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 50 37 
+ === Tour 17 === 
+pos j1 = 2 129
+pos j2 = 3 129
+pos j3 = 0 135
+Vitesse : 0 1Prochain point : 2 130 
 v_max= 1 1Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 1
  === Action === 
-0 0 (carburant restant 240)
+0 0 (carburant restant 550)
 
- === Tour 93 === 
-pos j1 = 50 37
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : 0 1Prochain point : 42 45 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 8
+ === Tour 18 === 
+pos j1 = 2 130
+pos j2 = 3 129
+pos j3 = 0 135
+Vitesse : 0 1Prochain point : 1 131 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
  === Action === 
-0 -1 (carburant restant 240)
+0 -1 (carburant restant 550)
 
- === Tour 94 === 
-pos j1 = 49 38
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : -1 1Prochain point : 42 45 
-v_max= 2 2Direction : -1 1 
-Distance a parcourir jusqu'au prochain cp : 7
+ === Tour 19 === 
+pos j1 = 1 131
+pos j2 = 2 130
+pos j3 = 1 141
+Vitesse : -1 1Prochain point : 1 137 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 6
  === Action === 
-1 -1 (carburant restant 240)
+0 1 (carburant restant 550)
 
- === Tour 95 === 
-pos j1 = 47 40
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : -2 2Prochain point : 42 45 
-v_max= 2 2Direction : -1 1 
+ === Tour 20 === 
+pos j1 = 1 132
+pos j2 = 2 130
+pos j3 = 1 141
+Vitesse : 0 1Prochain point : 1 137 
+v_max= 1 2Direction : 0 1 
 Distance a parcourir jusqu'au prochain cp : 5
  === Action === 
-0 0 (carburant restant 240)
+1 0 (carburant restant 550)
+
+ === Tour 21 === 
+pos j1 = 1 134
+pos j2 = 1 132
+pos j3 = 2 144
+Vitesse : 0 2Prochain point : 1 137 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 22 === 
+pos j1 = 1 135
+pos j2 = 1 134
+pos j3 = 3 147
+Vitesse : 0 1Prochain point : 1 137 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 23 === 
+pos j1 = 1 136
+pos j2 = 1 135
+pos j3 = 3 150
+Vitesse : 0 1Prochain point : 1 137 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 24 === 
+pos j1 = 1 137
+pos j2 = 1 135
+pos j3 = 3 156
+Vitesse : 0 1Prochain point : 2 138 
+v_max= 1 1Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 25 === 
+pos j1 = 2 138
+pos j2 = 1 137
+pos j3 = 2 159
+Vitesse : 1 1Prochain point : 2 145 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 7
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 26 === 
+pos j1 = 2 139
+pos j2 = 1 137
+pos j3 = 2 159
+Vitesse : 0 1Prochain point : 2 145 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 27 === 
+pos j1 = 2 141
+pos j2 = 2 138
+pos j3 = 1 165
+Vitesse : 0 2Prochain point : 2 145 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 28 === 
+pos j1 = 2 142
+pos j2 = 3 139
+pos j3 = 2 168
+Vitesse : 0 1Prochain point : 2 145 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 29 === 
+pos j1 = 2 143
+pos j2 = 3 142
+pos j3 = 4 171
+Vitesse : 0 1Prochain point : 2 145 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 30 === 
+pos j1 = 2 144
+pos j2 = 3 142
+pos j3 = 4 171
+Vitesse : 0 1Prochain point : 2 145 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 31 === 
+pos j1 = 2 145
+pos j2 = 3 145
+pos j3 = 7 173
+Vitesse : 0 1Prochain point : 3 146 
+v_max= 1 1Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 32 === 
+pos j1 = 3 146
+pos j2 = 3 145
+pos j3 = 13 176
+Vitesse : 1 1Prochain point : 3 152 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 33 === 
+pos j1 = 3 147
+pos j2 = 3 145
+pos j3 = 13 176
+Vitesse : 0 1Prochain point : 3 152 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 5
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 34 === 
+pos j1 = 3 149
+pos j2 = 3 146
+pos j3 = 19 176
+Vitesse : 0 2Prochain point : 3 152 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 35 === 
+pos j1 = 3 150
+pos j2 = 3 148
+pos j3 = 22 176
+Vitesse : 0 1Prochain point : 3 152 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 36 === 
+pos j1 = 3 151
+pos j2 = 3 148
+pos j3 = 22 176
+Vitesse : 0 1Prochain point : 3 152 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 37 === 
+pos j1 = 3 152
+pos j2 = 3 151
+pos j3 = 28 176
+Vitesse : 0 1Prochain point : 2 153 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 38 === 
+pos j1 = 2 153
+pos j2 = 3 154
+pos j3 = 31 175
+Vitesse : -1 1Prochain point : 2 160 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 7
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 39 === 
+pos j1 = 2 154
+pos j2 = 3 154
+pos j3 = 34 173
+Vitesse : 0 1Prochain point : 2 160 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 40 === 
+pos j1 = 2 156
+pos j2 = 3 156
+pos j3 = 36 171
+Vitesse : 0 2Prochain point : 2 160 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 41 === 
+pos j1 = 2 157
+pos j2 = 3 158
+pos j3 = 36 171
+Vitesse : 0 1Prochain point : 2 160 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 42 === 
+pos j1 = 2 158
+pos j2 = 3 158
+pos j3 = 37 168
+Vitesse : 0 1Prochain point : 2 160 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 43 === 
+pos j1 = 2 159
+pos j2 = 2 160
+pos j3 = 38 162
+Vitesse : 0 1Prochain point : 2 160 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 44 === 
+pos j1 = 2 159
+pos j2 = 1 161
+pos j3 = 38 159
+Vitesse : 0 0Prochain point : 2 160 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 45 === 
+pos j1 = 2 160
+pos j2 = 1 161
+pos j3 = 38 159
+Vitesse : 0 1Prochain point : 1 161 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 46 === 
+pos j1 = 2 160
+pos j2 = 1 164
+pos j3 = 38 153
+Vitesse : 0 0Prochain point : 1 161 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+1 -1 (carburant restant 550)
+
+ === Tour 47 === 
+pos j1 = 1 161
+pos j2 = 1 164
+pos j3 = 38 153
+Vitesse : -1 1Prochain point : 1 167 
+v_max= 1 3Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 48 === 
+pos j1 = 1 162
+pos j2 = 1 165
+pos j3 = 38 147
+Vitesse : 0 1Prochain point : 1 167 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 5
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 49 === 
+pos j1 = 1 164
+pos j2 = 1 166
+pos j3 = 38 147
+Vitesse : 0 2Prochain point : 1 167 
+v_max= 1 2Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 50 === 
+pos j1 = 1 165
+pos j2 = 1 167
+pos j3 = 38 144
+Vitesse : 0 1Prochain point : 1 167 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 51 === 
+pos j1 = 1 166
+pos j2 = 2 168
+pos j3 = 38 138
+Vitesse : 0 1Prochain point : 1 167 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 52 === 
+pos j1 = 1 167
+pos j2 = 5 171
+pos j3 = 38 138
+Vitesse : 0 1Prochain point : 8 174 
+v_max= 2 2Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 7
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 53 === 
+pos j1 = 2 168
+pos j2 = 5 171
+pos j3 = 38 135
+Vitesse : 1 1Prochain point : 8 174 
+v_max= 2 2Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+1 1 (carburant restant 550)
+
+ === Tour 54 === 
+pos j1 = 4 170
+pos j2 = 6 172
+pos j3 = 38 132
+Vitesse : 2 2Prochain point : 8 174 
+v_max= 2 2Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+-1 -1 (carburant restant 550)
+
+ === Tour 55 === 
+pos j1 = 5 171
+pos j2 = 8 174
+pos j3 = 38 126
+Vitesse : 1 1Prochain point : 8 174 
+v_max= 2 2Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 56 === 
+pos j1 = 6 172
+pos j2 = 8 174
+pos j3 = 38 126
+Vitesse : 1 1Prochain point : 8 174 
+v_max= 1 1Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 57 === 
+pos j1 = 7 173
+pos j2 = 10 175
+pos j3 = 38 123
+Vitesse : 1 1Prochain point : 8 174 
+v_max= 1 1Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 58 === 
+pos j1 = 8 174
+pos j2 = 10 175
+pos j3 = 38 120
+Vitesse : 1 1Prochain point : 9 174 
+v_max= 1 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 59 === 
+pos j1 = 9 174
+pos j2 = 14 176
+pos j3 = 38 114
+Vitesse : 1 0Prochain point : 10 175 
+v_max= 1 1Direction : 1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 60 === 
+pos j1 = 10 175
+pos j2 = 14 176
+pos j3 = 38 114
+Vitesse : 1 1Prochain point : 32 175 
+v_max= 5 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 22
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 61 === 
+pos j1 = 12 176
+pos j2 = 18 175
+pos j3 = 38 111
+Vitesse : 2 1Prochain point : 32 175 
+v_max= 2 2Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 20
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 62 === 
+pos j1 = 14 176
+pos j2 = 18 175
+pos j3 = 38 105
+Vitesse : 2 0Prochain point : 32 175 
+v_max= 2 2Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 18
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 63 === 
+pos j1 = 16 175
+pos j2 = 24 175
+pos j3 = 38 102
+Vitesse : 2 -1Prochain point : 32 175 
+v_max= 5 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 16
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 64 === 
+pos j1 = 18 175
+pos j2 = 26 175
+pos j3 = 38 99
+Vitesse : 2 0Prochain point : 32 175 
+v_max= 4 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 14
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 65 === 
+pos j1 = 21 175
+pos j2 = 26 175
+pos j3 = 38 99
+Vitesse : 3 0Prochain point : 32 175 
+v_max= 4 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 11
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 66 === 
+pos j1 = 24 175
+pos j2 = 29 175
+pos j3 = 38 96
+Vitesse : 3 0Prochain point : 32 175 
+v_max= 3 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 8
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 67 === 
+pos j1 = 26 175
+pos j2 = 30 175
+pos j3 = 38 93
+Vitesse : 2 0Prochain point : 32 175 
+v_max= 3 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 68 === 
+pos j1 = 28 175
+pos j2 = 31 175
+pos j3 = 38 90
+Vitesse : 2 0Prochain point : 32 175 
+v_max= 2 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 69 === 
+pos j1 = 29 175
+pos j2 = 31 175
+pos j3 = 38 87
+Vitesse : 1 0Prochain point : 32 175 
+v_max= 2 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 70 === 
+pos j1 = 30 175
+pos j2 = 32 175
+pos j3 = 38 84
+Vitesse : 1 0Prochain point : 32 175 
+v_max= 1 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 71 === 
+pos j1 = 31 175
+pos j2 = 34 173
+pos j3 = 38 78
+Vitesse : 1 0Prochain point : 32 175 
+v_max= 1 1Direction : 1 0 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 72 === 
+pos j1 = 32 175
+pos j2 = 35 172
+pos j3 = 38 75
+Vitesse : 1 0Prochain point : 36 171 
+v_max= 2 2Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 73 === 
+pos j1 = 33 174
+pos j2 = 35 172
+pos j3 = 38 75
+Vitesse : 1 -1Prochain point : 36 171 
+v_max= 2 2Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 74 === 
+pos j1 = 34 173
+pos j2 = 36 171
+pos j3 = 38 69
+Vitesse : 1 -1Prochain point : 36 171 
+v_max= 1 1Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 75 === 
+pos j1 = 35 172
+pos j2 = 37 169
+pos j3 = 38 66
+Vitesse : 1 -1Prochain point : 36 171 
+v_max= 1 1Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 76 === 
+pos j1 = 36 171
+pos j2 = 37 168
+pos j3 = 38 63
+Vitesse : 1 -1Prochain point : 36 170 
+v_max= 1 1Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 77 === 
+pos j1 = 36 170
+pos j2 = 37 168
+pos j3 = 38 63
+Vitesse : 0 -1Prochain point : 37 169 
+v_max= 1 1Direction : 1 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 78 === 
+pos j1 = 37 169
+pos j2 = 37 166
+pos j3 = 38 60
+Vitesse : 1 -1Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 161
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 79 === 
+pos j1 = 37 168
+pos j2 = 37 163
+pos j3 = 38 57
+Vitesse : 0 -1Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 160
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 80 === 
+pos j1 = 37 166
+pos j2 = 37 154
+pos j3 = 38 51
+Vitesse : 0 -2Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 158
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 81 === 
+pos j1 = 37 163
+pos j2 = 37 154
+pos j3 = 38 51
+Vitesse : 0 -3Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 155
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 82 === 
+pos j1 = 37 159
+pos j2 = 37 144
+pos j3 = 38 45
+Vitesse : 0 -4Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 151
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 83 === 
+pos j1 = 37 154
+pos j2 = 37 144
+pos j3 = 38 45
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 146
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 84 === 
+pos j1 = 37 149
+pos j2 = 37 139
+pos j3 = 38 39
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 141
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 85 === 
+pos j1 = 37 144
+pos j2 = 37 129
+pos j3 = 38 39
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 136
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 86 === 
+pos j1 = 37 139
+pos j2 = 37 124
+pos j3 = 38 33
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 131
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 87 === 
+pos j1 = 37 134
+pos j2 = 37 124
+pos j3 = 38 33
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 126
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 88 === 
+pos j1 = 37 129
+pos j2 = 37 119
+pos j3 = 38 27
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 121
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 89 === 
+pos j1 = 37 124
+pos j2 = 37 109
+pos j3 = 38 24
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 116
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 90 === 
+pos j1 = 37 119
+pos j2 = 37 109
+pos j3 = 38 24
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 111
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 91 === 
+pos j1 = 37 114
+pos j2 = 37 104
+pos j3 = 38 21
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 106
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 92 === 
+pos j1 = 37 109
+pos j2 = 37 99
+pos j3 = 38 15
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 101
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 93 === 
+pos j1 = 37 104
+pos j2 = 37 94
+pos j3 = 38 15
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 96
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 94 === 
+pos j1 = 37 99
+pos j2 = 37 84
+pos j3 = 38 12
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 91
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 95 === 
+pos j1 = 37 94
+pos j2 = 37 84
+pos j3 = 37 9
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 86
+ === Action === 
+0 0 (carburant restant 550)
 
  === Tour 96 === 
-pos j1 = 45 42
-pos j2 = 16 16
-pos j3 = 44 47
-Vitesse : -2 2Prochain point : 42 45 
+pos j1 = 37 89
+pos j2 = 37 74
+pos j3 = 32 4
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 81
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 97 === 
+pos j1 = 37 84
+pos j2 = 37 74
+pos j3 = 32 4
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 76
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 98 === 
+pos j1 = 37 79
+pos j2 = 37 64
+pos j3 = 26 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 71
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 99 === 
+pos j1 = 37 74
+pos j2 = 37 59
+pos j3 = 23 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 66
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 100 === 
+pos j1 = 37 69
+pos j2 = 37 54
+pos j3 = 20 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 61
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 101 === 
+pos j1 = 37 64
+pos j2 = 37 49
+pos j3 = 17 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 56
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 102 === 
+pos j1 = 37 59
+pos j2 = 37 49
+pos j3 = 17 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 51
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 103 === 
+pos j1 = 37 54
+pos j2 = 37 44
+pos j3 = 14 3
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 46
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 104 === 
+pos j1 = 37 49
+pos j2 = 37 39
+pos j3 = 11 4
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 41
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 105 === 
+pos j1 = 37 44
+pos j2 = 37 34
+pos j3 = 8 5
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 36
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 106 === 
+pos j1 = 37 39
+pos j2 = 37 24
+pos j3 = 5 7
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 31
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 107 === 
+pos j1 = 37 34
+pos j2 = 37 20
+pos j3 = 4 8
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 26
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 108 === 
+pos j1 = 37 29
+pos j2 = 37 17
+pos j3 = 4 9
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 21
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 109 === 
+pos j1 = 37 24
+pos j2 = 37 17
+pos j3 = 4 9
+Vitesse : 0 -5Prochain point : 37 8 
+v_max= 1 5Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 16
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 110 === 
+pos j1 = 37 20
+pos j2 = 37 14
+pos j3 = 4 10
+Vitesse : 0 -4Prochain point : 37 8 
+v_max= 1 4Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 12
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 111 === 
+pos j1 = 37 17
+pos j2 = 37 12
+pos j3 = 4 11
+Vitesse : 0 -3Prochain point : 37 8 
+v_max= 1 3Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 9
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 112 === 
+pos j1 = 37 14
+pos j2 = 37 10
+pos j3 = 4 12
+Vitesse : 0 -3Prochain point : 37 8 
+v_max= 1 3Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 113 === 
+pos j1 = 37 12
+pos j2 = 37 10
+pos j3 = 4 13
+Vitesse : 0 -2Prochain point : 37 8 
+v_max= 1 2Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 114 === 
+pos j1 = 37 11
+pos j2 = 37 8
+pos j3 = 4 15
+Vitesse : 0 -1Prochain point : 37 8 
+v_max= 1 2Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 115 === 
+pos j1 = 37 10
+pos j2 = 37 8
+pos j3 = 4 16
+Vitesse : 0 -1Prochain point : 37 8 
+v_max= 1 1Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 116 === 
+pos j1 = 37 9
+pos j2 = 35 6
+pos j3 = 4 17
+Vitesse : 0 -1Prochain point : 37 8 
+v_max= 1 1Direction : 0 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 117 === 
+pos j1 = 37 8
+pos j2 = 35 6
+pos j3 = 4 18
+Vitesse : 0 -1Prochain point : 34 5 
+v_max= 2 2Direction : -1 -1 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 118 === 
+pos j1 = 36 7
+pos j2 = 34 5
+pos j3 = 4 18
+Vitesse : -1 -1Prochain point : 34 5 
+v_max= 1 1Direction : -1 -1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 119 === 
+pos j1 = 35 6
+pos j2 = 32 4
+pos j3 = 4 20
+Vitesse : -1 -1Prochain point : 34 5 
+v_max= 1 1Direction : -1 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 120 === 
+pos j1 = 34 5
+pos j2 = 32 4
+pos j3 = 4 20
+Vitesse : -1 -1Prochain point : 33 5 
+v_max= 1 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 121 === 
+pos j1 = 33 5
+pos j2 = 30 3
+pos j3 = 4 21
+Vitesse : -1 0Prochain point : 32 4 
+v_max= 1 1Direction : -1 -1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 122 === 
+pos j1 = 32 4
+pos j2 = 26 4
+pos j3 = 4 23
+Vitesse : -1 -1Prochain point : 9 4 
+v_max= 5 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 23
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 123 === 
+pos j1 = 30 3
+pos j2 = 24 4
+pos j3 = 4 23
+Vitesse : -2 -1Prochain point : 9 4 
+v_max= 2 2Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 21
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 124 === 
+pos j1 = 28 3
+pos j2 = 21 4
+pos j3 = 4 25
+Vitesse : -2 0Prochain point : 9 4 
+v_max= 2 2Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 19
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 125 === 
+pos j1 = 26 4
+pos j2 = 21 4
+pos j3 = 4 25
+Vitesse : -2 1Prochain point : 9 4 
+v_max= 5 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 17
+ === Action === 
+-1 0 (carburant restant 550)
+
+ === Tour 126 === 
+pos j1 = 24 4
+pos j2 = 15 4
+pos j3 = 4 27
+Vitesse : -2 0Prochain point : 9 4 
+v_max= 5 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 15
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 127 === 
+pos j1 = 21 4
+pos j2 = 15 4
+pos j3 = 4 28
+Vitesse : -3 0Prochain point : 9 4 
+v_max= 4 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 12
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 128 === 
+pos j1 = 18 4
+pos j2 = 12 4
+pos j3 = 4 29
+Vitesse : -3 0Prochain point : 9 4 
+v_max= 3 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 9
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 129 === 
+pos j1 = 15 4
+pos j2 = 11 4
+pos j3 = 4 30
+Vitesse : -3 0Prochain point : 9 4 
+v_max= 3 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 6
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 130 === 
+pos j1 = 13 4
+pos j2 = 10 4
+pos j3 = 4 31
+Vitesse : -2 0Prochain point : 9 4 
+v_max= 2 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 131 === 
+pos j1 = 12 4
+pos j2 = 10 4
+pos j3 = 4 31
+Vitesse : -1 0Prochain point : 9 4 
+v_max= 2 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 3
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 132 === 
+pos j1 = 11 4
+pos j2 = 9 4
+pos j3 = 4 33
+Vitesse : -1 0Prochain point : 9 4 
+v_max= 1 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 133 === 
+pos j1 = 10 4
+pos j2 = 7 6
+pos j3 = 4 34
+Vitesse : -1 0Prochain point : 9 4 
+v_max= 1 1Direction : -1 0 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 134 === 
+pos j1 = 9 4
+pos j2 = 7 6
+pos j3 = 4 34
+Vitesse : -1 0Prochain point : 5 8 
+v_max= 2 2Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 4
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 135 === 
+pos j1 = 8 5
+pos j2 = 5 8
+pos j3 = 4 36
+Vitesse : -1 1Prochain point : 5 8 
 v_max= 2 2Direction : -1 1 
 Distance a parcourir jusqu'au prochain cp : 3
  === Action === 
--1 1 (carburant restant 240)
+0 0 (carburant restant 550)
+
+ === Tour 136 === 
+pos j1 = 7 6
+pos j2 = 5 9
+pos j3 = 4 36
+Vitesse : -1 1Prochain point : 5 8 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 2
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 137 === 
+pos j1 = 6 7
+pos j2 = 5 9
+pos j3 = 4 37
+Vitesse : -1 1Prochain point : 5 8 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 138 === 
+pos j1 = 5 8
+pos j2 = 4 10
+pos j3 = 4 38
+Vitesse : -1 1Prochain point : 5 9 
+v_max= 1 1Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 139 === 
+pos j1 = 5 9
+pos j2 = 4 13
+pos j3 = 4 39
+Vitesse : 0 1Prochain point : 4 10 
+v_max= 1 1Direction : -1 1 
+Distance a parcourir jusqu'au prochain cp : 1
+ === Action === 
+0 -1 (carburant restant 550)
+
+ === Tour 140 === 
+pos j1 = 4 10
+pos j2 = 4 13
+pos j3 = 4 41
+Vitesse : -1 1Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 66
+ === Action === 
+0 1 (carburant restant 550)
+
+ === Tour 141 === 
+pos j1 = 4 11
+pos j2 = 4 20
+pos j3 = 4 42
+Vitesse : 0 1Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 65
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 142 === 
+pos j1 = 4 13
+pos j2 = 4 25
+pos j3 = 4 43
+Vitesse : 0 2Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 63
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 143 === 
+pos j1 = 4 16
+pos j2 = 4 30
+pos j3 = 4 44
+Vitesse : 0 3Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 60
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 144 === 
+pos j1 = 4 20
+pos j2 = 4 30
+pos j3 = 4 44
+Vitesse : 0 4Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 56
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 145 === 
+pos j1 = 4 25
+pos j2 = 4 30
+pos j3 = 4 45
+Vitesse : 0 5Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 51
+ === Action === 
+0 0 (carburant restant 550)
+
+ === Tour 146 === 
+pos j1 = 4 25
+pos j2 = 4 30
+pos j3 = 4 46
+Vitesse : 0 0Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 51
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 147 === 
+pos j1 = 4 26
+pos j2 = 4 30
+pos j3 = 4 47
+Vitesse : 0 1Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 50
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 148 === 
+pos j1 = 4 28
+pos j2 = 4 30
+pos j3 = 4 48
+Vitesse : 0 2Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 48
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 149 === 
+pos j1 = 4 28
+pos j2 = 4 30
+pos j3 = 4 49
+Vitesse : 0 0Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 48
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 150 === 
+pos j1 = 4 29
+pos j2 = 4 30
+pos j3 = 4 50
+Vitesse : 0 1Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 47
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 151 === 
+pos j1 = 4 29
+pos j2 = 4 30
+pos j3 = 4 51
+Vitesse : 0 0Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 47
+ === Action === 
+1 0 (carburant restant 550)
+
+ === Tour 152 === 
+pos j1 = 4 29
+pos j2 = 4 30
+pos j3 = 4 52
+Vitesse : 0 0Prochain point : 4 76 
+v_max= 1 5Direction : 0 1 
+Distance a parcourir jusqu'au prochain cp : 47
+ === Action === 
+1 0 (carburant restant 550)
