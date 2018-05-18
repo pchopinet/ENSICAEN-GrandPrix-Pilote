@@ -19,7 +19,7 @@ void sendAcceleration(int ax, int ay, int fuel, FILE* log) {
     char action[10];
     sprintf(action, "%d %d", ax, ay);
     fprintf(stdout, "%s\n", action);
-    fprintf(log, "%s (carburant restant %d)\n", action, fuel);
+    fprintf(log, "\t%s (carburant restant %d)\n", action, fuel);
     fflush(stdout);
     fflush(log);
 }
@@ -28,7 +28,7 @@ int main() {
 
     int lowerFuel = 0, increaseFuel = 0, tour = 0, crash = 1;
     int sf, ax, ay, fuel;
-    float x0 = 0, x1 = 10,  x= 5;
+    float x0 = 0, x1 = 10, x = 5;
     char vb, vc;
 
     point a1, a2, b, c, finalPoint;
@@ -46,7 +46,7 @@ int main() {
         tour++;
         fprintf(log, "\nTour: %d\n", tour);
         sf = fscanf(stdin,"%d %d\t%d %d\t%d %d",&(a1.y),&(a1.x),&(b.y),&(b.x),&(c.y),&(c.x));
-        fprintf(log,"%d %d\t%d %d\t%d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
+        fprintf(log,"\tv1: %d %d\tv2: %d %d\tv3: %d %d\n",a1.y,a1.x,b.y,b.x,c.y,c.x);
         fflush(log);
 
         if (tour == 1 || a1.x!=a2.x || a1.y!=a2.y) {
@@ -61,19 +61,21 @@ int main() {
 
         if (crash == 1 || (a2.x==b.x && a2.y==b.y) || (a2.x==c.x && a2.y==c.y) || lowerFuel || increaseFuel) {
 
-            fprintf(log,"\t-Recalcul de la route\n");
-            fflush(log);
+            fprintf(log,"\tNouvelle trajectoire : ");
             if (lowerFuel) {
                 x1 = x;
                 x = (x0+x1)/2;
-                fprintf(log,"\t\t-lowerFuel x = %.2f\n", x);
-                fflush(log);
+                fprintf(log," - lowFuel x = %.2f.\n", x);
             } else if (increaseFuel) {
                 x0 = x;
                 x = (x0+x1)/2;
-                fprintf(log,"\t\t+increaseFuel x = %.2f\n",x);
-                fflush(log);
+                fprintf(log," + incFuel x = %.2f.\n",x);
+            } else {
+                x0 = 0;
+                x = (x0+x1)/2;
+                fprintf(log," route bloquée.\n");
             }
+            fflush(log);
 
             vb = T->track[b.x][b.y];
             vc = T->track[c.x][c.y];
