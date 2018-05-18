@@ -107,8 +107,8 @@ int reachable2(Track t, point p, point q) {
     dx = q.x-p.x;
     dy = q.y-p.y;
 
-    fx = x + 0.5;
-    fy = y + 0.5;
+    fx = x + 0.5f;
+    fy = y + 0.5f;
 
     len = abs(dx)>abs(dy) ? abs(dx) : abs(dy);
 
