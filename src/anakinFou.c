@@ -86,7 +86,9 @@ int main() {
                 a1.vx = 0;
                 a1.vy = 0;
             }
-
+            if (tour==1) {
+                //freeLadj(L,T);
+            }
             L = initLadj(T);
             loadLadj(L, T, a1);
             finalPoint = dijkstra(L,T,a1,x);

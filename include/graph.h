@@ -22,5 +22,8 @@ Stack* findRoute(Ladj* L, point p);
 
 point dijkstra(Ladj* L, Track t, point a, float x);
 
+void freeLadj(Ladj* L, Track T);
+
+
 
 #endif

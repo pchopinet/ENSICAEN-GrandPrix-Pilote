@@ -48,6 +48,29 @@ Ladj* initLadj(Track t) {
     return L;
 }
 
+void freeLadj(Ladj* L, Track t) {
+    point p;
+    Cell* C;
+    for (p.x=0; p.x<t->height; p.x++) {
+        for (p.y=0; p.y<t->width; p.y++) {
+            for (p.vx=0; p.vx<11; p.vx++) {
+                for (p.vy=0; p.vy<11; p.vy++) {
+                    free(L->node[p.x][p.y][p.vx][p.vy]->next);
+                        //for (C=L->node[p.x][p.y][p.vx][p.vy]->next, C=C->next,)
+                    free(L->node[p.x][p.y][p.vx][p.vy]->dijNext);
+                    free(L->node[p.x][p.y][p.vx][p.vy]->prev);
+                    free(L->node[p.x][p.y][p.vx][p.vy]->dijPrev);
+                    free(L->node[p.x][p.y][p.vx][p.vy]);
+
+                }
+                free(L->node[p.x][p.y][p.vx]);
+            }
+            free(L->node[p.x][p.y]);
+        }
+        free(L->node[p.x]);
+    }
+}
+
 int loadLadj(Ladj *L, Track T, point p) {
 
     int normSpeed2, ax, ay, fuel;
