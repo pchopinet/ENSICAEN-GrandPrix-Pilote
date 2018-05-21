@@ -87,8 +87,8 @@ int main() {
                 a1.vy = 0;
             }
             if (tour > 1) {
-                fprintf(log, "Free");
-                freeLadj(L, T);
+                //fprintf(log, "Free\n");
+                //freeLadj(L, T);
             }
             L = initLadj(T);
             loadLadj(L, T, a1);

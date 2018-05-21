@@ -52,21 +52,21 @@ void freeLadj(Ladj *L, Track t) {
     point p;
     Cell *C;
     Cell *temp;
+    L->nbNode = 0;
+    L->nbArc = 0;
     for (p.x = 0; p.x < t->height; p.x++) {
         for (p.y = 0; p.y < t->width; p.y++) {
             for (p.vx = 0; p.vx < 11; p.vx++) {
                 for (p.vy = 0; p.vy < 11; p.vy++) {
-                    //free(L->node[p.x][p.y][p.vx][p.vy]->next);
-                    C = L->node[p.x][p.y][p.vx][p.vy]->next;
 
+                    C = L->node[p.x][p.y][p.vx][p.vy]->prev;
                     while (C != NULL) {
                         temp = C;
                         C = C->next;
                         free(temp);
                     }
-                    //free(L->node[p.x][p.y][p.vx][p.vy]);
 
-                    /*C = L->node[p.x][p.y][p.vx][p.vy]->dijNext;
+                    C = L->node[p.x][p.y][p.vx][p.vy]->next;
                     while (C!=NULL){
                         temp = C;
                         C = C->next;
@@ -80,35 +80,39 @@ void freeLadj(Ladj *L, Track t) {
                         free(temp);
                     }
 
-                    C = L->node[p.x][p.y][p.vx][p.vy]->prev;
+                    C = L->node[p.x][p.y][p.vx][p.vy]->dijNext;
                     while (C!=NULL){
                         temp = C;
                         C = C->next;
                         free(temp);
-                    }*/
-                    //free(L->node[p.x][p.y][p.vx][p.vy]->dijNext);
-                    //free(L->node[p.x][p.y][p.vx][p.vy]->prev);
-                    //free(L->node[p.x][p.y][p.vx][p.vy]->dijPrev);
-                    //free(L->node[p.x][p.y][p.vx][p.vy]);
+                    }
+/*
+                    */
+                    L->node[p.x][p.y][p.vx][p.vy]->next = NULL;
+                    L->node[p.x][p.y][p.vx][p.vy]->dijNext = NULL;
+                    L->node[p.x][p.y][p.vx][p.vy]->dijPrev = NULL;
+                    L->node[p.x][p.y][p.vx][p.vy]->prev = NULL;
 
+                    L->node[p.x][p.y][p.vx][p.vy]->distance = -1;
+                    L->node[p.x][p.y][p.vx][p.vy]->tag = 0;
+                    L->node[p.x][p.y][p.vx][p.vy]->totFuel = INT_MAX;
+                    L->node[p.x][p.y][p.vx][p.vy]->totWeight = INT_MAX;
                 }
-                //free(L->node[p.x][p.y][p.vx]);
             }
-            free(L->node[p.x][p.y]);
         }
-        free(L->node[p.x]);
     }
-    free(L->node);
-    free(L);
 }
+
 
 int loadLadj(Ladj *L, Track T, point p) {
 
     int normSpeed2, ax, ay, fuel;
     int f = 0;
+
     point t, h;
     Queue *Q = createQueue();
     put(p, Q);
+
 
 
     while (!isEmpty(Q)) {

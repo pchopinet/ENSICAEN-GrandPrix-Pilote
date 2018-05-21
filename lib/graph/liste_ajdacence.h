@@ -44,6 +44,7 @@ typedef struct ladj {
 
 Lnode* createLnode();
 
+
 Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 
 int* tag(Ladj* L, point p);

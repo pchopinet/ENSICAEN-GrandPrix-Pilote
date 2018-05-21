@@ -14,14 +14,13 @@ Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
 
 Lnode* createLnode() {
     Lnode* node = (Lnode*) malloc(sizeof(Lnode));
-    node->next = NULL;
-    node->prev = NULL;
     node->distance = -1;
     node->tag = 0;
     node->totFuel = INT_MAX;
     node->totWeight = INT_MAX;
     return node;
 }
+
 
 int* tag(Ladj* L, point p) {
     return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->tag);
@@ -133,6 +132,7 @@ int reachable2(Track t, point p, point q) {
 
 
 int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
+
     Cell* C;
     C = createCell(h, fuel, ax, ay, *next(L, t));
     *next(L, t) = C;

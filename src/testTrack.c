@@ -14,11 +14,11 @@ int main() {
     clock_t t0, t;
     t0 = clock();
 
-    //Track T = initTrackFromFile("../track/starter_droit_au_but.txt");
-    Track T = initTrackFromFile("../track/f-Zero_Crossroad_Circuit.txt");
-    //Track T = initTrackFromFile("../track/starter_serpent.txt");
-    //Track T = initTrackFromFile("../track/sand.txt");
-    //Track T = initTrackFromFile("../track/test.txt");
+    Track T = initTrackFromFile("../tracks/starter_droit_au_but.txt");
+    //Track T = initTrackFromFile("../tracks/f-Zero_Crossroad_Circuit.txt");
+    //Track T = initTrackFromFile("../tracks/starter_serpent.txt");
+    //Track T = initTrackFromFile("../tracks/sand.txt");
+    //Track T = initTrackFromFile("../tracks/test.txt");
 
     Ladj* L = initLadj(T);
 
@@ -58,13 +58,20 @@ int main() {
 
 
     Stack* route = findRoute(L,finalPoint);
-    printRoute(T,route);
 
     t = clock();
     temps = (float)(t-t0)/CLOCKS_PER_SEC;
     printf("temps = %f\n", temps);
 
     printf("Distance min: %d\n", *distance(L,L->start[0]));
+
+    freeLadj(L, T);
+    printf("a\n");
+    loadLadj(L, T, depart);
+    finalPoint = dijkstra(L, T, depart, x);
+    route = findRoute(L, finalPoint);
+
+    printRoute(T,route);
 
     return 0;
 }
