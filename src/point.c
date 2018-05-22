@@ -1,50 +1,26 @@
-//
-// Created by pierre on 27/04/18.
-//
+/* -*- c-basic-offset: 3 -*-
+ *
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
 
-#include <wchar.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "../include/point.h"
+/**
+ * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
+ */
 
-struct point_t {
-    int x;
-    int y;
-};
+/**
+ * @file point.c
+ */
 
-Point newPoint(int x, int y) {
-    Point p = malloc(sizeof(struct point_t));
-    p->x = x;
-    p->y = y;
-    return p;
+#include "point.h"
+
+int ptEqual(point p, point q) {
+    return p.x == q.x && p.y == q.y && p.vx == q.vx && p.vy == q.vy;
 }
-
-int PointX(Point this) {
-    return this->x;
-}
-
-int PointY(Point this) {
-    return this->y;
-}
-
-int *PointGetXY(Point this) {
-    int *xy = malloc(sizeof(int) * 2);
-    xy[0] = this->x;
-    xy[1] = this->y;
-    return xy;
-}
-
-void PointPrint(Point this, FILE *ouput) {
-    fprintf(ouput, "Point p : %d %d\n", this->x, this->y);
-    fflush(ouput);
-}
-
-int PointEqual(Point this, Point test) {
-    if (this == NULL || test == NULL) {
-        return 0;
-    }
-    return this->y == test->y && this->x == test->x;
-}
-
-
-

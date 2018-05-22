@@ -1,7 +1,23 @@
+/* -*- c-basic-offset: 3 -*-
+ *
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
 
-//
-// Created by clabonne on 04/04/18.
-//
+/**
+ * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
+ */
+
+/**
+ * @file listeAjdacence.h
+ */
 
 #ifndef LADJ_H
 #define LADJ_H
@@ -11,7 +27,7 @@
 #include <float.h>
 #include "file.h"
 #include "stack.h"
-#include "../../include/track.h"
+#include "track.h"
 
 typedef struct cell {
     point head;
@@ -38,7 +54,7 @@ typedef struct ladj {
     int height, width;
     Lnode* **** node; //[x][y][vx][vy]
     point start[3];
-    point finish[10000]; // Faire une allocationS dynamique !!
+    point finish[20000];
     int nbFinish;
 } Ladj;
 

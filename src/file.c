@@ -24,7 +24,6 @@
 #include"file.h"
 
 
-
 Node* createNode(T value, Node* next) {
     Node* n=(Node*)malloc(sizeof(Node));
     n->val=value;

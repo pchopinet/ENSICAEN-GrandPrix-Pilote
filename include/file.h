@@ -1,27 +1,29 @@
-/* -*- c-basic-offset: 3 -*- 
+/* -*- c-basic-offset: 3 -*-
  *
  * ENSICAEN
- * 6 Boulevard Marechal Juin 
- * F-14050 Caen Cedex 
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
  *
  * This file is owned by ENSICAEN students.
  * No portion of this document may be reproduced, copied
  * or revised without written permission of the authors.
- */ 
+ */
 
 /**
  * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
- * @version 0.0.1 / 24-01-2018
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
  */
 
 /**
  * @file file.h
  */
 
+
 #ifndef FILE_H
 #define FILE_H
 
-#include "../../include/pointClement.h"
+#include "point.h"
 
 typedef point T; //the type used
 

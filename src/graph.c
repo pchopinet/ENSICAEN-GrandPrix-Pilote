@@ -1,3 +1,25 @@
+/* -*- c-./include/basic-offset: 3 -*-
+ *
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
+
+/**
+ * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
+ */
+
+/**
+ * @file graph.c
+ */
+
+
 #include "../include/graph.h"
 
 Ladj *initLadj(Track t) {
@@ -5,7 +27,6 @@ Ladj *initLadj(Track t) {
     point p;
     Ladj *L = malloc(sizeof(Ladj));
 
-    //L->nbNode = t->width*t->height*11*11*5;
     L->nbNode = 0;
     L->nbArc = 0;
     L->width = t->width;
@@ -60,9 +81,6 @@ void freeLadj(Ladj *L, Track t) {
                     freeCells(L->node[p.x][p.y][p.vx][p.vy]->next);
                     freeCells(L->node[p.x][p.y][p.vx][p.vy]->prev);
 
-                    //L->node[p.x][p.y][p.vx][p.vy]->tag = 0;
-                    //L->node[p.x][p.y][p.vx][p.vy]->totFuel = INT_MAX;
-                    //L->node[p.x][p.y][p.vx][p.vy]->totWeight = INT_MAX;
                     free(L->node[p.x][p.y][p.vx][p.vy]);
                 }
                 free(L->node[p.x][p.y][p.vx]);
@@ -129,12 +147,7 @@ int loadLadj(Ladj *L, Track T, point p) {
                         f++;
                     }
                 } else {
-                    /* peut etre supprimer pour gagner du temps de calcul
-                     * mais utile pour virage en epingle
-                     * ou reprise en cas de crash
-                     *
-                     * possiblement a metre dans tout les cas meme en dehors du else
-                     */
+
                     h = t;
                     h.vx = 0;
                     h.vy = 0;
@@ -145,12 +158,6 @@ int loadLadj(Ladj *L, Track T, point p) {
                     newArc(h, t, fuel, ax, ay, L);
                 }
             }
-        }
-        t.vx = 0;
-        t.vy = 0;
-        if (*tag(L, t) == 0) {
-            put(t, Q);
-            *tag(L, t) = 1;
         }
     }
 
@@ -212,7 +219,7 @@ Stack *findRoute(Ladj *L, point p) {
 point dijkstra(Ladj *L, Track t, point a, float x) {
     int w;
     int *TFa, *TFb;
-    int *TWa, *TWb, tmpWb;
+    int *TWa, *TWb;
     point b;
     Cell *C;
     nodeABR* A = NULL;
@@ -244,7 +251,6 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
                 w = 1000 * C->fuel + (int) (1000 * x);
 
                 if ((*totWeight(L, a) + w) < *totWeight(L, b)) {
-                    tmpWb = *TWb;
                     *TFb = *TFa + C->fuel;
                     *TWb = *TWa + w;
 
@@ -256,7 +262,6 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
 
                     } else if (*tag(L, b) == 3) {
 
-                        //A = supprNode(A,b,tmpWb);
                         A = insert(A,b,*TWb);
                         newArcDij(b, a, w, C->ax, C->ay, L);
                     }

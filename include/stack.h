@@ -16,32 +16,36 @@
  */
 
 /**
- * @file graph.h
+ * @file stack.h
  */
 
-#ifndef GRAPH_H
-#define GRAPH_H
+#ifndef STACK_H
+#define STACK_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include "track.h"
-#include "file.h"
-#include "stack.h"
-#include "abr.h"
-#include "listeAdjacence.h"
+#include "point.h"
+
+typedef point T;
+
+typedef struct snode{
+    T val;
+    struct snode* next;
+} SNode;
+
+typedef struct stack{
+    SNode* first;
+    SNode* last;
+    int size;
+} Stack;
+
+SNode* createSNode(T value, SNode* next);
+
+Stack* createStack();
 
 
-Ladj* initLadj(Track t);
+void putStack(T value, Stack*);
 
-int loadLadj(Ladj *l, Track T, point p);
+T pushStack(Stack*);
 
-int calculDistance(Ladj* L);
-
-Stack* findRoute(Ladj* L, point p);
-
-point dijkstra(Ladj* L, Track t, point a, float x);
-
-void freeLadj(Ladj* L, Track T);
+int isEmptyStack(Stack*);
 
 #endif

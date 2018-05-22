@@ -8,15 +8,10 @@ include_directories(lib/CCollections/include)
 include_directories(lib/graph)
 
 add_executable(ENSICAEN_GrandPrix_Pilote
-        include/controller.h
-        include/dijkstra.h
-        include/driver.h
         include/graph.h
         include/point.h
-        include/pointClement.h
         include/print.h
         include/track.h
-        include/vector.h
         lib/CCollections/include/ArrayList.h
         lib/CCollections/include/CompareTo.h
         lib/CCollections/include/LinkedList.h
@@ -36,33 +31,25 @@ add_executable(ENSICAEN_GrandPrix_Pilote
         #lib/graph/file.h
         #lib/graph/liste_adjacence.c
         #lib/graph/liste_ajdacence.h
-        src/anakin2.c
-        src/controller.c
         #src/dijkstra.c
-        src/driver.c
         #src/graph.c
-        src/point.c
         #src/print.c
         src/track.c
-        src/vector.c)
+        )
 
 add_executable(anakin
-        src/anakinFull.c
         src/graph.c
-        src/pointClement.c
-        src/print.c
-        src/dijkstra.c
+        src/point.c
         src/track.c
         include/graph.h
-        include/pointClement.h
+        include/point.h
         include/print.h
-        include/dijkstra.h
         include/track.h
-        lib/graph/file.c
-        lib/graph/file.h
-        lib/graph/liste_adjacence.c
-        lib/graph/liste_ajdacence.h
-        lib/graph/testABR.c)
+        src/file.c
+        include/file.h
+        src/listeAdjacence.c
+        include/listeAdjacence.h
+        )
 target_link_libraries(anakin m)
 
 target_link_libraries(ENSICAEN_GrandPrix_Pilote m)

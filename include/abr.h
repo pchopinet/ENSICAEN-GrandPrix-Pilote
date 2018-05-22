@@ -11,7 +11,8 @@
 
 /**
  * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
- * @version 0.0.1 / 31-01-2018
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
  */
 
 /**
@@ -20,7 +21,8 @@
 
 #ifndef __TP1_H
 #define __TP1_H
-#include "../../include/pointClement.h"
+
+#include "point.h"
 
 typedef struct nodeABR {
 	int weight;
@@ -33,12 +35,5 @@ nodeABR* insert(nodeABR *n, point p, int x);
 
 nodeABR* extractMin(nodeABR* p, point* pt);
 
-int leefNumber(nodeABR* A);
-
-nodeABR * supprNode(nodeABR* n, point p, int w);
-
-nodeABR *sup_aux(nodeABR *n, nodeABR *r);
-
-void affiche_arbre(nodeABR* n, int col);
 
 #endif

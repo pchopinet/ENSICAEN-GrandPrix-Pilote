@@ -295,4 +295,6 @@ ENSICAEN_GrandPrix_Pilote
 anakin.log
 .Rhistory
 
+bin/*
+
 # End of https://www.gitignore.io/api/c,qt,clion,clion+all,clion+iml,qtcreator,intellij+all

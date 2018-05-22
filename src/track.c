@@ -1,7 +1,27 @@
+/* -*- c-basic-offset: 3 -*-
+ *
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
+
+/**
+ * @author Clément Labonne <clement.labonne@ecole.ensicaen.fr>
+ * @author Pierre Chopinet <pierre.chopinet@ecole.ensicaen.fr>
+ * @version 1.0.0 / 21-05-2018
+ */
+
+/**
+ * @file track.c
+ */
 
 #include <unistd.h>
 #include <string.h>
-#include "../include/track.h"
+#include "track.h"
 
 
 Track initTrack(FILE *input) {
@@ -85,48 +105,7 @@ int readTrackFromFile(Track t, char *file) {
     return sf;
 }
 
-/*
-int isInTrack(Track t, Point p) {
-    int x = PointX(p);
-    int y = PointY(p);
-    return x < t->width && y < t->height && x >= 0 && y >= 0;
-}
 
-int isAccessible(Track t, Point p) {
-    int x = PointX(p);
-    int y = PointY(p);
-    if (isInTrack(t, p)) {
-        char value = t->track[y][x];
-        return value != '.';
-    }
-    return 0;
-}
-
-int isSand(Track t, Point p) {
-    int x = PointX(p);
-    int y = PointY(p);
-    return isInTrack(t, p) && t->track[y][x] == '~';
-}
-
-int isFinishingLine(Track t, Point p) {
-    int x = PointX(p);
-    int y = PointY(p);
-    return isInTrack(t, p) && t->track[y][x] == '=';
-}
-
-ArrayList FindFinishingLine(Track t) {
-    ArrayList finish = newArrayList(sizeof(Point));
-
-    for (int y = 0; y < t->height; y++) {
-        for (int x = 0; x < t->width; x++) {
-            if (t->track[y][x] == '=') {
-                ArrayListAppend(finish, newPoint(x, y));
-            }
-        }
-    }
-    return finish;
-}
-*/
 void TrackPrint(Track t, FILE *output) {
     fprintf(output, "Map : %d %d %d\n\n", t->width, t->height, t->fuel);
     for (int y = 0; y < t->height; y++) {
