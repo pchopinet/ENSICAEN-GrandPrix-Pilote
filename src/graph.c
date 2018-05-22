@@ -50,57 +50,32 @@ Ladj *initLadj(Track t) {
 
 void freeLadj(Ladj *L, Track t) {
     point p;
-    Cell *C;
-    Cell *temp;
-    L->nbNode = 0;
-    L->nbArc = 0;
     for (p.x = 0; p.x < t->height; p.x++) {
         for (p.y = 0; p.y < t->width; p.y++) {
             for (p.vx = 0; p.vx < 11; p.vx++) {
                 for (p.vy = 0; p.vy < 11; p.vy++) {
 
-                    C = L->node[p.x][p.y][p.vx][p.vy]->prev;
-                    while (C != NULL) {
-                        temp = C;
-                        C = C->next;
-                        free(temp);
-                    }
+                    freeCells(L->node[p.x][p.y][p.vx][p.vy]->dijNext);
+                    freeCells(L->node[p.x][p.y][p.vx][p.vy]->dijPrev);
+                    freeCells(L->node[p.x][p.y][p.vx][p.vy]->next);
+                    freeCells(L->node[p.x][p.y][p.vx][p.vy]->prev);
 
-                    C = L->node[p.x][p.y][p.vx][p.vy]->next;
-                    while (C!=NULL){
-                        temp = C;
-                        C = C->next;
-                        free(temp);
-                    }
-
-                    C = L->node[p.x][p.y][p.vx][p.vy]->dijPrev;
-                    while (C!=NULL){
-                        temp = C;
-                        C = C->next;
-                        free(temp);
-                    }
-
-                    C = L->node[p.x][p.y][p.vx][p.vy]->dijNext;
-                    while (C!=NULL){
-                        temp = C;
-                        C = C->next;
-                        free(temp);
-                    }
-/*
-                    */
-                    L->node[p.x][p.y][p.vx][p.vy]->next = NULL;
-                    L->node[p.x][p.y][p.vx][p.vy]->dijNext = NULL;
-                    L->node[p.x][p.y][p.vx][p.vy]->dijPrev = NULL;
-                    L->node[p.x][p.y][p.vx][p.vy]->prev = NULL;
-
-                    L->node[p.x][p.y][p.vx][p.vy]->distance = -1;
-                    L->node[p.x][p.y][p.vx][p.vy]->tag = 0;
-                    L->node[p.x][p.y][p.vx][p.vy]->totFuel = INT_MAX;
-                    L->node[p.x][p.y][p.vx][p.vy]->totWeight = INT_MAX;
+                    //L->node[p.x][p.y][p.vx][p.vy]->tag = 0;
+                    //L->node[p.x][p.y][p.vx][p.vy]->totFuel = INT_MAX;
+                    //L->node[p.x][p.y][p.vx][p.vy]->totWeight = INT_MAX;
+                    free(L->node[p.x][p.y][p.vx][p.vy]);
                 }
+                free(L->node[p.x][p.y][p.vx]);
+
             }
+            free(L->node[p.x][p.y]);
+
         }
+        free(L->node[p.x]);
+
     }
+    free(L->node);
+
 }
 
 
@@ -171,6 +146,12 @@ int loadLadj(Ladj *L, Track T, point p) {
                 }
             }
         }
+        t.vx = 0;
+        t.vy = 0;
+        if (*tag(L, t) == 0) {
+            put(t, Q);
+            *tag(L, t) = 1;
+        }
     }
 
     L->nbFinish = f;
@@ -237,8 +218,10 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
     List *list = createList();
 
     putInList(list, a, 0);
+
     *totFuel(L, a) = 0;
     *totWeight(L, a) = 0;
+
     while (!testPt(t, a, '=')) {
 
         a = getMin(list);
@@ -251,10 +234,12 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
 
         while (C != NULL) {
             b = C->head;
-            TFb = totFuel(L, b);
-            TWb = totWeight(L, b);
 
-            if (*tag(L, b) != 4) {
+            //printf("%d %d %d %d \n",b.x,b.y,b.vx,b.vy);
+
+            if (*tag(L, b) != 4 && !testPt(t,b,'.')) {
+                TFb = totFuel(L, b);
+                TWb = totWeight(L, b);
 
                 w = 1000 * C->fuel + (int) (1000 * x);
 

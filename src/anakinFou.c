@@ -87,15 +87,16 @@ int main() {
                 a1.vy = 0;
             }
             if (tour > 1) {
-                //fprintf(log, "Free\n");
-                //freeLadj(L, T);
+                fprintf(log, "Free\n");
+                freeLadj(L, T);
+            } else {
             }
-            L = initLadj(T);
-            loadLadj(L, T, a1);
+                L = initLadj(T);
+                loadLadj(L, T, a1);
             finalPoint = dijkstra(L, T, a1, x);
             route = findRoute(L, finalPoint);
-            lowerFuel = ((float) *totFuel(L, finalPoint) < 0.95f * (float) fuel) ? 0 : 1;
-            increaseFuel = ((float) *totFuel(L, finalPoint) > 0.90f * (float) fuel) ? 0 : 1;
+            lowerFuel = ((float) *totFuel(L, finalPoint) < 0.97f * (float) fuel) ? 0 : 1;
+            increaseFuel = ((float) *totFuel(L, finalPoint) > 0.93f * (float) fuel) ? 0 : 1;
 
             a1 = pushStack(route);
             a2 = pushStack(route);

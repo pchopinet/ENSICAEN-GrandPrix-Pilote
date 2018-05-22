@@ -14,6 +14,10 @@ Cell *createCell(point head, int fuel, int ax, int ay, Cell *next) {
 
 Lnode *createLnode() {
     Lnode *node = (Lnode *) malloc(sizeof(Lnode));
+    node->dijNext = NULL;
+    node->dijPrev = NULL;
+    node->next = NULL;
+    node->prev = NULL;
     node->distance = -1;
     node->tag = 0;
     node->totFuel = INT_MAX;
@@ -152,7 +156,7 @@ int newArc(point h, point t, int fuel, int ax, int ay, Ladj *L) {
 
 int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj *L) {
     Cell *C;
-    C = createCell(h, fuel, ax, ay, *next(L, t));
+    C = createCell(h, fuel, ax, ay, *dijNext(L, t));
     *dijNext(L, t) = C;
 
     free(*dijPrev(L, h));
