@@ -237,7 +237,7 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
         while (C != NULL) {
             b = C->head;
 
-            if (*tag(L, b) != 4 && !testPt(t,b,'.')) {
+            if (*tag(L, b) != 4) {
                 TFb = totFuel(L, b);
                 TWb = totWeight(L, b);
 

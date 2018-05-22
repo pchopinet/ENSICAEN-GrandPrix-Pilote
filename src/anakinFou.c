@@ -27,7 +27,7 @@ void sendAcceleration(int ax, int ay, int fuel, FILE *log) {
 int main() {
 
     int lowerFuel = 0, increaseFuel = 0, tour = 0, crash = 1;
-    int sf, ax, ay, fuel;
+    int sf, ax, ay, fuel, bloque;
     float x0 = 0, x1 = 10, x = 5;
     char vb, vc;
 
@@ -36,7 +36,6 @@ int main() {
     Ladj *L;
 
     FILE *log = fopen("anakinFou.log", "w");
-    //log = stdout;
     Track T = initTrack(stdin);
     TrackPrint(T, log);
     fuel = T->fuel;
@@ -59,7 +58,9 @@ int main() {
             crash = 0;
         }
 
-        if (crash == 1 || (a2.x == b.x && a2.y == b.y) || (a2.x == c.x && a2.y == c.y) || lowerFuel || increaseFuel) {
+        bloque = (a2.x == b.x && a2.y == b.y) || (a2.x == c.x && a2.y == c.y);
+
+        if (crash || bloque || lowerFuel || increaseFuel) {
 
             fprintf(log, "\tNouvelle trajectoire : ");
             if (lowerFuel) {
@@ -77,10 +78,12 @@ int main() {
             }
             fflush(log);
 
-            vb = T->track[b.x][b.y];
-            vc = T->track[c.x][c.y];
-            T->track[b.x][b.y] = '.';
-            T->track[c.x][c.y] = '.';
+            if (bloque || crash) {
+                vb = T->track[b.x][b.y];
+                vc = T->track[c.x][c.y];
+                T->track[b.x][b.y] = '.';
+                T->track[c.x][c.y] = '.';
+            }
 
             if (crash == 1) {
                 a1.vx = 0;
@@ -101,8 +104,10 @@ int main() {
             a1 = pushStack(route);
             a2 = pushStack(route);
 
-            T->track[b.x][b.y] = vb;
-            T->track[c.x][c.y] = vc;
+            if (bloque || crash) {
+                T->track[b.x][b.y] = vb;
+                T->track[c.x][c.y] = vc;
+            }
         }
 
         ay = a2.vx - a1.vx;
