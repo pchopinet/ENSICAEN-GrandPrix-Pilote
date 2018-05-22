@@ -47,6 +47,8 @@ Lnode* createLnode();
 
 Cell *createCell(point head, int fuel, int ax, int ay, Cell* next);
 
+void freeCells(Cell * c);
+
 int* tag(Ladj* L, point p);
 
 int* distance(Ladj* L, point p);

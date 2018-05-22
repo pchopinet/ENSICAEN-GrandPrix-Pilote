@@ -1,8 +1,8 @@
 
 #include "liste_ajdacence.h"
 
-Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
-    Cell* C;
+Cell *createCell(point head, int fuel, int ax, int ay, Cell *next) {
+    Cell *C;
     C = (Cell *) malloc(sizeof(Cell));
     C->head = head;
     C->fuel = fuel;
@@ -12,8 +12,8 @@ Cell *createCell(point head, int fuel, int ax, int ay, Cell* next) {
     return C;
 }
 
-Lnode* createLnode() {
-    Lnode* node = (Lnode*) malloc(sizeof(Lnode));
+Lnode *createLnode() {
+    Lnode *node = (Lnode *) malloc(sizeof(Lnode));
     node->distance = -1;
     node->tag = 0;
     node->totFuel = INT_MAX;
@@ -21,43 +21,49 @@ Lnode* createLnode() {
     return node;
 }
 
-
-int* tag(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->tag);
+void freeCells(Cell *c) {
+    if (c != NULL) {
+        freeCells(c->next);
+        free(c);
+    }
 }
 
-int* distance(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->distance);
+int *tag(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->tag);
 }
 
-int* totFuel(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->totFuel);
+int *distance(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->distance);
 }
 
-float* totWeight(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->totWeight);
+int *totFuel(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->totFuel);
 }
 
-Cell** next(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->next);
+float *totWeight(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->totWeight);
 }
 
-Cell** dijNext(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->dijNext);
+Cell **next(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->next);
 }
 
-Cell** dijPrev(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->dijPrev);
+Cell **dijNext(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->dijNext);
 }
 
-Cell** prev(Ladj* L, point p) {
-    return &(L->node[p.x][p.y][p.vx+5][p.vy+5]->prev);
+Cell **dijPrev(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->dijPrev);
 }
 
-int pointInTrack(point p, Ladj* L) {
+Cell **prev(Ladj *L, point p) {
+    return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->prev);
+}
+
+int pointInTrack(point p, Ladj *L) {
     int x = L->height;
     int y = L->width;
-    return (p.x>=0 && p.y>=0 && p.x<x && p.y<y);
+    return (p.x >= 0 && p.y >= 0 && p.x < x && p.y < y);
 }
 
 int testPt(Track t, point p, char c) {
@@ -103,24 +109,24 @@ int reachable2(Track t, point p, point q) {
     x = p.x;
     y = p.y;
 
-    dx = q.x-p.x;
-    dy = q.y-p.y;
+    dx = q.x - p.x;
+    dy = q.y - p.y;
 
     fx = x + 0.5f;
     fy = y + 0.5f;
 
-    len = abs(dx)>abs(dy) ? abs(dx) : abs(dy);
+    len = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
 
-    deltax = ((float)dx)/len;
-    deltay = ((float)dy)/len;
+    deltax = ((float) dx) / len;
+    deltay = ((float) dy) / len;
 
-    if (len!=0) {
-        for (i=0; i<len; i++) {
+    if (len != 0) {
+        for (i = 0; i < len; i++) {
 
             fx = fx + deltax;
             fy = fy + deltay;
-            x = (int)fx;
-            y = (int)fy;
+            x = (int) fx;
+            y = (int) fy;
 
             if (t->track[x][y] == '.') {
                 return 0;
@@ -131,9 +137,9 @@ int reachable2(Track t, point p, point q) {
 }
 
 
-int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
+int newArc(point h, point t, int fuel, int ax, int ay, Ladj *L) {
 
-    Cell* C;
+    Cell *C;
     C = createCell(h, fuel, ax, ay, *next(L, t));
     *next(L, t) = C;
 
@@ -144,8 +150,8 @@ int newArc(point h, point t, int fuel, int ax, int ay, Ladj* L) {
     return 0;
 }
 
-int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj* L) {
-    Cell* C;
+int newArcDij(point h, point t, int fuel, int ax, int ay, Ladj *L) {
+    Cell *C;
     C = createCell(h, fuel, ax, ay, *next(L, t));
     *dijNext(L, t) = C;
 
