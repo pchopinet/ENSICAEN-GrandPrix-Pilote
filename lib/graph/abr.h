@@ -31,7 +31,7 @@ typedef struct nodeABR {
 
 nodeABR* insert(nodeABR *n, point p, int x);
 
-nodeABR* extractMin(nodeABR* p);
+nodeABR* extractMin(nodeABR* p, point* pt);
 
 int leefNumber(nodeABR* A);
 

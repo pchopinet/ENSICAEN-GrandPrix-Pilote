@@ -225,12 +225,10 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
     while (!testPt(t, a, '=')) {
 
         do {
-            a = extractMin(A);
+            A = extractMin(A,&a);
         } while(*tag(L, a) == 4);
         *tag(L, a) = 4;
-        printf("a %d %d %d %d\n",a.x, a.y, a.vx, a.vy);
 
-        printf("%c\n",testPt(t, a, '='));
 
         C = *next(L, a);
         TFa = totFuel(L, a);

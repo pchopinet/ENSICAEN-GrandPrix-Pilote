@@ -22,7 +22,7 @@
 #include<stdlib.h>
 #include"abr.h"
 
-nodeABR *insert(nodeABR *n, point p, int x) {
+nodeABR* insert(nodeABR *n, point p, int x) {
   if (n == NULL) {
     n = (nodeABR *) malloc(sizeof(nodeABR));
     n->weight = x;
@@ -70,11 +70,16 @@ void affiche_arbre(nodeABR* n, int col) {
     }
 }*/
 
-nodeABR* extractMin(nodeABR* p) {
+nodeABR* extractMin(nodeABR* p, point* pt) {
 
-  while (p->left != NULL) {
-      p = p->left;
+    nodeABR* q;
+  if (p->left == NULL) {
+      q = p;
+      *pt = p->point;
+      p = p->right;
+      free(q);
+  } else {
+      p->left = extractMin(p->left,pt);
   }
-      extractMin(p->left);
     return p;
 }

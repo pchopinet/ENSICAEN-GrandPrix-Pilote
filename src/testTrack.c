@@ -14,8 +14,8 @@ int main() {
     clock_t t0, t;
     t0 = clock();
 
-    Track T = initTrackFromFile("../tracks/starter_droit_au_but.txt");
-    //Track T = initTrackFromFile("../tracks/f-Zero_Crossroad_Circuit.txt");
+    //Track T = initTrackFromFile("../tracks/starter_droit_au_but.txt");
+    Track T = initTrackFromFile("../tracks/f-Zero_Crossroad_Circuit.txt");
     //Track T = initTrackFromFile("../tracks/starter_serpent.txt");
     //Track T = initTrackFromFile("../tracks/sand.txt");
     //Track T = initTrackFromFile("../tracks/test.txt");
