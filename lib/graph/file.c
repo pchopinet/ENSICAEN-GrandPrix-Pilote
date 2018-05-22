@@ -32,6 +32,7 @@ Node* createNode(T value, Node* next) {
     return n;
 }
 
+
 Queue* createQueue() {
     Queue* Q = malloc(sizeof(Queue));
     Q->last=NULL;

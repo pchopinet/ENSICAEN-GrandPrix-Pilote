@@ -35,6 +35,7 @@ typedef struct queue{
    Node* last;
 } Queue;
 
+
 Node* createNode(T value, Node* next);
 
 Queue* createQueue();

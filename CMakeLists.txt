@@ -62,7 +62,7 @@ add_executable(anakin
         lib/graph/file.h
         lib/graph/liste_adjacence.c
         lib/graph/liste_ajdacence.h
-        )
+        lib/graph/testABR.c)
 target_link_libraries(anakin m)
 
 target_link_libraries(ENSICAEN_GrandPrix_Pilote m)

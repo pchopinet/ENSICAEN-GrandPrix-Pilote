@@ -212,21 +212,25 @@ Stack *findRoute(Ladj *L, point p) {
 point dijkstra(Ladj *L, Track t, point a, float x) {
     int w;
     int *TFa, *TFb;
-    float *TWa, *TWb;
+    int *TWa, *TWb, tmpWb;
     point b;
     Cell *C;
-    List *list = createList();
+    nodeABR* A = NULL;
 
-    putInList(list, a, 0);
+    A = insert(A, a, 0);
 
     *totFuel(L, a) = 0;
     *totWeight(L, a) = 0;
 
     while (!testPt(t, a, '=')) {
 
-        a = getMin(list);
+        do {
+            a = extractMin(A);
+        } while(*tag(L, a) == 4);
         *tag(L, a) = 4;
+        printf("a %d %d %d %d\n",a.x, a.y, a.vx, a.vy);
 
+        printf("%c\n",testPt(t, a, '='));
 
         C = *next(L, a);
         TFa = totFuel(L, a);
@@ -235,8 +239,6 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
         while (C != NULL) {
             b = C->head;
 
-            //printf("%d %d %d %d \n",b.x,b.y,b.vx,b.vy);
-
             if (*tag(L, b) != 4 && !testPt(t,b,'.')) {
                 TFb = totFuel(L, b);
                 TWb = totWeight(L, b);
@@ -244,19 +246,20 @@ point dijkstra(Ladj *L, Track t, point a, float x) {
                 w = 1000 * C->fuel + (int) (1000 * x);
 
                 if ((*totWeight(L, a) + w) < *totWeight(L, b)) {
-
+                    tmpWb = *TWb;
                     *TFb = *TFa + C->fuel;
                     *TWb = *TWa + w;
 
                     if (*tag(L, b) < 3) {
 
                         *tag(L, b) = 3;
-                        putInList(list, b, *TWb);
+                        A = insert(A, b, *TWb);
                         newArcDij(b, a, w, C->ax, C->ay, L);
 
                     } else if (*tag(L, b) == 3) {
 
-                        changeTotWeight(list, b, *TWb);
+                        //A = supprNode(A,b,tmpWb);
+                        A = insert(A,b,*TWb);
                         newArcDij(b, a, w, C->ax, C->ay, L);
                     }
                 }

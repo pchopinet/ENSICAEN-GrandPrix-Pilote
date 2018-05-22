@@ -9,6 +9,7 @@ typedef struct point {
     int vy;
 } point;
 
+
 int ptEqual(point p, point q);
 
 #endif

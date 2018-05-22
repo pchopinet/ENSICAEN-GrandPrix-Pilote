@@ -30,7 +30,7 @@ typedef struct lnode {
     int distance;
     int tag;
     int totFuel;
-    float totWeight;
+    int totWeight;
 } Lnode;
 
 typedef struct ladj {
@@ -55,7 +55,7 @@ int* distance(Ladj* L, point p);
 
 int* totFuel(Ladj* L, point p);
 
-float* totWeight(Ladj* L, point p);
+int* totWeight(Ladj* L, point p);
 
 Cell** next(Ladj* L, point p);
 

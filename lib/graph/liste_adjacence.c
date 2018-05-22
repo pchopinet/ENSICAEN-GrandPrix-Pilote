@@ -44,7 +44,7 @@ int *totFuel(Ladj *L, point p) {
     return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->totFuel);
 }
 
-float *totWeight(Ladj *L, point p) {
+int *totWeight(Ladj *L, point p) {
     return &(L->node[p.x][p.y][p.vx + 5][p.vy + 5]->totWeight);
 }
 

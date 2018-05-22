@@ -20,24 +20,25 @@
 
 #ifndef __TP1_H
 #define __TP1_H
-#include "../lib/graph/file.h"
-typedef int element;
+#include "../../include/pointClement.h"
 
 typedef struct nodeABR {
-	element val;
+	int weight;
+	point point;
 	struct nodeABR *left;
-  struct nodeABR *right;
+	struct nodeABR *right;
 } nodeABR;
 
-nodeABR* insere (nodeABR *n, element x);
-int parcoursLargeur(nodeABR* A) ;
+nodeABR* insert(nodeABR *n, point p, int x);
 
-void affiche_arbre(nodeABR* n, int col);
+nodeABR* extractMin(nodeABR* p);
 
 int leefNumber(nodeABR* A);
-int preffix (nodeABR* A);
-int suffix (nodeABR* A);
-int parcoursLargeur(nodeABR* A);
 
+nodeABR * supprNode(nodeABR* n, point p, int w);
+
+nodeABR *sup_aux(nodeABR *n, nodeABR *r);
+
+void affiche_arbre(nodeABR* n, int col);
 
 #endif

@@ -8,9 +8,8 @@
 #include "track.h"
 #include "../lib/graph/file.h"
 #include "../lib/graph/stack.h"
+#include "../lib/graph/abr.h"
 #include "../lib/graph/liste_ajdacence.h"
-#include "dijkstra.h"
-#include "abr.h"
 
 
 Ladj* initLadj(Track t);
